@@ -1,0 +1,48 @@
+{
+  "name": "kunwu-admin",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@8.15.9",
+  "scripts": {
+    "dev": "next dev --turbopack -H 127.0.0.1 -p 3100",
+    "build": "next build",
+    "start": "next start -H 127.0.0.1 -p 3100",
+    "db:up": "docker compose up -d --wait mysql",
+    "db:down": "docker compose down",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx tools/db-migrate.ts",
+    "db:seed": "tsx tools/db-seed.ts",
+    "db:setup": "pnpm db:up && pnpm db:migrate && pnpm db:seed && pnpm db:import:godot",
+    "db:studio": "drizzle-kit studio",
+    "db:check": "tsx tools/db-check.ts",
+    "db:import:godot": "tsx tools/import-godot-config.ts",
+    "import:stories": "node tools/import-story-drafts.mjs",
+    "audit:stories": "node tools/audit-story-import.mjs",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit --incremental false",
+    "check": "pnpm audit:stories && pnpm typecheck && pnpm lint && pnpm build"
+  },
+  "dependencies": {
+    "@xyflow/react": "^12.8.6",
+    "drizzle-orm": "^0.45.2",
+    "dotenv": "^17.4.2",
+    "lucide-react": "^0.468.0",
+    "mysql2": "^3.23.3",
+    "next": "^15.4.6",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "uuid": "^14.0.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.3",
+    "@types/react-dom": "^19.0.2",
+    "drizzle-kit": "^0.31.10",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "^15.4.6",
+    "tsx": "^4.23.12",
+    "typescript": "^5.7.2"
+  }
+}
