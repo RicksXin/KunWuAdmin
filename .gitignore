@@ -7,3 +7,4 @@ out/
 *.tsbuildinfo
 .env*
 !.env.example
+.next.conflict-backup

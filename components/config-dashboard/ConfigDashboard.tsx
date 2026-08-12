@@ -63,6 +63,7 @@ interface ChangeRequestWorkspace {
 }
 
 const railItems = [
+  { icon: BookOpenText, label: "剧情", href: "/" },
   { icon: Gauge, label: "总览", active: true },
   { icon: Boxes, label: "基础" },
   { icon: Users, label: "修士" },
@@ -234,14 +235,15 @@ export function ConfigDashboard() {
           <button className="secondary-button" onClick={() => loadOverview(configSetCode)} disabled={loading}>{loading ? <LoaderCircle className="spin" size={15} /> : <RefreshCw size={15} />} 刷新</button>
           <button className="secondary-button" onClick={runValidation} disabled={working !== null}>{working === "validate" ? <LoaderCircle className="spin" size={15} /> : <ShieldAlert size={15} />} 全量校验</button>
           <button className="secondary-button" onClick={() => buildRelease("preview")} disabled={working !== null}>{working === "preview" ? <LoaderCircle className="spin" size={15} /> : <Hammer size={15} />} 编译预览</button>
-          <Link className="secondary-button" href="/"><BookOpenText size={15} /> 剧情编辑器</Link>
           <button className="avatar-button" aria-label="用户"><CircleUserRound size={21} /></button>
         </div>
       </header>
 
       <div className="config-workspace">
         <nav className="app-rail">
-          <div className="rail-main">{railItems.map(({ icon: Icon, label, active }) => <button key={label} className={active ? "is-active" : ""} title={label}><Icon size={20} /><span>{label}</span></button>)}</div>
+          <div className="rail-main">{railItems.map(({ icon: Icon, label, active, href }) => href
+            ? <Link key={label} href={href} className={active ? "is-active" : ""} title={label}><Icon size={20} /><span>{label}</span></Link>
+            : <button key={label} className={active ? "is-active" : ""} title={label}><Icon size={20} /><span>{label}</span></button>)}</div>
           <div className="rail-bottom"><button title="审计"><ScrollText size={20} /></button><button title="设置"><Settings size={20} /></button></div>
         </nav>
 
