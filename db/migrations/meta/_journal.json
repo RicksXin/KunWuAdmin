@@ -15,6 +15,13 @@
       "when": 1786526384111,
       "tag": "0001_fantastic_bug",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1789459058382,
+      "tag": "0002_parallel_morlocks",
+      "breakpoints": true
     }
   ]
 }

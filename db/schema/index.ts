@@ -7,3 +7,4 @@ export * from "./economy";
 export * from "./expedition";
 export * from "./maps";
 export * from "./progression";
+export * from "./player-resources";

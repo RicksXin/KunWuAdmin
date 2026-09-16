@@ -582,3 +582,8 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-
   .config-workspace { grid-template-columns: var(--rail-width) 248px minmax(510px, 1fr) 300px; }
   .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* Main navigation stays available while a workspace loads or reports an error. */
+.admin-loading-shell { height: 100dvh; display: grid; grid-template-columns: var(--rail-width) minmax(0, 1fr); }
+.admin-loading-shell > .loading-screen { min-width: 0; }
+.app-rail a:focus-visible { outline: 1px solid var(--jade); outline-offset: 1px; }

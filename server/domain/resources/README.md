@@ -1,0 +1,54 @@
+# 灵源院资源模块
+
+2026-09-15：独立在线模块已实现。Godot、玩家 API、MySQL 状态/流水、管理余额调整和配置审批发布已贯通；原 D0 钱包与存档保持隔离。
+
+## 启动
+
+```bash
+pnpm db:up
+pnpm db:migrate
+pnpm resources:setup
+pnpm resources:dev
+```
+
+打开 http://127.0.0.1:3100/resources，点击“连接本机开发身份”。该快捷登录只在显式启用的本机回环服务可用；正式会话/账号产品不由这个入口提供。其他管理路由仍检查会话、环境、权限和同源。
+
+`resources:setup` 首次创建独立测试玩家，之后延长同身份会话有效期。凭据只存 `.local/resource-development.json`（Git 忽略，文件 600），不输出到终端。启动 Godot：双击相邻 KunWuGodot 的 `run_resource_online_test.command`。
+
+本机需使用 ARM Node，匹配现有 esbuild：`/Users/zhangxiaoen/.nvm/versions/node/v22.22.2/bin/node`。x64 Node 不匹配不是数据库故障。
+
+## 模块位置
+
+- `rules.ts`：五类资源与严格 v2 配置契约，包括等级表、可支付升级费用、冻结解锁与循环规则。
+- `settle.ts`：BigInt、精确有理进度、维护票据、满仓冻结、庚精个人余数、规则时间边界、预算续算。
+- `server/services/resource-service.ts`：真实 MySQL 事务、版本/请求幂等、配置历史、领取去重、账本、审计、会话和环境隔离。
+- `db/schema/player-resources.ts`、`0002_parallel_morlocks.sql`：9 张增量表；不改旧配置表内容。
+- `/api/game/v1/resources/sync`、`command`、`requests/:id`：玩家同步、命令与请求恢复。
+- `/api/admin/resources/…`：管理会话、玩家、调整、流水、配置、模拟。
+- `/resources`：玩家库存和调整、配置保存/审核/发布、当前草稿模拟。
+
+## 技术边界
+
+资源域状态作为一个 JSON 聚合与版本存储，不保存完整 Godot profile；事务/流水和请求结果独立落表。所有改动取得同一玩家锁，发布与结算使用环境共享/排他锁。后台调整与资源流水、审计同成同败，先校验当前余额；超时必须使用原 key 恢复。
+
+资源域采用独立配置草稿和发布历史，复用 KunWuAdmin 应用/MySQL。旧六模块配置管线和 D0 值不被更改；不能把本域发布当作整个 v1_0 配置发布。初始基线在隔离环境初始化时落库，后续配置要经保存、审核、发布。历史哈希校验失败停止结算，不套用最新值替代。
+
+开发身份权限独立，正式管理员/玩家账号系统的会话适配是上线集成事项。程序不提供客户端任意奖励接口；领域奖励服务仅供受信任任务逻辑调用并校验 claim。正式任务引擎、其他玩法余额接入和旧档迁移仍按 PRD Q3/Q8 的后续范围执行，不自动合并本地余额。
+
+## 验证
+
+```bash
+pnpm test:resources
+pnpm test:resources:godot  # 要求本机资源 API 已启动
+pnpm typecheck
+pnpm lint
+pnpm build
+```
+
+领域与 MySQL 集成共 30 项，含 150 组随机分段、并发/去重、回滚、配置审核、权限/到期、持久化续算及审计写入失败回滚。数据库测试仅创建 test-* 独立数据，不删除现有数据。
+
+Godot E2E 使用临时凭据与独立测试玩家，验证同步、调岗、招募、升级、余额不足、断线与 pending 恢复，并比较原存档哈希；凭据文件结束后清除。生产模拟不入账；计算预算不是离线收益上限。
+
+唯一续接状态：KunWuGodot/Docs/Artifacts/resource-management/CONTEXT.md。完整实装技术说明：KunWuGodot/Docs/Tech/资源管理与灵源院前后端分离技术方案.md。
+
+目录与配置页还提供五类资源筛选/详情编辑、稳定 code 与图标引用保护、相对最近发布的字段差异、历史版本载入并重新发布。模拟可逐人设置未完成进度、庚精余数与维护已付状态，结果显示停工原因。

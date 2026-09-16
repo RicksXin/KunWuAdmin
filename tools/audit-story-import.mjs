@@ -28,8 +28,8 @@ function headingSections(markdown) {
 }
 
 function currentMainCodes() {
-  const start = sources.current.indexOf("## 第一编：1.0主线 P0–C04");
-  const end = sources.current.indexOf("## 第二编：1.0四条支线");
+  const start = sources.current.indexOf("## 第一编：1.0主线");
+  const end = sources.current.indexOf("## 第二编：", start);
   return headingSections(sources.current).flatMap((section) => {
     if (section.level !== 4 || section.index <= start || section.index >= end) return [];
     return section.text.match(/^(?:场景 )?([A-Z][A-Z0-9]*-\d+[A-Z]?)：/)?.slice(1) ?? [];
@@ -51,11 +51,12 @@ function detailedMainCodes() {
 }
 
 function currentSideCodes() {
-  const start = sources.current.indexOf("## 第二编：1.0四条支线");
-  const end = sources.current.indexOf("### 6. 支线状态与汇流矩阵", start);
+  const start = sources.current.indexOf("## 第二编：");
+  const statusHeading = sources.current.match(/^### \d+\. 支线状态与汇流矩阵$/m);
+  const end = statusHeading?.index ?? sources.current.length;
   return headingSections(sources.current).flatMap((section) => {
     if (section.level !== 4 || section.index <= start || section.index >= end) return [];
-    return section.text.match(/^(Q[1-4]-\d+[A-Z]?)：/)?.slice(1) ?? [];
+    return section.text.match(/^(Q[1-5]-\d+[A-Z]?)：/)?.slice(1) ?? [];
   });
 }
 
@@ -75,21 +76,21 @@ function longSideCodes() {
   for (const parent of headings.filter((section) => section.level === 2)) {
     const sectionNumber = Number(parent.text.match(/^(\d+)\. /)?.[1]);
     const children = headings.filter((section) => section.level === 3 && section.index > parent.index && section.index < parent.endIndex);
-    if (sectionNumber >= 4 && sectionNumber <= 9) {
+    if (sectionNumber >= 4 && sectionNumber <= 10) {
       const worldIndex = sectionNumber - 3;
       for (const child of children) {
         const stage = child.text.match(/^阶段([A-D])/)?.[1];
         if (stage) codes.push(`W${worldIndex}-${stage}`);
         else if (child.text === "终局结果") codes.push(`W${worldIndex}-END`);
       }
-    } else if (sectionNumber >= 10 && sectionNumber <= 13) {
-      const personalIndex = sectionNumber - 9;
+    } else if (sectionNumber >= 11 && sectionNumber <= 14) {
+      const personalIndex = sectionNumber - 10;
       if (!sources.side.slice(parent.index, parent.endIndex).includes("关键结果：")) {
         failures.push(`支线源文档/${parent.text}: 缺少关键结果段`);
       }
       codes.push(`P${personalIndex}-FLOW`, `P${personalIndex}-END`);
-    } else if (sectionNumber === 14 || sectionNumber === 15) {
-      const prefix = sectionNumber === 14 ? "S" : "D";
+    } else if (sectionNumber === 15 || sectionNumber === 16) {
+      const prefix = sectionNumber === 15 ? "S" : "D";
       for (const child of children) {
         if (endingCodes[child.text]) codes.push(endingCodes[child.text]);
         else if (child.text === "完成结果") codes.push(`${prefix}-END`);
@@ -212,7 +213,7 @@ function auditProject(label, project, expectedCodes, expectedDocuments, expected
 const expectedMainCodes = [...currentMainCodes(), ...detailedMainCodes()];
 const expectedSideCodes = [...currentSideCodes(), ...longSideCodes()];
 auditProject("完整主线", mainProject, expectedMainCodes, [sourceLabels.current, sourceLabels.outline, sourceLabels.main, sourceLabels.reward, sourceLabels.mapFramework], 15);
-auditProject("完整支线", sideProject, expectedSideCodes, [sourceLabels.current, sourceLabels.outline, sourceLabels.side, sourceLabels.mapFramework], 12);
+auditProject("完整支线", sideProject, expectedSideCodes, [sourceLabels.current, sourceLabels.outline, sourceLabels.side, sourceLabels.mapFramework], 13);
 
 for (const [code, expectedLabels] of Object.entries({
   "M2-06": ["封坛尸将魂魄", "封坛军魂甲（上品）"],

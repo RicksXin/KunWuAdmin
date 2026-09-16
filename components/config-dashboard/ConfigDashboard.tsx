@@ -1,10 +1,11 @@
 "use client";
 
+import { AdminRail } from "@/components/admin/AdminRail";
+
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import {
   AlertTriangle,
-  BookOpenText,
   Boxes,
   CheckCircle2,
   ChevronRight,
@@ -12,14 +13,11 @@ import {
   ClipboardCheck,
   Database,
   Factory,
-  Gauge,
   GitCompareArrows,
   Hammer,
   LoaderCircle,
   Map,
   RefreshCw,
-  ScrollText,
-  Settings,
   ShieldAlert,
   Sparkles,
   Swords,
@@ -62,14 +60,6 @@ interface ChangeRequestWorkspace {
   };
 }
 
-const railItems = [
-  { icon: BookOpenText, label: "剧情", href: "/" },
-  { icon: Gauge, label: "总览", active: true },
-  { icon: Boxes, label: "基础" },
-  { icon: Users, label: "修士" },
-  { icon: Swords, label: "战斗" },
-  { icon: Map, label: "地图" },
-];
 const moduleIcons = { base: Boxes, progression: Users, combat: Swords, economy: Factory, expedition: Map };
 const fieldNames: Record<string, string> = {
   code: "稳定 ID", nameKey: "名称键", type: "类型", status: "状态", weight: "重量", level: "等级", maxLevel: "最高等级",
@@ -219,8 +209,8 @@ export function ConfigDashboard() {
   const activeModuleInfo = overview?.modules.find((item) => item.code === activeModule);
   const importTime = useMemo(() => overview?.latestImport?.finishedAt ? new Intl.DateTimeFormat("zh-CN", { dateStyle: "medium", timeStyle: "short" }).format(new Date(overview.latestImport.finishedAt)) : "尚未导入", [overview]);
 
-  if (!overview && loading) return <div className="loading-screen"><div className="seal-loader">昆</div><LoaderCircle className="spin" /><p>{notice}</p></div>;
-  if (!overview) return <div className="loading-screen"><ShieldAlert /><p>{notice}</p><button className="secondary-button" onClick={() => loadOverview(configSetCode)}>重试</button></div>;
+  if (!overview && loading) return <div className="admin-loading-shell"><AdminRail /><div className="loading-screen"><div className="seal-loader">昆</div><LoaderCircle className="spin" /><p>{notice}</p></div></div>;
+  if (!overview) return <div className="admin-loading-shell"><AdminRail /><div className="loading-screen"><ShieldAlert /><p>{notice}</p><button className="secondary-button" onClick={() => loadOverview(configSetCode)}>重试</button></div></div>;
 
   return (
     <div className="config-shell">
@@ -231,6 +221,7 @@ export function ConfigDashboard() {
           <small className="status-badge status-badge--review">草稿 · R{overview.configSet.currentRevision}</small>
         </div>
         <div className="header-actions">
+          <Link className="secondary-button" href="/resources">资源管理</Link>
           <label className="config-set-picker"><span>配置集</span><select value={configSetCode} onChange={(event) => setConfigSetCode(event.target.value)}>{overview.availableSets.map((set) => <option key={set.code} value={set.code}>{set.name} · R{set.currentRevision}</option>)}</select></label>
           <button className="secondary-button" onClick={() => loadOverview(configSetCode)} disabled={loading}>{loading ? <LoaderCircle className="spin" size={15} /> : <RefreshCw size={15} />} 刷新</button>
           <button className="secondary-button" onClick={runValidation} disabled={working !== null}>{working === "validate" ? <LoaderCircle className="spin" size={15} /> : <ShieldAlert size={15} />} 全量校验</button>
@@ -240,12 +231,7 @@ export function ConfigDashboard() {
       </header>
 
       <div className="config-workspace">
-        <nav className="app-rail">
-          <div className="rail-main">{railItems.map(({ icon: Icon, label, active, href }) => href
-            ? <Link key={label} href={href} className={active ? "is-active" : ""} title={label}><Icon size={20} /><span>{label}</span></Link>
-            : <button key={label} className={active ? "is-active" : ""} title={label}><Icon size={20} /><span>{label}</span></button>)}</div>
-          <div className="rail-bottom"><button title="审计"><ScrollText size={20} /></button><button title="设置"><Settings size={20} /></button></div>
-        </nav>
+        <AdminRail />
 
         <aside className="config-sidebar">
           <div className="sidebar-heading"><div><span className="section-kicker">CONFIG DOMAINS</span><h2>业务配置</h2></div><Database size={18} /></div>

@@ -3,9 +3,9 @@
   "id": "side_kunwu_complete_quests",
   "category": "side",
   "title": "昆吾因果支线库",
-  "subtitle": "6条世界线 · 4条个人线 · 2条结局专属任务",
+  "subtitle": "7条世界线 · 4条个人线 · 2条结局专属任务",
   "synopsis": "从1.0四条详细支线延伸到完整游戏的十二条任务链，产出证词、盟约、阵位、阵器、裂界锚点与人物尾声。",
-  "version": "1.0-story-baseline.3+story-baseline.1",
+  "version": "1.0-story-baseline.6+story-baseline.3",
   "status": "draft",
   "chapters": [
     {
@@ -51,46 +51,53 @@
       "order": 6
     },
     {
+      "id": "side_w7",
+      "code": "W7",
+      "title": "不在年轮里的人",
+      "summary": "任务 side_hanli_time_gardener；主题：跨越时间的赠予仍需由当世之人亲手种下，知道未来也不等于替现在作出选择。",
+      "order": 7
+    },
+    {
       "id": "side_p1",
       "code": "P1",
       "title": "石岩《谁来承阵》",
       "summary": "任务 companion_shi_yan_bear_the_seal；主题：自愿牺牲与被当作材料的区别。",
-      "order": 7
+      "order": 8
     },
     {
       "id": "side_p2",
       "code": "P2",
       "title": "陆清《两种灵气》",
       "summary": "任务 companion_lu_qing_two_energies；主题：理解危险力量与接受危险力量并不是同一件事。",
-      "order": 8
+      "order": 9
     },
     {
       "id": "side_p3",
       "code": "P3",
       "title": "白灵《十三个伤者》",
       "summary": "任务 companion_bai_ling_thirteen_wounded；主题：救下一个人是否值得让更多人承担风险。",
-      "order": 9
+      "order": 10
     },
     {
       "id": "side_p4",
       "code": "P4",
       "title": "墨言《真相留下谁》",
       "summary": "任务 companion_mo_yan_cost_of_truth；主题：揭露真相是否可以不顾及真相会杀死谁。",
-      "order": 10
+      "order": 11
     },
     {
       "id": "side_end_s",
       "code": "END-S",
       "title": "救世专属·众生同阵",
       "summary": "任务 ending_salvation_living_covenant；主题：以自愿盟约完成灵魔逆转阵位。",
-      "order": 11
+      "order": 12
     },
     {
       "id": "side_end_d",
       "code": "END-D",
       "title": "灭世专属·真名三契",
       "summary": "任务 ending_destruction_three_covenants；主题：连续主动确认借名、借身与借界。",
-      "order": 12
+      "order": 13
     }
   ],
   "scenes": [
@@ -333,9 +340,9 @@
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q1-01：少了十三个人",
         "markdown": "触发：地图1阅读废营粮册。玩家发现最后一页记录46人入山，回营栏只有33个名字，死亡栏为空。\n\n```text\n墨言：少了十三个人。\n白灵：不是死亡。死亡栏一笔没写。\n石岩：也不是失踪，墨迹被刮掉了。\n陆清：刮痕和岑伯的阵钥同材质。\n```\n\n选项：\n\n1. `把整本账带回。` → 占任务栏；岑守一无法否认。\n2. `只拓印最后一页。` → 保留现场；地图3可找到后来翻阅者痕迹。\n3. `先不告诉岑守一。` → `cen_secretive=true`；墨言在地图2发现晶钥后追加证词。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w1_q1_02",
@@ -651,9 +658,9 @@
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q1-02：账上无名",
         "markdown": "触发：回营与岑守一对话。\n\n```text\n玩家：四十六人入山，三十三人回营。\n岑守一：旧账受潮，数字不准。\n墨言：名字被阵钥刮掉，不是受潮。\n岑守一：……那把钥，早丢了。\n```\n\n选项：\n\n1. `给他一次自己说的机会。` → `cen_trust+1`；他说十三人执行北撤任务，但拒绝解释为何阵令只记录十二人闭门。\n2. `当面说他在撒谎。` → `cen_trust-1`；他交出断裂阵钥，要求玩家自己去查。\n3. `问十三人的家属。` → 解锁乌婆；岑守一：“十二年了，还有谁在等？”\n4. `暂时收起账簿。` → 任务保持ACTIVE，地图2晶钥自动触发下一步。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w1_q1_03",
@@ -849,9 +856,9 @@
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q1-03：晶化阵钥",
         "markdown": "触发：地图2西阵眼后方。断钥与岑守一左腿晶纹产生共鸣。\n\n```text\n陆清：钥上封着一段阵令。\n白灵：解开它，岑伯的旧伤也会发作。\n墨言：不解，十二个死人和一个无名者都没有答案。\n```\n\n方法：\n\n1. `远程请岑守一解除。` → `cen_trust≥1`时他同意；营地生产暂停5分钟，岑生命无战斗影响。\n2. `由陆清破解。` → 法力SUM≥150；失败全队受法伤并引来四象阵灵。\n3. `交给乌婆引魂。` → 需已解锁乌婆；付出玩家一段“初入营地”的回看记录作为仪式代价，\n   只影响图鉴文本，不删除实际存档。\n\n阵令残影：\n\n```text\n沈砚秋残影：北道已被魔气穿透。\n沈砚秋残影：封门后，里面十二人出不来。\n岑守一残影：再等一刻，他们也许能到。\n沈砚秋残影：再等一刻，魔气也会到。\n模糊人影：总印给我。至少把名字带出去。\n岑守一残影：……阵钥给我。\n```\n\n揭示：命令由旧营主沈砚秋提出，但真正转动阵钥的是岑守一；第十三人已经越过门线，\n身份被阵雾遮蔽。若`identity_clues≥2`，总印会与人影手中的裂纹完全重合。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w1_q1_04",
@@ -934,9 +941,9 @@
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q1-04：十三盏小灯",
         "markdown": "触发：地图3回程捷径附近发现十三盏熄灭小灯。点亮后只出现十二段亡魂，第十三盏不受引魂，\n反而与玩家总印同步明灭。\n\n- 点灯：消耗灵晶13；十二段无对白身影向玩家所在方向行礼；`identity_clues=max(当前,4)`、`cen_trust+1`。\n- 取灯芯：得器灵残片6；岑守一支线结尾不会公开名册。\n- 原样保留：乌婆可在回营后制作十二枚魂牌和一枚空白生牌，消耗灵晶6。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w1_q1_05",
@@ -1359,9 +1366,9 @@
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q1-05：最后一页写什么",
         "markdown": "触发：完成地图3后回营。\n\n```text\n岑守一：门是我封的。\n岑守一：沈营主下令，我转的钥。\n岑守一：十二个人死在门里。\n岑守一：第十三个，被我藏进眠棺。\n玩家：是我。\n岑守一：是你。总印一直在等你醒。\n岑守一：若重来一次，我仍会转。\n岑守一：可我不该刮掉他们的名字。\n```\n\n此处可比主线祭坛更早确认玩家是第十三名幸存者，但只由沈砚秋留影在主线 M4-05 确认\n阵图录官、继任掌印人与封忆原因。支线不是理解身份真相的必做条件。\n\n不可逆选择：\n\n1. `公开名册和阵令。` → 营地NPC知道真相；岑状态一章为“暂离议事”；获得归营符配方、\n   守封者评价+1。\n2. `恢复名字，不公开命令。` → 岑继续任管事；获得生产效率+5%和归营符配方。\n3. `完整保留旧账，不替任何人下结论。` → 解锁所有残影回看；获得魂晶400。\n4. `销毁旧账。` → 二次确认；得灵石300，`cen_trust=-2`，结尾岑另写一本新账。\n\n无论选择，十二名死者进入图鉴；第十三席显示玩家现用名或“生还者·姓名待复”，任务COMPLETED。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w2_q2_01",
@@ -1608,9 +1615,9 @@
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q2-01：半张封印图",
         "markdown": "触发：地图2木魅庭院救出木青萝；若玩家封死庭院，则地图3由她自行脱困并以`mu_trust=-2`开始。\n\n```text\n木青萝：此图传了数千年。\n木青萝：宗门只记得它指向灵宝。\n木青萝：直到昆吾重开，师门才翻到后半句。\n陆清：后半句是什么？\n木青萝：持图者，代三老守封。\n```\n\n选项：\n\n1. `先拓印，再还给她。` → `mu_trust+1`，玩家持任务拓印。\n2. `封印图暂由联营保管。` → `mu_trust-1`，但地图2阵眼检定+10。\n3. `图归你，责任也归你。` → 她反问玩家是否会退出昆吾；无数值变化。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w2_q2_02",
@@ -1857,9 +1864,9 @@
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q2-02：木夫人的命令",
         "markdown": "触发：修复任意三个阵眼后，木青萝收到宗门传讯。\n\n```text\n木夫人传讯：先取化龙玺，再谈封印。\n木青萝：师叔，阵眼正在被抽空。\n木夫人传讯：没有玺，你拿什么加固？\n木青萝：若取宝途中封印先破呢？\n木夫人传讯：修仙之人，没有无险之路。\n```\n\n玩家回应：\n\n1. `支持先救阵眼。` → `mu_trust+1`；木青萝违令留下。\n2. `化龙玺确实是关键。` → 她前往地图3入口等待；灵宝阁路线奖励+1。\n3. `你该自己决定。` → 她选择依据当前`mu_trust`；高信任守阵，低信任取宝。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w2_q2_03",
@@ -1883,7 +1890,7 @@
         "sourceText": "触发：地图3灵宝阁残层。碑文缺三句，需要从三个机关取拓片。"
       },
       "characters": [],
-      "description": "完成后木青萝发现化龙玺既能加固，也能抽取镇魔塔灵力。她承认宗门长期只保留“取宝”部分。",
+      "description": "完成后木青萝发现化龙玺调动的是封印权限：既能加固外层封链，也能把阵力调离原有职责。她承认宗门长期只保留 “取宝”部分。",
       "rewards": [
         {
           "id": "reward_218e8c8e",
@@ -1948,10 +1955,10 @@
       "source": {
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q2-03：三老碑文",
-        "markdown": "触发：地图3灵宝阁残层。碑文缺三句，需要从三个机关取拓片。\n\n谜面与答案：\n\n1. “器可镇魔，亦可启魔” → 答“持器者之心”不改变器本身；神识检定。\n2. “封链断一，先补何处” → 答“定界链”，否则地图4首次归营延迟。\n3. “后人忘使命，遗宝归谁” → 无标准答案，记录玩家选择“宗门/守封者/众生”。\n\n完成后木青萝发现化龙玺既能加固，也能抽取镇魔塔灵力。她承认宗门长期只保留“取宝”部分。\n\n碑后同时显露一只镇幽魂匣，开启珍品装备支链：提交四象阵砂1，并在五鬼袋支线中完成至少一名\n残魂遗愿后，将该残魂安置进魂匣。三个节点全部完成时解锁镇幽符匣配方与首件核心；打造所得七维\n按珍品规则随机。残魂只记录已安置状态，不从五鬼袋剧情中删除，也不影响该支线继续结算。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "markdown": "触发：地图3灵宝阁残层。碑文缺三句，需要从三个机关取拓片。\n\n谜面与答案：\n\n1. “器可镇魔，亦可启魔” → 答“持器者之心”不改变器本身；神识检定。\n2. “封链断一，先补何处” → 答“定界链”，否则地图4首次归营延迟。\n3. “后人忘使命，遗宝归谁” → 无标准答案，记录玩家选择“宗门/守封者/众生”。\n\n完成后木青萝发现化龙玺调动的是封印权限：既能加固外层封链，也能把阵力调离原有职责。她承认宗门长期只保留\n“取宝”部分。\n\n碑后同时显露一只镇幽魂匣，开启珍品装备支链：提交四象阵砂1，并在五鬼袋支线中完成至少一名\n残魂遗愿后，将该残魂安置进魂匣。三个节点全部完成时解锁镇幽符匣配方与首件核心；打造所得七维\n按珍品规则随机。残魂只记录已安置状态，不从五鬼袋剧情中删除，也不影响该支线继续结算。",
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w2_q2_04",
@@ -2125,9 +2132,9 @@
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q2-04：是否借阵结丹",
         "markdown": "触发：地图4结丹祭坛前。\n\n```text\n木青萝：祭坛的灵力本用于封链。\n陆清：借四份，不会立刻断裂。\n木青萝：可每个“不会立刻”，都留给后来人。\n```\n\n选择：\n\n1. `用自炼降尘丹结丹。` → 四人仍各消耗降尘丹 `1`与灵石 `1200`；`seal_integrity+1`。\n2. `借阵力稳住丹力，战后补回。` → 四人仍各消耗降尘丹 `1`，但各少付灵石 `300`；少付的灵石 `1200`记为\n   “待归还阵力”等价债务。最终战后支付灵石 `1200`则`seal_integrity+1`，拒绝支付则`demonic_taint+1`\n   并降低结局评价。\n3. `以魔气催化降尘丹。` → 四人仍各消耗降尘丹 `1`，但各少付灵石 `300`；`demonic_taint+2`，木青萝信任-2。\n\n任何方式都必须持有并消耗四枚降尘丹，且突破固定成功。选择 2 的归还发生在最终 Boss 之后，\n因此永远不影响主线入战资格；未归还时支线保持 `READY_TO_TURN_IN`。首次完成本节点同时解锁\n回春玉配方与首件核心；打造时需提交珍品铁胚和蓝图要求的器纹，七维由提交的器纹决定。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w2_q2_05",
@@ -2268,9 +2275,9 @@
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q2-05：化仙宗后人",
         "markdown": "触发：最终战后回营。\n\n```text\n木青萝：我原本想带回一件灵宝。\n木青萝：现在只带回一张补过的图。\n岑守一：图能告诉后来人哪里会漏。\n岑守一：比一件不知道怎么用的宝强。\n```\n\n选择：\n\n1. `邀请木青萝留在外营。` → `mu_trust≥0`成功；解锁封印研究NPC和太清符印最终炼制节点；\n   仍须满足镇幽符匣、玄箓修个人结丹试炼等前置。\n2. `让她回宗门公开遗命。` → 获得灵石600，后续版本化仙宗态度友好。\n3. `让她继续深入找木夫人。` → 深层门增加其标记；她暂离营，留下太清护魂符配方与首件核心。\n\n若玩家使用魔气结丹，她会要求净化：提交魔髓碎屑4可恢复信任，否则仍完成任务但不入驻。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w3_q3_01",
@@ -2571,9 +2578,9 @@
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q3-01：元牌开价",
         "markdown": "触发：地图3取得本命元牌后回到安全格，苏七衡传讯。\n\n```text\n苏七衡：黑底龟纹？那不是寻常禁牌。\n苏七衡：叶家出八百灵石收它。\n墨言：你怎么知道我们刚拿到？\n苏七衡：商路若不比脚快，早断了。\n```\n\n选项：\n\n1. `拒绝报价。` → 圭灵信任+1。\n2. `让他加价。` → 提至1000灵石；接受则进入售卖分支。\n3. `问买家是谁。` → 神识检定成功得知叶观衡；`ye_evidence`风味补充。\n4. `用假牌试探。` → 万象符脉可用伪造符傀送牌；其他路线进行神识检定。成功后获得叶家交货坐标，可伏击一组敌人。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w3_q3_02a",
@@ -2821,9 +2828,9 @@
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q3-02A：归还元牌",
         "markdown": "触发：Q3-01 选择“归还本命元牌”后立即激活，返回元牌密室并与第一根困灵钉交互时进入。  \n若主线选择归还：圭灵残念要求玩家击碎三根困灵钉。\n\n每根钉有不同代价：力道破坏会唤醒石傀；法力消融会消耗灵晶5；神识解印无资源但阈值高。\n三钉全破后：\n\n```text\n圭灵残念：牌已归，锁未尽。\n玩家：你答应不伤外营之人。\n圭灵残念：我答应不主动入营。\n墨言：它很会挑字眼。\n```\n\n选项：接受约定→地图3石灵中立；要求更严誓言→圭灵拒绝并离开；以元牌残片再束缚→回到保管分支。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w3_q3_02b",
@@ -2899,9 +2906,9 @@
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q3-02B：暂时保管",
         "markdown": "触发：Q3-01 选择“暂时保管”后，每累计完成 3 场战斗触发一次，最多 2 次；第 2 次后直接等待 Q3-03。  \n圭灵每完成三场战斗提出一次问题：“你与前一个持牌者有何不同？”\n\n1. `我会在离山时归还。` → 圭灵信任+1。\n2. `我需要你的力量。` → 获得护体增益，但圭灵信任-1。\n3. `没有不同，只是我暂时更强。` → 圭灵认可坦白，信任不变。\n\n地图4入口前必须再次决定归还、封存或交给叶家，不能无限携带跨版本。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w3_q3_02c",
@@ -3016,9 +3023,9 @@
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q3-02C：交给叶家",
         "markdown": "触发：Q3-01 选择“交给叶观衡”后，在地图 3 下一个叶家传讯点进入。  \n叶观衡支付灵石500并交出须弥扣配方线索，随后用元牌召来圭灵残影清理一组敌人。玩家发现残影每次\n行动都在损失神魂。\n\n```text\n石岩：这不是驱使，是在烧它的魂。\n叶观衡：器物本就为人所用。\n墨言：那你血祭自己时，也算器物？\n```\n\n玩家可在地图4血祭前通过神识+遁速检定偷回元牌，正面索回（战斗），或维持交易。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w3_q3_03",
@@ -3342,9 +3349,9 @@
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q3-03：最终归属",
         "markdown": "触发：Q3-02A/B/C 任一分支完成，且玩家在地图 4 处理第二座封链枢纽后。  \n三分支在地图4第二枢纽汇流：圭灵残念抵挡一次空间裂隙后要求最终答案。\n\n1. `彻底归还。` → 圭灵离开昆吾外层；给予须弥扣完整配方与首件核心，打造时需提交珍品铁胚和\n   蓝图要求的器纹，七维由提交的器纹决定。\n2. `封存在外营，不再驱使。` → 元牌成为营地关键物；地图探索负重+10；后续可继续其剧情。\n3. `继续作为法器使用。` → 全队护体+6永久，`demonic_taint+1`，结局评价扣分。\n4. `交给化仙宗保管。` → 需木青萝入驻意向；得洞玄镜片配方与首件核心、灵石300，圭灵不完全满意。\n\n圭灵不会因一次善意就成为宠物或战斗单位。任务完成文本明确“暂时停止敌对”。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w4_q4_01",
@@ -3480,9 +3487,9 @@
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q4-01：袋中有人",
         "markdown": "触发：地图3击败或追踪韩枭取得破损五鬼袋。\n\n```text\n乌婆传讯：别直接打开。\n乌婆传讯：五魂挤在一只袋里，会互相吃。\n白灵：还能分开吗？\n乌婆传讯：能。要么费灵力，要么费记忆。\n```\n\n选择分离方式：\n\n1. `消耗灵晶25。` → 五魂稳定，后续对话完整。\n2. `让乌婆取一段记忆。` → 从已回看剧情中选择一段交出；对应图鉴暂时隐藏，通关后恢复。\n3. `让白灵以镇魂符隔魂。` → 镇幽符脉可选；五魂稳定，获得对鬼伤害增益，不增加 `demonic_taint`。\n4. `强行打开。` → 随机一魂消散，但叶怀川不会被随机删除，确保主线证据存在。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w4_q4_02",
@@ -3566,9 +3573,9 @@
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q4-02：五个遗愿",
         "markdown": "触发：Q4-01 选择暂不打开五鬼袋后，与乌婆对话并完成一次引魂；五个遗愿同时进入 ACTIVE。  \n玩家可按任意顺序完成：\n\n- 叶怀川：把军令交给叶承安或留作证据。交出得信任，留下得叶家敌群情报。\n- 方砚：在三老碑补刻姓名。木青萝信任+1。\n- 罗七：击败一组阴罗宗追兵后选择净化或让其指认韩枭藏物。\n- 阿蘅：地图4侧狱找药篓；家书交营地获得灵粮生产+3%，焚化则残魂立刻安息。\n- 无名古魂：带到定界链；它补出正确修复顺序，使第一处枢纽材料-2。\n\n每完成一个遗愿，五鬼袋的战斗增益降低一层，但净化奖励提高。UI明确显示该取舍。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w4_q4_03",
@@ -3864,9 +3871,9 @@
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q4-03：韩枭讨袋",
         "markdown": "触发：完成至少三个遗愿后。韩枭提出用一只封存的地图3高危制式装备匣换回五鬼袋；匣子不允许\n选择职业、槽位或七维，开启时才按稳定种子生成实例。\n\n```text\n韩枭：死人说完话，就该做死人能做的事。\n白灵：他们不是你的材料。\n韩枭：修仙路上，活人也常是材料。\n墨言：所以你总躲在别人后面。\n```\n\n选项：\n\n1. `拒绝并迎战。` → 精英战；胜利得护魂牌后续打造核心，不改变既有装备品质、效果或七维。\n2. `交空袋骗他。` → 万象符脉用符傀替身送袋，或通过神识检定；成功时避免战斗并得地图3\n   高危制式装备匣，韩枭地图4再次出现。\n3. `以叶怀川军令交换韩枭证词。` → 他承认乾老魔命令阴罗宗追查血焰；两者各取所需。\n4. `接受交易。` → 未完成遗愿的残魂被炼化；获得地图3高危制式装备匣，`demonic_taint+2`。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w4_q4_04",
@@ -4083,9 +4090,684 @@
         "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
         "heading": "#### Q4-04：净化或炼化",
         "markdown": "触发：地图4封魂间。不可逆二次确认。\n\n1. `逐一净化。` → 每完成的遗愿使成功率和奖励提高；最低获得太清护魂符配方与首件核心，全部完成额外\n   得魂晶600、守封者评价+1。\n2. `保留五鬼袋为法器。` → 获得五鬼噬灵环配方与首件核心；其七维按珍品规则随机，固定效果为\n   直接攻击20%基础命中附加定力-10%/80 tick；`demonic_taint+2`，白灵信任风味下降。\n3. `让乌婆封存，待以后寻找轮回法。` → 获得护魂牌配方、首件核心和营地残魂图鉴；无即时高数值奖励。\n4. `交给木青萝。` → 需`mu_trust≥1`；她用封印图净化，得到太清护魂符配方与首件核心和化仙宗后续友好。\n\n净化结尾：\n\n```text\n叶怀川残魂：名字可以不留。\n叶怀川残魂：把命令留下。\n乌婆：人散了，话还在。\n岑守一：那就写到账上。\n```\n\n炼化结尾：\n\n```text\n五鬼袋：五道声音依次熄灭。\n白灵：它变安静了。\n墨言：安静，不等于安息。\n```",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
+    },
+    {
+      "id": "side_kunwu_complete_quests_side_w7_q5_01",
+      "chapterId": "side_w7",
+      "code": "Q5-01",
+      "title": "未来的种子",
+      "trigger": "C01读取万修之门残碑并退回最近安全格。残碑背面坐着一名从未登记入山、命灯也照不出年份的种药人。",
+      "location": "破禁山麓·万修之门 · C01读取万修之门残碑并退回最近安全格",
+      "locationContext": {
+        "kind": "field-map",
+        "mapIds": [
+          "map_01"
+        ],
+        "mapNames": [
+          "破禁山麓·万修之门"
+        ],
+        "areaName": "C01读取万修之门残碑并退回最近安全格",
+        "timeline": "跨章节／未冻结",
+        "explorationMode": "expedition",
+        "certainty": "explicit",
+        "sourceText": "触发：C01读取万修之门残碑并退回最近安全格。残碑背面坐着一名从未登记入山、命灯也照不出年份的种药人。"
+      },
+      "characters": [
+        "speaker_bf8545d",
+        "hero_lu_qing",
+        "player_seal_bearer"
+      ],
+      "description": "选择只改变成本和对白，不会永久错失种子：",
+      "rewards": [
+        {
+          "id": "reward_f94ffae6",
+          "kind": "item",
+          "label": "“种皮同时带有新生",
+          "timing": "immediate",
+          "sourceText": "得到“种皮同时带有新生与朽败灵性”的记录"
+        },
+        {
+          "id": "reward_35b9cf95",
+          "kind": "item",
+          "label": "朽败灵性”的记录",
+          "timing": "immediate",
+          "sourceText": "得到“种皮同时带有新生与朽败灵性”的记录"
+        },
+        {
+          "id": "reward_6682ebe7",
+          "kind": "item",
+          "label": "种植",
+          "timing": "immediate",
+          "sourceText": "开放种植"
+        }
+      ],
+      "costs": [],
+      "entryNodeId": "side_kunwu_complete_quests_side_w7_q5_01_entry",
+      "nodes": [
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_01_entry",
+          "type": "entry",
+          "position": {
+            "x": 60,
+            "y": 230
+          },
+          "data": {
+            "title": "场景入口",
+            "description": "C01读取万修之门残碑并退回最近安全格。残碑背面坐着一名从未登记入山、命灯也照不出年份的种药人。"
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_01_dialogue_1",
+          "type": "dialogue",
+          "position": {
+            "x": 370,
+            "y": 190
+          },
+          "data": {
+            "title": "对话 · 种药人、陆清、玩家",
+            "lines": [
+              {
+                "id": "side_kunwu_complete_quests_side_w7_q5_01_d1_l1",
+                "speakerId": "speaker_bf8545d",
+                "speakerName": "种药人",
+                "text": "这枚种子没有出生的年份。"
+              },
+              {
+                "id": "side_kunwu_complete_quests_side_w7_q5_01_d1_l2",
+                "speakerId": "hero_lu_qing",
+                "speakerName": "陆清",
+                "text": "没有年份，如何发芽？"
+              },
+              {
+                "id": "side_kunwu_complete_quests_side_w7_q5_01_d1_l3",
+                "speakerId": "speaker_bf8545d",
+                "speakerName": "种药人",
+                "text": "先让它在今日活一次。"
+              },
+              {
+                "id": "side_kunwu_complete_quests_side_w7_q5_01_d1_l4",
+                "speakerId": "player_seal_bearer",
+                "speakerName": "玩家",
+                "text": "你要从它身上取什么？"
+              },
+              {
+                "id": "side_kunwu_complete_quests_side_w7_q5_01_d1_l5",
+                "speakerId": "speaker_bf8545d",
+                "speakerName": "种药人",
+                "text": "取回本来就该还给你的一滴水。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_01_end",
+          "type": "ending",
+          "position": {
+            "x": 680,
+            "y": 230
+          },
+          "data": {
+            "title": "场景结束",
+            "description": "Q5-01 · 未来的种子"
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_01_edge_1",
+          "source": "side_kunwu_complete_quests_side_w7_q5_01_entry",
+          "target": "side_kunwu_complete_quests_side_w7_q5_01_dialogue_1",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_01_edge_2",
+          "source": "side_kunwu_complete_quests_side_w7_q5_01_dialogue_1",
+          "target": "side_kunwu_complete_quests_side_w7_q5_01_end",
+          "type": "smoothstep"
+        }
+      ],
+      "source": {
+        "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
+        "heading": "#### Q5-01：未来的种子",
+        "markdown": "触发：C01读取万修之门残碑并退回最近安全格。残碑背面坐着一名从未登记入山、命灯也照不出年份的种药人。\n他把一枚灰白种子放在玩家面前，只说“替一个还没来过这里的人种下”。\n\n```text\n种药人：这枚种子没有出生的年份。\n陆清：没有年份，如何发芽？\n种药人：先让它在今日活一次。\n玩家：你要从它身上取什么？\n种药人：取回本来就该还给你的一滴水。\n```\n\n选择只改变成本和对白，不会永久错失种子：\n\n1. `带回灵源院，立刻种下。` → 无额外成本；`timeless_tree_state=seed_rooted`。\n2. `先让陆清检查。` → 得到“种皮同时带有新生与朽败灵性”的记录；下一次归营自动开放种植。\n3. `追问受赠者是谁。` → 种药人只答“明日会见到”；种子作为受保护任务物进入背包。\n4. `拒绝来历不明的东西。` → 种药人把种子留在残碑旁；任务保持AVAILABLE，回访或通关后仍可带回。",
+        "importedAt": "2026-08-26T06:48:03.880Z"
+      },
+      "updatedAt": "2026-08-26T06:48:03.880Z"
+    },
+    {
+      "id": "side_kunwu_complete_quests_side_w7_q5_02",
+      "chapterId": "side_w7",
+      "code": "Q5-02",
+      "title": "第一滴",
+      "trigger": "种子种入灵源院，并在任意合法岗位配置下完成至少一次有效生产结算。幼芽在30秒内长出第一圈年轮，",
+      "location": "种子种入灵源院，并在任意合法岗位配置下完成至少一次有效生产结算",
+      "locationContext": {
+        "kind": "unknown",
+        "mapIds": [],
+        "mapNames": [],
+        "areaName": "种子种入灵源院，并在任意合法岗位配置下完成至少一次有效生产结算",
+        "timeline": "跨章节／未冻结",
+        "explorationMode": "unknown",
+        "certainty": "inferred",
+        "sourceText": "触发：种子种入灵源院，并在任意合法岗位配置下完成至少一次有效生产结算。幼芽在30秒内长出第一圈年轮，"
+      },
+      "characters": [
+        "hero_bai_ling",
+        "speaker_bf8545d",
+        "player_seal_bearer"
+      ],
+      "description": "结算：记录time_dew_claims+=dew_01、time_dew_level=1，灵源院五种岗位统一周期由30秒改为25秒。 岗位单周期产量、灵粮维护、储量上限和未满周期余数不变；重复查看不再次升级。",
+      "rewards": [],
+      "costs": [],
+      "entryNodeId": "side_kunwu_complete_quests_side_w7_q5_02_entry",
+      "nodes": [
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_02_entry",
+          "type": "entry",
+          "position": {
+            "x": 60,
+            "y": 230
+          },
+          "data": {
+            "title": "场景入口",
+            "description": "种子种入灵源院，并在任意合法岗位配置下完成至少一次有效生产结算。幼芽在30秒内长出第一圈年轮，"
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_02_dialogue_1",
+          "type": "dialogue",
+          "position": {
+            "x": 370,
+            "y": 190
+          },
+          "data": {
+            "title": "对话 · 白灵、种药人、玩家",
+            "lines": [
+              {
+                "id": "side_kunwu_complete_quests_side_w7_q5_02_d1_l1",
+                "speakerId": "hero_bai_ling",
+                "speakerName": "白灵",
+                "text": "它不是催熟。根、芽和年轮都是真的。"
+              },
+              {
+                "id": "side_kunwu_complete_quests_side_w7_q5_02_d1_l2",
+                "speakerId": "speaker_bf8545d",
+                "speakerName": "种药人",
+                "text": "所以这滴水也是真的。"
+              },
+              {
+                "id": "side_kunwu_complete_quests_side_w7_q5_02_d1_l3",
+                "speakerId": "player_seal_bearer",
+                "speakerName": "玩家",
+                "text": "它有什么用？"
+              },
+              {
+                "id": "side_kunwu_complete_quests_side_w7_q5_02_d1_l4",
+                "speakerId": "speaker_bf8545d",
+                "speakerName": "种药人",
+                "text": "让灵源院少等五秒。别让它替你省掉该做的事。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_02_action_1",
+          "type": "action",
+          "position": {
+            "x": 680,
+            "y": 210
+          },
+          "data": {
+            "title": "结算",
+            "description": "结算：记录time_dew_claims+=dew_01、time_dew_level=1，灵源院五种岗位统一周期由30秒改为25秒。 岗位单周期产量、灵粮维护、储量上限和未满周期余数不变；重复查看不再次升级。",
+            "rewards": [],
+            "costs": [],
+            "effects": [
+              "time_dew_claims+=dew_01",
+              "time_dew_level=1"
+            ]
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_02_end",
+          "type": "ending",
+          "position": {
+            "x": 990,
+            "y": 230
+          },
+          "data": {
+            "title": "场景结束",
+            "description": "Q5-02 · 第一滴"
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_02_edge_1",
+          "source": "side_kunwu_complete_quests_side_w7_q5_02_entry",
+          "target": "side_kunwu_complete_quests_side_w7_q5_02_dialogue_1",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_02_edge_2",
+          "source": "side_kunwu_complete_quests_side_w7_q5_02_dialogue_1",
+          "target": "side_kunwu_complete_quests_side_w7_q5_02_action_1",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_02_edge_3",
+          "source": "side_kunwu_complete_quests_side_w7_q5_02_action_1",
+          "target": "side_kunwu_complete_quests_side_w7_q5_02_end",
+          "type": "smoothstep"
+        }
+      ],
+      "source": {
+        "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
+        "heading": "#### Q5-02：第一滴",
+        "markdown": "触发：种子种入灵源院，并在任意合法岗位配置下完成至少一次有效生产结算。幼芽在30秒内长出第一圈年轮，\n叶尖凝成一滴银青灵液。领取前先按旧的30秒周期结算到当前可信时间，再原子写入奖励claim和新周期。\n\n```text\n白灵：它不是催熟。根、芽和年轮都是真的。\n种药人：所以这滴水也是真的。\n玩家：它有什么用？\n种药人：让灵源院少等五秒。别让它替你省掉该做的事。\n```\n\n结算：记录`time_dew_claims+=dew_01`、`time_dew_level=1`，灵源院五种岗位统一周期由30秒改为25秒。\n岗位单周期产量、灵粮维护、储量上限和未满周期余数不变；重复查看不再次升级。",
+        "importedAt": "2026-08-26T06:48:03.880Z"
+      },
+      "updatedAt": "2026-08-26T06:48:03.880Z"
+    },
+    {
+      "id": "side_kunwu_complete_quests_side_w7_q5_03",
+      "chapterId": "side_w7",
+      "code": "Q5-03",
+      "title": "树比山年轻",
+      "trigger": "完成C04最终Boss并安全归营。现实只经过数日，无时木却已有两人高，树干中同时出现向内与向外生长的年轮。",
+      "location": "山外联营 · 山外联营",
+      "locationContext": {
+        "kind": "camp",
+        "mapIds": [],
+        "mapNames": [
+          "山外联营"
+        ],
+        "areaName": "山外联营",
+        "timeline": "跨章节／未冻结",
+        "explorationMode": "camp",
+        "certainty": "explicit",
+        "sourceText": "触发：完成C04最终Boss并安全归营。现实只经过数日，无时木却已有两人高，树干中同时出现向内与向外生长的年轮。"
+      },
+      "characters": [
+        "player_seal_bearer",
+        "speaker_bf8545d"
+      ],
+      "description": "玩家选择修补一圈逆生年轮的方式：",
+      "rewards": [],
+      "costs": [
+        {
+          "id": "cost_91d7dc24",
+          "kind": "item",
+          "label": "灵木",
+          "quantity": 20,
+          "timing": "immediate",
+          "sourceText": "消耗灵木20"
+        }
+      ],
+      "entryNodeId": "side_kunwu_complete_quests_side_w7_q5_03_entry",
+      "nodes": [
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_03_entry",
+          "type": "entry",
+          "position": {
+            "x": 60,
+            "y": 230
+          },
+          "data": {
+            "title": "场景入口",
+            "description": "完成C04最终Boss并安全归营。现实只经过数日，无时木却已有两人高，树干中同时出现向内与向外生长的年轮。"
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_03_dialogue_1",
+          "type": "dialogue",
+          "position": {
+            "x": 370,
+            "y": 190
+          },
+          "data": {
+            "title": "对话 · 玩家、种药人",
+            "lines": [
+              {
+                "id": "side_kunwu_complete_quests_side_w7_q5_03_d1_l1",
+                "speakerId": "player_seal_bearer",
+                "speakerName": "玩家",
+                "text": "这棵树为何像活过了许多年？"
+              },
+              {
+                "id": "side_kunwu_complete_quests_side_w7_q5_03_d1_l2",
+                "speakerId": "speaker_bf8545d",
+                "speakerName": "种药人",
+                "text": "因为它有一段过去，还没有发生。"
+              },
+              {
+                "id": "side_kunwu_complete_quests_side_w7_q5_03_d1_l3",
+                "speakerId": "player_seal_bearer",
+                "speakerName": "玩家",
+                "text": "你见过那段过去？"
+              },
+              {
+                "id": "side_kunwu_complete_quests_side_w7_q5_03_d1_l4",
+                "speakerId": "speaker_bf8545d",
+                "speakerName": "种药人",
+                "text": "我见过它被种下，也见过它从未被种下。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_03_choice_1_1",
+          "type": "choice",
+          "position": {
+            "x": 680,
+            "y": 110
+          },
+          "data": {
+            "title": "用灵木慢慢托住裂口。",
+            "optionText": "用灵木慢慢托住裂口。",
+            "choiceCategory": "method",
+            "requiresConfirmation": false,
+            "description": " 消耗灵木20；追加“玩家亲手修树”尾声记录。",
+            "outcomeText": " 消耗灵木20；追加“玩家亲手修树”尾声记录。",
+            "followUpLines": [],
+            "followUpNote": "原文未配置该选项的专属后续对白；保存选择结果后汇流到公共节点。",
+            "branchBehavior": "merge",
+            "rewards": [],
+            "costs": [
+              {
+                "id": "cost_91d7dc24",
+                "kind": "item",
+                "label": "灵木",
+                "quantity": 20,
+                "timing": "immediate",
+                "sourceText": "消耗灵木20"
+              }
+            ],
+            "effects": [
+              "消耗灵木20",
+              "追加“玩家亲手修树”尾声记录。"
+            ],
+            "notes": "用灵木慢慢托住裂口。 → 消耗灵木20；追加“玩家亲手修树”尾声记录。"
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_03_choice_1_2",
+          "type": "check",
+          "position": {
+            "x": 680,
+            "y": 260
+          },
+          "data": {
+            "title": "让四名修士共同校准灵性。",
+            "optionText": "让四名修士共同校准灵性。",
+            "choiceCategory": "method",
+            "requiresConfirmation": false,
+            "description": " 完成一次无战斗七维检定；失败只改为消耗灵木10，不失去奖励。",
+            "outcomeText": " 完成一次无战斗七维检定；失败只改为消耗灵木10，不失去奖励。",
+            "followUpLines": [],
+            "followUpNote": "原文未配置该选项的专属后续对白；保存选择结果后汇流到公共节点。",
+            "branchBehavior": "merge",
+            "rewards": [],
+            "costs": [],
+            "effects": [
+              "完成一次无战斗七维检定",
+              "失败只改为消耗灵木10，不失去奖励。"
+            ],
+            "notes": "让四名修士共同校准灵性。 → 完成一次无战斗七维检定；失败只改为消耗灵木10，不失去奖励。"
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_03_choice_1_3",
+          "type": "choice",
+          "position": {
+            "x": 680,
+            "y": 410
+          },
+          "data": {
+            "title": "接受种药人的现成枝条。",
+            "optionText": "接受种药人的现成枝条。",
+            "choiceCategory": "method",
+            "requiresConfirmation": false,
+            "description": " 无资源成本；后续C07更早发现枝条来自上古同一棵树。",
+            "outcomeText": " 无资源成本；后续C07更早发现枝条来自上古同一棵树。",
+            "followUpLines": [],
+            "followUpNote": "原文未配置该选项的专属后续对白；保存选择结果后汇流到公共节点。",
+            "branchBehavior": "merge",
+            "rewards": [],
+            "costs": [],
+            "effects": [
+              "无资源成本",
+              "后续C07更早发现枝条来自上古同一棵树。"
+            ],
+            "notes": "接受种药人的现成枝条。 → 无资源成本；后续C07更早发现枝条来自上古同一棵树。"
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_03_merge_1",
+          "type": "action",
+          "position": {
+            "x": 990,
+            "y": 220
+          },
+          "data": {
+            "title": "公共后续",
+            "description": "本组选项在保存各自结果、播放原文明示的专属对白后，于此继续公共剧情。",
+            "effects": [
+              "selection.save"
+            ]
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_03_end",
+          "type": "ending",
+          "position": {
+            "x": 1300,
+            "y": 230
+          },
+          "data": {
+            "title": "场景结束",
+            "description": "Q5-03 · 树比山年轻"
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_03_edge_1",
+          "source": "side_kunwu_complete_quests_side_w7_q5_03_entry",
+          "target": "side_kunwu_complete_quests_side_w7_q5_03_dialogue_1",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_03_edge_2",
+          "source": "side_kunwu_complete_quests_side_w7_q5_03_dialogue_1",
+          "target": "side_kunwu_complete_quests_side_w7_q5_03_choice_1_1",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_03_edge_3",
+          "source": "side_kunwu_complete_quests_side_w7_q5_03_dialogue_1",
+          "target": "side_kunwu_complete_quests_side_w7_q5_03_choice_1_2",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_03_edge_4",
+          "source": "side_kunwu_complete_quests_side_w7_q5_03_dialogue_1",
+          "target": "side_kunwu_complete_quests_side_w7_q5_03_choice_1_3",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_03_edge_5",
+          "source": "side_kunwu_complete_quests_side_w7_q5_03_choice_1_1",
+          "target": "side_kunwu_complete_quests_side_w7_q5_03_merge_1",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_03_edge_6",
+          "source": "side_kunwu_complete_quests_side_w7_q5_03_choice_1_2",
+          "target": "side_kunwu_complete_quests_side_w7_q5_03_merge_1",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_03_edge_7",
+          "source": "side_kunwu_complete_quests_side_w7_q5_03_choice_1_3",
+          "target": "side_kunwu_complete_quests_side_w7_q5_03_merge_1",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_03_edge_8",
+          "source": "side_kunwu_complete_quests_side_w7_q5_03_merge_1",
+          "target": "side_kunwu_complete_quests_side_w7_q5_03_end",
+          "type": "smoothstep"
+        }
+      ],
+      "source": {
+        "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
+        "heading": "#### Q5-03：树比山年轻",
+        "markdown": "触发：完成C04最终Boss并安全归营。现实只经过数日，无时木却已有两人高，树干中同时出现向内与向外生长的年轮。\n种药人再次站在树下，营地守卫都不记得他如何进来。\n\n```text\n玩家：这棵树为何像活过了许多年？\n种药人：因为它有一段过去，还没有发生。\n玩家：你见过那段过去？\n种药人：我见过它被种下，也见过它从未被种下。\n```\n\n玩家选择修补一圈逆生年轮的方式：\n\n1. `用灵木慢慢托住裂口。` → 消耗灵木20；追加“玩家亲手修树”尾声记录。\n2. `让四名修士共同校准灵性。` → 完成一次无战斗七维检定；失败只改为消耗灵木10，不失去奖励。\n3. `接受种药人的现成枝条。` → 无资源成本；后续C07更早发现枝条来自上古同一棵树。\n\n无论路径，种药人都从逆生年轮中取出第二滴。结算前先按25秒旧周期追平生产，再记录\n`time_dew_claims+=dew_02`、`time_dew_level=2`，统一周期由25秒改为20秒。",
+        "importedAt": "2026-08-26T06:48:03.880Z"
+      },
+      "updatedAt": "2026-08-26T06:48:03.880Z"
+    },
+    {
+      "id": "side_kunwu_complete_quests_side_w7_q5_04",
+      "chapterId": "side_w7",
+      "code": "Q5-04",
+      "title": "没有写完的年轮",
+      "trigger": "跟随前置场景或任务状态触发",
+      "location": "破禁山麓·万修之门 → 白玉广场 → 逆灵试验场·第一界门 → 枯脉绝地·叠界台 → 双魂镜界 → 灵宝遗址 → 镇魔塔外层 → 阴芝园外层 → 封魔深层·废阵井 → 万修战场·重封营 → 黑风回廊 → 叶家血祭地宫 → 第三节点·界膜裂谷 · 跨地图任务链",
+      "locationContext": {
+        "kind": "cross-map",
+        "mapIds": [
+          "map_01",
+          "map_02",
+          "map_08",
+          "map_11",
+          "map_09",
+          "map_03",
+          "map_04",
+          "map_12",
+          "map_05",
+          "map_13",
+          "map_14",
+          "map_15",
+          "map_16"
+        ],
+        "mapNames": [
+          "破禁山麓·万修之门",
+          "白玉广场",
+          "逆灵试验场·第一界门",
+          "枯脉绝地·叠界台",
+          "双魂镜界",
+          "灵宝遗址",
+          "镇魔塔外层",
+          "阴芝园外层",
+          "封魔深层·废阵井",
+          "万修战场·重封营",
+          "黑风回廊",
+          "叶家血祭地宫",
+          "第三节点·界膜裂谷"
+        ],
+        "areaName": "跨地图任务链",
+        "timeline": "跨章节／未冻结",
+        "explorationMode": "cross-map",
+        "certainty": "cross-map",
+        "sourceText": "触发：跟随前置场景或任务状态触发；地图范围按地图27的W7章节网络推断"
+      },
+      "characters": [
+        "speaker_bf8545d",
+        "player_seal_bearer"
+      ],
+      "description": "第二滴领取后，种药人不回答姓名，只留下四道彼此交叠的水痕。1.0任务状态进入COMPLETED， timeless_tree_state=v10_arc_completed；任务页明确写“无时木前篇已完成”，不以ACTIVE状态等待未进入1.0的章节。",
+      "rewards": [],
+      "costs": [],
+      "entryNodeId": "side_kunwu_complete_quests_side_w7_q5_04_entry",
+      "nodes": [
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_04_entry",
+          "type": "entry",
+          "position": {
+            "x": 60,
+            "y": 230
+          },
+          "data": {
+            "title": "场景入口",
+            "description": "跟随前置场景或任务状态触发"
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_04_dialogue_1",
+          "type": "dialogue",
+          "position": {
+            "x": 370,
+            "y": 190
+          },
+          "data": {
+            "title": "对话 · 种药人、玩家",
+            "lines": [
+              {
+                "id": "side_kunwu_complete_quests_side_w7_q5_04_d1_l1",
+                "speakerId": "speaker_bf8545d",
+                "speakerName": "种药人",
+                "text": "前两滴，是你今日种下的过去。"
+              },
+              {
+                "id": "side_kunwu_complete_quests_side_w7_q5_04_d1_l2",
+                "speakerId": "speaker_bf8545d",
+                "speakerName": "种药人",
+                "text": "余下的，要等你真的走进过去。"
+              },
+              {
+                "id": "side_kunwu_complete_quests_side_w7_q5_04_d1_l3",
+                "speakerId": "player_seal_bearer",
+                "speakerName": "玩家",
+                "text": "我们还会再见？"
+              },
+              {
+                "id": "side_kunwu_complete_quests_side_w7_q5_04_d1_l4",
+                "speakerId": "speaker_bf8545d",
+                "speakerName": "种药人",
+                "text": "我们已经见过。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_04_end",
+          "type": "ending",
+          "position": {
+            "x": 680,
+            "y": 230
+          },
+          "data": {
+            "title": "场景结束",
+            "description": "Q5-04 · 没有写完的年轮"
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_04_edge_1",
+          "source": "side_kunwu_complete_quests_side_w7_q5_04_entry",
+          "target": "side_kunwu_complete_quests_side_w7_q5_04_dialogue_1",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_q5_04_edge_2",
+          "source": "side_kunwu_complete_quests_side_w7_q5_04_dialogue_1",
+          "target": "side_kunwu_complete_quests_side_w7_q5_04_end",
+          "type": "smoothstep"
+        }
+      ],
+      "source": {
+        "document": "Docs/1.0策划案/剧情/20_1.0剧情任务详细剧本_草案.md",
+        "heading": "#### Q5-04：没有写完的年轮",
+        "markdown": "第二滴领取后，种药人不回答姓名，只留下四道彼此交叠的水痕。1.0任务状态进入COMPLETED，\n`timeless_tree_state=v10_arc_completed`；任务页明确写“无时木前篇已完成”，不以ACTIVE状态等待未进入1.0的章节。\n\n```text\n种药人：前两滴，是你今日种下的过去。\n种药人：余下的，要等你真的走进过去。\n玩家：我们还会再见？\n种药人：我们已经见过。\n```\n\n完整游戏C07、C09与C10的后篇、第三至第四滴和身份揭晓统一从\n[完整游戏支线剧情库](26_完整游戏支线剧情库_草案.md)继续，不在1.0任务数据中提前开放。",
+        "importedAt": "2026-08-26T06:48:03.880Z"
+      },
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w1_w1_a",
@@ -4279,9 +4961,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段A：十二年前的十三人（C01–C04）",
         "markdown": "- 核对旧营入山与归营人数；\n- 发现岑守一亲手封闭北道；\n- 确认十二人死于门内，玩家是第十三名幸存者；\n- 确认沈砚秋封住玩家姓名与神魂气息；\n- 发现旧阵簿卷首被整页剥离，残留“灵脉”“界路”和一枚陌生大修士印记；\n- 决定公开、保留、改写或销毁旧账。\n\n即时结果：岑守一信任、营地评价、身份线索与旧账是否完整。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w1_w1_b",
@@ -4441,9 +5123,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段B：上古磨痕（C05–C07）",
         "markdown": "- 玩家在上古发现一块尚未刻字的阵簿石；\n- 返回现在后，石上出现一道与玩家总印一致、却不属于原阵图的额外磨痕；\n- 保留旧账者可证明磨痕早于十二年前；销毁旧账者只能依赖岑守一记忆；\n- 乌婆指出玩家姓名被封后，神魂不再带有稳定年份。\n\n关键选择：是否承认上古无署名阵令正是十二年前第十三名录官在未来穿越后留下，并让总印完成第一次跨时代核对。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w1_w1_c",
@@ -4647,9 +5329,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段C：谁写下第一行，谁改掉任务（C08–C11）",
         "markdown": "- 双魂记忆中出现一名站在阵法边缘、无法被登记的模糊身影；\n- 玩家发现古代阵令的笔迹来自自己尚未经历的C11；\n- C07求渡大修士遗物补出卷首残文：十三人的原始任务是追查灵脉衰竭根因，并寻找稳定通往灵界的道路；\n- 灾变后的表面记录把任务改写成普通开山勘测与守封事故，以隐藏可能被元刹利用的界路并掩盖任务失败；\n- 岑守一可以选择相信玩家，或认为穿越正在伪造旧史；\n- 完整保留矛盾证据，才能同时恢复任务原文，并让总印确认阵外批注来自当世持印人、恢复其执行权。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w1_w1_end",
@@ -4893,9 +5575,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 终局结果",
         "markdown": "- `完整旧账＋任务原文＋矛盾证据保留`：提供高因果真相、`human_realm_path_evidence=old_mission`和\n  `marginal_note_authority=executable`；救世关键支持；\n- `恢复姓名但隐瞒命令`：支持常规与部分救世，缺少一份公开盟约证词；\n- `销毁旧账`：失去救世所需因果真相之一，但无名状态更容易被元刹利用；\n- `把现用名写入魔契`：旧账成为真名契约在人界落地的媒介。\n\n常规尾声：岑守一是否留营、受审、重写阵簿或终身守着空白第十三行。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w2_w2_a",
@@ -4929,6 +5611,13 @@
           "label": "三老封印图的当世半图",
           "timing": "immediate",
           "sourceText": "取得三老封印图的当世半图"
+        },
+        {
+          "id": "reward_d1370d55",
+          "kind": "item",
+          "label": "化龙玺原座拓印",
+          "timing": "immediate",
+          "sourceText": "取得化龙玺原座拓印，并在灵宝阁取得真玺转移记录"
         }
       ],
       "costs": [],
@@ -4992,9 +5681,17 @@
             "y": 210
           },
           "data": {
-            "title": "发现化龙玺既可加固封印，也可抽取镇魔塔灵力；",
-            "description": "发现化龙玺既可加固封印，也可抽取镇魔塔灵力；",
-            "rewards": [],
+            "title": "在昆吾殿取得化龙玺原座拓印，并在灵宝阁取得真玺转移记录；",
+            "description": "在昆吾殿取得化龙玺原座拓印，并在灵宝阁取得真玺转移记录；",
+            "rewards": [
+              {
+                "id": "reward_d1370d55",
+                "kind": "item",
+                "label": "化龙玺原座拓印",
+                "timing": "immediate",
+                "sourceText": "取得化龙玺原座拓印，并在灵宝阁取得真玺转移记录"
+              }
+            ],
             "costs": [],
             "effects": []
           }
@@ -5007,8 +5704,8 @@
             "y": 210
           },
           "data": {
-            "title": "木青萝在宗门夺宝命令与守封责任之间作出第一次选择；",
-            "description": "木青萝在宗门夺宝命令与守封责任之间作出第一次选择；",
+            "title": "发现化龙玺调动的是封印权限",
+            "description": "发现化龙玺调动的是封印权限：既可加固封链，也可被用来把外层阵力调离既定封印职责；",
             "rewards": [],
             "costs": [],
             "effects": []
@@ -5019,6 +5716,21 @@
           "type": "action",
           "position": {
             "x": 1610,
+            "y": 210
+          },
+          "data": {
+            "title": "木青萝在宗门夺宝命令与守封责任之间作出第一次选择；",
+            "description": "木青萝在宗门夺宝命令与守封责任之间作出第一次选择；",
+            "rewards": [],
+            "costs": [],
+            "effects": []
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w2_w2_a_action_6",
+          "type": "action",
+          "position": {
+            "x": 1920,
             "y": 210
           },
           "data": {
@@ -5033,7 +5745,7 @@
           "id": "side_kunwu_complete_quests_side_w2_w2_a_end",
           "type": "ending",
           "position": {
-            "x": 1920,
+            "x": 2230,
             "y": 230
           },
           "data": {
@@ -5076,6 +5788,12 @@
         {
           "id": "side_kunwu_complete_quests_side_w2_w2_a_edge_6",
           "source": "side_kunwu_complete_quests_side_w2_w2_a_action_5",
+          "target": "side_kunwu_complete_quests_side_w2_w2_a_action_6",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w2_w2_a_edge_7",
+          "source": "side_kunwu_complete_quests_side_w2_w2_a_action_6",
           "target": "side_kunwu_complete_quests_side_w2_w2_a_end",
           "type": "smoothstep"
         }
@@ -5083,10 +5801,10 @@
       "source": {
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段A：被删去的后半句（C02–C04）",
-        "markdown": "- 救出或重新接触木青萝；\n- 取得三老封印图的当世半图；\n- 发现化龙玺既可加固封印，也可抽取镇魔塔灵力；\n- 木青萝在宗门夺宝命令与守封责任之间作出第一次选择；\n- 玩家决定自备材料、借阵结丹或以魔气代替灵力。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "markdown": "- 救出或重新接触木青萝；\n- 取得三老封印图的当世半图；\n- 在昆吾殿取得化龙玺原座拓印，并在灵宝阁取得真玺转移记录；\n- 发现化龙玺调动的是封印权限：既可加固封链，也可被用来把外层阵力调离既定封印职责；\n- 木青萝在宗门夺宝命令与守封责任之间作出第一次选择；\n- 玩家决定自备材料、借阵结丹或以魔气代替灵力。",
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w2_w2_b",
@@ -5246,9 +5964,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段B：逆转二字（C05–C07）",
         "markdown": "- 在上古见到封印图仍完整时的原始阵式；\n- 古阵师说明“逆转”不是净化法术，而是让两界能量经过灵脉缓冲后重新归流；\n- 返回现在后，木青萝半图中的空白段显现；\n- 玩家必须放弃把一件逆阵古宝炼成装备，才能保留其阵纹载体。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w2_w2_c",
@@ -5430,9 +6148,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段C：宗门要哪一张图（C08–C10）",
         "markdown": "- 木夫人或化仙宗高层要求交出完整阵图；\n- 公开阵图可能引来各宗争夺，隐瞒则缺少宗门材料与阵师；\n- 木青萝必须决定服从宗门、留在外营或建立独立守封盟约；\n- 玩家需要找回三处被后世改写的碑文，才能确认灵脉长期衰退的机制。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w2_w2_d",
@@ -5571,9 +6289,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段D：持图者守阵（C11–C12）",
         "markdown": "- 木青萝在封山之日见证祖传阵图的原始用途；\n- 完整阵图必须由一名当世持图者自愿承担终局阵位；\n- 木青萝死亡、敌对或拒绝时，可以通过高难替代任务培养另一名阵师，但成本更高且少一个终局支援。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w2_w2_end",
@@ -5847,9 +6565,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 终局结果",
         "markdown": "- `完整阵图＋自愿持图者`：救世硬门槛完成；\n- `完整阵图交宗门`：常规结局中化仙宗取得优势，救世需要额外夺回使用权；\n- `抽取阵图灵力`：获得强力成长，阵图失去逆转功能；\n- `以魔气重写阵图`：可作为灭世裂界仪式的稳定框架。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w3_w3_a",
@@ -6017,9 +6735,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段A：元牌归属（C03–C04）",
         "markdown": "- 玩家取得本命元牌；\n- 圭灵要求归还，叶家要求购买，外营可以选择封存；\n- 玩家发现驱使圭灵会持续烧损其神魂；\n- 初步选择归还、保管、交易或继续作为法器使用。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w3_w3_b",
@@ -6179,9 +6897,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段B：最初的山契（C05–C07）",
         "markdown": "- 上古圭灵并非昆吾三老灵兽，而是早于宗门占据昆吾的山中异类；\n- 三老最初与其签订共同维持地脉的山契，本命元牌只是魔劫时的紧急控制手段；\n- 玩家决定是否保存原始山契，或把其中的约束条款改成更强控制；\n- 返回现在后，圭灵通过元牌认出玩家曾见证原始契约。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w3_w3_c",
@@ -6347,9 +7065,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段C：自由的风险（C08–C10）",
         "markdown": "- 被释放的圭灵可能袭击进入地脉的修士；\n- 玩家需要在保护外营、约束圭灵与承认其领地之间谈判；\n- 若叶家曾驱使元牌，玩家还需修复圭灵损伤或承担其敌意；\n- 元刹会指出奴役圭灵比说服它更快、更稳定。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w3_w3_d",
@@ -6488,9 +7206,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段D：谁来托山（C11–C12）",
         "markdown": "- 救世需要圭灵自愿托住地脉，并接受灵魔逆转可能带来的长期痛苦；\n- 圭灵拒绝时，玩家可以完成高难替代方案：由多名修士分担地脉反噬，但会增加终战阵位压力；\n- 灭世可以直接以元牌烧损圭灵神魂，使其成为稳定裂界锚点。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w3_w3_end",
@@ -6770,9 +7488,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 终局结果",
         "markdown": "- `归还元牌＋修复山契＋自愿托山`：最佳救世灵脉载体；\n- `自由但无盟约`：不成为阵位，常规结局中可能继续伤人；\n- `外营封存`：常规安全方案；\n- `持续驱使／交给元刹`：获得灭世裂界锚点；\n- `交化仙宗`：取决于木青萝路线，可能成为受监管盟友或换一种奴役。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w4_w4_a",
@@ -6924,9 +7642,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段A：五魂分离（C03–C04）",
         "markdown": "- 稳定、强开或毒隔五鬼袋；\n- 完成叶怀川、方砚、罗七、阿蘅与无名古魂的遗愿；\n- 决定拒绝、欺骗或接受韩枭交易；\n- 在封魂间净化、封存、交付或炼化残魂。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w4_w4_b",
@@ -7102,9 +7820,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段B：无名古魂的前世（C05–C07）",
         "markdown": "- 上古章节中玩家遇见尚活着的无名古守卫，却不知道他是五鬼之一；\n- 玩家对其下达的撤离或守阵命令，解释其为何只记得“先定界”；\n- 返回现在后，完整残魂可以认出玩家；已炼化版本只能从法器中发出破碎阵序；\n- 完成其真正遗愿可取得第一段正确封链顺序。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w4_w4_c",
@@ -7291,9 +8009,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段C：五个人的证词（C08–C10）",
         "markdown": "- 五魂分别证明叶家、化仙宗、阴罗宗、凡人采药者与上古守阵者如何被卷入昆吾；\n- 方砚被确认为十二年前旧队阵钥师；其“先定界”遗言来自《寻界归流》的失败处置顺序，补全旧队任务与五鬼支线的连接；\n- 全部遗愿完成后，五份看似无关的方位组成完整灵魔逆转阵序；\n- 保留五鬼袋力量越久，残魂之间吞噬越严重；\n- 元刹提出把五魂熔成一枚“界魂钉”，直接替代一名活着的阵位盟友。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w4_w4_end",
@@ -7557,9 +8275,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 终局结果",
         "markdown": "- `五愿完成＋逐一净化`：提供完整封链顺序和众生盟约证词；\n- `乌婆封存`：保留部分顺序，可通过高难解阵补足；\n- `炼化五魂`：提供一个强裂界锚点并降低灭世终战难度；\n- `交元刹`：推进魔契并制造更强界魂钉；\n- `残魂提前消散`：常规结局不受阻，救世必须寻找替代阵序。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w5_w5_a",
@@ -7748,9 +8466,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段A：重封令与抽阵令（C01–C04）",
         "markdown": "- 取得两份印鉴都真实的矛盾命令；\n- 发现重封派被夺宝派灭口并作为祭品；\n- 救出叶承安并收集叶月圣、血焰与血祭阵证据；\n- 公开质问叶观衡，但不能只靠一次揭露改变其忠于家族的选择；\n- 决定阻止、利用或旁观叶观衡血祭。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w5_w5_b",
@@ -7924,9 +8642,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段B：命令从何时分裂（C07–C09）",
         "markdown": "- 上古与当世证据证明叶家后世继承的开山令本身缺少限制条款；\n- 一份命令要求“取宝后重封”，另一份利用同一阵权将族人变成开山祭品；\n- 叶承安希望公开家族罪证，叶观衡认为公开只会使叶家失去唯一自救机会；\n- 玩家可以促成两人合作、扶持一方、将阵权交化仙宗或把矛盾交给元刹利用。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w5_w5_c",
@@ -8185,9 +8903,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段C：叶家最后一印（C10–C12）",
         "markdown": "- 救世需要叶家开山阵权关闭当世逆向抽灵路线；\n- 叶观衡若得知完整真相且尚存活，可以进入高难赎罪线；\n- 赎罪要求他公开承认叶家明知血祭代价、亲手停止尚未完成的血祭、交出最后阵印，并自愿承担非核心护阵职责；\n- 若血祭已经造成不可逆的大规模死亡，他只能悔悟和协助收尾，不再取得“赎罪完成”结算；\n- 玩家可以接受其协助、拒绝其加入或保留审判，赎罪不要求玩家及受害者原谅；\n- 叶承安可以替代签印，但缺少叶观衡对夺宝派阵纹的了解；\n- 灭世路线可以保留血祭阵，以叶家族血作为裂界锚点。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w5_w5_end",
@@ -8467,9 +9185,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 终局结果",
         "markdown": "- `双令公开＋重封派存活＋阵权自愿交付`：救世核心盟友候选；\n- `只剩叶家阵令遗物`：可执行常规封链，救世终战缺少人物支援；\n- `血祭阵保留`：灭世裂界锚点；\n- `叶家全灭`：常规伤亡增加，玩家仍可从遗物取得主线通行权；\n- `叶观衡赎罪`、`悔悟未偿`或`继续血祭`：形成三种独立人物尾声。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w6_w6_a",
@@ -8623,9 +9341,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段A：救人还是保图（C05–C06）",
         "markdown": "- 古阵师负责不被三老主封印采用的逆转试验；\n- 魔军袭击时，玩家只能优先救阵师、保住阵图或抢出纯净灵脉样本中的两项；\n- 第三项必须在现在通过更高成本补足；\n- 接受元刹捷径可以暂时保住全部，但样本会留下难以察觉的魔界坐标。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w6_w6_b",
@@ -8815,9 +9533,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段B：后世的错误答案（C07–C10）",
         "markdown": "- 古阵师存活版本留下传承，死亡版本留下无人能读懂的试验场；\n- 陆清与木青萝分别从法术和封印角度解释逆阵，却得出相反方案；\n- 玩家必须通过C08魂印实验，证明逆转式不会把元刹一并送入人界灵脉；\n- 将阵图炼器可获得强力成长捷径，但永久破坏救世关键载体。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w6_w6_c",
@@ -8992,9 +9710,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 阶段C：未竟不是不可行（C11）",
         "markdown": "- 玩家把过去一取得的技术、过去二取得的魂印和当世完整封印图带回封山之日；\n- 古阵师终于完成理论闭环，却因主封印即将发动无法现场验证；\n- 玩家必须决定把纯化阵心隐藏给未来自己，还是服从三老摧毁风险技术。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_w6_w6_end",
@@ -9237,9 +9955,679 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 终局结果",
         "markdown": "- `阵图＋纯净样本＋魂印验证`：允许`past_core_state=pure`；\n- `样本被魔染`：表面可用，终局会转为魔界坐标，除非完成额外净化任务；\n- `阵图被炼器／毁去`：失去救世关键门槛；\n- `技术交元刹`：推进灭世路线并降低引界仪式难度。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
+    },
+    {
+      "id": "side_kunwu_complete_quests_side_w7_w7_a",
+      "chapterId": "side_w7",
+      "code": "W7-A",
+      "title": "今日种下的过去（C01）",
+      "trigger": "跟随前置场景或任务状态触发",
+      "location": "破禁山麓·万修之门 · 跟随前置场景或任务状态触发",
+      "locationContext": {
+        "kind": "field-map",
+        "mapIds": [
+          "map_01"
+        ],
+        "mapNames": [
+          "破禁山麓·万修之门"
+        ],
+        "areaName": "跟随前置场景或任务状态触发",
+        "timeline": "跨章节／未冻结",
+        "explorationMode": "expedition",
+        "certainty": "inferred",
+        "sourceText": "触发：跟随前置场景或任务状态触发；地图按地图27的W7章节网络推断"
+      },
+      "characters": [],
+      "description": "种药人只说这滴灵液来自一件“能让草木少等一会儿”的法宝，不说法宝名，也不把法宝本体交给玩家。",
+      "rewards": [],
+      "costs": [],
+      "entryNodeId": "side_kunwu_complete_quests_side_w7_w7_a_entry",
+      "nodes": [
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_a_entry",
+          "type": "entry",
+          "position": {
+            "x": 60,
+            "y": 230
+          },
+          "data": {
+            "title": "场景入口",
+            "description": "跟随前置场景或任务状态触发"
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_a_action_1",
+          "type": "action",
+          "position": {
+            "x": 370,
+            "y": 210
+          },
+          "data": {
+            "title": "万修之门残碑后遇见无名种药人，取得没有出生年份的灰白种子",
+            "description": "万修之门残碑后遇见无名种药人，取得没有出生年份的灰白种子；",
+            "rewards": [],
+            "costs": [],
+            "effects": []
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_a_action_2",
+          "type": "action",
+          "position": {
+            "x": 680,
+            "y": 210
+          },
+          "data": {
+            "title": "种子进入灵源院并完成一次有效生产结算后，长成第一圈年轮；",
+            "description": "种子进入灵源院并完成一次有效生产结算后，长成第一圈年轮；",
+            "rewards": [],
+            "costs": [],
+            "effects": []
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_a_action_3",
+          "type": "action",
+          "position": {
+            "x": 990,
+            "y": 210
+          },
+          "data": {
+            "title": "第一滴盗天灵液使time_dew_level=1，灵源院",
+            "description": "第一滴盗天灵液使time_dew_level=1，灵源院统一周期由30秒缩短到25秒；",
+            "rewards": [],
+            "costs": [],
+            "effects": [
+              "time_dew_level=1"
+            ]
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_a_action_4",
+          "type": "action",
+          "position": {
+            "x": 1300,
+            "y": 210
+          },
+          "data": {
+            "title": "玩家调查、暂拒或延迟种植只改变对白和成本，种子始终有受保",
+            "description": "玩家调查、暂拒或延迟种植只改变对白和成本，种子始终有受保护的回收路径。",
+            "rewards": [],
+            "costs": [],
+            "effects": []
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_a_end",
+          "type": "ending",
+          "position": {
+            "x": 1610,
+            "y": 230
+          },
+          "data": {
+            "title": "场景结束",
+            "description": "W7-A · 今日种下的过去（C01）"
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_a_edge_1",
+          "source": "side_kunwu_complete_quests_side_w7_w7_a_entry",
+          "target": "side_kunwu_complete_quests_side_w7_w7_a_action_1",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_a_edge_2",
+          "source": "side_kunwu_complete_quests_side_w7_w7_a_action_1",
+          "target": "side_kunwu_complete_quests_side_w7_w7_a_action_2",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_a_edge_3",
+          "source": "side_kunwu_complete_quests_side_w7_w7_a_action_2",
+          "target": "side_kunwu_complete_quests_side_w7_w7_a_action_3",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_a_edge_4",
+          "source": "side_kunwu_complete_quests_side_w7_w7_a_action_3",
+          "target": "side_kunwu_complete_quests_side_w7_w7_a_action_4",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_a_edge_5",
+          "source": "side_kunwu_complete_quests_side_w7_w7_a_action_4",
+          "target": "side_kunwu_complete_quests_side_w7_w7_a_end",
+          "type": "smoothstep"
+        }
+      ],
+      "source": {
+        "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
+        "heading": "### 阶段A：今日种下的过去（C01）",
+        "markdown": "- 万修之门残碑后遇见无名种药人，取得没有出生年份的灰白种子；\n- 种子进入灵源院并完成一次有效生产结算后，长成第一圈年轮；\n- 第一滴盗天灵液使`time_dew_level=1`，灵源院统一周期由30秒缩短到25秒；\n- 玩家调查、暂拒或延迟种植只改变对白和成本，种子始终有受保护的回收路径。\n\n种药人只说这滴灵液来自一件“能让草木少等一会儿”的法宝，不说法宝名，也不把法宝本体交给玩家。",
+        "importedAt": "2026-08-26T06:48:03.880Z"
+      },
+      "updatedAt": "2026-08-26T06:48:03.880Z"
+    },
+    {
+      "id": "side_kunwu_complete_quests_side_w7_w7_b",
+      "chapterId": "side_w7",
+      "code": "W7-B",
+      "title": "树比山年轻（C04）",
+      "trigger": "跟随前置场景或任务状态触发",
+      "location": "镇魔塔外层 → 破禁山麓·万修之门 → 白玉广场 → 逆灵试验场·第一界门 → 枯脉绝地·叠界台 · 跨地图任务链",
+      "locationContext": {
+        "kind": "cross-map",
+        "mapIds": [
+          "map_04",
+          "map_01",
+          "map_02",
+          "map_08",
+          "map_11"
+        ],
+        "mapNames": [
+          "镇魔塔外层",
+          "破禁山麓·万修之门",
+          "白玉广场",
+          "逆灵试验场·第一界门",
+          "枯脉绝地·叠界台"
+        ],
+        "areaName": "跨地图任务链",
+        "timeline": "跨章节／未冻结",
+        "explorationMode": "cross-map",
+        "certainty": "cross-map",
+        "sourceText": "触发：跟随前置场景或任务状态触发；地图范围按地图27的W7章节网络推断"
+      },
+      "characters": [],
+      "description": "W7-B · 树比山年轻（C04）",
+      "rewards": [],
+      "costs": [],
+      "entryNodeId": "side_kunwu_complete_quests_side_w7_w7_b_entry",
+      "nodes": [
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_b_entry",
+          "type": "entry",
+          "position": {
+            "x": 60,
+            "y": 230
+          },
+          "data": {
+            "title": "场景入口",
+            "description": "跟随前置场景或任务状态触发"
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_b_action_1",
+          "type": "action",
+          "position": {
+            "x": 370,
+            "y": 210
+          },
+          "data": {
+            "title": "最终Boss后回到灵源院，无时木在数日内长成两人高，年轮",
+            "description": "最终Boss后回到灵源院，无时木在数日内长成两人高，年轮同时向内、向外生长；",
+            "rewards": [],
+            "costs": [],
+            "effects": []
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_b_action_2",
+          "type": "action",
+          "position": {
+            "x": 680,
+            "y": 210
+          },
+          "data": {
+            "title": "玩家以灵木、四人校准或种药人的现成枝条修复逆生裂口；选择",
+            "description": "玩家以灵木、四人校准或种药人的现成枝条修复逆生裂口；选择改变C07互证成本，不改变第二滴是否取得；",
+            "rewards": [],
+            "costs": [],
+            "effects": []
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_b_action_3",
+          "type": "action",
+          "position": {
+            "x": 990,
+            "y": 210
+          },
+          "data": {
+            "title": "第二滴使time_dew_level=2，统一周期由25",
+            "description": "第二滴使time_dew_level=2，统一周期由25秒缩短到20秒；",
+            "rewards": [],
+            "costs": [],
+            "effects": [
+              "time_dew_level=2"
+            ]
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_b_action_4",
+          "type": "action",
+          "position": {
+            "x": 1300,
+            "y": 210
+          },
+          "data": {
+            "title": "1.0前篇以COMPLETED结束并保存timeless",
+            "description": "1.0前篇以COMPLETED结束并保存timeless_tree_state=v10_arc_completed，不留下等待未来版本的ACTIVE死任务；",
+            "rewards": [],
+            "costs": [],
+            "effects": [
+              "timeless_tree_state=v10_arc_completed"
+            ]
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_b_action_5",
+          "type": "action",
+          "position": {
+            "x": 1610,
+            "y": 210
+          },
+          "data": {
+            "title": "种药人仍不说姓名，只留下“余下的要等你真的走进过去”。",
+            "description": "种药人仍不说姓名，只留下“余下的要等你真的走进过去”。",
+            "rewards": [],
+            "costs": [],
+            "effects": []
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_b_end",
+          "type": "ending",
+          "position": {
+            "x": 1920,
+            "y": 230
+          },
+          "data": {
+            "title": "场景结束",
+            "description": "W7-B · 树比山年轻（C04）"
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_b_edge_1",
+          "source": "side_kunwu_complete_quests_side_w7_w7_b_entry",
+          "target": "side_kunwu_complete_quests_side_w7_w7_b_action_1",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_b_edge_2",
+          "source": "side_kunwu_complete_quests_side_w7_w7_b_action_1",
+          "target": "side_kunwu_complete_quests_side_w7_w7_b_action_2",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_b_edge_3",
+          "source": "side_kunwu_complete_quests_side_w7_w7_b_action_2",
+          "target": "side_kunwu_complete_quests_side_w7_w7_b_action_3",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_b_edge_4",
+          "source": "side_kunwu_complete_quests_side_w7_w7_b_action_3",
+          "target": "side_kunwu_complete_quests_side_w7_w7_b_action_4",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_b_edge_5",
+          "source": "side_kunwu_complete_quests_side_w7_w7_b_action_4",
+          "target": "side_kunwu_complete_quests_side_w7_w7_b_action_5",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_b_edge_6",
+          "source": "side_kunwu_complete_quests_side_w7_w7_b_action_5",
+          "target": "side_kunwu_complete_quests_side_w7_w7_b_end",
+          "type": "smoothstep"
+        }
+      ],
+      "source": {
+        "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
+        "heading": "### 阶段B：树比山年轻（C04）",
+        "markdown": "- 最终Boss后回到灵源院，无时木在数日内长成两人高，年轮同时向内、向外生长；\n- 玩家以灵木、四人校准或种药人的现成枝条修复逆生裂口；选择改变C07互证成本，不改变第二滴是否取得；\n- 第二滴使`time_dew_level=2`，统一周期由25秒缩短到20秒；\n- 1.0前篇以COMPLETED结束并保存`timeless_tree_state=v10_arc_completed`，不留下等待未来版本的ACTIVE死任务；\n- 种药人仍不说姓名，只留下“余下的要等你真的走进过去”。",
+        "importedAt": "2026-08-26T06:48:03.880Z"
+      },
+      "updatedAt": "2026-08-26T06:48:03.880Z"
+    },
+    {
+      "id": "side_kunwu_complete_quests_side_w7_w7_c",
+      "chapterId": "side_w7",
+      "code": "W7-C",
+      "title": "同一棵树的过去与现在（C07末）",
+      "trigger": "跟随前置场景或任务状态触发",
+      "location": "破禁山麓·万修之门 → 白玉广场 → 逆灵试验场·第一界门 → 枯脉绝地·叠界台 → 镇魔塔外层 · 跨地图任务链",
+      "locationContext": {
+        "kind": "cross-map",
+        "mapIds": [
+          "map_01",
+          "map_02",
+          "map_08",
+          "map_11",
+          "map_04"
+        ],
+        "mapNames": [
+          "破禁山麓·万修之门",
+          "白玉广场",
+          "逆灵试验场·第一界门",
+          "枯脉绝地·叠界台",
+          "镇魔塔外层"
+        ],
+        "areaName": "跨地图任务链",
+        "timeline": "跨章节／未冻结",
+        "explorationMode": "cross-map",
+        "certainty": "cross-map",
+        "sourceText": "触发：跟随前置场景或任务状态触发；地图范围按地图27的W7章节网络推断"
+      },
+      "characters": [],
+      "description": "此时只确认“他不在正常年轮里”，仍不揭示韩立身份。第三滴属于第二幕末的章节回响，不在C04提前发放。",
+      "rewards": [],
+      "costs": [],
+      "entryNodeId": "side_kunwu_complete_quests_side_w7_w7_c_entry",
+      "nodes": [
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_c_entry",
+          "type": "entry",
+          "position": {
+            "x": 60,
+            "y": 230
+          },
+          "data": {
+            "title": "场景入口",
+            "description": "跟随前置场景或任务状态触发"
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_c_action_1",
+          "type": "action",
+          "position": {
+            "x": 370,
+            "y": 210
+          },
+          "data": {
+            "title": "玩家在上古归流谷发现一株尚未结果的无时木，其伤口与C04",
+            "description": "玩家在上古归流谷发现一株尚未结果的无时木，其伤口与C04灵源院幼树完全一致；",
+            "rewards": [],
+            "costs": [],
+            "effects": []
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_c_action_2",
+          "type": "action",
+          "position": {
+            "x": 680,
+            "y": 210
+          },
+          "data": {
+            "title": "若C04接受现成枝条，枝条会在上古树上找到缺口；若玩家亲",
+            "description": "若C04接受现成枝条，枝条会在上古树上找到缺口；若玩家亲手修补，则上古树皮出现同样的手势痕迹；",
+            "rewards": [],
+            "costs": [],
+            "effects": []
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_c_action_3",
+          "type": "action",
+          "position": {
+            "x": 990,
+            "y": 210
+          },
+          "data": {
+            "title": "返回现在后，两株树在同一息投下方向相反的影子，确认种药人",
+            "description": "返回现在后，两株树在同一息投下方向相反的影子，确认种药人能同时站在过去与现在；",
+            "rewards": [],
+            "costs": [],
+            "effects": []
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_c_action_4",
+          "type": "action",
+          "position": {
+            "x": 1300,
+            "y": 210
+          },
+          "data": {
+            "title": "玩家必须完成一次跨时代互证",
+            "description": "玩家必须完成一次跨时代互证：保留上古叶脉拓印、现在年轮记录与总印时间戳中的任意两项；遗漏项可用高成本补录；",
+            "rewards": [],
+            "costs": [],
+            "effects": []
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_c_action_5",
+          "type": "action",
+          "position": {
+            "x": 1610,
+            "y": 210
+          },
+          "data": {
+            "title": "第三滴使time_dew_level=3，统一周期由20",
+            "description": "第三滴使time_dew_level=3，统一周期由20秒缩短到15秒。",
+            "rewards": [],
+            "costs": [],
+            "effects": [
+              "time_dew_level=3"
+            ]
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_c_end",
+          "type": "ending",
+          "position": {
+            "x": 1920,
+            "y": 230
+          },
+          "data": {
+            "title": "场景结束",
+            "description": "W7-C · 同一棵树的过去与现在（C07末）"
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_c_edge_1",
+          "source": "side_kunwu_complete_quests_side_w7_w7_c_entry",
+          "target": "side_kunwu_complete_quests_side_w7_w7_c_action_1",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_c_edge_2",
+          "source": "side_kunwu_complete_quests_side_w7_w7_c_action_1",
+          "target": "side_kunwu_complete_quests_side_w7_w7_c_action_2",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_c_edge_3",
+          "source": "side_kunwu_complete_quests_side_w7_w7_c_action_2",
+          "target": "side_kunwu_complete_quests_side_w7_w7_c_action_3",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_c_edge_4",
+          "source": "side_kunwu_complete_quests_side_w7_w7_c_action_3",
+          "target": "side_kunwu_complete_quests_side_w7_w7_c_action_4",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_c_edge_5",
+          "source": "side_kunwu_complete_quests_side_w7_w7_c_action_4",
+          "target": "side_kunwu_complete_quests_side_w7_w7_c_action_5",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_c_edge_6",
+          "source": "side_kunwu_complete_quests_side_w7_w7_c_action_5",
+          "target": "side_kunwu_complete_quests_side_w7_w7_c_end",
+          "type": "smoothstep"
+        }
+      ],
+      "source": {
+        "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
+        "heading": "### 阶段C：同一棵树的过去与现在（C07末）",
+        "markdown": "- 玩家在上古归流谷发现一株尚未结果的无时木，其伤口与C04灵源院幼树完全一致；\n- 若C04接受现成枝条，枝条会在上古树上找到缺口；若玩家亲手修补，则上古树皮出现同样的手势痕迹；\n- 返回现在后，两株树在同一息投下方向相反的影子，确认种药人能同时站在过去与现在；\n- 玩家必须完成一次跨时代互证：保留上古叶脉拓印、现在年轮记录与总印时间戳中的任意两项；遗漏项可用高成本补录；\n- 第三滴使`time_dew_level=3`，统一周期由20秒缩短到15秒。\n\n此时只确认“他不在正常年轮里”，仍不揭示韩立身份。第三滴属于第二幕末的章节回响，不在C04提前发放。",
+        "importedAt": "2026-08-26T06:48:03.880Z"
+      },
+      "updatedAt": "2026-08-26T06:48:03.880Z"
+    },
+    {
+      "id": "side_kunwu_complete_quests_side_w7_w7_d",
+      "chapterId": "side_w7",
+      "code": "W7-D",
+      "title": "从未发生过的那一年（C09末）",
+      "trigger": "玩家完成C09真名魔契相关选择，并明确记录借名、以阵外批注承接或拒绝三者之一。种药人直到玩家",
+      "location": "双魂镜界 · 玩家完成C09真名魔契相关选择，并明确记录借名、以阵外批注承接或拒绝三者之一",
+      "locationContext": {
+        "kind": "field-map",
+        "mapIds": [
+          "map_09"
+        ],
+        "mapNames": [
+          "双魂镜界"
+        ],
+        "areaName": "玩家完成C09真名魔契相关选择，并明确记录借名、以阵外批注承接或拒绝三者之一",
+        "timeline": "跨章节／未冻结",
+        "explorationMode": "expedition",
+        "certainty": "inferred",
+        "sourceText": "触发：玩家完成C09真名魔契相关选择，并明确记录借名、以阵外批注承接或拒绝三者之一。种药人直到玩家；地图按地图27的W7章节网络推断"
+      },
+      "characters": [
+        "player_seal_bearer",
+        "speaker_bf8545d",
+        "speaker_2a144fba"
+      ],
+      "description": "化身说明自己不能替玩家杀元刹、签契、补阵或判断哪条人界值得存在。他只取出第四滴：",
+      "rewards": [],
+      "costs": [
+        {
+          "id": "cost_1f30fb26",
+          "kind": "item",
+          "label": "品",
+          "timing": "immediate",
+          "sourceText": "消耗品"
+        }
+      ],
+      "entryNodeId": "side_kunwu_complete_quests_side_w7_w7_d_entry",
+      "nodes": [
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_d_entry",
+          "type": "entry",
+          "position": {
+            "x": 60,
+            "y": 230
+          },
+          "data": {
+            "title": "场景入口",
+            "description": "玩家完成C09真名魔契相关选择，并明确记录借名、以阵外批注承接或拒绝三者之一。种药人直到玩家"
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_d_dialogue_1",
+          "type": "dialogue",
+          "position": {
+            "x": 370,
+            "y": 190
+          },
+          "data": {
+            "title": "对话 · 玩家、种药人",
+            "lines": [
+              {
+                "id": "side_kunwu_complete_quests_side_w7_w7_d_d1_l1",
+                "speakerId": "player_seal_bearer",
+                "speakerName": "玩家",
+                "text": "你到底是谁？"
+              },
+              {
+                "id": "side_kunwu_complete_quests_side_w7_w7_d_d1_l2",
+                "speakerId": "speaker_bf8545d",
+                "speakerName": "种药人",
+                "text": "山中那个韩立，明日才会见到你。"
+              },
+              {
+                "id": "side_kunwu_complete_quests_side_w7_w7_d_d1_l3",
+                "speakerId": "speaker_bf8545d",
+                "speakerName": "种药人",
+                "text": "我是他走到长河尽头后，留下的一道化身。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_d_dialogue_2",
+          "type": "dialogue",
+          "position": {
+            "x": 680,
+            "y": 190
+          },
+          "data": {
+            "title": "对话 · 韩立化身",
+            "lines": [
+              {
+                "id": "side_kunwu_complete_quests_side_w7_w7_d_d2_l1",
+                "speakerId": "speaker_2a144fba",
+                "speakerName": "韩立化身",
+                "text": "前三滴，来自这株树的过去、现在与未来。"
+              },
+              {
+                "id": "side_kunwu_complete_quests_side_w7_w7_d_d2_l2",
+                "speakerId": "speaker_2a144fba",
+                "speakerName": "韩立化身",
+                "text": "最后一滴，来自它从未发生过的那一年。"
+              }
+            ]
+          }
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_d_end",
+          "type": "ending",
+          "position": {
+            "x": 990,
+            "y": 230
+          },
+          "data": {
+            "title": "场景结束",
+            "description": "W7-D · 从未发生过的那一年（C09末）"
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_d_edge_1",
+          "source": "side_kunwu_complete_quests_side_w7_w7_d_entry",
+          "target": "side_kunwu_complete_quests_side_w7_w7_d_dialogue_1",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_d_edge_2",
+          "source": "side_kunwu_complete_quests_side_w7_w7_d_dialogue_1",
+          "target": "side_kunwu_complete_quests_side_w7_w7_d_dialogue_2",
+          "type": "smoothstep"
+        },
+        {
+          "id": "side_kunwu_complete_quests_side_w7_w7_d_edge_3",
+          "source": "side_kunwu_complete_quests_side_w7_w7_d_dialogue_2",
+          "target": "side_kunwu_complete_quests_side_w7_w7_d_end",
+          "type": "smoothstep"
+        }
+      ],
+      "source": {
+        "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
+        "heading": "### 阶段D：从未发生过的那一年（C09末）",
+        "markdown": "触发：玩家完成C09真名魔契相关选择，并明确记录借名、以阵外批注承接或拒绝三者之一。种药人直到玩家\n亲自承担这次选择后才现身，避免用未来答案干扰选择。\n\n```text\n玩家：你到底是谁？\n\n种药人：山中那个韩立，明日才会见到你。\n种药人：我是他走到长河尽头后，留下的一道化身。\n```\n\n化身说明自己不能替玩家杀元刹、签契、补阵或判断哪条人界值得存在。他只取出第四滴：\n\n```text\n韩立化身：前三滴，来自这株树的过去、现在与未来。\n韩立化身：最后一滴，来自它从未发生过的那一年。\n```\n\n第四滴使`time_dew_level=4`，统一周期由15秒缩短到10秒，并记录`hanli_avatar_revealed=true`。\n它仍是灵源院阵心的永久状态，不是可复制、交易或带入战斗的普通消耗品。",
+        "importedAt": "2026-08-26T06:48:03.880Z"
+      },
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_p1_p1_flow",
@@ -9450,11 +10838,11 @@
       ],
       "source": {
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
-        "heading": "## 10. 个人支线一：石岩《谁来承阵》",
+        "heading": "## 11. 个人支线一：石岩《谁来承阵》",
         "markdown": "任务ID候选：`companion_shi_yan_bear_the_seal`  \n主题：自愿牺牲与被当作材料的区别。  \n终局职责：承受阵法物理反震、保护灵脉载体。\n\n框架节点：\n\n1. C02石岩主动用肉身抬开救援通道，认为“总要有人顶住”；\n2. C05见到上古修士被命令留在阵台等死，他第一次质疑服从是否等于自愿；\n3. C07外营有人把他的受伤当作理所当然，玩家决定制止、默认或用奖励补偿；\n4. C10元刹提供不会疼痛的魔躯强化，代价是把其身体变成可替换阵器；\n5. C12根据长期选择，他可以自愿承担救世阵位、拒绝继续被消耗，或接受魔躯成为裂界锚点。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_p1_p1_end",
@@ -9679,11 +11067,11 @@
       ],
       "source": {
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
-        "heading": "## 10. 个人支线一：石岩《谁来承阵》",
+        "heading": "## 11. 个人支线一：石岩《谁来承阵》",
         "markdown": "- 尊重其决定并共同分担风险：自愿救世阵位；\n- 长期要求其无条件牺牲：拒绝救世阵位或在常规结局离队；\n- 接受魔躯：战斗强化、灭世锚点候选；\n- 玩家强行把他写入阵器：直接阻断救世，但不自动触发灭世。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_p2_p2_flow",
@@ -9901,11 +11289,11 @@
       ],
       "source": {
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
-        "heading": "## 11. 个人支线二：陆清《两种灵气》",
+        "heading": "## 12. 个人支线二：陆清《两种灵气》",
         "markdown": "任务ID候选：`companion_lu_qing_two_energies`  \n主题：理解危险力量与接受危险力量并不是同一件事。  \n终局职责：计算灵魔逆转、维持法阵能量平衡。\n\n框架节点：\n\n1. C01记录反向阵纹，对叶家抽灵技术产生兴趣；\n2. C05发现真魔气经过逆阵会释放可用灵力；\n3. C07请求保留魔气样本进行实验，玩家决定监管、禁止或鼓励直接吸收；\n4. C08用实验帮助区分元刹魂印与玲珑神魂；\n5. C10面对无需材料即可元婴突破的魔气方案；\n6. C12成为救世逆转计算者，或成为灭世魔气导流者。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_p2_p2_end",
@@ -10130,11 +11518,11 @@
       ],
       "source": {
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
-        "heading": "## 11. 个人支线二：陆清《两种灵气》",
+        "heading": "## 12. 个人支线二：陆清《两种灵气》",
         "markdown": "- 完成受控实验且拒绝直接吸收：高魔理认知、救世技术阵位；\n- 完全禁止研究：保持纯净但救世缺少技术，需要古阵师替代；\n- 主动吸收并完成魔气突破：强力战斗成长、第二段魔契支持；\n- 隐瞒实验事故：常规结局留下魔染后患。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_p3_p3_flow",
@@ -10352,11 +11740,11 @@
       ],
       "source": {
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
-        "heading": "## 12. 个人支线三：白灵《十三个伤者》",
+        "heading": "## 13. 个人支线三：白灵《十三个伤者》",
         "markdown": "任务ID候选：`companion_bai_ling_thirteen_wounded`  \n主题：救下一个人是否值得让更多人承担风险。  \n终局职责：维持盟友存活、保护魂印剥离对象。\n\n框架节点：\n\n1. C01处理叶家先遣尸体，识别献祭而非战伤；\n2. C06发现十三名带魔标伤员，净化最安全，保留则可能追出元刹魂印；\n3. C07魔标伤员在当世留下后裔或残魂，请求玩家兑现过去的救援承诺；\n4. C08白灵通过伤者魔标帮助提取元刹独立魂印；\n5. C10高阶大战中必须在救援区与关键古宝之间分配行动；\n6. C12决定她能否同时维持玲珑、灵脉载体和阵位盟友存活。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_p3_p3_end",
@@ -10597,11 +11985,11 @@
       ],
       "source": {
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
-        "heading": "## 12. 个人支线三：白灵《十三个伤者》",
+        "heading": "## 13. 个人支线三：白灵《十三个伤者》",
         "markdown": "- 承担风险并完成后续救治：补全元刹魂印、救世医疗阵位；\n- 只在当时救下却不处理魔标：伤者后世成为魔灾源；\n- 立即净化全部魔标：降低伤亡，失去一条魂印路径；\n- 把伤者交元刹研究：推进魔契并制造裂界祭品。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_p4_p4_flow",
@@ -10836,11 +12224,11 @@
       ],
       "source": {
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
-        "heading": "## 13. 个人支线四：墨言《真相留下谁》",
+        "heading": "## 14. 个人支线四：墨言《真相留下谁》",
         "markdown": "任务ID候选：`companion_mo_yan_cost_of_truth`  \n主题：揭露真相是否可以不顾及真相会杀死谁。  \n终局职责：识破伪证、保护跨时代阵令、欺骗或拆解魔契。\n\n框架节点：\n\n1. C01识别两份开山令都是真的；\n2. C03追踪伪造灵宝和五鬼袋背后的真正受益者；\n3. C05保存“玲珑神念”语气证据，却无法证明其身份；\n4. C07玩家决定公开穿越时，墨言要求先保护会被各宗灭口的证人；\n5. C08以三层记录识别记忆篡改；\n6. C09因果真相足够时，提出让无署名阵令而非现用名承接第一段魔契；\n7. C12可以拆穿元刹最后的契约漏洞，或替玩家伪造最后一枚人界阵印。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_p4_p4_end",
@@ -11097,11 +12485,11 @@
       ],
       "source": {
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
-        "heading": "## 13. 个人支线四：墨言《真相留下谁》",
+        "heading": "## 14. 个人支线四：墨言《真相留下谁》",
         "markdown": "- 证据与证人都被保护：高因果真相、救世阵令保护者；\n- 只求公开不顾证人：获得舆论优势但关键人物死亡；\n- 长期销毁不利证据：无法拆解魔契；\n- 与玩家共同欺骗契约：保留多路线，但若后续失去其信任，契约反噬加重。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_end_s_s_activate",
@@ -11228,9 +12616,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 任务出现条件（非终局资格）",
         "markdown": "- 玩家已经发现纯化逆转阵心的可能；\n- 至少两名潜在自愿阵位者仍可接触；\n- 第三契尚未完成。\n\n任务可以在证据与阵位尚不完整时提前出现，用于提示缺失内容。救世硬门槛只在\n[剧情总纲第8.1节](24_完整游戏剧情总纲_草案.md#81-必备条件)维护，本节不复制另一份判定清单。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_end_s_s_nodes",
@@ -11509,9 +12897,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 任务节点",
         "markdown": "1. `列阵位`：确认逆转需要的阵位类型，而不是直接要求固定NPC；\n2. `补魂印`：通过白灵伤者线、双魂证词或高难封魂战补全元刹魂印；\n3. `请持图者`：说服木青萝或培养替代阵师承担完整封印图；\n4. `请托山者`：取得圭灵自愿山契，或组织多名修士分担地脉反噬；\n5. `还五人愿`：取得正确封链顺序，或完成高难古阵推演；\n6. `停抽灵`：拆除玩家此前保留的成长捷径，归还借走的阵力与古宝；\n7. `四人演阵`：完成一次不使用魔气强化的多目标阵法演练；\n8. `众生落名`：所有阵位承担者分别确认代价，形成自愿盟约。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_end_s_s_fail",
@@ -11659,9 +13047,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 失败与降级",
         "markdown": "- 任一核心阵位拒绝时，任务保持可补救，不立即失败；\n- 关键阵器已被炼化或献祭时，明确标记该存档救世路线关闭；\n- 阵位不足但玩家强行启动，只能在C12进入“近救世失败”的特殊常规结局；\n- 不允许用大量灵石、刷怪次数或付费资源替代自愿盟约。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_end_s_s_end",
@@ -11740,9 +13128,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 完成结果",
         "markdown": "取得`living_covenant=complete`；是否开放“逆转灵魔大阵”仍由剧情总纲的救世硬门槛统一判定，并需完成C12最高难度终战。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_end_d_d_first",
@@ -11885,9 +13273,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 第一契：借名（C09）",
         "markdown": "- 玩家交出现用名或主动认可的真名；\n- 元刹帮助四人投影安全返回并保住关键记忆；\n- 若玩家以无署名阵令承接，第一契处于不稳定状态，尚不满足灭世门槛。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_end_d_d_second",
@@ -12014,9 +13402,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 第二契：借身（C10）",
         "markdown": "- 元刹以真魔气帮助至少一名队员突破或改造阵器；\n- 玩家可以选择队员自愿接受、把魔气写入无人阵器，或以俘虏／残魂替代；\n- 任务提供实质便利：减少突破成本、跳过部分高难战斗、直接定位黑风旗坐标。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_end_d_d_anchor",
@@ -12214,9 +13602,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 锚点准备（C10–C12）",
         "markdown": "从下列对象中取得至少两个裂界锚点：\n\n- 被本命元牌持续驱使的圭灵；\n- 炼化五鬼形成的界魂钉；\n- 保留并强化的叶家血祭阵；\n- 主动接受魔躯改造的队员；\n- 被魔染的逆转阵心；\n- 其他后续确认的唯一祭品载体。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_end_d_d_third",
@@ -12380,9 +13768,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 第三契：借界（C12）",
         "markdown": "- 玩家利用阵外批注执行权，承认魔界坐标属于人界阵法的一部分；\n- 元刹要求玩家最后一次确认：被写入的人界不再保持原有天地法则；\n- 玩家拒绝则进入“拒绝灭世”的特殊常规结局并承担契约反噬；\n- 玩家确认后取得“完成真名魔契”终局方案。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     },
     {
       "id": "side_kunwu_complete_quests_side_end_d_d_end",
@@ -12461,9 +13849,9 @@
         "document": "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
         "heading": "### 完成结果",
         "markdown": "灭世终战获得元刹支援与多种捷径，难度显著低于救世，但人界同化不可逆。",
-        "importedAt": "2026-08-06T08:33:30.303Z"
+        "importedAt": "2026-08-26T06:48:03.880Z"
       },
-      "updatedAt": "2026-08-06T08:33:30.303Z"
+      "updatedAt": "2026-08-26T06:48:03.880Z"
     }
   ],
   "variables": [
@@ -12486,6 +13874,12 @@
       "type": "counter",
       "range": "0…5",
       "description": "接受古魔力量、炼化残魂；提高伤害并增加受伤；改变结局评价"
+    },
+    {
+      "id": "hanli_avatar_revealed",
+      "label": "hanli_avatar_revealed",
+      "type": "boolean",
+      "description": "完整游戏C09后篇；1.0固定为false；后续用于区分无名种药人与韩立道祖化身揭晓对白"
     },
     {
       "id": "human_realm_path_evidence",
@@ -12544,6 +13938,27 @@
       "description": "C06十三名伤者；C07回声、C08魂印与白灵个人线"
     },
     {
+      "id": "time_dew_claims",
+      "label": "time_dew_claims",
+      "type": "enum",
+      "range": "集合",
+      "description": "支线五每滴灵液的奖励claim；防止回看、刷新、迁移或重复交互再次升级周期"
+    },
+    {
+      "id": "time_dew_level",
+      "label": "time_dew_level",
+      "type": "counter",
+      "range": "0…2（1.0）",
+      "description": "无时木前篇两次领取；把灵源院统一生产周期由30秒依次改为25秒、20秒；完整游戏可继续扩展到4级"
+    },
+    {
+      "id": "timeless_tree_state",
+      "label": "timeless_tree_state",
+      "type": "enum",
+      "range": "枚举",
+      "description": "种子入圃、有效生产、C04回访；记录种子、幼树、年轮异常与1.0前篇完成状态"
+    },
+    {
       "id": "ye_evidence",
       "label": "叶家证据",
       "type": "counter",
@@ -12557,6 +13972,6 @@
     "Docs/1.0策划案/剧情/26_完整游戏支线剧情库_草案.md",
     "Docs/1.0策划案/地图/27_完整游戏野外大地图与内容框架_草案.md"
   ],
-  "updatedAt": "2026-08-06T08:33:30.303Z",
+  "updatedAt": "2026-08-26T06:48:03.880Z",
   "updatedBy": "新剧情事实源导入器"
 }

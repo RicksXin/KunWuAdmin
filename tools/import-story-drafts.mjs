@@ -4,7 +4,9 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const toolsDirectory = path.dirname(fileURLToPath(import.meta.url));
 export const adminRoot = path.dirname(toolsDirectory);
-const kunwuRoot = path.resolve(adminRoot, "..", "KunWu");
+// KunWuGodot is the active game workspace and the authoritative home for story facts.
+// Keep an environment override so CI or archived workspaces can explicitly select another root.
+const kunwuRoot = path.resolve(process.env.KUNWU_GODOT_ROOT ?? path.resolve(adminRoot, "..", "KunWuGodot"));
 const planningDirectory = path.join(kunwuRoot, "Docs", "1.0策划案");
 const storyDirectory = path.join(planningDirectory, "剧情");
 const mapDirectory = path.join(planningDirectory, "地图");
@@ -134,6 +136,7 @@ const sideChapterDefinitions = [
   ["W4", "阴罗宗的五鬼袋", "side_five_ghosts_last_order", "死者是可使用的材料，还是仍需履行意愿的人。"],
   ["W5", "叶家的两道命令", "side_ye_two_orders", "家族集体罪责之中是否仍保留个人选择。"],
   ["W6", "逆灵者的未竟阵", "side_ancient_reverse_array", "后人是否应继续承担未竟技术的风险。"],
+  ["W7", "不在年轮里的人", "side_hanli_time_gardener", "跨越时间的赠予仍需由当世之人亲手种下，知道未来也不等于替现在作出选择。"],
   ["P1", "石岩《谁来承阵》", "companion_shi_yan_bear_the_seal", "自愿牺牲与被当作材料的区别。"],
   ["P2", "陆清《两种灵气》", "companion_lu_qing_two_energies", "理解危险力量与接受危险力量并不是同一件事。"],
   ["P3", "白灵《十三个伤者》", "companion_bai_ling_thirteen_wounded", "救下一个人是否值得让更多人承担风险。"],
@@ -976,8 +979,8 @@ function currentMainChapterCode(sourceCode) {
 }
 
 function parseCurrentMainScenes(markdown, projectId, chapterByCode, importedAt) {
-  const start = markdown.indexOf("## 第一编：1.0主线 P0–C04");
-  const end = markdown.indexOf("## 第二编：1.0四条支线");
+  const start = markdown.indexOf("## 第一编：1.0主线");
+  const end = markdown.indexOf("## 第二编：", start);
   return headingSections(markdown).filter((section) => (
     section.index > start
     && section.index < end
@@ -1040,16 +1043,17 @@ function parseDetailedMainScenes(markdown, projectId, chapterByCode, importedAt)
 }
 
 function parseCurrentSideScenes(markdown, projectId, chapterByCode, importedAt) {
-  const start = markdown.indexOf("## 第二编：1.0四条支线");
-  const end = markdown.indexOf("### 6. 支线状态与汇流矩阵", start);
+  const start = markdown.indexOf("## 第二编：");
+  const statusHeading = markdown.match(/^### \d+\. 支线状态与汇流矩阵$/m);
+  const end = statusHeading?.index ?? markdown.length;
   return headingSections(markdown).filter((section) => (
     section.index > start
     && section.index < end
     && section.level === 4
-    && /^Q[1-4]-\d+[A-Z]?：/.test(section.text)
+    && /^Q[1-5]-\d+[A-Z]?：/.test(section.text)
   )).map((section) => {
-    const [, sourceCode, title] = section.text.match(/^(Q[1-4]-\d+[A-Z]?)：(.+)$/);
-    const chapterCode = `W${sourceCode[1]}`;
+    const [, sourceCode, title] = section.text.match(/^(Q[1-5]-\d+[A-Z]?)：(.+)$/);
+    const chapterCode = sourceCode[1] === "5" ? "W7" : `W${sourceCode[1]}`;
     return makeScene({
       projectId,
       chapterId: chapterByCode.get(chapterCode).id,
@@ -1163,15 +1167,15 @@ function parseLongSideScenes(markdown, projectId, chapterByCode, importedAt) {
   for (const parent of taskSections) {
     const numbered = parent.text.match(/^(\d+)\. /);
     const sectionNumber = Number(numbered?.[1]);
-    if (sectionNumber >= 4 && sectionNumber <= 9) {
+    if (sectionNumber >= 4 && sectionNumber <= 10) {
       const worldIndex = sectionNumber - 3;
       scenes.push(...worldSideScenes(markdown, parent, worldIndex, projectId, chapterByCode.get(`W${worldIndex}`), importedAt));
-    } else if (sectionNumber >= 10 && sectionNumber <= 13) {
-      const personalIndex = sectionNumber - 9;
+    } else if (sectionNumber >= 11 && sectionNumber <= 14) {
+      const personalIndex = sectionNumber - 10;
       scenes.push(...personalSideScenes(parent, personalIndex, projectId, chapterByCode.get(`P${personalIndex}`), importedAt));
-    } else if (sectionNumber === 14) {
-      scenes.push(...endingSideScenes(markdown, parent, "S", projectId, chapterByCode.get("END-S"), importedAt));
     } else if (sectionNumber === 15) {
+      scenes.push(...endingSideScenes(markdown, parent, "S", projectId, chapterByCode.get("END-S"), importedAt));
+    } else if (sectionNumber === 16) {
       scenes.push(...endingSideScenes(markdown, parent, "D", projectId, chapterByCode.get("END-D"), importedAt));
     }
   }
@@ -1229,7 +1233,7 @@ export function buildProjects(sources, importedAt = new Date().toISOString()) {
   const currentSideScenes = parseCurrentSideScenes(sources.current, sideProjectId, sideChapterByCode, importedAt);
   const longSideScenes = parseLongSideScenes(sources.side, sideProjectId, sideChapterByCode, importedAt);
   const allVariables = parseVariables([sources.current, sources.outline, sources.main]);
-  const sideCorpus = `${sources.current.slice(sources.current.indexOf("## 第二编：1.0四条支线"))}\n${sources.side}`;
+  const sideCorpus = `${sources.current.slice(sources.current.indexOf("## 第二编："))}\n${sources.side}`;
 
   const mainProject = {
     schemaVersion: 2,
@@ -1253,7 +1257,7 @@ export function buildProjects(sources, importedAt = new Date().toISOString()) {
     id: sideProjectId,
     category: "side",
     title: "昆吾因果支线库",
-    subtitle: "6条世界线 · 4条个人线 · 2条结局专属任务",
+    subtitle: "7条世界线 · 4条个人线 · 2条结局专属任务",
     synopsis: "从1.0四条详细支线延伸到完整游戏的十二条任务链，产出证词、盟约、阵位、阵器、裂界锚点与人物尾声。",
     version: `${versionOf(sources.current)}+${versionOf(sources.side)}`,
     status: "draft",

@@ -20,7 +20,14 @@
     "audit:stories": "node tools/audit-story-import.mjs",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit --incremental false",
-    "check": "pnpm audit:stories && pnpm typecheck && pnpm lint && pnpm build"
+    "check": "pnpm audit:stories && pnpm typecheck && pnpm lint && pnpm build",
+    "test:resources": "node --import tsx --test tests/resources/*.test.ts",
+    "test:resources:unit": "node --import tsx --test tests/resources/settle.test.ts",
+    "test:resources:db": "node --import tsx --test tests/resources/database.test.ts",
+    "resources:setup": "node --import tsx tools/resource-development.ts",
+    "resources:dev": "KUNWU_ALLOW_LOCAL_RESOURCE_LOGIN=1 next dev --turbopack -H 127.0.0.1 -p 3100",
+    "resources:start": "KUNWU_ALLOW_LOCAL_RESOURCE_LOGIN=1 KUNWU_ADMIN_DIST_DIR=.next-build next start -H 127.0.0.1 -p 3100",
+    "test:resources:godot": "node --import tsx tools/test-resource-godot.ts"
   },
   "dependencies": {
     "@xyflow/react": "^12.8.6",

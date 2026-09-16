@@ -1,25 +1,19 @@
 "use client";
 
+import { AdminRail } from "@/components/admin/AdminRail";
+
 import { useCallback, useEffect, useMemo, useState } from "react";
-import Link from "next/link";
 import {
-  BookOpenText,
-  Boxes,
   Check,
   ChevronDown,
   CircleUserRound,
   Cloud,
-  Database,
-  FileCode2,
-  Gauge,
   LoaderCircle,
   Play,
   Save,
   Send,
-  Settings,
   Sparkles,
-  Users,
-} from "lucide-react";
+  } from "lucide-react";
 import type {
   StoryGraphNode,
   StoryNodeData,
@@ -34,13 +28,6 @@ import { PreviewDialog } from "./PreviewDialog";
 import { StoryCanvas } from "./StoryCanvas";
 import { StorySidebar } from "./StorySidebar";
 
-const railItems = [
-  { icon: BookOpenText, label: "剧情", active: true },
-  { icon: FileCode2, label: "任务" },
-  { icon: Users, label: "角色" },
-  { icon: Boxes, label: "物品" },
-  { icon: Database, label: "数据", href: "/config" },
-];
 
 export function StoryEditor() {
   const [projects, setProjects] = useState<StoryProject[]>([]);
@@ -249,7 +236,7 @@ export function StoryEditor() {
   }
 
   if (!project) {
-    return <div className="loading-screen"><div className="seal-loader">昆</div><LoaderCircle className="spin" /><p>{notice}</p></div>;
+    return <div className="admin-loading-shell"><AdminRail /><div className="loading-screen"><div className="seal-loader">昆</div><LoaderCircle className="spin" /><p>{notice}</p></div></div>;
   }
 
   return (
@@ -271,14 +258,7 @@ export function StoryEditor() {
       </header>
 
       <div className="workspace">
-        <nav className="app-rail">
-          <div className="rail-main">
-            {railItems.map(({ icon: Icon, label, active, href }) => href
-              ? <Link key={label} href={href} className={active ? "is-active" : ""} title={label}><Icon size={20} /><span>{label}</span></Link>
-              : <button key={label} className={active ? "is-active" : ""} title={label}><Icon size={20} /><span>{label}</span></button>)}
-          </div>
-          <div className="rail-bottom"><button title="运行状态"><Gauge size={20} /></button><button title="设置"><Settings size={20} /></button></div>
-        </nav>
+        <AdminRail />
 
         <StorySidebar projects={projects} project={project} activeSceneId={activeScene?.id ?? ""} onSelectProject={selectProject} onSelectScene={(id) => { setActiveSceneId(id); setSelectedNodeId(null); }} onNewProject={createProject} onNewScene={createScene} />
 
