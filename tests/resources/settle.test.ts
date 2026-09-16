@@ -1,7 +1,13 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { assetCodes, baselineCatalog, baselineRules, rulesSchema, simulationInputSchema, type AssetCode } from "../../server/domain/resources/rules";
-import { applyCommand, createSimulation, productionStatus, createFarm, settle, zeroAmounts, type FarmState } from "../../server/domain/resources/settle";
+import { assetCodes, baselineCatalog, legacyBaselineRules as baselineRules, rulesSchema, simulationInputSchema, type AssetCode } from "../../server/domain/resources/rules";
+import { applyCommand as applyCommandRaw, createSimulation as createSimulationRaw, productionStatus as productionStatusRaw, createFarm as createFarmRaw, settle as settleRaw, zeroAmounts, type FarmState } from "../../server/domain/resources/settle";
+
+const createFarm = (time=0) => createFarmRaw(time, baselineRules);
+const settle: typeof settleRaw = (state, target, rules=baselineRules, activations=[], budget=20000) => settleRaw(state,target,rules,activations,budget);
+const applyCommand: typeof applyCommandRaw = (state, command, rules=baselineRules) => applyCommandRaw(state,command,rules);
+const createSimulation: typeof createSimulationRaw = (input, rules=baselineRules) => createSimulationRaw(input,rules);
+const productionStatus: typeof productionStatusRaw = (state, rules=baselineRules) => productionStatusRaw(state,rules);
 
 const allocate = (state:FarmState, values:Partial<Record<AssetCode,number>>) => applyCommand(state,{type:"allocation",allocations:Object.fromEntries(assetCodes.map(c => [c,values[c]??0])) as Record<AssetCode,number>}).state;
 test("frozen baseline: five resources and all storage values", () => {

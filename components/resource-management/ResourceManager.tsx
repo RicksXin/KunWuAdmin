@@ -3,7 +3,7 @@
 import { AdminRail } from "@/components/admin/AdminRail";
 import { useCallback,useEffect,useState } from "react";
 import { Warehouse, Users, SlidersHorizontal, FlaskConical, ChevronRight } from "lucide-react";
-import { assetCodes,assetNames,baselineRules,baselineCatalog,type AssetCode,type ProductionRules } from "@/server/domain/resources/rules";
+import { assetCodes,assetNames,baselineRules,baselineCatalog,singleCycleRules,currentRulesSchema,type AssetCode,type ProductionRules } from "@/server/domain/resources/rules";
 import type { FarmState } from "@/server/domain/resources/settle";
 import styles from "./ResourceManager.module.css";
 import { ResourceSimulator } from "./ResourceSimulator";
@@ -33,7 +33,7 @@ export function ResourceManager() {
   const [config,setConfig]=useState<Config|null>(null),[draft,setDraft]=useState<ProductionRules>(baselineRules),[configReason,setConfigReason]=useState("");
   const [asset,setAsset]=useState<AssetCode>("spiritGrain"),[mode,setMode]=useState("add"),[amount,setAmount]=useState("10"),[reason,setReason]=useState(""),[pending,setPending]=useState<Pending|null>(null);
   const load=useCallback(async()=>{
-    try {await api("session");const [p,c]=await Promise.all([api<{players:Player[]}>("players"),api<Config>("configuration")]);setPlayers(p.players);setConfig(c);setDraft(c.draft.rules);setConnected(true);setNotice("已连接 · development 独立资源环境");}
+    try {await api("session");const [p,c]=await Promise.all([api<{players:Player[]}>("players"),api<Config>("configuration")]);setPlayers(p.players);setConfig(c);setDraft(singleCycleRules(c.draft.rules));setConnected(true);setNotice("已连接 · development 独立资源环境");}
     catch(e){setConnected(false);setNotice((e as Error).message);}
   },[]);
   useEffect(()=>{void load();const saved=sessionStorage.getItem("kw-resource-pending");if(saved){try{setPending(JSON.parse(saved));}catch{sessionStorage.removeItem("kw-resource-pending");}}},[load]);
@@ -54,15 +54,18 @@ export function ResourceManager() {
   }
   async function login(){setBusy(true);try{await api("local-login",{method:"POST",body:"{}"});await load();}catch(e){setNotice((e as Error).message);}finally{setBusy(false);}}
   async function configAction(action:"save"|"approve"|"publish") {
-    if(!config)return;setBusy(true);
+    if(!config)return;
+    if(action === "save" && !draftValidation.success){setNotice(draftErrors.map(issue => issue.message).join("；"));return;}
+    setBusy(true);
     try{await api("configuration",{method:"POST",body:JSON.stringify({action,revision:config.draft.revision,...(action==="save"?{rules:draft}:{}),reason:configReason})});await load();setNotice({save:"草稿已保存，原审核已失效",approve:"当前修订已审核",publish:"配置已发布，新收益按生效时间分段"}[action]);}
     catch(e){setNotice((e as Error).message);}finally{setBusy(false);}
   }
-  function jobField(index:number,field:"output",value:string){setDraft(d=>({...d,jobs:d.jobs.map((j,i)=>i===index?{...j,[field]:value}:j)}));}
   function storageField(index:number,level:number,field:"capacity"|"upgradeWood",value:string){setDraft(d=>({...d,jobs:d.jobs.map((j,i)=>i===index?{...j,storage:j.storage.map((s,n)=>n===level?{...s,[field]:value}:s)}:j)}));}
   function catalogField(index:number,field:"displayName"|"nameKey"|"sourceRef"|"usageRef",value:string){setDraft(d=>({...d,catalog:(d.catalog??baselineCatalog).map((item,i)=>i===index?{...item,[field]:value}:item)}));}
   const reference=config?.releases[0]?.rules??baselineRules;
   const changes=differences({...reference,catalog:reference.catalog??baselineCatalog},{...draft,catalog:draft.catalog??baselineCatalog});
+  const draftValidation = currentRulesSchema.safeParse(draft);
+  const draftErrors = draftValidation.success ? [] : draftValidation.error.issues;
   const dirty=!!config&&JSON.stringify(draft)!==JSON.stringify(config.draft.rules);
   let after="—";try{if(snapshot&&/^\d+$/.test(amount)){const a=BigInt(amount),b=BigInt(snapshot.state.balances[asset]);after=String(mode==="set"?a:mode==="subtract"?b-a:b+a);}}catch{/* Server validates. */}
   const tabs = [
@@ -104,6 +107,7 @@ export function ResourceManager() {
       {tab === "config" && config && <>
         <section className={styles.configPanel}>
           <div className={styles.panelHeading}><h2>资源目录</h2><span className="status-badge">R{config.draft.revision} · {dirty ? "未保存" : ({draft:"草稿",approved:"已审核",published:"已发布"} as Record<string,string>)[config.draft.status]}</span></div>
+          <p>每名工人每周期产出 1 个，岗位产出随在岗人数增加。</p>
           <fieldset disabled={busy} className={styles.flatFieldset}>
             <div className={styles.scroll}><table className={styles.catalogTable}>
               <thead><tr><th>资源名称</th><th>每人产出</th><th>产出周期</th><th>解锁地图</th><th /></tr></thead>
@@ -111,7 +115,7 @@ export function ResourceManager() {
                 const job = draft.jobs[i];
                 return <tr key={item.code}>
                   <td><input aria-label={`${assetNames[item.code]}显示名称`} value={item.displayName} maxLength={200} onChange={e => catalogField(i,"displayName",e.target.value)} /></td>
-                  <td><input aria-label={`${assetNames[item.code]}每人产出`} inputMode="numeric" value={job.output} onChange={e => jobField(i,"output",e.target.value)} /></td>
+                  <td>{job.output} 个 / 人</td>
                   <td>{job.cycles} 周期</td><td>地图 {job.unlockMap}</td>
                   <td><button aria-expanded={editingResource === item.code} onClick={() => setEditingResource(editingResource === item.code ? null : item.code)}>{editingResource === item.code ? "收起" : "详细设置"}</button></td>
                 </tr>;
@@ -126,11 +130,21 @@ export function ResourceManager() {
                 <details><summary>名称键与引用信息</summary><div className={styles.metadataFields}>{([["nameKey","名称键"],["sourceRef","来源引用"],["usageRef","用途引用"]] as const).map(([field,label]) => <label key={field}>{label}<input value={item[field]} maxLength={200} onChange={e => catalogField(i,field,e.target.value)} /></label>)}</div><p>图标：{item.iconRef} · 公共仓库 · 已启用</p></details>
               </div>;
             })()}
-            <details className={styles.disclosure}><summary>招募费用与生产规则</summary>
+            <details className={styles.disclosure}><summary>生产规则</summary>
               <p>初始 {draft.initialWorkers} 人，上限 {draft.maxWorkers} 人；灵液周期 {draft.cyclesMs.map(ms => ms/1000).join(" / ")} 秒。除灵粮外，每人每周期消耗 2 灵粮，按上表顺序供给。</p>
-              <div className={styles.form}>{draft.recruitCosts.map((cost,i) => <label key={i}>第 {i+7} 人 · 灵粮<input value={cost} inputMode="numeric" onChange={e => setDraft(d => ({...d,recruitCosts:d.recruitCosts.map((c,n) => n===i ? e.target.value : c)}))} /></label>)}</div>
             </details>
           </fieldset>
+        </section>
+        <section>
+          <div className={styles.panelHeading}><h2>杂役招募费用</h2><span className={styles.muted}>消耗灵粮 · 逐级递增</span></div>
+          <p>初始 {draft.initialWorkers} 人免费；招募第 {draft.initialWorkers + 1}–{draft.maxWorkers} 人时，按对应档位扣除灵粮。后一级费用必须高于前一级。</p>
+          <fieldset disabled={busy} className={styles.flatFieldset}>
+            <div className={styles.form}>{draft.recruitCosts.map((cost,i) => {
+              const error = draftErrors.find(issue => issue.path[0] === "recruitCosts" && issue.path[1] === i);
+              return <label key={i}>第 {draft.initialWorkers+i+1} 人<input aria-label={`第${draft.initialWorkers+i+1}人招募灵粮费用`} aria-invalid={!!error} aria-describedby={error ? `recruit-error-${i}` : undefined} value={cost} inputMode="numeric" onChange={e => setDraft(d => ({...d,recruitCosts:d.recruitCosts.map((c,n) => n===i ? e.target.value : c)}))} />{error && <small id={`recruit-error-${i}`} className={styles.fieldError}>{error.message}</small>}</label>;
+            })}</div>
+          </fieldset>
+          {!draftValidation.success && <p role="alert" className={styles.fieldError}>{draftErrors.map(issue => issue.message).join("；")}</p>}
         </section>
         <section className={styles.publishPanel}>
           <div className={styles.panelHeading}><h2>保存与发布</h2><span className={styles.muted}>{changes.length ? `${changes.length} 项变更` : "与最新发布一致"}</span></div>
@@ -138,7 +152,7 @@ export function ResourceManager() {
           <fieldset disabled={busy} className={styles.flatFieldset}>
             <label>操作说明<input value={configReason} onChange={e => setConfigReason(e.target.value)} placeholder="简述本次变更或审核意见（至少 2 字）" maxLength={500} /></label>
             <div className={styles.actions}>
-              <button disabled={configReason.trim().length<2} onClick={() => configAction("save")}>保存草稿</button>
+              <button disabled={configReason.trim().length<2||!draftValidation.success} onClick={() => configAction("save")}>保存草稿</button>
               <button disabled={configReason.trim().length<2||config.draft.status!=="draft"||dirty} onClick={() => configAction("approve")}>审核</button>
               <button disabled={configReason.trim().length<2||config.draft.status!=="approved"||dirty} onClick={() => configAction("publish")}>发布</button>
             </div>
@@ -148,11 +162,11 @@ export function ResourceManager() {
             {changes.length ? <div className={styles.scroll}><table><thead><tr><th>字段</th><th>已发布</th><th>草稿</th></tr></thead><tbody>{changes.map(change => <tr key={change.path}><td>{change.path}</td><td>{change.before}</td><td>{change.after}</td></tr>)}</tbody></table></div> : <p>暂无变更。</p>}
           </details>
           <details className={styles.disclosure}><summary>发布历史 · {config.releases.length} 个版本</summary>
-            {config.releases.map(r => <div className={styles.historyRow} key={r.id}><div><span>{r.effective_at===0 ? "初始基线" : new Date(Number(r.effective_at)).toLocaleString()}</span><small>{r.id}</small></div><button disabled={busy} onClick={() => {setDraft({...r.rules,releaseId:draft.releaseId});setNotice("历史规则已载入，请检查差异后保存、审核并发布");}}>载入</button></div>)}
+            {config.releases.map(r => <div className={styles.historyRow} key={r.id}><div><span>{r.effective_at===0 ? "初始基线" : new Date(Number(r.effective_at)).toLocaleString()}</span><small>{r.id}</small></div><button disabled={busy} onClick={() => {setDraft(singleCycleRules({...r.rules,releaseId:draft.releaseId}));setNotice("历史规则已载入，请检查差异后保存、审核并发布");}}>载入</button></div>)}
           </details>
         </section>
       </>}
-      {tab==="simulate"&&<ResourceSimulator rules={config?.draft.rules??baselineRules} endpoint="/api/admin/resources/simulate"/>}
+      {tab==="simulate"&&<ResourceSimulator rules={config?singleCycleRules(config.draft.rules):baselineRules} endpoint="/api/admin/resources/simulate"/>}
     </>}
   </div></main></div><footer className={styles.footer}><span>昆吾司典 · 灵源院</span><span>{connected ? "管理会话已连接" : "管理会话未连接"}</span></footer></div>;
 }

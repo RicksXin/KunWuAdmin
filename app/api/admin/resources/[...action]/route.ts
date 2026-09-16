@@ -4,7 +4,7 @@ import { z } from "zod";
 import { resources,reply,failure,jsonBody,key,token,adminOrigin,requestOrigin } from "@/server/http/resource-http";
 import { adjustSchema,ResourceError } from "@/server/services/resource-service";
 import { createSimulation,productionStatus,settle } from "@/server/domain/resources/settle";
-import { rulesSchema,simulationInputSchema } from "@/server/domain/resources/rules";
+import { rulesSchema,singleCycleRules,simulationInputSchema } from "@/server/domain/resources/rules";
 export const runtime="nodejs";
 type Context={params:Promise<{action:string[]}>};
 const configSchema=z.object({action:z.enum(["save","approve","publish"]),revision:z.number().int().positive(),rules:rulesSchema.optional(),reason:z.string().trim().min(2).max(500)}).strict();
@@ -24,7 +24,7 @@ export async function POST(request:Request,context:Context) {
     const actor=await resources.authenticate(token(request,"admin"),"admin");
     if(action.join("/")==="simulate") {
       const input=simulationInputSchema.parse(await jsonBody(request));
-      const config=await resources.configuration(actor);const rules=rulesSchema.parse(config.draft?.rules);
+      const config=await resources.configuration(actor);const rules=singleCycleRules(rulesSchema.parse(config.draft?.rules));
       const state=createSimulation(input,rules);
       const result=settle(state,input.durationSeconds*1000,rules);
       if(!result.complete)throw new ResourceError("SIMULATION_BUDGET",422);

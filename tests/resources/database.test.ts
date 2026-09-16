@@ -66,13 +66,17 @@ test("DB administrator stale balance is rejected; audit and ledger agree",async(
 });
 test("DB configuration approval is invalidated on save; release is immutable",async()=>{
   const f=await fixture();try {
-    const rules=structuredClone(baselineRules);rules.jobs[0].output="13";rules.catalog=structuredClone(baselineCatalog);rules.catalog[0].displayName="目录发布测试";
+    const rules=structuredClone(baselineRules);rules.recruitCosts=["10","20","30","40","50","60"];rules.catalog=structuredClone(baselineCatalog);rules.catalog[0].displayName="目录发布测试";
     await f.service.configure(f.admin,{action:"save",revision:1,rules,reason:"数值测试"});
     await assert.rejects(()=>f.service.configure(f.admin,{action:"publish",revision:2,reason:"未审核"}),/RELEASE_BLOCKED/);
     await f.service.configure(f.admin,{action:"approve",revision:2,reason:"测试审核"});
     await f.service.configure(f.admin,{action:"publish",revision:2,reason:"测试发布"});
     const config=await f.service.configuration(f.admin);assert.equal(config.releases.length,2);assert.deepEqual((config.releases[0].rules as typeof rules).catalog,rules.catalog);
     const snapshot=await execute(f,f.player,{type:"sync"});assert.equal((snapshot.body as unknown as {rulesSummary:typeof rules}).rulesSummary.catalog?.[0].displayName,"目录发布测试");
+    assert.deepEqual((snapshot.body as unknown as {rulesSummary:typeof rules}).rulesSummary.recruitCosts,rules.recruitCosts);
+    const recruited=await execute(f,f.player,{type:"recruit",expectedVersion:snapshot.snapshot.stateVersion});
+    assert.equal(recruited.snapshot.state.balances.spiritGrain,"110");
+    await assert.rejects(()=>f.service.configure(f.admin,{action:"save",revision:2,rules:{...rules,recruitCosts:["10","10","30","40","50","60"]},reason:"相邻费用相同"}),/严格高于/);
     await f.service.configure(f.admin,{action:"save",revision:2,rules,reason:"后续编辑"});
     await assert.rejects(()=>f.service.configure(f.admin,{action:"publish",revision:3,reason:"过期审核"}),/RELEASE_BLOCKED/);
   }finally{await f.pool.end();}
@@ -92,7 +96,7 @@ test("DB persistent continuation survives service restart and blocks competing w
     await assert.rejects(()=>f.service.execute(f.player,f.playerId,"other-sync-0001",{type:"sync"}),/PLAYER_BUSY/);
     const restarted=new ResourceService(f.pool,1);let result=first;
     for(let i=0;result.status===202;i++){assert.ok(i<20);result=await restarted.execute(f.player,f.playerId,key,{type:"sync"});}
-    assert.equal(result.status,200);assert.ok(BigInt((result.body as unknown as Snapshot).state.balances.spiritGrain)>=BigInt(168));
+    assert.equal(result.status,200);assert.ok(BigInt((result.body as unknown as Snapshot).state.balances.spiritGrain)>=BigInt(124));
   }finally{await f.pool.end();}
 });
 test("invalid amount returns validation failure, not BigInt exception",()=>{assert.equal(amountSchema.safeParse("abc").success,false);});

@@ -54,3 +54,6 @@
 .metadataFields { display: grid; gap: 10px; margin-top: 14px; }
 .historyRow { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
 .historyRow small { display: block; margin-top: 5px; color: var(--text-dim); overflow-wrap: anywhere; }
+
+.root .fieldError { color: #d58e7d; line-height: 1.6; }
+.root input[aria-invalid="true"] { border-color: var(--red); }

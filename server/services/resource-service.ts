@@ -1,7 +1,7 @@
 import { createHash, randomUUID } from "node:crypto";
 import type { Pool, PoolConnection, RowDataPacket } from "mysql2/promise";
 import { z } from "zod";
-import { amountSchema, assetCodes, baselineRules, rulesSchema, type ProductionRules } from "../domain/resources/rules";
+import { amountSchema, assetCodes, baselineRules, currentRulesSchema, rulesSchema, type ProductionRules } from "../domain/resources/rules";
 import { applyCommand, capacity, createFarm, emptyReport, settle, type Command, type FarmState, type Report } from "../domain/resources/settle";
 
 export type Actor = {id:string; kind:"player"|"admin"; environment:string; permissions:string[]};
@@ -144,13 +144,13 @@ export class ResourceService {
       if(!row||row.revision!==input.revision)throw new ResourceError("STATE_CONFLICT",409);
       const now=await atTime(c);
       if(input.action==="save") {
-        const rules=rulesSchema.parse(input.rules);
+        const rules=currentRulesSchema.parse(input.rules);
         await c.query("UPDATE resource_rule_draft SET rules=?,revision=revision+1,status='draft',approved_revision=NULL WHERE environment=?",[JSON.stringify(rules),actor.environment]);
       } else if(input.action==="approve") {
-        rulesSchema.parse(decode(row.rules));await c.query("UPDATE resource_rule_draft SET status='approved',approved_revision=revision WHERE environment=?",[actor.environment]);
+        currentRulesSchema.parse(decode(row.rules));await c.query("UPDATE resource_rule_draft SET status='approved',approved_revision=revision WHERE environment=?",[actor.environment]);
       } else {
         if(row.status!=="approved"||row.approved_revision!==row.revision)throw new ResourceError("RELEASE_BLOCKED",409);
-        const rules=rulesSchema.parse(decode(row.rules)); rules.releaseId=randomUUID();
+        const rules=currentRulesSchema.parse(decode(row.rules)); rules.releaseId=randomUUID();
         await c.query("INSERT INTO resource_rule_release (id,environment,effective_at,rules,hash,actor_id) VALUES (?,?,?,?,?,?)",[rules.releaseId,actor.environment,now,JSON.stringify(rules),hash(canonical(rules)),actor.id]);
         await c.query("UPDATE resource_rule_draft SET status='published' WHERE environment=?",[actor.environment]);
       }

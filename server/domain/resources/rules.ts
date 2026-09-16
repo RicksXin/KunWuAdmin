@@ -28,7 +28,7 @@ const jobSchema = z.object({
 }).strict();
 export const rulesSchema = z.object({
   catalog: catalogSchema.optional(),
-  schemaVersion: z.literal(2), releaseId: z.string().min(1).max(96),
+  schemaVersion: z.union([z.literal(2), z.literal(3)]), releaseId: z.string().min(1).max(96),
   initialWorkers: z.literal(6), maxWorkers: z.literal(12), offlinePolicy: z.literal("unbounded"),
   cyclesMs: z.tuple([z.literal(30000), z.literal(25000), z.literal(20000)]),
   recruitCosts: z.array(amountSchema).length(6), jobs: z.array(jobSchema).length(5),
@@ -48,8 +48,8 @@ export const rulesSchema = z.object({
     if(job.storage[0].upgradeWood!=="0")context.addIssue({code:"custom",message:"初始储量不收取升级费用"});
     if(wood&&job.storage.some((s,i)=>i>0&&BigInt(s.upgradeWood)>BigInt(wood.storage[job.code==="spiritWood"?i-1:4].capacity)))
       context.addIssue({code:"custom",message:"储量升级费用超过可达到的灵木容量"});
-    if (BigInt(job.output) === BigInt(0) || job.cycles !== (job.code === "gengJing" ? 2 : 1))
-      context.addIssue({ code: "custom", message: `${job.code} 产量或周期非法` });
+    if (rules.schemaVersion === 3 ? (job.output !== "1" || job.cycles !== 1) : (BigInt(job.output) === BigInt(0) || job.cycles !== (job.code === "gengJing" ? 2 : 1)))
+      context.addIssue({ code: "custom", message: `${job.code} 产量或周期非法；新规则要求每人每周期产出 1 个` });
     if (job.upkeep !== (job.code === "spiritGrain" ? "0" : "2"))
       context.addIssue({ code: "custom", message: "1.0 维护只能是灵粮 0 / 非粮 2" });
     if (job.storage.some((s, i) => BigInt(s.capacity) === BigInt(0) || (i > 0 && BigInt(s.capacity) <= BigInt(job.storage[i - 1].capacity))))
@@ -59,7 +59,7 @@ export const rulesSchema = z.object({
 export type ProductionRules = z.infer<typeof rulesSchema>;
 const storage = (capacities: number[], costs: number[]) => capacities.map((capacity, i) => ({ capacity: String(capacity), upgradeWood: String(costs[i]) }));
 // 1.0 后勤分册 §3 的独立基线；不覆盖 demo_d0，不冒充已发布配置。
-export const baselineRules: ProductionRules = rulesSchema.parse({
+export const legacyBaselineRules: ProductionRules = rulesSchema.parse({
   schemaVersion: 2, releaseId: "v1_0-production-baseline-20260915", initialWorkers: 6, maxWorkers: 12,
   offlinePolicy: "unbounded", cyclesMs: [30000, 25000, 20000], recruitCosts: [300,450,650,900,1200,1600].map(String),
   jobs: [
@@ -70,6 +70,21 @@ export const baselineRules: ProductionRules = rulesSchema.parse({
     { code: "gengJing", output: "1", cycles: 2, upkeep: "2", unlockMap: 3, storage: storage([20,50,120,300,700], [0,220,650,1900,5200]) },
   ],
 });
+// Keep v2 releases readable so historical earnings retain their original rules.
+export const currentRulesSchema = rulesSchema.refine(rules => rules.schemaVersion === 3, "请使用每人每周期产出 1 个的新规则").superRefine((rules, context) => {
+  rules.recruitCosts.forEach((cost, index) => {
+    if (!amountSchema.safeParse(cost).success) return;
+    const previous = rules.recruitCosts[index - 1];
+    if (BigInt(cost) === BigInt(0) || (index > 0 && amountSchema.safeParse(previous).success && BigInt(cost) <= BigInt(previous))) {
+      context.addIssue({code: "custom", path: ["recruitCosts", index], message: `第 ${rules.initialWorkers + index + 1} 人的招募费用须为正整数，且严格高于前一级`});
+    }
+  });
+});
+export function singleCycleRules(rules: ProductionRules): ProductionRules {
+  return rulesSchema.parse({...rules, schemaVersion: 3, jobs: rules.jobs.map(job => ({...job, output: "1", cycles: 1}))});
+}
+export const baselineRules = singleCycleRules({...legacyBaselineRules, releaseId: "single-cycle-production-20260916"});
+
 export const simulationInputSchema = z.object({
   workerProgress: z.array(z.object({
     progressPercent:z.number().int().min(0).max(99),gengParity:z.union([z.literal(0),z.literal(1)]),
