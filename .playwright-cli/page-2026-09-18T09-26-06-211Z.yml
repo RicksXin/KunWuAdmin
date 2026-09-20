@@ -1,0 +1,359 @@
+- generic [active] [ref=f1e1]:
+  - alert [ref=f1e66]
+  - generic [ref=f1e375]:
+    - banner [ref=f1e376]:
+      - generic [ref=f1e377]:
+        - generic [ref=f1e378]: 昆
+        - generic [ref=f1e379]:
+          - strong [ref=f1e380]: 昆吾司典
+          - generic [ref=f1e381]: KUNWU CONFIG CONSOLE
+      - generic [ref=f1e382]:
+        - generic [ref=f1e383]: 敌人
+        - strong [ref=f1e385]: 1.0 正式版
+        - generic [ref=f1e386]: 草稿 · R211
+      - generic [ref=f1e387]:
+        - button "管理身份已连接" [ref=f1e794]
+        - link "版本与发布" [ref=f1e389] [cursor=pointer]:
+          - /url: /config?configSet=v1_0
+        - generic [ref=f1e390]:
+          - generic [ref=f1e391]: 配置集
+          - combobox "配置集" [ref=f1e392]:
+            - option "D0 Demo · R5"
+            - option "1.0 正式版 · R211" [selected]
+        - button "刷新" [ref=f1e393] [cursor=pointer]
+        - button "用户" [ref=f1e399] [cursor=pointer]
+    - generic [ref=f1e404]:
+      - navigation "后台导航" [ref=f1e405]:
+        - generic [ref=f1e406]:
+          - link "剧情" [ref=f1e407] [cursor=pointer]:
+            - /url: /
+          - link "发布" [ref=f1e411] [cursor=pointer]:
+            - /url: /config?configSet=v1_0
+          - link "资源" [ref=f1e417] [cursor=pointer]:
+            - /url: /resources
+          - link "物品" [ref=f1e422] [cursor=pointer]:
+            - /url: /items?configSet=v1_0
+          - link "修士" [ref=f1e428] [cursor=pointer]:
+            - /url: /cultivators?configSet=v1_0
+          - link "技能" [ref=f1e435] [cursor=pointer]:
+            - /url: /skills?configSet=v1_0
+          - link "敌人" [ref=f1e446] [cursor=pointer]:
+            - /url: /enemies?configSet=v1_0
+          - link "地图" [ref=f1e453] [cursor=pointer]:
+            - /url: /maps?configSet=v1_0
+          - link "营地" [ref=f1e457] [cursor=pointer]:
+            - /url: /camp?configSet=v1_0
+      - complementary [ref=f1e463]:
+        - generic [ref=f1e465]:
+          - text: BUSINESS CONFIG
+          - heading "敌人" [level=2] [ref=f1e466]
+        - paragraph [ref=f1e471]: 敌人模板、基础属性与战斗机制；地图通过编组引用。
+        - navigation "敌人功能" [ref=f1e472]:
+          - button [ref=f1e473] [cursor=pointer]:
+            - strong [ref=f1e479]: 敌人模板与属性
+            - emphasis [ref=f1e480]: "38"
+        - paragraph [ref=f1e483]: 当前配置集：v1_0不同配置集完全隔离。
+      - main [ref=f1e484]:
+        - generic [ref=f1e485]:
+          - generic [ref=f1e486]:
+            - text: MYSQL DRAFT SOURCE
+            - heading "敌人" [level=1] [ref=f1e487]
+            - paragraph [ref=f1e488]: 敌人模板、基础属性与战斗机制；地图通过编组引用。
+          - generic [ref=f1e489]:
+            - generic [ref=f1e490]: SCHEMA
+            - generic [ref=f1e491]: v1
+            - generic [ref=f1e492]: Revision 211
+        - generic [ref=f1e493]:
+          - generic [ref=f1e495]:
+            - heading "敌人" [level=2] [ref=f1e496]
+            - paragraph [ref=f1e497]: 当前为已入库数据查看，尚未开放的编辑能力不会改变运行配置。
+          - paragraph [ref=f1e498]: 当前查看敌人属性和机制。敌人独立默认掉落尚未建成，已有遭遇奖励保留在地图页，不会自动改为每只敌人的掉落。
+          - generic [ref=f1e499]:
+            - generic [ref=f1e500]:
+              - heading "敌人" [level=3] [ref=f1e501]
+              - generic [ref=f1e502]: "38"
+              - generic [ref=f1e503]: 点击行查看设计
+            - table [ref=f1e505]:
+              - rowgroup [ref=f1e506]:
+                - row [ref=f1e507]:
+                  - columnheader "稳定 ID" [ref=f1e508]
+                  - columnheader "名称" [ref=f1e509]
+                  - columnheader "名称键" [ref=f1e510]
+                  - columnheader "类型" [ref=f1e511]
+                  - columnheader "生命" [ref=f1e512]
+                  - columnheader "状态" [ref=f1e513]
+              - rowgroup [ref=f1e514]:
+                - row [ref=f1e515] [cursor=pointer]:
+                  - cell "m1_rubble_rat" [ref=f1e516]
+                  - cell "噬灵鼠" [ref=f1e517]
+                  - cell "enemy.m1_rubble_rat.name" [ref=f1e518]
+                  - cell "normal" [ref=f1e519]
+                  - cell "420" [ref=f1e520]
+                  - cell "disabled" [ref=f1e521]
+                - row [ref=f1e522] [cursor=pointer]:
+                  - cell "m1_stone_wisp" [ref=f1e523]
+                  - cell "碎岩灵" [ref=f1e524]
+                  - cell "enemy.m1_stone_wisp.name" [ref=f1e525]
+                  - cell "normal" [ref=f1e526]
+                  - cell "650" [ref=f1e527]
+                  - cell "disabled" [ref=f1e528]
+                - row [ref=f1e529] [cursor=pointer]:
+                  - cell "m1_corpse_scout" [ref=f1e530]
+                  - cell "游荡尸兵" [ref=f1e531]
+                  - cell "enemy.m1_corpse_scout.name" [ref=f1e532]
+                  - cell "normal" [ref=f1e533]
+                  - cell "780" [ref=f1e534]
+                  - cell "disabled" [ref=f1e535]
+                - row [ref=f1e536] [cursor=pointer]:
+                  - cell "m1_array_glow" [ref=f1e537]
+                  - cell "残阵灵光" [ref=f1e538]
+                  - cell "enemy.m1_array_glow.name" [ref=f1e539]
+                  - cell "normal" [ref=f1e540]
+                  - cell "620" [ref=f1e541]
+                  - cell "disabled" [ref=f1e542]
+                - row [ref=f1e543] [cursor=pointer]:
+                  - cell "m1_stone_guard" [ref=f1e544]
+                  - cell "石甲守卫" [ref=f1e545]
+                  - cell "enemy.m1_stone_guard.name" [ref=f1e546]
+                  - cell "normal" [ref=f1e547]
+                  - cell "1200" [ref=f1e548]
+                  - cell "disabled" [ref=f1e549]
+                - row [ref=f1e550] [cursor=pointer]:
+                  - cell "e1_cracked_guard" [ref=f1e551]
+                  - cell "裂甲石卫" [ref=f1e552]
+                  - cell "enemy.e1_cracked_guard.name" [ref=f1e553]
+                  - cell "elite" [ref=f1e554]
+                  - cell "2600" [ref=f1e555]
+                  - cell "disabled" [ref=f1e556]
+                - row [ref=f1e557] [cursor=pointer]:
+                  - cell "e1_banner_corpse" [ref=f1e558]
+                  - cell "尸煞执旗者" [ref=f1e559]
+                  - cell "enemy.e1_banner_corpse.name" [ref=f1e560]
+                  - cell "elite" [ref=f1e561]
+                  - cell "2300" [ref=f1e562]
+                  - cell "disabled" [ref=f1e563]
+                - row [ref=f1e564] [cursor=pointer]:
+                  - cell "m2_jade_corpse" [ref=f1e565]
+                  - cell "白玉尸兵" [ref=f1e566]
+                  - cell "enemy.m2_jade_corpse.name" [ref=f1e567]
+                  - cell "normal" [ref=f1e568]
+                  - cell "1300" [ref=f1e569]
+                  - cell "disabled" [ref=f1e570]
+                - row [ref=f1e571] [cursor=pointer]:
+                  - cell "m2_vine" [ref=f1e572]
+                  - cell "缠魂藤" [ref=f1e573]
+                  - cell "enemy.m2_vine.name" [ref=f1e574]
+                  - cell "normal" [ref=f1e575]
+                  - cell "1100" [ref=f1e576]
+                  - cell "disabled" [ref=f1e577]
+                - row [ref=f1e578] [cursor=pointer]:
+                  - cell "m2_wood_sprite" [ref=f1e579]
+                  - cell "木魅幼体" [ref=f1e580]
+                  - cell "enemy.m2_wood_sprite.name" [ref=f1e581]
+                  - cell "normal" [ref=f1e582]
+                  - cell "1400" [ref=f1e583]
+                  - cell "disabled" [ref=f1e584]
+                - row [ref=f1e585] [cursor=pointer]:
+                  - cell "m2_array_serpent" [ref=f1e586]
+                  - cell "阵纹灵蛇" [ref=f1e587]
+                  - cell "enemy.m2_array_serpent.name" [ref=f1e588]
+                  - cell "normal" [ref=f1e589]
+                  - cell "1150" [ref=f1e590]
+                  - cell "disabled" [ref=f1e591]
+                - row [ref=f1e592] [cursor=pointer]:
+                  - cell "m2_spell_shadow" [ref=f1e593]
+                  - cell "残禁法影" [ref=f1e594]
+                  - cell "enemy.m2_spell_shadow.name" [ref=f1e595]
+                  - cell "normal" [ref=f1e596]
+                  - cell "1250" [ref=f1e597]
+                  - cell "disabled" [ref=f1e598]
+                - row [ref=f1e599] [cursor=pointer]:
+                  - cell "e2_reviving_guard" [ref=f1e600]
+                  - cell "复生尸卫" [ref=f1e601]
+                  - cell "enemy.e2_reviving_guard.name" [ref=f1e602]
+                  - cell "elite" [ref=f1e603]
+                  - cell "4200" [ref=f1e604]
+                  - cell "disabled" [ref=f1e605]
+                - row [ref=f1e606] [cursor=pointer]:
+                  - cell "e2_mana_devourer" [ref=f1e607]
+                  - cell "噬法木魅" [ref=f1e608]
+                  - cell "enemy.e2_mana_devourer.name" [ref=f1e609]
+                  - cell "elite" [ref=f1e610]
+                  - cell "3800" [ref=f1e611]
+                  - cell "disabled" [ref=f1e612]
+                - row [ref=f1e613] [cursor=pointer]:
+                  - cell "e2_four_symbols" [ref=f1e614]
+                  - cell "四象阵灵" [ref=f1e615]
+                  - cell "enemy.e2_four_symbols.name" [ref=f1e616]
+                  - cell "elite" [ref=f1e617]
+                  - cell "4800" [ref=f1e618]
+                  - cell "disabled" [ref=f1e619]
+                - row [ref=f1e620] [cursor=pointer]:
+                  - cell "m3_broken_blade" [ref=f1e621]
+                  - cell "断刃器灵" [ref=f1e622]
+                  - cell "enemy.m3_broken_blade.name" [ref=f1e623]
+                  - cell "normal" [ref=f1e624]
+                  - cell "2200" [ref=f1e625]
+                  - cell "disabled" [ref=f1e626]
+                - row [ref=f1e627] [cursor=pointer]:
+                  - cell "m3_bronze_puppet" [ref=f1e628]
+                  - cell "铸灵铜傀" [ref=f1e629]
+                  - cell "enemy.m3_bronze_puppet.name" [ref=f1e630]
+                  - cell "normal" [ref=f1e631]
+                  - cell "3200" [ref=f1e632]
+                  - cell "disabled" [ref=f1e633]
+                - row [ref=f1e634] [cursor=pointer]:
+                  - cell "m3_treasure_rogue" [ref=f1e635]
+                  - cell "夺宝散修" [ref=f1e636]
+                  - cell "enemy.m3_treasure_rogue.name" [ref=f1e637]
+                  - cell "normal" [ref=f1e638]
+                  - cell "2500" [ref=f1e639]
+                  - cell "disabled" [ref=f1e640]
+                - row [ref=f1e641] [cursor=pointer]:
+                  - cell "m3_ghost_soldier" [ref=f1e642]
+                  - cell "阴罗宗鬼卒" [ref=f1e643]
+                  - cell "enemy.m3_ghost_soldier.name" [ref=f1e644]
+                  - cell "normal" [ref=f1e645]
+                  - cell "2700" [ref=f1e646]
+                  - cell "disabled" [ref=f1e647]
+                - row [ref=f1e648] [cursor=pointer]:
+                  - cell "m3_gold_eater" [ref=f1e649]
+                  - cell "吞金兽" [ref=f1e650]
+                  - cell "enemy.m3_gold_eater.name" [ref=f1e651]
+                  - cell "normal" [ref=f1e652]
+                  - cell "3800" [ref=f1e653]
+                  - cell "disabled" [ref=f1e654]
+                - row [ref=f1e655] [cursor=pointer]:
+                  - cell "e3_treasure_guard" [ref=f1e656]
+                  - cell "灵宝阁守卫" [ref=f1e657]
+                  - cell "enemy.e3_treasure_guard.name" [ref=f1e658]
+                  - cell "elite" [ref=f1e659]
+                  - cell "7600" [ref=f1e660]
+                  - cell "disabled" [ref=f1e661]
+                - row [ref=f1e662] [cursor=pointer]:
+                  - cell "e3_elder_soul" [ref=f1e663]
+                  - cell "阴罗宗长老分魂" [ref=f1e664]
+                  - cell "enemy.e3_elder_soul.name" [ref=f1e665]
+                  - cell "elite" [ref=f1e666]
+                  - cell "6500" [ref=f1e667]
+                  - cell "disabled" [ref=f1e668]
+                - row [ref=f1e669] [cursor=pointer]:
+                  - cell "e3_unstable_sword" [ref=f1e670]
+                  - cell "失控剑灵" [ref=f1e671]
+                  - cell "enemy.e3_unstable_sword.name" [ref=f1e672]
+                  - cell "elite" [ref=f1e673]
+                  - cell "6200" [ref=f1e674]
+                  - cell "disabled" [ref=f1e675]
+                - row [ref=f1e676] [cursor=pointer]:
+                  - cell "e3_furnace_golem" [ref=f1e677]
+                  - cell "熔炉石傀" [ref=f1e678]
+                  - cell "enemy.e3_furnace_golem.name" [ref=f1e679]
+                  - cell "elite" [ref=f1e680]
+                  - cell "9000" [ref=f1e681]
+                  - cell "disabled" [ref=f1e682]
+                - row [ref=f1e683] [cursor=pointer]:
+                  - cell "m4_silver_corpse" [ref=f1e684]
+                  - cell "银甲尸" [ref=f1e685]
+                  - cell "enemy.m4_silver_corpse.name" [ref=f1e686]
+                  - cell "normal" [ref=f1e687]
+                  - cell "4200" [ref=f1e688]
+                  - cell "disabled" [ref=f1e689]
+                - row [ref=f1e690] [cursor=pointer]:
+                  - cell "m4_chain_spirit" [ref=f1e691]
+                  - cell "封链魔灵" [ref=f1e692]
+                  - cell "enemy.m4_chain_spirit.name" [ref=f1e693]
+                  - cell "normal" [ref=f1e694]
+                  - cell "3500" [ref=f1e695]
+                  - cell "disabled" [ref=f1e696]
+                - row [ref=f1e697] [cursor=pointer]:
+                  - cell "m4_soul_shadow" [ref=f1e698]
+                  - cell "摄魂残影" [ref=f1e699]
+                  - cell "enemy.m4_soul_shadow.name" [ref=f1e700]
+                  - cell "normal" [ref=f1e701]
+                  - cell "3200" [ref=f1e702]
+                  - cell "disabled" [ref=f1e703]
+                - row [ref=f1e704] [cursor=pointer]:
+                  - cell "m4_demon_beast" [ref=f1e705]
+                  - cell "魔化石兽" [ref=f1e706]
+                  - cell "enemy.m4_demon_beast.name" [ref=f1e707]
+                  - cell "normal" [ref=f1e708]
+                  - cell "5200" [ref=f1e709]
+                  - cell "disabled" [ref=f1e710]
+                - row [ref=f1e711] [cursor=pointer]:
+                  - cell "m4_rift_form" [ref=f1e712]
+                  - cell "裂隙化形" [ref=f1e713]
+                  - cell "enemy.m4_rift_form.name" [ref=f1e714]
+                  - cell "normal" [ref=f1e715]
+                  - cell "3800" [ref=f1e716]
+                  - cell "disabled" [ref=f1e717]
+                - row [ref=f1e718] [cursor=pointer]:
+                  - cell "e4_golden_guard" [ref=f1e719]
+                  - cell "金身尸卫" [ref=f1e720]
+                  - cell "enemy.e4_golden_guard.name" [ref=f1e721]
+                  - cell "elite" [ref=f1e722]
+                  - cell "10000" [ref=f1e723]
+                  - cell "disabled" [ref=f1e724]
+                - row [ref=f1e725] [cursor=pointer]:
+                  - cell "e4_blackwind_shadow" [ref=f1e726]
+                  - cell "黑风旗影" [ref=f1e727]
+                  - cell "enemy.e4_blackwind_shadow.name" [ref=f1e728]
+                  - cell "elite" [ref=f1e729]
+                  - cell "8500" [ref=f1e730]
+                  - cell "disabled" [ref=f1e731]
+                - row [ref=f1e732] [cursor=pointer]:
+                  - cell "e4_parasite" [ref=f1e733]
+                  - cell "魔气寄生体" [ref=f1e734]
+                  - cell "enemy.e4_parasite.name" [ref=f1e735]
+                  - cell "elite" [ref=f1e736]
+                  - cell "9000" [ref=f1e737]
+                  - cell "disabled" [ref=f1e738]
+                - row [ref=f1e739] [cursor=pointer]:
+                  - cell "e4_jailer" [ref=f1e740]
+                  - cell "镇塔狱卒" [ref=f1e741]
+                  - cell "enemy.e4_jailer.name" [ref=f1e742]
+                  - cell "elite" [ref=f1e743]
+                  - cell "11500" [ref=f1e744]
+                  - cell "disabled" [ref=f1e745]
+                - row [ref=f1e746] [cursor=pointer]:
+                  - cell "e4_silver_feather" [ref=f1e747]
+                  - cell "银翅残羽" [ref=f1e748]
+                  - cell "enemy.e4_silver_feather.name" [ref=f1e749]
+                  - cell "elite" [ref=f1e750]
+                  - cell "8000" [ref=f1e751]
+                  - cell "disabled" [ref=f1e752]
+                - row [ref=f1e753] [cursor=pointer]:
+                  - cell "b1_gate_stone" [ref=f1e754]
+                  - cell "守门石灵" [ref=f1e755]
+                  - cell "enemy.b1_gate_stone.name" [ref=f1e756]
+                  - cell "boss" [ref=f1e757]
+                  - cell "6500" [ref=f1e758]
+                  - cell "disabled" [ref=f1e759]
+                - row [ref=f1e760] [cursor=pointer]:
+                  - cell "b2_corpse_general" [ref=f1e761]
+                  - cell "封坛尸将" [ref=f1e762]
+                  - cell "enemy.b2_corpse_general.name" [ref=f1e763]
+                  - cell "boss" [ref=f1e764]
+                  - cell "12000" [ref=f1e765]
+                  - cell "disabled" [ref=f1e766]
+                - row [ref=f1e767] [cursor=pointer]:
+                  - cell "b3_four_arm_puppet" [ref=f1e768]
+                  - cell "四臂铸灵傀" [ref=f1e769]
+                  - cell "enemy.b3_four_arm_puppet.name" [ref=f1e770]
+                  - cell "boss" [ref=f1e771]
+                  - cell "26000" [ref=f1e772]
+                  - cell "disabled" [ref=f1e773]
+                - row [ref=f1e774] [cursor=pointer]:
+                  - cell "b4_silver_wing_avatar" [ref=f1e775]
+                  - cell "银翅夜叉·尸煞化身" [ref=f1e776]
+                  - cell "enemy.b4_silver_wing_avatar.name" [ref=f1e777]
+                  - cell "boss" [ref=f1e778]
+                  - cell "45000" [ref=f1e779]
+                  - cell "disabled" [ref=f1e780]
+    - contentinfo [ref=f1e781]:
+      - generic [ref=f1e782]: MySQL 8.4 · v1_0
+      - paragraph [ref=f1e787]: 1.0 正式版 · 修订 211 · 数据来自 MySQL
+      - generic [ref=f1e790]:
+        - generic [ref=f1e791]: "5"
+        - text: 配置域
+        - generic [ref=f1e793]: "0"
+        - text: 项冲突

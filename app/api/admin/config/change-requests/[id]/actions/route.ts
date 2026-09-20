@@ -1,3 +1,4 @@
+import { requireConfigAdmin } from "@/server/http/config-auth";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { configErrorResponse, requestIdFor } from "@/server/http/config-errors";
@@ -20,6 +21,7 @@ const actionSchema = z.discriminatedUnion("action", [
 export async function POST(request: Request, context: RouteContext) {
   const requestId = requestIdFor(request);
   try {
+    await requireConfigAdmin(request,"release.review");
     const id = z.string().uuid().parse((await context.params).id);
     const body = actionSchema.parse(await request.json());
     const result = body.action === "submit"

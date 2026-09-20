@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { configErrorResponse, errorResponse, requestIdFor } from "@/server/http/config-errors";
 import { getSkill, skillUpdateSchema, updateSkill } from "@/server/services/config-skill";
+import { requireConfigAdmin } from "@/server/http/config-auth";
 
 export const dynamic = "force-dynamic";
 
@@ -13,6 +14,7 @@ export async function GET(request: Request, context: RouteContext) {
   const configSet = configSetSchema.safeParse(new URL(request.url).searchParams.get("configSet") ?? "demo_d0");
   if (!configSet.success) return errorResponse("INVALID_REQUEST", "配置集参数无效", requestId, 400);
   try {
+    await requireConfigAdmin(request);
     const { code } = await context.params;
     return NextResponse.json(await getSkill(configSet.data, code), { headers: { "x-request-id": requestId } });
   } catch (error) {
@@ -25,9 +27,10 @@ export async function PUT(request: Request, context: RouteContext) {
   const configSet = configSetSchema.safeParse(new URL(request.url).searchParams.get("configSet") ?? "demo_d0");
   if (!configSet.success) return errorResponse("INVALID_REQUEST", "配置集参数无效", requestId, 400);
   try {
+    const actor=await requireConfigAdmin(request,"config.write");
     const body = skillUpdateSchema.parse(await request.json());
     const { code } = await context.params;
-    return NextResponse.json(await updateSkill(configSet.data, code, body, requestId), { headers: { "x-request-id": requestId } });
+    return NextResponse.json(await updateSkill(configSet.data, code, body, requestId,actor.id), { headers: { "x-request-id": requestId } });
   } catch (error) {
     return configErrorResponse(error, requestId, "技能保存失败");
   }

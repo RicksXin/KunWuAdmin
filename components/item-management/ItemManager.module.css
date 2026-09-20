@@ -1,0 +1,15 @@
+.toolbar { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.toolbar input { flex:1; }
+.toolbar select { width:auto; }
+.toolbar a { color:var(--gold-bright); font-size:12px; }
+.overlay { position:fixed; inset:0; z-index:50; background:#0009; display:flex; justify-content:flex-end; }
+.drawer { width:min(600px,100%); overflow:auto; background:var(--panel); border-left:1px solid var(--line-strong); padding:28px; box-shadow:-20px 0 70px #0005; }
+.drawer h2 { margin-top:0; }
+.drawer form { display:grid; gap:16px; }
+.drawer fieldset { margin:0; }
+.drawer small { color:var(--text-dim); }
+.cost { display:grid; grid-template-columns:95px 1fr 85px 54px; gap:8px; align-items:center; }
+.empty { padding:48px 12px; text-align:center; }
+.swatch { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:8px; }
+.error { color:#df9d8c !important; white-space:pre-wrap; }
+.code { display:block; font-size:11px; color:var(--text-dim); margin-top:5px; }

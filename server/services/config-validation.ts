@@ -1,4 +1,14 @@
+import {hydrateMap01Loop} from './map01-loop';
+import {gameParameters} from '@/db/schema';
+import {enemyRuntimeSchema,enemySkillRuntimeSchema} from "@/server/domain/encounters/runtime";
 import "server-only";
+import { readCultivators } from "./cultivator-config";
+import { validateCultivators } from "@/server/domain/cultivators/config";
+import { readItemCatalog } from "./item-config";
+import { validateCatalog } from "@/server/domain/items/config";
+import { skillTargets, skillDefinitionSchema, validateSkillReferences, type SkillDefinition } from "@/server/domain/skills/config";
+import { readProductionSource } from "./config-production";
+import { onboardingSchema } from "@/server/domain/onboarding/config";
 
 import { and, desc, eq, inArray } from "drizzle-orm";
 import { v7 as uuidv7 } from "uuid";
@@ -41,7 +51,7 @@ export type ConfigIssue = {
 
 const attributes = new Set(["strength", "magic", "technique", "speed", "constitution", "armor", "resistance"]);
 const damageKinds = new Set(["physical", "magical", "none"]);
-const targetTypes = new Set(["SELF", "ALLY_ALL", "ALLY_LOWEST_HP", "ENEMY_SINGLE", "ENEMY_ALL", "ENEMY_LOWEST_HP", "ENEMY_RANDOM_MULTI"]);
+const targetTypes = new Set<string>(skillTargets);
 
 export async function runConfigValidation(configSetCode: string) {
   return database.transaction(async (tx) => {
@@ -64,6 +74,16 @@ export async function runConfigValidation(configSetCode: string) {
 
     const issues: ConfigIssue[] = [];
     const add = (issue: ConfigIssue) => issues.push(issue);
+    const [loopParameter]=await tx.select().from(gameParameters).where(and(eq(gameParameters.configSetId,configSet.id),eq(gameParameters.code,'map01_loop')));
+    if(loopParameter?.status==='active')try{await hydrateMap01Loop(tx,configSet.id,loopParameter.jsonValue);}catch(error){add(issue('error','combat','game_parameter','map01_loop','jsonValue','MAP01_LOOP_NOT_READY',error instanceof Error?error.message:'地图1运行包无效'));}
+
+    let productionSource:Awaited<ReturnType<typeof readProductionSource>>=null;
+    try {productionSource=await readProductionSource(tx,configSet.id);}catch(error){add(issue("error","economy","production_source","default","source","PRODUCTION_SOURCE_INVALID",error instanceof Error?error.message:"生产来源无效"));}
+
+    const cultivators = await readCultivators(tx,configSet.id);
+    for(const message of validateCultivators(cultivators,true)) add(issue("error","progression","cultivator","catalog","references","CULTIVATOR_INVALID",message));
+    const itemCatalog = await readItemCatalog(tx, configSet.id);
+    for (const message of validateCatalog(itemCatalog)) add(issue("error", "economy", "item_config", "catalog", "references", "ITEM_REFERENCE_INVALID", message));
 
     const realmRows = await tx.select({
       code: realms.code, orderIndex: realms.orderIndex, minLevel: realms.minLevel, maxLevel: realms.maxLevel,
@@ -90,8 +110,18 @@ export async function runConfigValidation(configSetCode: string) {
       baseIntervalTicks: skills.baseIntervalTicks, castTicks: skills.castTicks, cooldownTicks: skills.cooldownTicks,
       primaryAttribute: skills.primaryAttribute, primaryPercent: skills.primaryPercent,
       secondaryAttribute: skills.secondaryAttribute, secondaryPercent: skills.secondaryPercent,
+      enemyRuntime:skills.enemyRuntime,mechanics:skills.mechanics,ignoreTaunt:skills.ignoreTaunt,nameKey:skills.nameKey,
     }).from(skills).where(and(eq(skills.configSetId, configSet.id), eq(skills.status, "active"))).orderBy(skills.code);
+    const typedSkills:SkillDefinition[]=[];
     skillRows.forEach((skill) => {
+      if(skill.enemyRuntime&&!enemySkillRuntimeSchema.safeParse(skill.enemyRuntime).success)add(issue("error","combat","skill",skill.code,"enemyRuntime","ENEMY_SKILL_RUNTIME_INVALID","敌人技能执行参数不合法"));
+      if(skill.mechanics){
+        const {nameKey,enemyRuntime: _enemyRuntime,...data}=skill;
+        void _enemyRuntime;
+        const result=skillDefinitionSchema.safeParse({...data,name:nameKey});
+        if(!result.success)add(issue("error","combat","skill",skill.code,"mechanics","SKILL_MECHANICS_INVALID",result.error.issues.map(i=>i.message).join("；")));
+        else typedSkills.push(result.data);
+      }
       if (!damageKinds.has(skill.damageKind)) add(issue("error", "combat", "skill", skill.code, "damageKind", "SKILL_DAMAGE_KIND_INVALID", "技能伤害类型不合法", { value: skill.damageKind }));
       if (!targetTypes.has(skill.targetType)) add(issue("error", "combat", "skill", skill.code, "targetType", "SKILL_TARGET_INVALID", "技能目标类型不合法", { value: skill.targetType }));
       if (skill.baseIntervalTicks <= 0 || skill.castTicks < 0 || skill.cooldownTicks < 0) add(issue("error", "combat", "skill", skill.code, "ticks", "SKILL_TICKS_INVALID", "技能 Tick 必须处于合法范围", skill));
@@ -100,8 +130,15 @@ export async function runConfigValidation(configSetCode: string) {
       if (skill.damageKind !== "none" && (!skill.primaryAttribute || skill.primaryPercent <= 0)) add(issue("error", "combat", "skill", skill.code, "primaryPercent", "SKILL_DAMAGE_MULTIPLIER_MISSING", "伤害技能必须配置主属性正倍率", skill));
       if ((!skill.secondaryAttribute && skill.secondaryPercent !== 0) || (skill.secondaryAttribute && skill.secondaryPercent <= 0)) add(issue("error", "combat", "skill", skill.code, "secondaryPercent", "SKILL_SECONDARY_MULTIPLIER_INVALID", "技能副属性与副倍率必须同时配置", skill));
     });
+    for(const message of validateSkillReferences(typedSkills))add(issue("error","combat","skill",null,"mechanics","SKILL_EFFECT_REFERENCE_INVALID",message));
 
-    const encounterRows = await tx.select({ code: encounters.code, id: encounters.id })
+    if(configSet.code==="v1_0")for(const career of cultivators.careers.filter(c=>c.status==="active"))for(const slot of career.skills){
+      const skill=skillRows.find(s=>s.code===slot.code);
+      if(!skill?.mechanics)add(issue("error","combat","skill",slot.code,"mechanics","SKILL_MECHANICS_MISSING",`${career.code} 引用的新版技能缺少效果配置`));
+      else if(career.tier===2&&!skill.mechanics.mastery)add(issue("error","combat","skill",slot.code,"mechanics.mastery","SKILL_MASTERY_MISSING",`${career.code} 的结丹技能缺少精通配置`));
+    }
+
+    const encounterRows = await tx.select({ code: encounters.code, id: encounters.id, design:encounters.design })
       .from(encounters).where(and(eq(encounters.configSetId, configSet.id), eq(encounters.status, "active"))).orderBy(encounters.code);
     const encounterMemberRows = encounterRows.length ? await tx.select({
       encounterId: encounterMembers.encounterId, quantity: encounterMembers.quantity,
@@ -109,6 +146,7 @@ export async function runConfigValidation(configSetCode: string) {
     const membersByEncounter = new Map<string, number>();
     encounterMemberRows.forEach((member) => membersByEncounter.set(member.encounterId, (membersByEncounter.get(member.encounterId) ?? 0) + (member.quantity > 0 ? member.quantity : 0)));
     encounterRows.forEach((encounter) => {
+      if(encounter.design?.implementationStatus==="design_only")add(issue("error","combat","encounter",encounter.code,"design","BATTLE_DESIGN_NOT_READY","设计草稿不能作为可执行遭遇启用"));
       if ((membersByEncounter.get(encounter.id) ?? 0) < 1) add(issue("error", "combat", "encounter", encounter.code, "members", "ENCOUNTER_HAS_NO_ENEMY", "启用的遭遇至少需要一个敌人"));
     });
 
@@ -147,7 +185,7 @@ export async function runConfigValidation(configSetCode: string) {
       tx.select({ code: gameAssets.code }).from(gameAssets).where(and(eq(gameAssets.configSetId, configSet.id), eq(gameAssets.status, "active"))),
       tx.select({ code: careers.code }).from(careers).where(and(eq(careers.configSetId, configSet.id), eq(careers.status, "active"))),
       tx.select({ code: heroTemplates.code }).from(heroTemplates).where(and(eq(heroTemplates.configSetId, configSet.id), eq(heroTemplates.status, "active"))),
-      tx.select({ code: enemies.code }).from(enemies).where(and(eq(enemies.configSetId, configSet.id), eq(enemies.status, "active"))),
+      tx.select({ code: enemies.code, design:enemies.design,runtime:enemies.runtime }).from(enemies).where(and(eq(enemies.configSetId, configSet.id), eq(enemies.status, "active"))),
       tx.select({ code: buildings.code }).from(buildings).where(and(eq(buildings.configSetId, configSet.id), eq(buildings.status, "active"))),
       tx.select({ code: productionRules.code }).from(productionRules).where(eq(productionRules.configSetId, configSet.id)),
       tx.select({ code: expeditionRules.code }).from(expeditionRules).where(eq(expeditionRules.configSetId, configSet.id)),
@@ -157,9 +195,23 @@ export async function runConfigValidation(configSetCode: string) {
       assets: new Set(assetRows.map((row) => row.code)), careers: new Set(careerRows.map((row) => row.code)),
       roots: new Set(rootRows.map((row) => row.code)), realms: new Set(realmRows.map((row) => row.code)),
       heroes: new Set(heroRows.map((row) => row.code)), skills: new Set(skillRows.map((row) => row.code)),
-      buildings: new Set(buildingRows.map((row) => row.code)), jobs: new Set(jobRows.map((row) => row.code)),
+      buildings: new Set(buildingRows.map((row) => row.code)), jobs: new Set(productionSource?productionSource.rules.jobs.map(j=>j.code):jobRows.map((row) => row.code)),
     };
+    for(const enemy of enemyRows)if(enemy.design?.implementationStatus==="design_only")add(issue("error","combat","enemy",enemy.code,"design","BATTLE_DESIGN_NOT_READY","设计草稿不能作为可执行敌人启用"));
+    for(const enemy of enemyRows)if(enemy.runtime&&!enemyRuntimeSchema.safeParse(enemy.runtime).success)add(issue("error","combat","enemy",enemy.code,"runtime","ENEMY_RUNTIME_INVALID","敌人被动与阶段参数不合法"));
     presetRows.forEach((preset) => validatePreset(preset.code, preset.payload, references, add));
+    if(productionSource){
+      if(productionRuleRows.length||jobRows.length)add(issue("error","economy","production_source","default","source","PRODUCTION_DUPLICATE_SOURCE","不能同时维护资源服务与旧生产表两套规则"));
+      for(const job of productionSource.rules.jobs)if(!references.assets.has(job.code))add(issue("error","economy","production_source",job.code,"asset","PRODUCTION_ASSET_MISSING",`缺少生产资源定义：${job.code}`));
+    }
+    for(const preset of presetRows){
+      const payload=asRecord(preset.payload);
+      if(configSet.code==="v1_0"){
+        const parsed=onboardingSchema.safeParse(payload.onboarding);
+        const camp=asRecord(payload.camp),levels=asRecord(camp.buildingLevels);
+        if(!parsed.success||levels.yi_shi_dian!==1||Object.entries(levels).some(([code,value])=>code!=="yi_shi_dian"&&value!==0)||camp.farm!==null||Object.keys(asRecord(camp.workerAssignments)).length)add(issue("error","progression","new_player_preset",preset.code,"camp","NEW_PLAYER_UNLOCK_INVALID","新档只能开启议事殿；灵源院须由P0-01对话解锁，解锁前无农场和岗位分配"));
+      }
+    }
 
     const missingCollections = [
       ["base", "game_asset", assetRows.length],
@@ -172,12 +224,20 @@ export async function runConfigValidation(configSetCode: string) {
       ["combat", "enemy", enemyRows.length],
       ["combat", "encounter", encounterRows.length],
       ["economy", "building", buildingRows.length],
-      ["economy", "production_rule", productionRuleRows.length],
-      ["economy", "production_job", jobRows.length],
+      ["economy", "production_rule", productionSource?1:productionRuleRows.length],
+      ["economy", "production_job", productionSource?productionSource.rules.jobs.length:jobRows.length],
       ["expedition", "expedition_rule", expeditionRuleRows.length],
       ["maps", "map_definition", mapRows.length],
     ] as const;
+    const [enemyDesigns,encounterDesigns]=await Promise.all([
+      tx.select({design:enemies.design}).from(enemies).where(eq(enemies.configSetId,configSet.id)),
+      tx.select({design:encounters.design}).from(encounters).where(eq(encounters.configSetId,configSet.id)),
+    ]);
+    const pendingDesignCounts={enemy:enemyDesigns.filter(e=>e.design?.implementationStatus==="design_only").length,encounter:encounterDesigns.filter(e=>e.design?.implementationStatus==="design_only").length};
     missingCollections.forEach(([moduleCode, entityType, size]) => {
+      if(size===0&&(entityType==="enemy"||entityType==="encounter")&&pendingDesignCounts[entityType]>0){
+        add(issue("error",moduleCode,"config_set",configSet.code,entityType,"BATTLE_DESIGN_PENDING",`${pendingDesignCounts[entityType]}条${entityType==="enemy"?"敌人":"遭遇"}设计已入库，执行配置尚未接通，暂无可发布条目`,{entityType,designCount:pendingDesignCounts[entityType]}));return;
+      }
       if (size === 0) add(issue("error", moduleCode, "config_set", configSet.code, entityType, "REQUIRED_COLLECTION_EMPTY", `发布所需配置集合为空：${entityType}`, { entityType }));
     });
 

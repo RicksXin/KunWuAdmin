@@ -1,6 +1,7 @@
 import "server-only";
+import {map01LoopSchema} from "@/server/domain/encounters/loop";
 
-import { and, count, desc, eq, inArray } from "drizzle-orm";
+import { and, count, desc, eq, inArray, isNull, isNotNull } from "drizzle-orm";
 import { z } from "zod";
 import {
   buildings,
@@ -30,6 +31,7 @@ import {
   statusEffects,
 } from "@/db/schema";
 import { database } from "@/server/db/client";
+import { readProductionSource } from "./config-production";
 
 export const configModuleSchema = z.enum(["base", "progression", "combat", "economy", "expedition"]);
 export type ConfigModuleCode = z.infer<typeof configModuleSchema>;
@@ -101,6 +103,9 @@ export async function getConfigOverview(configSetCode: string) {
     Promise.all(Object.entries(countPromises).map(async ([key, promise]) => [key, value(await promise)] as const)),
   ]);
   const counts = Object.fromEntries(countsEntries) as Record<keyof typeof countPromises, number>;
+  let productionReadError="";
+  try {const source=await readProductionSource(database,configSet.id);if(source){counts.productionRules=1;counts.productionJobs=source.rules.jobs.length;}}
+  catch(error){productionReadError=error instanceof Error?error.message:"生产来源读取失败";}
   const latestImport = latestImports[0] ?? null;
   const recentIssues = latestImport
     ? await database.select({
@@ -135,7 +140,7 @@ export async function getConfigOverview(configSetCode: string) {
       { code: "base", name: "基础资源", count: counts.i18n + counts.assets + counts.rewardPacks + counts.lootPools + counts.parameters, detail: `${counts.assets} 资源 · ${counts.i18n} 文本 · ${counts.rewardPacks} 奖励包 · ${counts.lootPools} 掉落池` },
       { code: "progression", name: "修士成长", count: counts.careers + counts.roots + counts.realms + counts.heroes + counts.presets, detail: `${counts.careers} 职业 · ${counts.roots} 灵根 · ${counts.realms} 境界 · ${counts.heroes} 修士` },
       { code: "combat", name: "技能战斗", count: counts.skills + counts.statuses + counts.enemies + counts.encounters + counts.combatParameters, detail: `${counts.skills} 技能 · ${counts.statuses} 状态 · ${counts.enemies} 敌人 · ${counts.encounters} 遭遇` },
-      { code: "economy", name: "营地经济", count: counts.buildings + counts.productionJobs + counts.productionRules, detail: `${counts.buildings} 建筑 · ${counts.productionJobs} 生产岗位` },
+      { code: "economy", name: "营地经济", count: counts.buildings + counts.productionJobs + counts.productionRules, detail: productionReadError || `${counts.buildings} 建筑 · ${counts.productionJobs} 生产岗位` },
       { code: "expedition", name: "出征地图", count: counts.expeditionRules + counts.maps + counts.objectPrototypes, detail: `${counts.maps} 地图 · ${counts.objectPrototypes} 对象原型` },
     ],
     recentIssues,
@@ -176,23 +181,32 @@ export async function listConfigModuleEntities(configSetCode: string, module: Co
     };
   }
   if (module === "combat") {
+    const [loopParameter]=await database.select({value:gameParameters.jsonValue}).from(gameParameters).where(and(eq(gameParameters.configSetId,setId),eq(gameParameters.code,"map01_loop")));
+    const parsedLoop=map01LoopSchema.safeParse(loopParameter?.value);
+    const loop=parsedLoop.success?parsedLoop.data:null;
     return {
       configSet: configSet.code,
       module,
       groups: [
-        { code: "skills", name: "技能", editable: true, rows: await database.select({ code: skills.code, nameKey: skills.nameKey, type: skills.damageKind, target: skills.targetType, interval: skills.baseIntervalTicks, cooldown: skills.cooldownTicks, status: skills.status, revision: skills.revision }).from(skills).where(eq(skills.configSetId, setId)).orderBy(skills.sortOrder) },
-        { code: "enemies", name: "敌人", rows: await database.select({ code: enemies.code, nameKey: enemies.nameKey, type: enemies.rank, hp: enemies.maxHp, status: enemies.status }).from(enemies).where(eq(enemies.configSetId, setId)).orderBy(enemies.sortOrder) },
-        { code: "encounters", name: "遭遇", rows: await database.select({ code: encounters.code, type: encounters.encounterType, escapePercent: encounters.escapeEnemyHpPercent, status: encounters.status }).from(encounters).where(eq(encounters.configSetId, setId)).orderBy(encounters.sortOrder) },
+        { code: "skills", name: "技能", editable: true, rows: await database.select({ code: skills.code, name: i18nTexts.text, nameKey: skills.nameKey, type: skills.damageKind, target: skills.targetType, interval: skills.baseIntervalTicks, cooldown: skills.cooldownTicks, status: skills.status, revision: skills.revision }).from(skills).leftJoin(i18nTexts, and(eq(i18nTexts.configSetId, skills.configSetId), eq(i18nTexts.code, skills.nameKey), eq(i18nTexts.locale, "zh-CN"))).where(and(eq(skills.configSetId, setId),isNull(skills.enemyRuntime))).orderBy(skills.sortOrder) },
+        ...(loop?[{code:"map01Bindings",name:"地图1遭遇绑定与奖励",rows:loop.combat.encounters.map(e=>({code:e.designCode??e.id,runtimeId:e.id,firstReward:e.firstSoulCrystalReward,repeatReward:e.repeatSoulCrystalReward,members:e.members.map(m=>`${m.enemyId} ×${m.quantity}`).join("、")}))},{code:"equipmentRuntime",name:"地图1装备模板（实例生成）",rows:loop.equipment.templates.map(t=>({code:t.code,name:t.name,slot:t.slot,baseStatBudget:t.baseStatBudget,runeSlots:t.runeSlots,allowedStats:t.allowedStats.join(" / ")}))},{code:"bossEquipmentRewards",name:"守门石灵首杀装备",rows:(loop.combat.encounters.find(e=>e.id==="m1_boss_gate_spirit")?.equipmentRewards??[]).map(r=>({code:r.qualityCode,name:loop.equipment.qualityNames[r.qualityCode]??r.qualityCode,quantity:r.quantity}))}]:[]),
+        { code: "enemySkills", name: "敌人技能（执行配置）", rows: await database.select({ code: skills.code, name: i18nTexts.text, nameKey: skills.nameKey, type: skills.damageKind, target: skills.targetType, interval: skills.baseIntervalTicks, cooldown: skills.cooldownTicks, status: skills.status, revision: skills.revision }).from(skills).leftJoin(i18nTexts, and(eq(i18nTexts.configSetId, skills.configSetId), eq(i18nTexts.code, skills.nameKey), eq(i18nTexts.locale, "zh-CN"))).where(and(eq(skills.configSetId, setId),isNotNull(skills.enemyRuntime))).orderBy(skills.sortOrder) },
+        { code: "enemies", name: "敌人", rows: await database.select({ code: enemies.code, name: i18nTexts.text, nameKey: enemies.nameKey, type: enemies.rank, hp: enemies.maxHp, status: enemies.status }).from(enemies).leftJoin(i18nTexts,and(eq(i18nTexts.configSetId,enemies.configSetId),eq(i18nTexts.code,enemies.nameKey),eq(i18nTexts.locale,"zh-CN"))).where(eq(enemies.configSetId, setId)).orderBy(enemies.sortOrder) },
+        { code: "encounters", name: "遭遇", rows: await database.select({ code: encounters.code, name: i18nTexts.text, type: encounters.encounterType, escapePercent: encounters.escapeEnemyHpPercent, status: encounters.status }).from(encounters).leftJoin(i18nTexts,and(eq(i18nTexts.configSetId,encounters.configSetId),eq(i18nTexts.code,encounters.nameKey),eq(i18nTexts.locale,"zh-CN"))).where(eq(encounters.configSetId, setId)).orderBy(encounters.sortOrder) },
       ],
     };
   }
   if (module === "economy") {
+    let source:Awaited<ReturnType<typeof readProductionSource>>=null,sourceError="";
+    try{source=await readProductionSource(database,setId);}catch(error){sourceError=error instanceof Error?error.message:"生产来源读取失败";}
     return {
       configSet: configSet.code,
       module,
       groups: [
+        ...(sourceError?[{code:"productionSourceError",name:"生产来源待同步",rows:[{code:"production_source",message:sourceError}]}]:[]),
+        ...(source?[{code:"productionSource",name:"生产规则（资源管理已发布版本）",rows:[{code:source.binding.releaseId,cycleSeconds:source.rules.cyclesMs.map(ms=>ms/1000).join(" / "),initialWorkers:source.rules.initialWorkers,maxWorkers:source.rules.maxWorkers,recruitCosts:source.rules.recruitCosts.join(" / "),source:"资源管理",status:"已发布来源"}]}]:[]),
         { code: "buildings", name: "建筑", rows: await database.select({ code: buildings.code, nameKey: buildings.nameKey, level: buildings.initialLevel, maxLevel: buildings.maxLevel, status: buildings.status }).from(buildings).where(eq(buildings.configSetId, setId)).orderBy(buildings.sortOrder) },
-        { code: "productionJobs", name: "生产岗位", rows: await database.select({ code: productionJobs.code, output: productionJobs.outputPerWorker, upkeep: productionJobs.upkeepPerWorker, shutdownPriority: productionJobs.shutdownPriority, status: productionJobs.status }).from(productionJobs).where(eq(productionJobs.configSetId, setId)).orderBy(productionJobs.sortOrder) },
+        { code: "productionJobs", name: "生产岗位", rows: source?source.rules.jobs.map(job=>({code:job.code,output:job.output,cycles:job.cycles,upkeep:job.upkeep,unlockMap:job.unlockMap,status:"已发布来源"})):await database.select({ code: productionJobs.code, output: productionJobs.outputPerWorker, upkeep: productionJobs.upkeepPerWorker, shutdownPriority: productionJobs.shutdownPriority, status: productionJobs.status }).from(productionJobs).where(eq(productionJobs.configSetId, setId)).orderBy(productionJobs.sortOrder) },
       ],
     };
   }

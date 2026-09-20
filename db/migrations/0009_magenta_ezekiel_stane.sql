@@ -1,0 +1,1 @@
+ALTER TABLE `crafting_recipe` ADD `outcomes` json;

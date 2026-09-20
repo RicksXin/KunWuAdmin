@@ -1,0 +1,1 @@
+ALTER TABLE `item_definition` ADD `is_market_sellable` boolean DEFAULT false NOT NULL;

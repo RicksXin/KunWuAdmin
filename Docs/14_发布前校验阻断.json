@@ -1,0 +1,72 @@
+{
+  "id": "01a0b3ad-35a2-770e-bab1-94d51e2c7a22",
+  "configSet": "v1_0",
+  "sourceRevision": 211,
+  "status": "failed",
+  "errorCount": 5,
+  "warningCount": 0,
+  "infoCount": 0,
+  "startedAt": "2026-09-18T08:41:08.259Z",
+  "finishedAt": "2026-09-18T08:41:08.414Z",
+  "issues": [
+    {
+      "severity": "error",
+      "moduleCode": "combat",
+      "entityType": "game_parameter",
+      "entityCode": "map01_loop",
+      "fieldPath": "jsonValue",
+      "ruleCode": "MAP01_LOOP_NOT_READY",
+      "message": "地图1敌人尚未启用，不能发布执行包"
+    },
+    {
+      "severity": "error",
+      "moduleCode": "combat",
+      "entityType": "config_set",
+      "entityCode": "v1_0",
+      "fieldPath": "enemy",
+      "ruleCode": "BATTLE_DESIGN_PENDING",
+      "message": "38条敌人设计已入库，执行配置尚未接通，暂无可发布条目",
+      "details": {
+        "entityType": "enemy",
+        "designCount": 38
+      }
+    },
+    {
+      "severity": "error",
+      "moduleCode": "combat",
+      "entityType": "config_set",
+      "entityCode": "v1_0",
+      "fieldPath": "encounter",
+      "ruleCode": "BATTLE_DESIGN_PENDING",
+      "message": "70条遭遇设计已入库，执行配置尚未接通，暂无可发布条目",
+      "details": {
+        "entityType": "encounter",
+        "designCount": 70
+      }
+    },
+    {
+      "severity": "error",
+      "moduleCode": "expedition",
+      "entityType": "config_set",
+      "entityCode": "v1_0",
+      "fieldPath": "expedition_rule",
+      "ruleCode": "REQUIRED_COLLECTION_EMPTY",
+      "message": "发布所需配置集合为空：expedition_rule",
+      "details": {
+        "entityType": "expedition_rule"
+      }
+    },
+    {
+      "severity": "error",
+      "moduleCode": "maps",
+      "entityType": "config_set",
+      "entityCode": "v1_0",
+      "fieldPath": "map_definition",
+      "ruleCode": "REQUIRED_COLLECTION_EMPTY",
+      "message": "发布所需配置集合为空：map_definition",
+      "details": {
+        "entityType": "map_definition"
+      }
+    }
+  ]
+}

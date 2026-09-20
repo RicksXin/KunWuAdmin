@@ -18,9 +18,9 @@ export async function POST(request:Request,context:Context) {
       const local=JSON.parse(await readFile(path.join(process.cwd(),".local/resource-development.json"),"utf8"));
       const actor=await resources.authenticate(local.adminToken,"admin");
       if(actor.environment!=="development")throw new ResourceError("FORBIDDEN",403);
-      const response=reply({ok:true});response.cookies.set("kw_resource_admin",local.adminToken,{httpOnly:true,sameSite:"strict",secure:url.protocol==="https:",path:"/api/admin/resources",maxAge:3600});return response;
+      const response=reply({ok:true});response.cookies.set("kw_resource_admin",local.adminToken,{httpOnly:true,sameSite:"strict",secure:url.protocol==="https:",path:"/api/admin/resources",maxAge:3600});response.cookies.set("kw_config_admin",local.adminToken,{httpOnly:true,sameSite:"strict",secure:url.protocol==="https:",path:"/api/admin",maxAge:3600});return response;
     }
-    if(action.join("/")==="logout") {const response=reply({ok:true});response.cookies.set("kw_resource_admin","",{path:"/api/admin/resources",maxAge:0});return response;}
+    if(action.join("/")==="logout") {const response=reply({ok:true});response.cookies.set("kw_resource_admin","",{path:"/api/admin/resources",maxAge:0});response.cookies.set("kw_config_admin","",{path:"/api/admin",maxAge:0});return response;}
     const actor=await resources.authenticate(token(request,"admin"),"admin");
     if(action.join("/")==="simulate") {
       const input=simulationInputSchema.parse(await jsonBody(request));

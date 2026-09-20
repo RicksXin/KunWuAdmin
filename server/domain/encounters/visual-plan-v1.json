@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "status": "planned",
+  "baseModelBudget": 6,
+  "families": [
+    {
+      "code": "beast",
+      "name": "灵兽",
+      "baseModel": "低伏四足兽",
+      "palette": "灰褐毛皮 → 暗金矿纹 → 黑紫魔纹"
+    },
+    {
+      "code": "construct",
+      "name": "石灵与傀儡",
+      "baseModel": "厚重人形构装体",
+      "palette": "灰岩 → 青铜 → 熔岩裂纹；核心共用发光插槽"
+    },
+    {
+      "code": "humanoid",
+      "name": "尸兵与人形",
+      "baseModel": "通用人形战士",
+      "palette": "布衣/甲片开关；肤色、甲色、尸气材质变体"
+    },
+    {
+      "code": "spirit",
+      "name": "阵灵与幽魂",
+      "baseModel": "悬浮灵体",
+      "palette": "同一灵核与拖尾网格；阵环、蛇形拖尾、虚影材质组合"
+    },
+    {
+      "code": "plant",
+      "name": "藤妖与寄生体",
+      "baseModel": "根须植物体",
+      "palette": "青绿 → 枯褐 → 黑紫；花冠与寄生核使用可开关部件"
+    },
+    {
+      "code": "weapon",
+      "name": "器灵与残羽",
+      "baseModel": "悬浮长条器物",
+      "palette": "同一低面数主体及漂浮动画；断刃、灵剑、银羽用轮廓贴片区分"
+    }
+  ],
+  "enemies": {
+    "m1_rubble_rat": {
+      "family": "beast",
+      "variant": "normal",
+      "appearance": "沿用基础模型，使用地图配色；保持清楚的攻击预警。"
+    },
+    "m3_gold_eater": {
+      "family": "beast",
+      "variant": "normal",
+      "appearance": "沿用基础模型，使用地图配色；保持清楚的攻击预警。"
+    },
+    "m4_demon_beast": {
+      "family": "beast",
+      "variant": "normal",
+      "appearance": "沿用基础模型，使用地图配色；保持清楚的攻击预警。"
+    },
+    "m1_stone_wisp": {
+      "family": "construct",
+      "variant": "normal",
+      "appearance": "沿用基础模型，使用地图配色；保持清楚的攻击预警。"
+    },
+    "m1_stone_guard": {
+      "family": "construct",
+      "variant": "normal",
+      "appearance": "沿用基础模型，使用地图配色；保持清楚的攻击预警。"
+    },
+    "e1_cracked_guard": {
+      "family": "construct",
+      "variant": "elite",
+      "appearance": "沿用基础模型，加局部发光符纹、精英标记和低密度粒子；无需新骨架。"
+    },
+    "m3_bronze_puppet": {
+      "family": "construct",
+      "variant": "normal",
+      "appearance": "沿用基础模型，使用地图配色；保持清楚的攻击预警。"
+    },
+    "e3_treasure_guard": {
+      "family": "construct",
+      "variant": "elite",
+      "appearance": "沿用基础模型，加局部发光符纹、精英标记和低密度粒子；无需新骨架。"
+    },
+    "e3_furnace_golem": {
+      "family": "construct",
+      "variant": "elite",
+      "appearance": "沿用基础模型，加局部发光符纹、精英标记和低密度粒子；无需新骨架。"
+    },
+    "b1_gate_stone": {
+      "family": "construct",
+      "variant": "boss",
+      "appearance": "构装体放大至1.4倍，石材、金身符纹与可显隐核心；复用砸地动作。"
+    },
+    "b3_four_arm_puppet": {
+      "family": "construct",
+      "variant": "boss",
+      "appearance": "构装体加可显隐的两条附加手臂，共四臂；四个命中区域必须独立辨认，需要额外绑定和阶段动作。"
+    },
+    "m1_corpse_scout": {
+      "family": "humanoid",
+      "variant": "normal",
+      "appearance": "沿用基础模型，使用地图配色；保持清楚的攻击预警。"
+    },
+    "e1_banner_corpse": {
+      "family": "humanoid",
+      "variant": "elite",
+      "appearance": "人形加魂旗静态挂件，增益使用共用光环。"
+    },
+    "m2_jade_corpse": {
+      "family": "humanoid",
+      "variant": "normal",
+      "appearance": "沿用基础模型，使用地图配色；保持清楚的攻击预警。"
+    },
+    "e2_reviving_guard": {
+      "family": "humanoid",
+      "variant": "elite",
+      "appearance": "沿用基础模型，加局部发光符纹、精英标记和低密度粒子；无需新骨架。"
+    },
+    "m3_treasure_rogue": {
+      "family": "humanoid",
+      "variant": "normal",
+      "appearance": "复用人形，关闭尸气与尸变皮肤，用布衣和持械姿态表达活人。"
+    },
+    "m4_silver_corpse": {
+      "family": "humanoid",
+      "variant": "normal",
+      "appearance": "沿用基础模型，使用地图配色；保持清楚的攻击预警。"
+    },
+    "e4_golden_guard": {
+      "family": "humanoid",
+      "variant": "elite",
+      "appearance": "沿用基础模型，加局部发光符纹、精英标记和低密度粒子；无需新骨架。"
+    },
+    "e4_jailer": {
+      "family": "humanoid",
+      "variant": "elite",
+      "appearance": "沿用基础模型，加局部发光符纹、精英标记和低密度粒子；无需新骨架。"
+    },
+    "b2_corpse_general": {
+      "family": "humanoid",
+      "variant": "boss",
+      "appearance": "人形战士加将领冠饰和魂旗；尸兵召唤复用同族，魂灯/旗为静态部件。"
+    },
+    "b4_silver_wing_avatar": {
+      "family": "humanoid",
+      "variant": "boss",
+      "appearance": "人形战士加银翼部件，飞行用悬浮和翼摆；地面/空中轮廓明确，残羽复用器灵族。"
+    },
+    "m1_array_glow": {
+      "family": "spirit",
+      "variant": "normal",
+      "appearance": "沿用基础模型，使用地图配色；保持清楚的攻击预警。"
+    },
+    "m2_array_serpent": {
+      "family": "spirit",
+      "variant": "normal",
+      "appearance": "灵体拖尾弯曲成蛇形，不制作独立蛇骨架。"
+    },
+    "m2_spell_shadow": {
+      "family": "spirit",
+      "variant": "normal",
+      "appearance": "沿用基础模型，使用地图配色；保持清楚的攻击预警。"
+    },
+    "e2_four_symbols": {
+      "family": "spirit",
+      "variant": "elite",
+      "appearance": "沿用基础模型，加局部发光符纹、精英标记和低密度粒子；无需新骨架。"
+    },
+    "m3_ghost_soldier": {
+      "family": "spirit",
+      "variant": "normal",
+      "appearance": "沿用基础模型，使用地图配色；保持清楚的攻击预警。"
+    },
+    "e3_elder_soul": {
+      "family": "spirit",
+      "variant": "elite",
+      "appearance": "沿用基础模型，加局部发光符纹、精英标记和低密度粒子；无需新骨架。"
+    },
+    "m4_chain_spirit": {
+      "family": "spirit",
+      "variant": "normal",
+      "appearance": "灵体加锁链贴片与束缚特效，不增加独立骨架。"
+    },
+    "m4_soul_shadow": {
+      "family": "spirit",
+      "variant": "normal",
+      "appearance": "沿用基础模型，使用地图配色；保持清楚的攻击预警。"
+    },
+    "m4_rift_form": {
+      "family": "spirit",
+      "variant": "normal",
+      "appearance": "沿用基础模型，使用地图配色；保持清楚的攻击预警。"
+    },
+    "e4_blackwind_shadow": {
+      "family": "spirit",
+      "variant": "elite",
+      "appearance": "沿用基础模型，加局部发光符纹、精英标记和低密度粒子；无需新骨架。"
+    },
+    "m2_vine": {
+      "family": "plant",
+      "variant": "normal",
+      "appearance": "沿用基础模型，使用地图配色；保持清楚的攻击预警。"
+    },
+    "m2_wood_sprite": {
+      "family": "plant",
+      "variant": "normal",
+      "appearance": "沿用基础模型，使用地图配色；保持清楚的攻击预警。"
+    },
+    "e2_mana_devourer": {
+      "family": "plant",
+      "variant": "elite",
+      "appearance": "沿用基础模型，加局部发光符纹、精英标记和低密度粒子；无需新骨架。"
+    },
+    "e4_parasite": {
+      "family": "plant",
+      "variant": "elite",
+      "appearance": "沿用基础模型，加局部发光符纹、精英标记和低密度粒子；无需新骨架。"
+    },
+    "m3_broken_blade": {
+      "family": "weapon",
+      "variant": "normal",
+      "appearance": "沿用基础模型，使用地图配色；保持清楚的攻击预警。"
+    },
+    "e3_unstable_sword": {
+      "family": "weapon",
+      "variant": "elite",
+      "appearance": "沿用基础模型，加局部发光符纹、精英标记和低密度粒子；无需新骨架。"
+    },
+    "e4_silver_feather": {
+      "family": "weapon",
+      "variant": "elite",
+      "appearance": "器灵主体换银羽轮廓贴片；复用悬浮与突刺动画。"
+    }
+  }
+}

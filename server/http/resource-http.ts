@@ -20,6 +20,7 @@ export async function jsonBody(request:Request) {
 export function key(request:Request) {const value=request.headers.get("idempotency-key");if(!value)throw new ResourceError("INVALID_REQUEST_ID",400);return value;}
 export function token(request:Request,kind:"player"|"admin") {
   const bearer=request.headers.get("authorization");if(bearer?.startsWith("Bearer "))return bearer.slice(7);
+  if(kind==="admin") { const configCookie=(request.headers.get("cookie")??"").split(";").map(s=>s.trim()).find(s=>s.startsWith("kw_config_admin=")); if(configCookie)return configCookie.slice("kw_config_admin=".length); }
   if(kind==="admin")return (request.headers.get("cookie")??"").split(";").map(s=>s.trim()).find(s=>s.startsWith("kw_resource_admin="))?.slice("kw_resource_admin=".length)??"";
   return "";
 }

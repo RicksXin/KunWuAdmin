@@ -1,3 +1,4 @@
+import { requireConfigAdmin } from "@/server/http/config-auth";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { configErrorResponse, errorResponse, requestIdFor } from "@/server/http/config-errors";
@@ -20,6 +21,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   const requestId = requestIdFor(request);
   try {
+    await requireConfigAdmin(request,"config.write");
     const body = z.object({
       configSet: configSetSchema,
       title: z.string().trim().min(2).max(160),

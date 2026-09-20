@@ -11,9 +11,10 @@ import {
 } from "@/db/schema";
 import { database } from "@/server/db/client";
 import { ConfigSetNotFoundError } from "./config-query";
+import { mechanicsSchema, skillDefinitionSchema, skillTargets } from "@/server/domain/skills/config";
 
 const attributes = ["strength", "magic", "technique", "speed", "constitution", "armor", "resistance"] as const;
-const targets = ["SELF", "ALLY_ALL", "ALLY_LOWEST_HP", "ENEMY_SINGLE", "ENEMY_ALL", "ENEMY_LOWEST_HP", "ENEMY_RANDOM_MULTI"] as const;
+const targets = skillTargets;
 
 export const skillUpdateSchema = z.object({
   revision: z.number().int().positive(),
@@ -31,6 +32,7 @@ export const skillUpdateSchema = z.object({
   status: z.enum(["active", "disabled"]),
   sortOrder: z.number().int().min(-100000).max(100000),
   notes: z.string().max(5000).nullable(),
+  mechanics: mechanicsSchema.nullable().optional(),
 }).superRefine((value, context) => {
   if (value.damageKind !== "none" && (!value.primaryAttribute || value.primaryPercent <= 0)) {
     context.addIssue({ code: "custom", path: ["primaryPercent"], message: "伤害技能必须配置主属性和正倍率" });
@@ -63,6 +65,7 @@ const skillSelection = {
   primaryPercent: skills.primaryPercent,
   secondaryAttribute: skills.secondaryAttribute,
   secondaryPercent: skills.secondaryPercent,
+  mechanics: skills.mechanics,
   status: skills.status,
   sortOrder: skills.sortOrder,
   notes: skills.notes,
@@ -81,7 +84,8 @@ export async function getSkill(configSetCode: string, skillCode: string) {
   return { configSet: configSet.code, skill: editableSkill(skill) };
 }
 
-export async function updateSkill(configSetCode: string, skillCode: string, input: SkillUpdate, requestId: string) {
+export async function updateSkill(configSetCode: string, skillCode: string, rawInput: SkillUpdate, requestId: string, actorId?: string) {
+  const input=skillUpdateSchema.parse(rawInput);
   const [targetSet] = await database.select({ id: configSets.id }).from(configSets)
     .where(eq(configSets.code, configSetCode)).limit(1);
   if (!targetSet) throw new ConfigSetNotFoundError(`Config set ${configSetCode} was not found`);
@@ -98,6 +102,10 @@ export async function updateSkill(configSetCode: string, skillCode: string, inpu
       .where(and(eq(skills.configSetId, lockedSet.id), eq(skills.code, skillCode))).limit(1);
     if (!before) throw new SkillNotFoundError(`Skill ${skillCode} was not found`);
     if (before.revision !== input.revision) throw new RevisionConflictError("Skill revision has changed");
+
+    const mechanics=input.mechanics===undefined?before.mechanics:input.mechanics;
+    if(before.mechanics&&!mechanics)throw new z.ZodError([{code:"custom",path:["mechanics"],message:"新版技能不能清空效果与精通配置"}]);
+    if(mechanics)skillDefinitionSchema.parse({code:before.code,name:input.nameKey,damageKind:input.damageKind,targetType:input.targetType,ignoreTaunt:input.ignoreTaunt,baseIntervalTicks:input.baseIntervalTicks,castTicks:input.castTicks,cooldownTicks:input.cooldownTicks,primaryAttribute:input.primaryAttribute,primaryPercent:input.primaryPercent,secondaryAttribute:input.secondaryAttribute,secondaryPercent:input.secondaryPercent,mechanics});
 
     const changes = { ...input };
     delete (changes as Partial<SkillUpdate>).revision;
@@ -142,6 +150,7 @@ export async function updateSkill(configSetCode: string, skillCode: string, inpu
       configSetId: lockedSet.id,
       requestId,
       details: {
+        actorId,
         entityCode: before.code,
         entityRevision: after.revision,
         configSetRevision: lockedSet.currentRevision + 1,

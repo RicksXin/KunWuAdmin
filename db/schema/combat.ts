@@ -4,6 +4,10 @@ import { gameAssets, rewardPacks } from "./base";
 import { configSets } from "./config";
 import { createdAtColumn, idColumn, updatedAtColumn, uuidBinary } from "./columns";
 import { careers, heroTemplates } from "./progression";
+import type { SkillMechanics } from "@/server/domain/skills/config";
+import type { EnemyDesign,EncounterDesign } from "@/server/domain/encounters/config";
+
+import type {EnemySkillRuntime,EnemyRuntime} from "@/server/domain/encounters/runtime";
 
 export const skills = mysqlTable("skill", {
   ...editableConfigColumns(),
@@ -18,6 +22,8 @@ export const skills = mysqlTable("skill", {
   primaryPercent: int("primary_percent").notNull().default(0),
   secondaryAttribute: varchar("secondary_attribute", { length: 24 }),
   secondaryPercent: int("secondary_percent").notNull().default(0),
+  mechanics: json("mechanics").$type<SkillMechanics>(),
+  enemyRuntime: json("enemy_runtime").$type<EnemySkillRuntime>(),
 }, (table) => [
   uniqueIndex("uq_skill_set_code").on(table.configSetId, table.code),
   index("idx_skill_kind").on(table.configSetId, table.damageKind, table.status),
@@ -111,6 +117,8 @@ export const heroTemplateSkills = mysqlTable("hero_template_skill", {
 
 export const enemies = mysqlTable("enemy", {
   ...editableConfigColumns(),
+  design: json("design").$type<EnemyDesign>(),
+  runtime: json("runtime").$type<EnemyRuntime>(),
   nameKey: varchar("name_key", { length: 160 }).notNull(),
   raceKey: varchar("race_key", { length: 160 }).notNull(),
   level: int("level", { unsigned: true }).notNull().default(1),
@@ -160,6 +168,7 @@ export const lootPoolEntries = mysqlTable("loot_pool_entry", {
 
 export const encounters = mysqlTable("encounter", {
   ...editableConfigColumns(),
+  design: json("design").$type<EncounterDesign>(),
   nameKey: varchar("name_key", { length: 160 }),
   encounterType: varchar("encounter_type", { length: 32 }).notNull().default("normal"),
   escapeEnemyHpPercent: int("escape_enemy_hp_percent", { unsigned: true }).notNull().default(0),

@@ -1,0 +1,973 @@
+{
+  "schemaVersion": 1,
+  "mapId": "map_01",
+  "encounterBindings": {
+    "enc_m1_normal_01": "m1_g01",
+    "enc_m1_normal_02": "m1_g02",
+    "enc_m1_normal_03": "m1_g03",
+    "enc_m1_normal_04": "m1_g04",
+    "enc_m1_normal_05": "m1_g05",
+    "enc_m1_normal_06": "m1_g06",
+    "enc_m1_normal_07": "m1_g07",
+    "enc_m1_normal_08": "m1_g08",
+    "enc_m1_normal_09": "m1_g09",
+    "enc_m1_normal_10": "m1_g10",
+    "enc_e1_cracked_guard": "m1_e01",
+    "enc_e1_banner_corpse": "m1_e02",
+    "enc_b1_gate_stone": "m1_boss_gate_spirit"
+  },
+  "combat": {
+    "schemaVersion": 1,
+    "status": "formal_map01_combat_payload",
+    "inherits": "res://data/config/combat_d0.json",
+    "skills": [
+      {
+        "id": "m1_rat_bite",
+        "name": "啮咬",
+        "damageKind": "physical",
+        "targetType": "ENEMY_LOWEST_HP",
+        "baseIntervalTicks": 24,
+        "cooldownTicks": 0,
+        "primaryAttribute": "strength",
+        "primaryPercent": 90,
+        "appliesStatus": {
+          "kind": "slow",
+          "durationTicks": 40,
+          "magnitude": 10,
+          "chancePercent": 30
+        }
+      },
+      {
+        "id": "m1_wisp_shard",
+        "name": "石片",
+        "damageKind": "physical",
+        "targetType": "ENEMY_SINGLE",
+        "baseIntervalTicks": 30,
+        "cooldownTicks": 0,
+        "primaryAttribute": "strength",
+        "primaryPercent": 95
+      },
+      {
+        "id": "m1_corpse_rust_blade",
+        "name": "锈刃",
+        "damageKind": "physical",
+        "targetType": "ENEMY_SINGLE",
+        "baseIntervalTicks": 29,
+        "cooldownTicks": 0,
+        "primaryAttribute": "strength",
+        "primaryPercent": 105
+      },
+      {
+        "id": "m1_corpse_claw",
+        "name": "尸爪",
+        "damageKind": "physical",
+        "targetType": "ENEMY_SINGLE",
+        "baseIntervalTicks": 32,
+        "cooldownTicks": 80,
+        "primaryAttribute": "strength",
+        "primaryPercent": 75,
+        "appliesStatus": {
+          "kind": "poison",
+          "durationTicks": 60,
+          "perSecondDamage": 3
+        }
+      },
+      {
+        "id": "m1_array_flash",
+        "name": "灵闪",
+        "damageKind": "magical",
+        "targetType": "ENEMY_SINGLE",
+        "baseIntervalTicks": 27,
+        "cooldownTicks": 0,
+        "primaryAttribute": "magic",
+        "primaryPercent": 105,
+        "secondaryAttribute": "technique",
+        "secondaryPercent": 20
+      },
+      {
+        "id": "m1_seal_light",
+        "name": "封灵光",
+        "damageKind": "magical",
+        "targetType": "ENEMY_SINGLE",
+        "baseIntervalTicks": 34,
+        "cooldownTicks": 120,
+        "primaryAttribute": "magic",
+        "primaryPercent": 60,
+        "appliesStatus": {
+          "kind": "silence",
+          "durationTicks": 20
+        }
+      },
+      {
+        "id": "m1_guard_heavy_punch",
+        "name": "重拳",
+        "damageKind": "physical",
+        "targetType": "ENEMY_SINGLE",
+        "baseIntervalTicks": 34,
+        "cooldownTicks": 0,
+        "primaryAttribute": "strength",
+        "primaryPercent": 110
+      },
+      {
+        "id": "m1_guard_stone_shield",
+        "name": "石甲重结",
+        "damageKind": "none",
+        "targetType": "SELF",
+        "baseIntervalTicks": 34,
+        "cooldownTicks": 140,
+        "primaryAttribute": "constitution",
+        "primaryPercent": 0,
+        "useBelowHpPercent": 50,
+        "appliesStatus": {
+          "kind": "shield",
+          "durationTicks": 140,
+          "magnitude": 350
+        }
+      },
+      {
+        "id": "m1_cracked_fist",
+        "name": "碎岳拳",
+        "damageKind": "physical",
+        "targetType": "ENEMY_SINGLE",
+        "baseIntervalTicks": 30,
+        "cooldownTicks": 0,
+        "primaryAttribute": "strength",
+        "primaryPercent": 125
+      },
+      {
+        "id": "m1_cracked_quake",
+        "name": "震地",
+        "damageKind": "physical",
+        "targetType": "ENEMY_ALL",
+        "baseIntervalTicks": 36,
+        "cooldownTicks": 100,
+        "primaryAttribute": "strength",
+        "primaryPercent": 55
+      },
+      {
+        "id": "m1_banner_ghost_fire",
+        "name": "鬼火",
+        "damageKind": "magical",
+        "targetType": "ENEMY_SINGLE",
+        "baseIntervalTicks": 28,
+        "cooldownTicks": 0,
+        "primaryAttribute": "magic",
+        "primaryPercent": 95
+      },
+      {
+        "id": "m1_banner_poison",
+        "name": "尸旗煞毒",
+        "damageKind": "magical",
+        "targetType": "ENEMY_SINGLE",
+        "baseIntervalTicks": 34,
+        "cooldownTicks": 100,
+        "primaryAttribute": "magic",
+        "primaryPercent": 45,
+        "appliesStatus": {
+          "kind": "poison",
+          "durationTicks": 80,
+          "perSecondDamage": 5
+        }
+      },
+      {
+        "id": "m1_boss_rock_fist",
+        "name": "岩拳",
+        "damageKind": "physical",
+        "targetType": "ENEMY_HIGHEST_HP",
+        "baseIntervalTicks": 28,
+        "cooldownTicks": 0,
+        "primaryAttribute": "strength",
+        "primaryPercent": 120,
+        "secondaryAttribute": "constitution",
+        "secondaryPercent": 20
+      },
+      {
+        "id": "m1_boss_ground_quake",
+        "name": "裂地震",
+        "damageKind": "physical",
+        "targetType": "ENEMY_ALL",
+        "baseIntervalTicks": 38,
+        "cooldownTicks": 120,
+        "primaryAttribute": "strength",
+        "primaryPercent": 58,
+        "secondaryAttribute": "constitution",
+        "secondaryPercent": 15,
+        "appliesStatus": {
+          "kind": "bleed",
+          "durationTicks": 60,
+          "perSecondDamage": 4
+        },
+        "warningTicks": 16
+      }
+    ],
+    "enemyTemplates": [
+      {
+        "id": "m1_rubble_rat",
+        "name": "噬灵鼠",
+        "level": 2,
+        "maxHp": 420,
+        "attributes": {
+          "strength": 12,
+          "magic": 2,
+          "technique": 10,
+          "speed": 18,
+          "constitution": 8,
+          "armor": 5,
+          "resistance": 6
+        },
+        "skillIds": [
+          "m1_rat_bite"
+        ],
+        "initialActionTimer": 24
+      },
+      {
+        "id": "m1_stone_wisp",
+        "name": "碎岩灵",
+        "level": 3,
+        "maxHp": 650,
+        "attributes": {
+          "strength": 16,
+          "magic": 6,
+          "technique": 8,
+          "speed": 8,
+          "constitution": 16,
+          "armor": 15,
+          "resistance": 9
+        },
+        "skillIds": [
+          "m1_wisp_shard"
+        ],
+        "initialActionTimer": 32,
+        "mechanics": {
+          "periodicShield": {
+            "intervalTicks": 60,
+            "amount": 120
+          }
+        }
+      },
+      {
+        "id": "m1_corpse_scout",
+        "name": "游荡尸兵",
+        "level": 4,
+        "maxHp": 780,
+        "attributes": {
+          "strength": 20,
+          "magic": 3,
+          "technique": 8,
+          "speed": 9,
+          "constitution": 20,
+          "armor": 18,
+          "resistance": 7
+        },
+        "skillIds": [
+          "m1_corpse_rust_blade",
+          "m1_corpse_claw"
+        ],
+        "initialActionTimer": 34
+      },
+      {
+        "id": "m1_array_glow",
+        "name": "残阵灵光",
+        "level": 5,
+        "maxHp": 620,
+        "attributes": {
+          "strength": 5,
+          "magic": 22,
+          "technique": 14,
+          "speed": 14,
+          "constitution": 10,
+          "armor": 7,
+          "resistance": 19
+        },
+        "skillIds": [
+          "m1_seal_light",
+          "m1_array_flash"
+        ],
+        "initialActionTimer": 30
+      },
+      {
+        "id": "m1_stone_guard",
+        "name": "石甲守卫",
+        "level": 6,
+        "maxHp": 1200,
+        "attributes": {
+          "strength": 27,
+          "magic": 3,
+          "technique": 9,
+          "speed": 7,
+          "constitution": 30,
+          "armor": 28,
+          "resistance": 12
+        },
+        "skillIds": [
+          "m1_guard_heavy_punch",
+          "m1_guard_stone_shield"
+        ],
+        "initialActionTimer": 38
+      },
+      {
+        "id": "e1_cracked_guard",
+        "name": "裂甲石卫",
+        "level": 6,
+        "maxHp": 2600,
+        "attributes": {
+          "strength": 32,
+          "magic": 4,
+          "technique": 12,
+          "speed": 8,
+          "constitution": 42,
+          "armor": 36,
+          "resistance": 15
+        },
+        "skillIds": [
+          "m1_cracked_fist",
+          "m1_cracked_quake"
+        ],
+        "initialActionTimer": 36,
+        "mechanics": {
+          "physicalHitCounter": {
+            "threshold": 3,
+            "counterPercent": 35,
+            "clearOnMagical": true,
+            "magicalClearAmount": 99
+          }
+        }
+      },
+      {
+        "id": "e1_banner_corpse",
+        "name": "尸煞执旗者",
+        "level": 7,
+        "maxHp": 2300,
+        "attributes": {
+          "strength": 27,
+          "magic": 18,
+          "technique": 18,
+          "speed": 12,
+          "constitution": 35,
+          "armor": 24,
+          "resistance": 22
+        },
+        "skillIds": [
+          "m1_banner_poison",
+          "m1_banner_ghost_fire"
+        ],
+        "initialActionTimer": 32,
+        "mechanics": {
+          "allyDamageAuraPercent": 15
+        }
+      },
+      {
+        "id": "b1_gate_stone",
+        "name": "守门石灵",
+        "level": 7,
+        "maxHp": 6500,
+        "attributes": {
+          "strength": 42,
+          "magic": 12,
+          "technique": 24,
+          "speed": 10,
+          "constitution": 70,
+          "armor": 48,
+          "resistance": 28
+        },
+        "skillIds": [
+          "m1_boss_rock_fist",
+          "m1_boss_ground_quake"
+        ],
+        "initialActionTimer": 45,
+        "mechanics": {
+          "bossGoldBody": true,
+          "forcedShieldThresholds": [
+            75,
+            35
+          ],
+          "forcedShieldAmount": 900,
+          "shieldArmorBonus": 20,
+          "coreExposedOnShieldBreak": true,
+          "coreExposedTicks": 80,
+          "physicalHitCounter": {
+            "threshold": 3,
+            "counterPercent": 40,
+            "clearOnMagical": true,
+            "magicalClearAmount": 1
+          },
+          "controlImmunities": [
+            "root"
+          ],
+          "stunDurationPercents": [
+            100,
+            60,
+            30
+          ],
+          "lowPhase": {
+            "hpPercent": 35,
+            "skillCode": "m1_boss_ground_quake",
+            "intervalPercent": 80
+          }
+        }
+      }
+    ],
+    "encounters": [
+      {
+        "id": "m1_g01",
+        "escapeEnemyHpPercent": 35,
+        "firstSoulCrystalReward": 24,
+        "repeatSoulCrystalReward": 12,
+        "members": [
+          {
+            "enemyId": "m1_rubble_rat",
+            "quantity": 1
+          }
+        ],
+        "loot": [
+          {
+            "itemId": "beast_hide",
+            "name": "兽皮",
+            "amount": 1
+          }
+        ],
+        "designCode": "enc_m1_normal_01"
+      },
+      {
+        "id": "m1_g02",
+        "escapeEnemyHpPercent": 35,
+        "firstSoulCrystalReward": 27,
+        "repeatSoulCrystalReward": 14,
+        "members": [
+          {
+            "enemyId": "m1_rubble_rat",
+            "quantity": 2
+          }
+        ],
+        "loot": [
+          {
+            "itemId": "beast_hide",
+            "name": "兽皮",
+            "amount": 2
+          }
+        ],
+        "designCode": "enc_m1_normal_02"
+      },
+      {
+        "id": "m1_g03",
+        "escapeEnemyHpPercent": 35,
+        "firstSoulCrystalReward": 30,
+        "repeatSoulCrystalReward": 15,
+        "members": [
+          {
+            "enemyId": "m1_stone_wisp",
+            "quantity": 1
+          }
+        ],
+        "loot": [
+          {
+            "itemId": "stone_core",
+            "name": "碎石核",
+            "amount": 1
+          }
+        ],
+        "designCode": "enc_m1_normal_03"
+      },
+      {
+        "id": "m1_g04",
+        "escapeEnemyHpPercent": 35,
+        "firstSoulCrystalReward": 33,
+        "repeatSoulCrystalReward": 16,
+        "members": [
+          {
+            "enemyId": "m1_corpse_scout",
+            "quantity": 1
+          },
+          {
+            "enemyId": "m1_rubble_rat",
+            "quantity": 1
+          }
+        ],
+        "loot": [
+          {
+            "itemId": "corpse_bone",
+            "name": "尸煞骨",
+            "amount": 1
+          },
+          {
+            "itemId": "beast_hide",
+            "name": "兽皮",
+            "amount": 1
+          }
+        ],
+        "designCode": "enc_m1_normal_04"
+      },
+      {
+        "id": "m1_g05",
+        "escapeEnemyHpPercent": 35,
+        "firstSoulCrystalReward": 36,
+        "repeatSoulCrystalReward": 18,
+        "members": [
+          {
+            "enemyId": "m1_stone_wisp",
+            "quantity": 1
+          },
+          {
+            "enemyId": "m1_corpse_scout",
+            "quantity": 1
+          }
+        ],
+        "loot": [
+          {
+            "itemId": "stone_core",
+            "name": "碎石核",
+            "amount": 1
+          },
+          {
+            "itemId": "corpse_bone",
+            "name": "尸煞骨",
+            "amount": 1
+          }
+        ],
+        "designCode": "enc_m1_normal_05"
+      },
+      {
+        "id": "m1_g06",
+        "escapeEnemyHpPercent": 35,
+        "firstSoulCrystalReward": 39,
+        "repeatSoulCrystalReward": 20,
+        "members": [
+          {
+            "enemyId": "m1_array_glow",
+            "quantity": 1
+          },
+          {
+            "enemyId": "m1_rubble_rat",
+            "quantity": 1
+          }
+        ],
+        "loot": [
+          {
+            "itemId": "remnant_talisman",
+            "name": "残符",
+            "amount": 1
+          },
+          {
+            "itemId": "beast_hide",
+            "name": "兽皮",
+            "amount": 1
+          }
+        ],
+        "designCode": "enc_m1_normal_06"
+      },
+      {
+        "id": "m1_g07",
+        "escapeEnemyHpPercent": 35,
+        "firstSoulCrystalReward": 42,
+        "repeatSoulCrystalReward": 21,
+        "members": [
+          {
+            "enemyId": "m1_corpse_scout",
+            "quantity": 2
+          }
+        ],
+        "loot": [
+          {
+            "itemId": "corpse_bone",
+            "name": "尸煞骨",
+            "amount": 2
+          }
+        ],
+        "designCode": "enc_m1_normal_07"
+      },
+      {
+        "id": "m1_g08",
+        "escapeEnemyHpPercent": 35,
+        "firstSoulCrystalReward": 45,
+        "repeatSoulCrystalReward": 22,
+        "members": [
+          {
+            "enemyId": "m1_stone_guard",
+            "quantity": 1
+          },
+          {
+            "enemyId": "m1_rubble_rat",
+            "quantity": 1
+          }
+        ],
+        "loot": [
+          {
+            "itemId": "darkIron",
+            "name": "玄铁",
+            "amount": 1
+          },
+          {
+            "itemId": "beast_hide",
+            "name": "兽皮",
+            "amount": 1
+          }
+        ],
+        "designCode": "enc_m1_normal_08"
+      },
+      {
+        "id": "m1_g09",
+        "escapeEnemyHpPercent": 35,
+        "firstSoulCrystalReward": 48,
+        "repeatSoulCrystalReward": 24,
+        "members": [
+          {
+            "enemyId": "m1_array_glow",
+            "quantity": 1
+          },
+          {
+            "enemyId": "m1_stone_wisp",
+            "quantity": 1
+          }
+        ],
+        "loot": [
+          {
+            "itemId": "remnant_talisman",
+            "name": "残符",
+            "amount": 1
+          },
+          {
+            "itemId": "stone_core",
+            "name": "碎石核",
+            "amount": 1
+          }
+        ],
+        "designCode": "enc_m1_normal_09"
+      },
+      {
+        "id": "m1_g10",
+        "escapeEnemyHpPercent": 35,
+        "firstSoulCrystalReward": 51,
+        "repeatSoulCrystalReward": 26,
+        "members": [
+          {
+            "enemyId": "m1_stone_guard",
+            "quantity": 1
+          },
+          {
+            "enemyId": "m1_corpse_scout",
+            "quantity": 2
+          },
+          {
+            "enemyId": "m1_array_glow",
+            "quantity": 1
+          }
+        ],
+        "loot": [
+          {
+            "itemId": "darkIron",
+            "name": "玄铁",
+            "amount": 1
+          },
+          {
+            "itemId": "corpse_bone",
+            "name": "尸煞骨",
+            "amount": 2
+          },
+          {
+            "itemId": "remnant_talisman",
+            "name": "残符",
+            "amount": 1
+          }
+        ],
+        "designCode": "enc_m1_normal_10"
+      },
+      {
+        "id": "m1_dungeon_rockfall",
+        "escapeEnemyHpPercent": 35,
+        "firstSoulCrystalReward": 32,
+        "repeatSoulCrystalReward": 0,
+        "members": [
+          {
+            "enemyId": "m1_stone_wisp",
+            "quantity": 2
+          },
+          {
+            "enemyId": "m1_rubble_rat",
+            "quantity": 1
+          }
+        ],
+        "loot": [
+          {
+            "itemId": "stone_core",
+            "name": "碎石核",
+            "amount": 2
+          }
+        ],
+        "firstVictoryEffects": {
+          "mapStatePatch": {
+            "map_01.events.m1_dungeon_tunnel.resolved": true,
+            "map_01.events.m1_dungeon_tunnel.savedGuNanlu": true
+          },
+          "storyFlagPatch": {
+            "saved_gu_nanlu": true
+          },
+          "incrementStoryFlags": {
+            "ye_evidence": 1
+          },
+          "campBuildingLevels": {
+            "lian_qi_fang": 1
+          },
+          "rewards": [
+            {
+              "itemId": "recipe_fu_xin_pei",
+              "amount": 1
+            },
+            {
+              "itemId": "fu_xin_core",
+              "amount": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "m1_e01",
+        "escapeEnemyHpPercent": 35,
+        "firstSoulCrystalReward": 60,
+        "repeatSoulCrystalReward": 30,
+        "members": [
+          {
+            "enemyId": "e1_cracked_guard",
+            "quantity": 1
+          }
+        ],
+        "loot": [
+          {
+            "itemId": "darkIron",
+            "name": "玄铁",
+            "amount": 4
+          }
+        ],
+        "firstLoot": [
+          {
+            "itemId": "cracked_guard_plate",
+            "name": "石卫甲片",
+            "amount": 2
+          }
+        ],
+        "designCode": "enc_e1_cracked_guard"
+      },
+      {
+        "id": "m1_e02",
+        "escapeEnemyHpPercent": 35,
+        "firstSoulCrystalReward": 55,
+        "repeatSoulCrystalReward": 28,
+        "members": [
+          {
+            "enemyId": "e1_banner_corpse",
+            "quantity": 1
+          }
+        ],
+        "loot": [
+          {
+            "itemId": "corpse_bone",
+            "name": "尸煞骨",
+            "amount": 2
+          }
+        ],
+        "firstLoot": [
+          {
+            "itemId": "broken_corpse_banner",
+            "name": "破旗",
+            "amount": 1
+          },
+          {
+            "itemId": "return_talisman_fragment",
+            "name": "归营符残纸",
+            "amount": 1
+          }
+        ],
+        "designCode": "enc_e1_banner_corpse"
+      },
+      {
+        "id": "m1_boss_gate_spirit",
+        "escapeEnemyHpPercent": 70,
+        "firstSoulCrystalReward": 200,
+        "repeatSoulCrystalReward": 0,
+        "members": [
+          {
+            "enemyId": "b1_gate_stone",
+            "quantity": 1
+          }
+        ],
+        "loot": [],
+        "firstLoot": [
+          {
+            "itemId": "stone_spirit_core",
+            "name": "石灵核心",
+            "amount": 1
+          },
+          {
+            "itemId": "recipe_guardian_token_fragment",
+            "name": "护法令碎片配方",
+            "amount": 1
+          }
+        ],
+        "victoryEffects": {
+          "mapStatePatch": {
+            "map_01.encounters.m1_boss_gate_spirit.defeated": true,
+            "map_01.encounters.m1_boss_gate_spirit.coreAcquired": true
+          }
+        },
+        "firstVictoryEffects": {
+          "incrementStoryFlags": {
+            "seal_integrity": 1
+          },
+          "storyFlagPatch": {
+            "map_01_boss_defeated": true
+          }
+        },
+        "designCode": "enc_b1_gate_stone",
+        "equipmentRewards": [
+          {
+            "qualityCode": "fa_qi",
+            "quantity": 1
+          },
+          {
+            "qualityCode": "zhen_bao",
+            "quantity": 1
+          }
+        ],
+        "mainBossOrdinal": 1
+      }
+    ]
+  },
+  "equipment": {
+    "schemaVersion": 1,
+    "capacity": 100,
+    "qualityNames": {
+      "fa_qi": "法器",
+      "zhen_bao": "真宝",
+      "fa_bao": "法宝",
+      "gu_bao": "古宝",
+      "tong_tian_ling_bao": "通天灵宝",
+      "xuan_tian_zhi_bao": "玄天之宝"
+    },
+    "qualityMultipliers": {
+      "fa_qi": 100,
+      "zhen_bao": 120
+    },
+    "templates": [
+      {
+        "code": "map01_xuanjia",
+        "name": "石纹玄甲",
+        "slot": "armor",
+        "baseStatBudget": 10,
+        "runeSlots": 2,
+        "allowedStats": [
+          "strength",
+          "magic",
+          "technique",
+          "speed",
+          "constitution",
+          "armor"
+        ],
+        "careers": []
+      },
+      {
+        "code": "map01_fayi",
+        "name": "避尘法衣",
+        "slot": "armor",
+        "baseStatBudget": 10,
+        "runeSlots": 2,
+        "allowedStats": [
+          "strength",
+          "magic",
+          "technique",
+          "speed",
+          "constitution",
+          "resistance"
+        ],
+        "careers": []
+      },
+      {
+        "code": "map01_sword",
+        "name": "铁木重锋",
+        "slot": "weapon",
+        "baseStatBudget": 12,
+        "runeSlots": 2,
+        "allowedStats": [
+          "strength",
+          "magic",
+          "technique",
+          "speed",
+          "constitution"
+        ],
+        "careers": [
+          "qian_xiu"
+        ]
+      },
+      {
+        "code": "map01_staff",
+        "name": "乌钢降魔杵",
+        "slot": "weapon",
+        "baseStatBudget": 12,
+        "runeSlots": 2,
+        "allowedStats": [
+          "strength",
+          "magic",
+          "technique",
+          "speed",
+          "constitution"
+        ],
+        "careers": [
+          "wu_xiu"
+        ]
+      },
+      {
+        "code": "map01_orb",
+        "name": "聚火灵珠",
+        "slot": "weapon",
+        "baseStatBudget": 12,
+        "runeSlots": 2,
+        "allowedStats": [
+          "strength",
+          "magic",
+          "technique",
+          "speed",
+          "constitution"
+        ],
+        "careers": [
+          "fa_xiu"
+        ]
+      },
+      {
+        "code": "map01_talisman",
+        "name": "青囊针匣",
+        "slot": "weapon",
+        "baseStatBudget": 12,
+        "runeSlots": 2,
+        "allowedStats": [
+          "strength",
+          "magic",
+          "technique",
+          "speed",
+          "constitution"
+        ],
+        "careers": [
+          "yi_xiu"
+        ]
+      }
+    ],
+    "pool": [
+      "map01_xuanjia",
+      "map01_fayi",
+      "map01_sword",
+      "map01_staff",
+      "map01_orb",
+      "map01_talisman"
+    ]
+  },
+  "settlement": {
+    "materialLossBasisPoints": 3000,
+    "equipmentLossBasisPoints": 3000,
+    "protectedItemCodes": [
+      "stone_spirit_core",
+      "recipe_guardian_token_fragment",
+      "recipe_fu_xin_pei",
+      "fu_xin_core",
+      "return_talisman_fragment",
+      "broken_corpse_banner"
+    ]
+  },
+  "notes": "用户确认Boss法器1件+真宝1件。法器100%/真宝120%是本轮首版可配置预算，不是旧品质序号映射；基础模板预算和允许池采用18分册。"
+}

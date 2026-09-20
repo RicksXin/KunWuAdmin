@@ -587,3 +587,17 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-
 .admin-loading-shell { height: 100dvh; display: grid; grid-template-columns: var(--rail-width) minmax(0, 1fr); }
 .admin-loading-shell > .loading-screen { min-width: 0; }
 .app-rail a:focus-visible { outline: 1px solid var(--jade); outline-offset: 1px; }
+
+/* Business pages have a single owner; release controls stay in /config. */
+.domain-shell .config-workspace { grid-template-columns: var(--rail-width) 250px minmax(0, 1fr); }
+.domain-shell .config-main { min-width: 0; }
+.app-rail { min-height: 0; overflow-y: auto; }
+.config-module-list a { min-height: 63px; display: grid; grid-template-columns: 28px 1fr 14px; align-items: center; gap: 7px; padding: 9px 8px; border: 1px solid transparent; color: #78837d; border-radius: 4px; text-decoration: none; }
+.config-module-list a:hover { border-color: #2f3c36; background: #17201c; }
+.config-module-list a > span { min-width: 0; display: grid; gap: 4px; }
+.business-entry-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 12px; }
+.business-entry-grid a { display: grid; gap: 10px; padding: 20px; border: 1px solid var(--line); color: var(--gold-bright); text-decoration: none; }
+.business-entry-grid a span,.domain-note { color: #98a69c; font-size: 12px; line-height: 1.8; }
+.domain-note { padding: 12px; border-left: 2px solid var(--gold); background: #17201c; }
+.enemy-attribute-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+.enemy-attribute-grid > div { display: flex; justify-content: space-between; padding: 8px 12px; border: 1px solid var(--line); }

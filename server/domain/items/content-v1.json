@@ -1,0 +1,2805 @@
+{
+  "items": [
+    {
+      "code": "spirit_guiding_sand",
+      "name": "引灵砂",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 10,
+      "category": "material",
+      "usageTag": "material",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "归营符辅材；野外探索获得",
+        "contentStatus": "ready"
+      }
+    },
+    {
+      "code": "shadow_stone",
+      "name": "照影石",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 11,
+      "category": "material",
+      "usageTag": "material",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "探灵灯永久强化材料；地图2开放限量补购",
+        "contentStatus": "ready"
+      }
+    },
+    {
+      "code": "dew_grass",
+      "name": "凝露草",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 12,
+      "category": "material",
+      "usageTag": "material",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "野外通用材料；具体配方以内容表为准",
+        "contentStatus": "ready"
+      }
+    },
+    {
+      "code": "condensation_herb",
+      "name": "凝丹灵草",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 13,
+      "category": "material",
+      "usageTag": "material",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "大境界突破物共同药引；地图3开放限量补购",
+        "contentStatus": "ready"
+      }
+    },
+    {
+      "code": "artifact_spirit_fragment",
+      "name": "器灵残片",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 14,
+      "category": "material",
+      "usageTag": "material",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "器纹炼制材料",
+        "contentStatus": "ready"
+      }
+    },
+    {
+      "code": "four_array_sand",
+      "name": "四象阵砂",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 15,
+      "category": "material",
+      "usageTag": "material",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "区域稀有材料；任务与特装用途，不进入普通商店",
+        "contentStatus": "ready"
+      }
+    },
+    {
+      "code": "demon_marrow_fragment",
+      "name": "魔髓碎屑",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 16,
+      "category": "material",
+      "usageTag": "material",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "区域稀有材料；不进入普通商店",
+        "contentStatus": "ready"
+      }
+    },
+    {
+      "code": "ancient_treasure_fragment",
+      "name": "古宝残片",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 17,
+      "category": "material",
+      "usageTag": "material",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "区域稀有材料；不进入普通商店",
+        "contentStatus": "ready"
+      }
+    },
+    {
+      "code": "pickaxe",
+      "name": "开山镐",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 18,
+      "category": "consumable",
+      "usageTag": "consumable",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "/items/pickaxe.png",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "一次性单次出征工具，启程消耗，本次出征内生效",
+        "contentStatus": "ready",
+        "weight": 12
+      }
+    },
+    {
+      "code": "lens",
+      "name": "探灵镜",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 19,
+      "category": "consumable",
+      "usageTag": "consumable",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "/items/lens.png",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "探索侦测工具",
+        "contentStatus": "ready",
+        "weight": 4
+      }
+    },
+    {
+      "code": "return_talisman",
+      "name": "归营符",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 20,
+      "category": "consumable",
+      "usageTag": "consumable",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "任意坐标安全归营；使用限制按探索规则",
+        "contentStatus": "ready",
+        "weight": null
+      }
+    },
+    {
+      "code": "dustfall_pill",
+      "name": "降尘丹",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 21,
+      "category": "consumable",
+      "usageTag": "consumable",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "结丹突破消耗物；炼器坊3级配方",
+        "contentStatus": "ready",
+        "weight": null
+      }
+    },
+    {
+      "code": "bigu_cake",
+      "name": "辟谷饼",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 22,
+      "category": "food",
+      "usageTag": "food",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "/items/bigu_cake.png",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "固定恢复灵粮；不恢复生命或灵息",
+        "contentStatus": "ready",
+        "weight": 1,
+        "holdLimit": 30,
+        "resourceCode": "spiritGrain",
+        "resourceYield": 12,
+        "usageScope": "营地或野外扎营；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "travel_ration",
+      "name": "山行干粮",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 23,
+      "category": "food",
+      "usageTag": "food",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "固定恢复灵粮；不恢复生命或灵息",
+        "contentStatus": "ready",
+        "weight": 2,
+        "holdLimit": 30,
+        "resourceCode": "spiritGrain",
+        "resourceYield": 20,
+        "usageScope": "营地或野外扎营；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "wolf_meat",
+      "name": "妖狼肉",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 24,
+      "category": "food",
+      "usageTag": "food",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "固定恢复灵粮；不恢复生命或灵息",
+        "contentStatus": "ready",
+        "weight": 3,
+        "holdLimit": 20,
+        "resourceCode": "spiritGrain",
+        "resourceYield": 36,
+        "usageScope": "营地或野外扎营；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "earth_dragon_meat",
+      "name": "地龙肉",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 25,
+      "category": "food",
+      "usageTag": "food",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "固定恢复灵粮；不恢复生命或灵息",
+        "contentStatus": "ready",
+        "weight": 5,
+        "holdLimit": 10,
+        "resourceCode": "spiritGrain",
+        "resourceYield": 70,
+        "usageScope": "营地或野外扎营；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_wood_low",
+      "name": "下品灵木包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 26,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 30,
+        "resourceCode": "spiritWood",
+        "resourceYield": 20,
+        "packTier": "low",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_wood_high",
+      "name": "上品灵木包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 27,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 15,
+        "resourceCode": "spiritWood",
+        "resourceYield": 60,
+        "packTier": "high",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_wood_special",
+      "name": "特级灵木包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 28,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 5,
+        "resourceCode": "spiritWood",
+        "resourceYield": 160,
+        "packTier": "special",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_wood_immortal",
+      "name": "仙品灵木包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 29,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 2,
+        "resourceCode": "spiritWood",
+        "resourceYield": 400,
+        "packTier": "immortal",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_iron_low",
+      "name": "下品玄铁包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 30,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 30,
+        "resourceCode": "darkIron",
+        "resourceYield": 12,
+        "packTier": "low",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_iron_high",
+      "name": "上品玄铁包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 31,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 15,
+        "resourceCode": "darkIron",
+        "resourceYield": 36,
+        "packTier": "high",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_iron_special",
+      "name": "特级玄铁包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 32,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 5,
+        "resourceCode": "darkIron",
+        "resourceYield": 100,
+        "packTier": "special",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_iron_immortal",
+      "name": "仙品玄铁包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 33,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 2,
+        "resourceCode": "darkIron",
+        "resourceYield": 250,
+        "packTier": "immortal",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_stone_low",
+      "name": "下品灵石包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 34,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 30,
+        "resourceCode": "spiritStone",
+        "resourceYield": 80,
+        "packTier": "low",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_stone_high",
+      "name": "上品灵石包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 35,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 15,
+        "resourceCode": "spiritStone",
+        "resourceYield": 240,
+        "packTier": "high",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_stone_special",
+      "name": "特级灵石包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 36,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 5,
+        "resourceCode": "spiritStone",
+        "resourceYield": 650,
+        "packTier": "special",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_stone_immortal",
+      "name": "仙品灵石包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 37,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 2,
+        "resourceCode": "spiritStone",
+        "resourceYield": 1600,
+        "packTier": "immortal",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_crystal_low",
+      "name": "下品灵晶包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 38,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 30,
+        "resourceCode": "spiritCrystal",
+        "resourceYield": 8,
+        "packTier": "low",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_crystal_high",
+      "name": "上品灵晶包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 39,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 15,
+        "resourceCode": "spiritCrystal",
+        "resourceYield": 24,
+        "packTier": "high",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_crystal_special",
+      "name": "特级灵晶包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 40,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 5,
+        "resourceCode": "spiritCrystal",
+        "resourceYield": 64,
+        "packTier": "special",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_crystal_immortal",
+      "name": "仙品灵晶包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 41,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 2,
+        "resourceCode": "spiritCrystal",
+        "resourceYield": 160,
+        "packTier": "immortal",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_geng_low",
+      "name": "下品庚精包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 42,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 30,
+        "resourceCode": "gengJing",
+        "resourceYield": 1,
+        "packTier": "low",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_geng_high",
+      "name": "上品庚精包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 43,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 15,
+        "resourceCode": "gengJing",
+        "resourceYield": 3,
+        "packTier": "high",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_geng_special",
+      "name": "特级庚精包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 44,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 5,
+        "resourceCode": "gengJing",
+        "resourceYield": 8,
+        "packTier": "special",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "item_resource_pack_geng_immortal",
+      "name": "仙品庚精包",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 45,
+      "category": "resource_pack",
+      "usageTag": "resource_pack",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "包装档位仅表示数量，不是物品品级",
+        "contentStatus": "ready",
+        "holdLimit": 2,
+        "resourceCode": "gengJing",
+        "resourceYield": 20,
+        "packTier": "immortal",
+        "usageScope": "仅营地仓库打开；完整容量不足不消耗"
+      }
+    },
+    {
+      "code": "rune_strength",
+      "name": "力道器纹",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 46,
+      "category": "rune",
+      "usageTag": "rune",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "打造时消耗并永久附着，不可拆卸、替换、转移；数值由蓝图预算和成品品质决定",
+        "contentStatus": "ready",
+        "attribute": "strength"
+      }
+    },
+    {
+      "code": "rune_magic",
+      "name": "法力器纹",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 47,
+      "category": "rune",
+      "usageTag": "rune",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "打造时消耗并永久附着，不可拆卸、替换、转移；数值由蓝图预算和成品品质决定",
+        "contentStatus": "ready",
+        "attribute": "magic"
+      }
+    },
+    {
+      "code": "rune_technique",
+      "name": "神识器纹",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 48,
+      "category": "rune",
+      "usageTag": "rune",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "打造时消耗并永久附着，不可拆卸、替换、转移；数值由蓝图预算和成品品质决定",
+        "contentStatus": "ready",
+        "attribute": "technique"
+      }
+    },
+    {
+      "code": "rune_speed",
+      "name": "遁速器纹",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 49,
+      "category": "rune",
+      "usageTag": "rune",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "打造时消耗并永久附着，不可拆卸、替换、转移；数值由蓝图预算和成品品质决定",
+        "contentStatus": "ready",
+        "attribute": "speed"
+      }
+    },
+    {
+      "code": "rune_constitution",
+      "name": "肉身器纹",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 50,
+      "category": "rune",
+      "usageTag": "rune",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "打造时消耗并永久附着，不可拆卸、替换、转移；数值由蓝图预算和成品品质决定",
+        "contentStatus": "ready",
+        "attribute": "constitution"
+      }
+    },
+    {
+      "code": "rune_armor",
+      "name": "护体器纹",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 51,
+      "category": "rune",
+      "usageTag": "rune",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "打造时消耗并永久附着，不可拆卸、替换、转移；数值由蓝图预算和成品品质决定",
+        "contentStatus": "ready",
+        "attribute": "armor"
+      }
+    },
+    {
+      "code": "rune_resistance",
+      "name": "定力器纹",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 52,
+      "category": "rune",
+      "usageTag": "rune",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "打造时消耗并永久附着，不可拆卸、替换、转移；数值由蓝图预算和成品品质决定",
+        "contentStatus": "ready",
+        "attribute": "resistance"
+      }
+    },
+    {
+      "code": "infant_jade",
+      "name": "凝婴玉髓",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 53,
+      "category": "consumable",
+      "usageTag": "consumable",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "炼器坊8级解锁；后续地区辅材和数量未定，暂不启用",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "soul_incense",
+      "name": "蕴神天香",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 54,
+      "category": "consumable",
+      "usageTag": "consumable",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "炼器坊13级解锁；后续地区辅材和数量未定，暂不启用",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "void_crystal",
+      "name": "破虚玄晶",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 55,
+      "category": "consumable",
+      "usageTag": "consumable",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "炼器坊18级解锁；后续地区辅材和数量未定，暂不启用",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "unity_jade",
+      "name": "两仪合真璧",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 56,
+      "category": "consumable",
+      "usageTag": "consumable",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "炼器坊21级解锁；后续地区辅材和数量未定，暂不启用",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "tribulation_talisman",
+      "name": "渡厄金符",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 57,
+      "category": "consumable",
+      "usageTag": "consumable",
+      "qualityCode": null,
+      "stackLimit": 9999,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "炼器坊24级解锁；后续地区辅材和数量未定，暂不启用",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "stone_spirit_core",
+      "name": "石灵核心",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 58,
+      "category": "quest",
+      "usageTag": "quest",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": true,
+      "isDiscardable": false,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "唯一任务核心；不得出售、分解或因阵亡丢失",
+        "contentStatus": "ready"
+      }
+    },
+    {
+      "code": "forge_spirit_core",
+      "name": "铸灵核心",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 59,
+      "category": "quest",
+      "usageTag": "quest",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": true,
+      "isDiscardable": false,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "唯一任务核心；不得出售、分解或因阵亡丢失",
+        "contentStatus": "ready"
+      }
+    },
+    {
+      "code": "sealed_altar_order",
+      "name": "封坛令",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 60,
+      "category": "quest",
+      "usageTag": "quest",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": true,
+      "isDiscardable": false,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "唯一任务核心；不得出售、分解或因阵亡丢失",
+        "contentStatus": "ready"
+      }
+    },
+    {
+      "code": "remnant_wing_core",
+      "name": "残翎核心",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 61,
+      "category": "quest",
+      "usageTag": "quest",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": true,
+      "isDiscardable": false,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/34_1.0基础材料与资源循环_草案.md",
+        "description": "唯一任务核心；不得出售、分解或因阵亡丢失",
+        "contentStatus": "ready"
+      }
+    },
+    {
+      "code": "w01_sword_tiemu",
+      "name": "铁木重锋",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 62,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `w01_sword_tiemu` | 铁木重锋 | 剑器 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w01_orb_juhuo",
+      "name": "聚火灵珠",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 63,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `w01_orb_juhuo` | 聚火灵珠 | 五行法器 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w01_needles_qingnang",
+      "name": "青囊针匣",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 64,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `w01_needles_qingnang` | 青囊针匣 | 玄箓符器 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w01_daggers_wugang",
+      "name": "乌钢降魔杵",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 65,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `w01_daggers_wugang` | 乌钢降魔杵 | 金刚禅器 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "a01_old_mail",
+      "name": "旧营锁甲",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 66,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `a01_old_mail` | 旧营锁甲 | 玄甲 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "a01_dust_robe",
+      "name": "避尘道袍",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 67,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `a01_dust_robe` | 避尘道袍 | 行衣 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r01_heart_mirror",
+      "name": "护心镜",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 68,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `r01_heart_mirror` | 护心镜 | 饰品 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r01_spirit_jade",
+      "name": "引灵玉",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 69,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `r01_spirit_jade` | 引灵玉 | 饰品 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r01_medicine_pendant",
+      "name": "药王佩",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 70,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `r01_medicine_pendant` | 药王佩 | 饰品 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r01_night_buckle",
+      "name": "夜行扣",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 71,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `r01_night_buckle` | 夜行扣 | 饰品 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w02_sword_zhenwen",
+      "name": "镇纹剑匣",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 72,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `w02_sword_zhenwen` | 镇纹剑匣 | 剑器 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w02_disc_sixiang",
+      "name": "四象法盘",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 73,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `w02_disc_sixiang` | 四象法盘 | 五行法器 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w02_cauldron_huiyuan",
+      "name": "回元符鼎",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 74,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `w02_cauldron_huiyuan` | 回元符鼎 | 玄箓符器 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w02_daggers_pozhen",
+      "name": "破阵金刚轮",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 75,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `w02_daggers_pozhen` | 破阵金刚轮 | 金刚禅器 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "a02_jade_mail",
+      "name": "白玉玄甲",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 76,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `a02_jade_mail` | 白玉玄甲 | 玄甲 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "a02_four_robe",
+      "name": "四象法衣",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 77,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `a02_four_robe` | 四象法衣 | 法衣 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r02_array_pendant",
+      "name": "阵眼玉佩",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 78,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `r02_array_pendant` | 阵眼玉佩 | 饰品 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r02_cold_ring",
+      "name": "寒髓环",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 79,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `r02_cold_ring` | 寒髓环 | 饰品 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r02_soul_bell",
+      "name": "追魂铃",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 80,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `r02_soul_bell` | 追魂铃 | 饰品 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w03_sword_bixie",
+      "name": "辟邪剑胚",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 81,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `w03_sword_bixie` | 辟邪剑胚 | 剑器 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w03_cauldron_baicao",
+      "name": "百草符鼎",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 82,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `w03_cauldron_baicao` | 百草符鼎 | 玄箓符器 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w03_blade_wuying",
+      "name": "无影法镜",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 83,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `w03_blade_wuying` | 无影法镜 | 五行法器 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "a03_ancient_mail",
+      "name": "古修玄甲",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 84,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `a03_ancient_mail` | 古修玄甲 | 玄甲 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "a03_treasure_robe",
+      "name": "灵宝法袍",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 85,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `a03_treasure_robe` | 灵宝法袍 | 法衣 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w04_cauldron_taiqing",
+      "name": "太清符鼎",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 86,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `w04_cauldron_taiqing` | 太清符鼎 | 玄箓符器 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w04_blade_bimo",
+      "name": "辟魔金刚轮",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 87,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 3.4 旧装备 ID 转制式模板\n| `w04_blade_bimo` | 辟魔金刚轮 | 金刚禅器 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r01_guard_token",
+      "name": "护法令碎片",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 88,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.2 上品特定装备\n| `r01_guard_token` 护法令碎片 | 饰品 | 10 | 嘲讽强度+20；金轮反照反伤+5个百分点 | 允许护体、定力 | 守门石灵首杀 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r01_talisman_pendant",
+      "name": "符心佩",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 89,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.2 上品特定装备\n| `r01_talisman_pendant` 符心佩 | 饰品 | 10 | 直接恢复+6% | 无 | 顾南炉救援 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r02_thunder_bead",
+      "name": "雷纹珠",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 90,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.2 上品特定装备\n| `r02_thunder_bead` 雷纹珠 | 饰品 | 14 | 雷印每层雷伤加成额外+2个百分点 | 无 | 东阵眼导雷 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r02_mirage_ring",
+      "name": "蜃光环",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 91,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.2 上品特定装备\n| `r02_mirage_ring` 蜃光环 | 饰品 | 14 | 迷神 DoT+8%；镜花惑心减益命中+8% | 无 | 西阵眼幻境 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r02_clear_pouch",
+      "name": "清灵囊",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 92,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.2 上品特定装备\n| `r02_clear_pouch` 清灵囊 | 饰品 | 14 | 直接恢复+5%；尸毒治疗抑制降低10个百分点 | 允许定力 | 木魅庭院隐藏救援 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w03_vajra_soul",
+      "name": "镇邪禅珠",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 93,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.3 珍品特定装备\n| `w03_vajra_soul` 镇邪禅珠 | 金刚禅器 | 28 | 金轮反照反伤+8个百分点；吞元炼血伤害转疗+10个百分点 | 允许护体、定力 | 灵宝阁守卫→禅珠残片→铸灵炉复原 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w03_wheel_wuhuo",
+      "name": "五火法轮",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 94,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.3 珍品特定装备\n| `w03_wheel_wuhuo` 五火法轮 | 五行法器 | 28 | 直接法伤35%基础命中附加每秒`10%法`灼烧/60 tick | 无 | 真假灵宝→取得火轮残胚→熔炉重启 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w03_talisman_zhenyou",
+      "name": "镇幽符匣",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 95,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.3 珍品特定装备\n| `w03_talisman_zhenyou` 镇幽符匣 | 玄箓符器 | 28 | 对鬼类伤害+15%；直接恢复+10% | 允许定力 | 三老碑文→四象阵砂→安置残魂 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w03_sword_lingbao",
+      "name": "铸灵剑胚",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 96,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.3 珍品特定装备\n| `w03_sword_lingbao` 铸灵剑胚 | 剑器 | 28 | 青冥暴击后行动间隔-10%；玄岳首次破甲延长40 tick | 允许护体 | 失控剑灵→剑灵锋→修复剑炉 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r03_soul_tablet",
+      "name": "护魂牌",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 97,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.3 珍品特定装备\n| `r03_soul_tablet` 护魂牌 | 饰品 | 18 | 恐惧状态命中-20% | 允许定力 | 五鬼伏击→完成至少一魂遗愿→封存残魂或击退韩枭 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r03_storage_buckle",
+      "name": "须弥扣",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 98,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.3 珍品特定装备\n| `r03_storage_buckle` 须弥扣 | 饰品 | 18 | 负重+25 | 允许肉身、护体 | 本命元牌完整支线 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r03_forge_ring",
+      "name": "铸灵指环",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 99,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.3 珍品特定装备\n| `r03_forge_ring` 铸灵指环 | 饰品 | 18 | 对护盾目标伤害+12% | 无 | 铸灵堂核心支线 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r03_insight_lens",
+      "name": "洞玄镜片",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 100,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.3 珍品特定装备\n| `r03_insight_lens` 洞玄镜片 | 饰品 | 18 | DoT伤害+6%；机关探查神识+10 | 无 | 真假灵宝→识破空间宝匣；或本命元牌交化仙宗保管 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r03_spring_jade",
+      "name": "回春玉",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 101,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.3 珍品特定装备\n| `r03_spring_jade` 回春玉 | 饰品 | 18 | 直接恢复+10% | 允许定力 | 化仙宗遗命中段 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r04_wing_ring",
+      "name": "残翅骨环",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 102,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.3 珍品特定装备\n| `r04_wing_ring` 残翅骨环 | 饰品 | 22 | 命中+8%；对飞行目标伤害+12% | 无 | 银翅残羽首杀开放净化节点→最终Boss战后取残翅本源 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r04_core_pendant",
+      "name": "凝金玉佩",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 103,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.3 珍品特定装备\n| `r04_core_pendant` 凝金玉佩 | 饰品 | 22 | 筑基定型的三个核心技能属性倍率+5个百分点 | 允许定力 | 个人结丹试炼；配方可打造4件 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r04_pure_talisman",
+      "name": "太清护魂符",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 104,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.3 珍品特定装备\n| `r04_pure_talisman` 太清护魂符 | 饰品 | 22 | DoT伤害-15%；恐惧状态命中-20% | 允许定力 | 化仙宗遗命最终节点；或五鬼袋净化节点 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r04_seal_order",
+      "name": "封魔令",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 105,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.3 珍品特定装备\n| `r04_seal_order` 封魔令 | 饰品 | 22 | 魔气状态命中-20%；魔气侵蚀的受伤增幅减半 | 允许护体、定力 | 三条封链主线汇流 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r04_five_ghost_ring",
+      "name": "五鬼噬灵环",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 106,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.3 珍品特定装备\n| `r04_five_ghost_ring` 五鬼噬灵环 | 饰品 | 22 | 直接攻击20%基础命中附加定力-10%/80 tick | 允许定力 | 五鬼袋→至少三魂遗愿→选择炼成法器 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "a02_soul_banner_mail",
+      "name": "封坛军魂甲",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 107,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.4 乌婆Boss魂器\n| `a02_soul_banner_mail` 封坛军魂甲 | 玄甲/防具 | 上品 | 18 | 肉身、护体 | 尸毒造成的治疗降低效果减少10个百分点；受到敌方召唤单位伤害-8% | 封坛尸将魂魄交付乌婆 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "a04_soul_wing_robe",
+      "name": "银翅魂衣",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 108,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.4 乌婆Boss魂器\n| `a04_soul_wing_robe` 银翅魂衣 | 行衣/防具 | 珍品 | 28 | 神识、遁速 | 攻击飞行目标时受到的普通命中惩罚减少15个百分点；迟缓幅度降低20% | 银翅尸煞魂魄交付乌婆 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w04_vajra_zhenmo",
+      "name": "镇魔金刚杵",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 109,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.5 古宝特定装备\n| `w04_vajra_zhenmo` 镇魔金刚杵 | 金刚禅器 | 护法线嘲讽+25、金轮反照+12%；魔相线伤害转疗+12% | 34/0/12/0/32/28/14 | 120 | 镇邪禅珠+修复镇尸链+金身尸卫残骨+金刚禅修个人结丹试炼 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w04_mirror_leihuo",
+      "name": "八门雷火镜",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 110,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.5 古宝特定装备\n| `w04_mirror_leihuo` 八门雷火镜 | 五行法器 | 对尸煞/魔气+15%；群攻每多命中1敌增伤3%，上限9% | 0/36/32/18/8/6/20 | 120 | 五火法轮+修复锁魂链+封魂间火种+五行法修个人结丹试炼 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w04_talisman_taiqing",
+      "name": "太清符印",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 111,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.5 古宝特定装备\n| `w04_talisman_taiqing` 太清符印 | 玄箓符器 | 镇幽首次群疗+25%；万象首次单疗或符傀生命+25%；其余恢复+10% | 0/30/30/8/16/10/26 | 120 | 镇幽符匣+化仙宗遗命“木青萝留营”结局+玄箓修个人结丹试炼 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "w04_sword_tiangang",
+      "name": "天罡镇魔剑胚",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 112,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.5 古宝特定装备\n| `w04_sword_tiangang` 天罡镇魔剑胚 | 剑器 | 青冥不受飞行惩罚且对飞行+10%；玄岳破甲+5个百分点 | 32/0/36/30/10/8/4 | 120 | 铸灵剑胚+残翎核心+修复镇魔剑炉+剑修个人结丹试炼 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "a04_demon_mail",
+      "name": "镇魔宝甲",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 113,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.5 古宝特定装备\n| `a04_demon_mail` 镇魔宝甲 | 玄甲 | 尸毒与魔气状态命中-20% | 12/0/10/0/38/42/28 | 130 | 三条封链均修复+金身尸卫核心+古修甲片 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "a04_pure_robe",
+      "name": "清虚法衣",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 114,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.5 古宝特定装备\n| `a04_pure_robe` 清虚法衣 | 法衣 | 恐惧与空间错位效果降低30% | 0/26/24/18/18/8/36 | 130 | 化仙宗遗命+结丹祭坛+封魂间清气 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    },
+    {
+      "code": "r04_space_bead",
+      "name": "黑风定界珠",
+      "revision": 0,
+      "status": "disabled",
+      "sortOrder": 115,
+      "category": "equipment",
+      "usageTag": "equipment",
+      "qualityCode": null,
+      "stackLimit": 1,
+      "iconPath": "",
+      "isProtected": false,
+      "isDiscardable": true,
+      "isMarketSellable": false,
+      "details": {
+        "source": "Docs/1.0策划案/数值/18_1.0装备与掉落数值_草案.md",
+        "description": "### 5.5 古宝特定装备\n| `r04_space_bead` 黑风定界珠 | 饰品 | 空间错位免疫；每战一次抵消行动条击退 | 10/12/28/30/16/8/16 | 120 | 黑风封路→击败黑风旗影→修复定界链→回收珠核 |\n旧品质与新六档映射及装备执行配置待校准，保留原始定义，不作为已就绪掉落。",
+        "contentStatus": "planned"
+      }
+    }
+  ],
+  "recipes": [
+    {
+      "code": "rcp_pickaxe",
+      "name": "炼制开山镐",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 20,
+      "availability": "ready",
+      "workshopLevel": 1,
+      "outputCode": "pickaxe",
+      "outputQuantity": 1,
+      "costs": [
+        {
+          "kind": "resource",
+          "code": "darkIron",
+          "quantity": 10
+        }
+      ]
+    },
+    {
+      "code": "rcp_return_talisman",
+      "name": "炼制归营符",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 21,
+      "availability": "ready",
+      "workshopLevel": 2,
+      "outputCode": "return_talisman",
+      "outputQuantity": 1,
+      "costs": [
+        {
+          "kind": "resource",
+          "code": "spiritCrystal",
+          "quantity": 3
+        },
+        {
+          "kind": "item",
+          "code": "spirit_guiding_sand",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "code": "rcp_dustfall_pill",
+      "name": "炼制降尘丹",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 22,
+      "availability": "ready",
+      "workshopLevel": 3,
+      "outputCode": "dustfall_pill",
+      "outputQuantity": 1,
+      "costs": [
+        {
+          "kind": "item",
+          "code": "condensation_herb",
+          "quantity": 1
+        },
+        {
+          "kind": "resource",
+          "code": "spiritCrystal",
+          "quantity": 15
+        }
+      ]
+    },
+    {
+      "code": "rcp_random_rune",
+      "name": "炼制随机器纹",
+      "revision": 0,
+      "status": "active",
+      "sortOrder": 30,
+      "availability": "planned",
+      "workshopLevel": 1,
+      "outputCode": "rune_strength",
+      "outputQuantity": 1,
+      "outcomes": [
+        {
+          "code": "rune_strength",
+          "quantity": 1,
+          "weight": 1
+        },
+        {
+          "code": "rune_magic",
+          "quantity": 1,
+          "weight": 1
+        },
+        {
+          "code": "rune_technique",
+          "quantity": 1,
+          "weight": 1
+        },
+        {
+          "code": "rune_speed",
+          "quantity": 1,
+          "weight": 1
+        },
+        {
+          "code": "rune_constitution",
+          "quantity": 1,
+          "weight": 1
+        },
+        {
+          "code": "rune_armor",
+          "quantity": 1,
+          "weight": 1
+        },
+        {
+          "code": "rune_resistance",
+          "quantity": 1,
+          "weight": 1
+        }
+      ],
+      "costs": [
+        {
+          "kind": "item",
+          "code": "artifact_spirit_fragment",
+          "quantity": 2
+        },
+        {
+          "kind": "resource",
+          "code": "spiritCrystal",
+          "quantity": 6
+        },
+        {
+          "kind": "currency",
+          "code": "spiritStone",
+          "quantity": 120
+        }
+      ]
+    }
+  ],
+  "market": {
+    "code": "default",
+    "revision": 0,
+    "currency": "spiritStone",
+    "refreshSeconds": 7200,
+    "randomSlots": 6,
+    "refreshBase": 600,
+    "refreshPerMap": 300,
+    "currentTierPercent": 70,
+    "groups": [
+      {
+        "code": "resource_pack",
+        "name": "资源包",
+        "weight": 42,
+        "minMap": 1,
+        "stockMin": 1,
+        "stockMax": 1,
+        "prices": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "availability": "ready"
+      },
+      {
+        "code": "shadow_stone",
+        "name": "照影石",
+        "weight": 12,
+        "minMap": 2,
+        "stockMin": 1,
+        "stockMax": 2,
+        "prices": [
+          260,
+          260,
+          260,
+          260
+        ],
+        "availability": "ready"
+      },
+      {
+        "code": "condensation_herb",
+        "name": "凝丹灵草",
+        "weight": 6,
+        "minMap": 3,
+        "stockMin": 1,
+        "stockMax": 1,
+        "prices": [
+          1200,
+          1200,
+          1200,
+          1200
+        ],
+        "availability": "ready"
+      },
+      {
+        "code": "effect_blueprint",
+        "name": "特殊效果蓝图",
+        "weight": 18,
+        "minMap": 2,
+        "stockMin": 1,
+        "stockMax": 1,
+        "prices": [
+          0,
+          1600,
+          2400,
+          3600
+        ],
+        "availability": "planned"
+      },
+      {
+        "code": "double_blueprint",
+        "name": "双器纹槽蓝图",
+        "weight": 18,
+        "minMap": 2,
+        "stockMin": 1,
+        "stockMax": 1,
+        "prices": [
+          0,
+          2400,
+          3600,
+          5200
+        ],
+        "availability": "planned"
+      },
+      {
+        "code": "effect_double_blueprint",
+        "name": "特效加双槽蓝图",
+        "weight": 4,
+        "minMap": 2,
+        "stockMin": 1,
+        "stockMax": 1,
+        "prices": [
+          0,
+          3600,
+          5200,
+          7600
+        ],
+        "availability": "planned"
+      }
+    ],
+    "goods": [
+      {
+        "code": "shop_bigu_cake",
+        "itemCode": "bigu_cake",
+        "shelf": "fixed",
+        "groupCode": null,
+        "price": 40,
+        "stock": 5,
+        "minMap": 1,
+        "tier": null,
+        "enabled": true
+      },
+      {
+        "code": "shop_pickaxe",
+        "itemCode": "pickaxe",
+        "shelf": "fixed",
+        "groupCode": null,
+        "price": 100,
+        "stock": 2,
+        "minMap": 1,
+        "tier": null,
+        "enabled": true
+      },
+      {
+        "code": "shop_return_talisman",
+        "itemCode": "return_talisman",
+        "shelf": "fixed",
+        "groupCode": null,
+        "price": 160,
+        "stock": 2,
+        "minMap": 1,
+        "tier": null,
+        "enabled": true
+      },
+      {
+        "code": "shop_lens",
+        "itemCode": "lens",
+        "shelf": "fixed",
+        "groupCode": null,
+        "price": 500,
+        "stock": 1,
+        "minMap": 1,
+        "tier": null,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_wood_low",
+        "itemCode": "item_resource_pack_wood_low",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 120,
+        "stock": 1,
+        "minMap": 1,
+        "tier": 1,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_wood_high",
+        "itemCode": "item_resource_pack_wood_high",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 330,
+        "stock": 1,
+        "minMap": 2,
+        "tier": 2,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_wood_special",
+        "itemCode": "item_resource_pack_wood_special",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 820,
+        "stock": 1,
+        "minMap": 3,
+        "tier": 3,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_wood_immortal",
+        "itemCode": "item_resource_pack_wood_immortal",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 1900,
+        "stock": 1,
+        "minMap": 4,
+        "tier": 4,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_iron_low",
+        "itemCode": "item_resource_pack_iron_low",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 120,
+        "stock": 1,
+        "minMap": 1,
+        "tier": 1,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_iron_high",
+        "itemCode": "item_resource_pack_iron_high",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 330,
+        "stock": 1,
+        "minMap": 2,
+        "tier": 2,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_iron_special",
+        "itemCode": "item_resource_pack_iron_special",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 850,
+        "stock": 1,
+        "minMap": 3,
+        "tier": 3,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_iron_immortal",
+        "itemCode": "item_resource_pack_iron_immortal",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 1950,
+        "stock": 1,
+        "minMap": 4,
+        "tier": 4,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_stone_low",
+        "itemCode": "item_resource_pack_stone_low",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 60,
+        "stock": 1,
+        "minMap": 1,
+        "tier": 1,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_stone_high",
+        "itemCode": "item_resource_pack_stone_high",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 180,
+        "stock": 1,
+        "minMap": 2,
+        "tier": 2,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_stone_special",
+        "itemCode": "item_resource_pack_stone_special",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 500,
+        "stock": 1,
+        "minMap": 3,
+        "tier": 3,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_stone_immortal",
+        "itemCode": "item_resource_pack_stone_immortal",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 1250,
+        "stock": 1,
+        "minMap": 4,
+        "tier": 4,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_crystal_low",
+        "itemCode": "item_resource_pack_crystal_low",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 160,
+        "stock": 1,
+        "minMap": 1,
+        "tier": 1,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_crystal_high",
+        "itemCode": "item_resource_pack_crystal_high",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 450,
+        "stock": 1,
+        "minMap": 2,
+        "tier": 2,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_crystal_special",
+        "itemCode": "item_resource_pack_crystal_special",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 1150,
+        "stock": 1,
+        "minMap": 3,
+        "tier": 3,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_crystal_immortal",
+        "itemCode": "item_resource_pack_crystal_immortal",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 2700,
+        "stock": 1,
+        "minMap": 4,
+        "tier": 4,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_geng_low",
+        "itemCode": "item_resource_pack_geng_low",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 300,
+        "stock": 1,
+        "minMap": 1,
+        "tier": 1,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_geng_high",
+        "itemCode": "item_resource_pack_geng_high",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 820,
+        "stock": 1,
+        "minMap": 2,
+        "tier": 2,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_geng_special",
+        "itemCode": "item_resource_pack_geng_special",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 2100,
+        "stock": 1,
+        "minMap": 3,
+        "tier": 3,
+        "enabled": true
+      },
+      {
+        "code": "shop_item_resource_pack_geng_immortal",
+        "itemCode": "item_resource_pack_geng_immortal",
+        "shelf": "random",
+        "groupCode": "resource_pack",
+        "price": 5000,
+        "stock": 1,
+        "minMap": 4,
+        "tier": 4,
+        "enabled": true
+      },
+      {
+        "code": "shop_shadow_stone",
+        "itemCode": "shadow_stone",
+        "shelf": "random",
+        "groupCode": "shadow_stone",
+        "price": 260,
+        "stock": 2,
+        "minMap": 2,
+        "tier": null,
+        "enabled": true
+      },
+      {
+        "code": "shop_condensation_herb",
+        "itemCode": "condensation_herb",
+        "shelf": "random",
+        "groupCode": "condensation_herb",
+        "price": 1200,
+        "stock": 1,
+        "minMap": 3,
+        "tier": null,
+        "enabled": true
+      }
+    ]
+  },
+  "workshop": {
+    "revision": 0,
+    "woodCode": "spiritWood",
+    "costs": [
+      40,
+      60,
+      90,
+      130,
+      180,
+      240,
+      320,
+      420,
+      540,
+      680,
+      850,
+      1050,
+      1280,
+      1540,
+      1840,
+      2180,
+      2560,
+      2980,
+      3440,
+      3940,
+      4500,
+      5120,
+      5800
+    ]
+  }
+}

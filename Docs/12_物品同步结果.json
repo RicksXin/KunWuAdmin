@@ -1,0 +1,707 @@
+{
+  "configSet": "v1_0",
+  "changed": 0,
+  "items": 111,
+  "byCategory": {
+    "processed": 5,
+    "material": 8,
+    "consumable": 9,
+    "food": 4,
+    "resource_pack": 20,
+    "rune": 7,
+    "quest": 4,
+    "equipment": 54
+  },
+  "withImages": [
+    {
+      "code": "pickaxe",
+      "name": "开山镐",
+      "path": "/items/pickaxe.png"
+    },
+    {
+      "code": "lens",
+      "name": "探灵镜",
+      "path": "/items/lens.png"
+    },
+    {
+      "code": "bigu_cake",
+      "name": "辟谷饼",
+      "path": "/items/bigu_cake.png"
+    }
+  ],
+  "missingImages": [
+    {
+      "code": "ingot_common",
+      "name": "法器铁胚"
+    },
+    {
+      "code": "ingot_refined",
+      "name": "真宝铁胚"
+    },
+    {
+      "code": "ingot_superior",
+      "name": "法宝铁胚"
+    },
+    {
+      "code": "ingot_precious",
+      "name": "古宝铁胚"
+    },
+    {
+      "code": "ingot_magic",
+      "name": "通天灵宝铁胚"
+    },
+    {
+      "code": "spirit_guiding_sand",
+      "name": "引灵砂"
+    },
+    {
+      "code": "shadow_stone",
+      "name": "照影石"
+    },
+    {
+      "code": "dew_grass",
+      "name": "凝露草"
+    },
+    {
+      "code": "condensation_herb",
+      "name": "凝丹灵草"
+    },
+    {
+      "code": "artifact_spirit_fragment",
+      "name": "器灵残片"
+    },
+    {
+      "code": "four_array_sand",
+      "name": "四象阵砂"
+    },
+    {
+      "code": "demon_marrow_fragment",
+      "name": "魔髓碎屑"
+    },
+    {
+      "code": "ancient_treasure_fragment",
+      "name": "古宝残片"
+    },
+    {
+      "code": "return_talisman",
+      "name": "归营符"
+    },
+    {
+      "code": "dustfall_pill",
+      "name": "降尘丹"
+    },
+    {
+      "code": "travel_ration",
+      "name": "山行干粮"
+    },
+    {
+      "code": "wolf_meat",
+      "name": "妖狼肉"
+    },
+    {
+      "code": "earth_dragon_meat",
+      "name": "地龙肉"
+    },
+    {
+      "code": "item_resource_pack_wood_low",
+      "name": "下品灵木包"
+    },
+    {
+      "code": "item_resource_pack_wood_high",
+      "name": "上品灵木包"
+    },
+    {
+      "code": "item_resource_pack_wood_special",
+      "name": "特级灵木包"
+    },
+    {
+      "code": "item_resource_pack_wood_immortal",
+      "name": "仙品灵木包"
+    },
+    {
+      "code": "item_resource_pack_iron_low",
+      "name": "下品玄铁包"
+    },
+    {
+      "code": "item_resource_pack_iron_high",
+      "name": "上品玄铁包"
+    },
+    {
+      "code": "item_resource_pack_iron_special",
+      "name": "特级玄铁包"
+    },
+    {
+      "code": "item_resource_pack_iron_immortal",
+      "name": "仙品玄铁包"
+    },
+    {
+      "code": "item_resource_pack_stone_low",
+      "name": "下品灵石包"
+    },
+    {
+      "code": "item_resource_pack_stone_high",
+      "name": "上品灵石包"
+    },
+    {
+      "code": "item_resource_pack_stone_special",
+      "name": "特级灵石包"
+    },
+    {
+      "code": "item_resource_pack_stone_immortal",
+      "name": "仙品灵石包"
+    },
+    {
+      "code": "item_resource_pack_crystal_low",
+      "name": "下品灵晶包"
+    },
+    {
+      "code": "item_resource_pack_crystal_high",
+      "name": "上品灵晶包"
+    },
+    {
+      "code": "item_resource_pack_crystal_special",
+      "name": "特级灵晶包"
+    },
+    {
+      "code": "item_resource_pack_crystal_immortal",
+      "name": "仙品灵晶包"
+    },
+    {
+      "code": "item_resource_pack_geng_low",
+      "name": "下品庚精包"
+    },
+    {
+      "code": "item_resource_pack_geng_high",
+      "name": "上品庚精包"
+    },
+    {
+      "code": "item_resource_pack_geng_special",
+      "name": "特级庚精包"
+    },
+    {
+      "code": "item_resource_pack_geng_immortal",
+      "name": "仙品庚精包"
+    },
+    {
+      "code": "rune_strength",
+      "name": "力道器纹"
+    },
+    {
+      "code": "rune_magic",
+      "name": "法力器纹"
+    },
+    {
+      "code": "rune_technique",
+      "name": "神识器纹"
+    },
+    {
+      "code": "rune_speed",
+      "name": "遁速器纹"
+    },
+    {
+      "code": "rune_constitution",
+      "name": "肉身器纹"
+    },
+    {
+      "code": "rune_armor",
+      "name": "护体器纹"
+    },
+    {
+      "code": "rune_resistance",
+      "name": "定力器纹"
+    },
+    {
+      "code": "infant_jade",
+      "name": "凝婴玉髓"
+    },
+    {
+      "code": "soul_incense",
+      "name": "蕴神天香"
+    },
+    {
+      "code": "void_crystal",
+      "name": "破虚玄晶"
+    },
+    {
+      "code": "unity_jade",
+      "name": "两仪合真璧"
+    },
+    {
+      "code": "tribulation_talisman",
+      "name": "渡厄金符"
+    },
+    {
+      "code": "stone_spirit_core",
+      "name": "石灵核心"
+    },
+    {
+      "code": "forge_spirit_core",
+      "name": "铸灵核心"
+    },
+    {
+      "code": "sealed_altar_order",
+      "name": "封坛令"
+    },
+    {
+      "code": "remnant_wing_core",
+      "name": "残翎核心"
+    },
+    {
+      "code": "w01_sword_tiemu",
+      "name": "铁木重锋"
+    },
+    {
+      "code": "w01_orb_juhuo",
+      "name": "聚火灵珠"
+    },
+    {
+      "code": "w01_needles_qingnang",
+      "name": "青囊针匣"
+    },
+    {
+      "code": "w01_daggers_wugang",
+      "name": "乌钢降魔杵"
+    },
+    {
+      "code": "a01_old_mail",
+      "name": "旧营锁甲"
+    },
+    {
+      "code": "a01_dust_robe",
+      "name": "避尘道袍"
+    },
+    {
+      "code": "r01_heart_mirror",
+      "name": "护心镜"
+    },
+    {
+      "code": "r01_spirit_jade",
+      "name": "引灵玉"
+    },
+    {
+      "code": "r01_medicine_pendant",
+      "name": "药王佩"
+    },
+    {
+      "code": "r01_night_buckle",
+      "name": "夜行扣"
+    },
+    {
+      "code": "w02_sword_zhenwen",
+      "name": "镇纹剑匣"
+    },
+    {
+      "code": "w02_disc_sixiang",
+      "name": "四象法盘"
+    },
+    {
+      "code": "w02_cauldron_huiyuan",
+      "name": "回元符鼎"
+    },
+    {
+      "code": "w02_daggers_pozhen",
+      "name": "破阵金刚轮"
+    },
+    {
+      "code": "a02_jade_mail",
+      "name": "白玉玄甲"
+    },
+    {
+      "code": "a02_four_robe",
+      "name": "四象法衣"
+    },
+    {
+      "code": "r02_array_pendant",
+      "name": "阵眼玉佩"
+    },
+    {
+      "code": "r02_cold_ring",
+      "name": "寒髓环"
+    },
+    {
+      "code": "r02_soul_bell",
+      "name": "追魂铃"
+    },
+    {
+      "code": "w03_sword_bixie",
+      "name": "辟邪剑胚"
+    },
+    {
+      "code": "w03_cauldron_baicao",
+      "name": "百草符鼎"
+    },
+    {
+      "code": "w03_blade_wuying",
+      "name": "无影法镜"
+    },
+    {
+      "code": "a03_ancient_mail",
+      "name": "古修玄甲"
+    },
+    {
+      "code": "a03_treasure_robe",
+      "name": "灵宝法袍"
+    },
+    {
+      "code": "w04_cauldron_taiqing",
+      "name": "太清符鼎"
+    },
+    {
+      "code": "w04_blade_bimo",
+      "name": "辟魔金刚轮"
+    },
+    {
+      "code": "r01_guard_token",
+      "name": "护法令碎片"
+    },
+    {
+      "code": "r01_talisman_pendant",
+      "name": "符心佩"
+    },
+    {
+      "code": "r02_thunder_bead",
+      "name": "雷纹珠"
+    },
+    {
+      "code": "r02_mirage_ring",
+      "name": "蜃光环"
+    },
+    {
+      "code": "r02_clear_pouch",
+      "name": "清灵囊"
+    },
+    {
+      "code": "w03_vajra_soul",
+      "name": "镇邪禅珠"
+    },
+    {
+      "code": "w03_wheel_wuhuo",
+      "name": "五火法轮"
+    },
+    {
+      "code": "w03_talisman_zhenyou",
+      "name": "镇幽符匣"
+    },
+    {
+      "code": "w03_sword_lingbao",
+      "name": "铸灵剑胚"
+    },
+    {
+      "code": "r03_soul_tablet",
+      "name": "护魂牌"
+    },
+    {
+      "code": "r03_storage_buckle",
+      "name": "须弥扣"
+    },
+    {
+      "code": "r03_forge_ring",
+      "name": "铸灵指环"
+    },
+    {
+      "code": "r03_insight_lens",
+      "name": "洞玄镜片"
+    },
+    {
+      "code": "r03_spring_jade",
+      "name": "回春玉"
+    },
+    {
+      "code": "r04_wing_ring",
+      "name": "残翅骨环"
+    },
+    {
+      "code": "r04_core_pendant",
+      "name": "凝金玉佩"
+    },
+    {
+      "code": "r04_pure_talisman",
+      "name": "太清护魂符"
+    },
+    {
+      "code": "r04_seal_order",
+      "name": "封魔令"
+    },
+    {
+      "code": "r04_five_ghost_ring",
+      "name": "五鬼噬灵环"
+    },
+    {
+      "code": "a02_soul_banner_mail",
+      "name": "封坛军魂甲"
+    },
+    {
+      "code": "a04_soul_wing_robe",
+      "name": "银翅魂衣"
+    },
+    {
+      "code": "w04_vajra_zhenmo",
+      "name": "镇魔金刚杵"
+    },
+    {
+      "code": "w04_mirror_leihuo",
+      "name": "八门雷火镜"
+    },
+    {
+      "code": "w04_talisman_taiqing",
+      "name": "太清符印"
+    },
+    {
+      "code": "w04_sword_tiangang",
+      "name": "天罡镇魔剑胚"
+    },
+    {
+      "code": "a04_demon_mail",
+      "name": "镇魔宝甲"
+    },
+    {
+      "code": "a04_pure_robe",
+      "name": "清虚法衣"
+    },
+    {
+      "code": "r04_space_bead",
+      "name": "黑风定界珠"
+    }
+  ],
+  "planned": [
+    {
+      "code": "infant_jade",
+      "name": "凝婴玉髓"
+    },
+    {
+      "code": "soul_incense",
+      "name": "蕴神天香"
+    },
+    {
+      "code": "void_crystal",
+      "name": "破虚玄晶"
+    },
+    {
+      "code": "unity_jade",
+      "name": "两仪合真璧"
+    },
+    {
+      "code": "tribulation_talisman",
+      "name": "渡厄金符"
+    },
+    {
+      "code": "w01_sword_tiemu",
+      "name": "铁木重锋"
+    },
+    {
+      "code": "w01_orb_juhuo",
+      "name": "聚火灵珠"
+    },
+    {
+      "code": "w01_needles_qingnang",
+      "name": "青囊针匣"
+    },
+    {
+      "code": "w01_daggers_wugang",
+      "name": "乌钢降魔杵"
+    },
+    {
+      "code": "a01_old_mail",
+      "name": "旧营锁甲"
+    },
+    {
+      "code": "a01_dust_robe",
+      "name": "避尘道袍"
+    },
+    {
+      "code": "r01_heart_mirror",
+      "name": "护心镜"
+    },
+    {
+      "code": "r01_spirit_jade",
+      "name": "引灵玉"
+    },
+    {
+      "code": "r01_medicine_pendant",
+      "name": "药王佩"
+    },
+    {
+      "code": "r01_night_buckle",
+      "name": "夜行扣"
+    },
+    {
+      "code": "w02_sword_zhenwen",
+      "name": "镇纹剑匣"
+    },
+    {
+      "code": "w02_disc_sixiang",
+      "name": "四象法盘"
+    },
+    {
+      "code": "w02_cauldron_huiyuan",
+      "name": "回元符鼎"
+    },
+    {
+      "code": "w02_daggers_pozhen",
+      "name": "破阵金刚轮"
+    },
+    {
+      "code": "a02_jade_mail",
+      "name": "白玉玄甲"
+    },
+    {
+      "code": "a02_four_robe",
+      "name": "四象法衣"
+    },
+    {
+      "code": "r02_array_pendant",
+      "name": "阵眼玉佩"
+    },
+    {
+      "code": "r02_cold_ring",
+      "name": "寒髓环"
+    },
+    {
+      "code": "r02_soul_bell",
+      "name": "追魂铃"
+    },
+    {
+      "code": "w03_sword_bixie",
+      "name": "辟邪剑胚"
+    },
+    {
+      "code": "w03_cauldron_baicao",
+      "name": "百草符鼎"
+    },
+    {
+      "code": "w03_blade_wuying",
+      "name": "无影法镜"
+    },
+    {
+      "code": "a03_ancient_mail",
+      "name": "古修玄甲"
+    },
+    {
+      "code": "a03_treasure_robe",
+      "name": "灵宝法袍"
+    },
+    {
+      "code": "w04_cauldron_taiqing",
+      "name": "太清符鼎"
+    },
+    {
+      "code": "w04_blade_bimo",
+      "name": "辟魔金刚轮"
+    },
+    {
+      "code": "r01_guard_token",
+      "name": "护法令碎片"
+    },
+    {
+      "code": "r01_talisman_pendant",
+      "name": "符心佩"
+    },
+    {
+      "code": "r02_thunder_bead",
+      "name": "雷纹珠"
+    },
+    {
+      "code": "r02_mirage_ring",
+      "name": "蜃光环"
+    },
+    {
+      "code": "r02_clear_pouch",
+      "name": "清灵囊"
+    },
+    {
+      "code": "w03_vajra_soul",
+      "name": "镇邪禅珠"
+    },
+    {
+      "code": "w03_wheel_wuhuo",
+      "name": "五火法轮"
+    },
+    {
+      "code": "w03_talisman_zhenyou",
+      "name": "镇幽符匣"
+    },
+    {
+      "code": "w03_sword_lingbao",
+      "name": "铸灵剑胚"
+    },
+    {
+      "code": "r03_soul_tablet",
+      "name": "护魂牌"
+    },
+    {
+      "code": "r03_storage_buckle",
+      "name": "须弥扣"
+    },
+    {
+      "code": "r03_forge_ring",
+      "name": "铸灵指环"
+    },
+    {
+      "code": "r03_insight_lens",
+      "name": "洞玄镜片"
+    },
+    {
+      "code": "r03_spring_jade",
+      "name": "回春玉"
+    },
+    {
+      "code": "r04_wing_ring",
+      "name": "残翅骨环"
+    },
+    {
+      "code": "r04_core_pendant",
+      "name": "凝金玉佩"
+    },
+    {
+      "code": "r04_pure_talisman",
+      "name": "太清护魂符"
+    },
+    {
+      "code": "r04_seal_order",
+      "name": "封魔令"
+    },
+    {
+      "code": "r04_five_ghost_ring",
+      "name": "五鬼噬灵环"
+    },
+    {
+      "code": "a02_soul_banner_mail",
+      "name": "封坛军魂甲"
+    },
+    {
+      "code": "a04_soul_wing_robe",
+      "name": "银翅魂衣"
+    },
+    {
+      "code": "w04_vajra_zhenmo",
+      "name": "镇魔金刚杵"
+    },
+    {
+      "code": "w04_mirror_leihuo",
+      "name": "八门雷火镜"
+    },
+    {
+      "code": "w04_talisman_taiqing",
+      "name": "太清符印"
+    },
+    {
+      "code": "w04_sword_tiangang",
+      "name": "天罡镇魔剑胚"
+    },
+    {
+      "code": "a04_demon_mail",
+      "name": "镇魔宝甲"
+    },
+    {
+      "code": "a04_pure_robe",
+      "name": "清虚法衣"
+    },
+    {
+      "code": "r04_space_bead",
+      "name": "黑风定界珠"
+    }
+  ],
+  "recipes": 9,
+  "shopGoods": 26,
+  "workshop": true
+}

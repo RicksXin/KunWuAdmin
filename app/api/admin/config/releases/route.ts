@@ -1,3 +1,4 @@
+import { requireConfigAdmin } from "@/server/http/config-auth";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { configErrorResponse, errorResponse, requestIdFor } from "@/server/http/config-errors";
@@ -20,6 +21,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   const requestId = requestIdFor(request);
   try {
+    await requireConfigAdmin(request,"release.build");
     const body = z.object({ configSet: configSetSchema, mode: z.enum(["preview", "publish"]).default("preview") }).parse(await request.json());
     return NextResponse.json(await buildDevelopmentRelease(body.configSet, body.mode, requestId), { status: 201, headers: { "x-request-id": requestId } });
   } catch (error) {

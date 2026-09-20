@@ -1,3 +1,4 @@
+import { ResourceError } from "@/server/services/resource-service";
 import { NextResponse } from "next/server";
 import { ZodError } from "zod";
 import { ConfigSetNotFoundError } from "@/server/services/config-query";
@@ -10,6 +11,7 @@ export function requestIdFor(request: Request) {
 }
 
 export function configErrorResponse(error: unknown, requestId: string, fallbackMessage: string) {
+  if (error instanceof ResourceError) return errorResponse(error.code, error.code === "UNAUTHENTICATED" ? "请先连接管理身份" : "没有此操作权限", requestId, error.status);
   if (error instanceof ConfigSetNotFoundError || error instanceof SkillNotFoundError) {
     return errorResponse("NOT_FOUND", "配置实体不存在", requestId, 404);
   }

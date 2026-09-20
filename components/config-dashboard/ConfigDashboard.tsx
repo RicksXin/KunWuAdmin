@@ -1,30 +1,29 @@
 "use client";
 
+import {domainViews,businessEntries,type DomainView} from "@/server/domain/admin/ownership";
 import { AdminRail } from "@/components/admin/AdminRail";
+import { SkillMechanicsEditor } from "./SkillMechanicsEditor";
+import { BattleDesignViewer,type BattleDesignDetail } from "./BattleDesignViewer";
 
-import { useEffect, useMemo, useState } from "react";
+import { ConfigLogin } from "@/components/admin/ConfigLogin";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
-  AlertTriangle,
   Boxes,
   CheckCircle2,
   ChevronRight,
   CircleUserRound,
   ClipboardCheck,
   Database,
-  Factory,
   GitCompareArrows,
   Hammer,
   LoaderCircle,
-  Map,
   RefreshCw,
   ShieldAlert,
   Sparkles,
-  Swords,
   ThumbsDown,
   ThumbsUp,
   X,
-  Users,
 } from "lucide-react";
 
 type ModuleCode = "base" | "progression" | "combat" | "economy" | "expedition";
@@ -42,6 +41,7 @@ interface SkillDraft {
   ignoreTaunt: boolean; baseIntervalTicks: number; castTicks: number; cooldownTicks: number;
   primaryAttribute: string | null; primaryPercent: number; secondaryAttribute: string | null; secondaryPercent: number;
   status: "active" | "disabled"; sortOrder: number; notes: string | null;
+  mechanics?: import("@/server/domain/skills/config").SkillMechanics | null;
 }
 interface ReleaseWorkspace {
   currentRevision: number;
@@ -60,73 +60,94 @@ interface ChangeRequestWorkspace {
   };
 }
 
-const moduleIcons = { base: Boxes, progression: Users, combat: Swords, economy: Factory, expedition: Map };
+const groupNames:Record<string,string>={skills:"修士技能",enemySkills:"敌人技能",enemies:"敌人模板与属性",maps:"地图基础",objects:"资源与交互点",placements:"地图落点",encounters:"敌人编组",map01Bindings:"地图1入口与奖励",bossEquipmentRewards:"Boss首杀装备",rewardPacks:"奖励包",buildings:"营地建筑",equipmentRuntime:"装备模板"};
 const fieldNames: Record<string, string> = {
+  runtimeId:"地图入口", firstReward:"首杀魂晶", repeatReward:"重复魂晶",members:"编成",slot:"槽位",baseStatBudget:"每纹基础预算",runeSlots:"器纹数量",allowedStats:"器纹池",quantity:"数量",
+  strength:"力道",magic:"术法",technique:"技艺",speed:"速度",constitution:"体质",armor:"护甲",resistance:"抗性",name:"名称",
   code: "稳定 ID", nameKey: "名称键", type: "类型", status: "状态", weight: "重量", level: "等级", maxLevel: "最高等级",
   basePercent: "基础倍率", growthPercent: "成长倍率", minLevel: "最低等级", target: "目标",
   interval: "行动 Tick", cooldown: "冷却 Tick", hp: "生命", escapePercent: "撤离阈值", output: "单工产出", upkeep: "单工维护",
   shutdownPriority: "停工顺序", mapNumber: "地图序号", width: "宽", height: "高", title: "标题", refresh: "刷新", x: "X", y: "Y",
 };
 
-export function ConfigDashboard() {
-  const [configSetCode, setConfigSetCode] = useState("demo_d0");
-  const [activeModule, setActiveModule] = useState<ModuleCode>("base");
+export function ConfigDashboard({initialConfigSet="v1_0",view="release"}:{initialConfigSet?:string;view?:DomainView|"release"}) {
+  const isRelease=view==="release";
+  const domain=isRelease?null:domainViews[view];
+  const pageTitle=domain?.name??"版本与发布";
+  const [activeGroup,setActiveGroup]=useState<string>(domain?.groups[0]??"");
+  const [entityError,setEntityError]=useState("");
+  const [configSetCode, setConfigSetCode] = useState(initialConfigSet);
+  const selectedSet = useRef(initialConfigSet);
+  const overviewRequest = useRef(0), entityRequest = useRef(0);
   const [overview, setOverview] = useState<Overview | null>(null);
   const [entities, setEntities] = useState<ModuleEntities | null>(null);
   const [loading, setLoading] = useState(true);
   const [workspace, setWorkspace] = useState<ReleaseWorkspace | null>(null);
   const [changeWorkspace, setChangeWorkspace] = useState<ChangeRequestWorkspace | null>(null);
   const [skillDraft, setSkillDraft] = useState<SkillDraft | null>(null);
+  const [battleDesign,setBattleDesign]=useState<BattleDesignDetail|null>(null);
   const [working, setWorking] = useState<"save" | "validate" | "preview" | "publish" | "change" | null>(null);
   const [notice, setNotice] = useState("正在连接 MySQL 配置中心…");
 
   async function loadWorkspace(code: string) {
     const response = await fetch(`/api/admin/config/releases?configSet=${encodeURIComponent(code)}`, { cache: "no-store" });
     if (!response.ok) throw new Error("WORKSPACE_FAILED");
-    setWorkspace(await response.json() as ReleaseWorkspace);
+    const result=await response.json() as ReleaseWorkspace;
+    if(selectedSet.current===code) setWorkspace(result);
   }
 
   async function loadChangeWorkspace(code: string) {
     const response = await fetch(`/api/admin/config/change-requests?configSet=${encodeURIComponent(code)}`, { cache: "no-store" });
     if (!response.ok) throw new Error("CHANGE_WORKSPACE_FAILED");
-    setChangeWorkspace(await response.json() as ChangeRequestWorkspace);
+    const result=await response.json() as ChangeRequestWorkspace;
+    if(selectedSet.current===code) setChangeWorkspace(result);
   }
 
-  async function loadEntities(code = configSetCode, module = activeModule) {
-    setEntities(null);
-    const response = await fetch(`/api/admin/config/entities?configSet=${encodeURIComponent(code)}&module=${module}`, { cache: "no-store" });
+  async function loadEntities(code = configSetCode) {
+    const request=++entityRequest.current;
+    setEntities(null);setEntityError("");
+    if(isRelease)return;
+    const response = await fetch(`/api/admin/config/domains/${view}?configSet=${encodeURIComponent(code)}`, { cache: "no-store" });
     if (!response.ok) throw new Error("ENTITIES_FAILED");
-    setEntities(await response.json() as ModuleEntities);
+    const result=await response.json() as ModuleEntities;
+    if(request===entityRequest.current && selectedSet.current===code) setEntities(result);
   }
 
   async function loadOverview(code: string) {
+    const request=++overviewRequest.current;
     setLoading(true);
     try {
       const response = await fetch(`/api/admin/config/overview?configSet=${encodeURIComponent(code)}`, { cache: "no-store" });
       if (!response.ok) throw new Error("OVERVIEW_FAILED");
       const data = await response.json() as Overview;
+      if(request!==overviewRequest.current || selectedSet.current!==code)return;
       setOverview(data);
-      await Promise.all([loadWorkspace(code), loadChangeWorkspace(code)]);
+      if(isRelease) await Promise.all([loadWorkspace(code), loadChangeWorkspace(code)]);
+      if(request!==overviewRequest.current || selectedSet.current!==code)return;
       setNotice(`${data.configSet.name} · 修订 ${data.configSet.currentRevision} · 数据来自 MySQL`);
     } catch {
-      setNotice("配置总览加载失败，请确认 MySQL 与迁移状态");
+      if(request===overviewRequest.current) setNotice("配置总览加载失败，请确认 MySQL 与迁移状态");
     } finally {
-      setLoading(false);
+      if(request===overviewRequest.current) setLoading(false);
     }
   }
 
   useEffect(() => {
+    selectedSet.current=configSetCode;
+    setOverview(null);setWorkspace(null);setChangeWorkspace(null);
     void loadOverview(configSetCode);
     // Fetch helpers are scoped to the component; the selected code is the intended trigger.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [configSetCode]);
+  }, [configSetCode,view]);
   useEffect(() => {
-    void loadEntities(configSetCode, activeModule)
-      .catch(() => setNotice("配置明细加载失败"));
+    setActiveGroup(domain?.groups[0]??"");
+    void loadEntities(configSetCode)
+      .catch(() => {setEntityError("配置明细加载失败，请重试");setNotice("配置明细加载失败");});
     setSkillDraft(null);
+    setBattleDesign(null);
     // loadEntities deliberately follows the selected set and module.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [configSetCode, activeModule]);
+  }, [configSetCode, view]);
 
   async function editSkill(code: string) {
     setNotice(`正在读取技能 ${code}…`);
@@ -135,6 +156,14 @@ export function ConfigDashboard() {
     const data = await response.json() as { skill: SkillDraft };
     setSkillDraft(data.skill);
     setNotice(`正在编辑技能 ${code} · R${data.skill.revision}`);
+  }
+  async function viewBattleDesign(kind:"enemy"|"encounter",code:string){
+    try{
+      const response=await fetch(`/api/admin/config/battle-design?configSet=${encodeURIComponent(configSetCode)}&kind=${kind}&code=${encodeURIComponent(code)}`);
+      const body=await response.json();
+      if(!response.ok)throw new Error(body.error?.message??"读取设计失败");
+      setBattleDesign(body);
+    }catch(error){setNotice(error instanceof Error?error.message:"读取设计失败");}
   }
 
   async function saveSkill() {
@@ -206,64 +235,65 @@ export function ConfigDashboard() {
     finally { setWorking(null); }
   }
 
-  const activeModuleInfo = overview?.modules.find((item) => item.code === activeModule);
-  const importTime = useMemo(() => overview?.latestImport?.finishedAt ? new Intl.DateTimeFormat("zh-CN", { dateStyle: "medium", timeStyle: "short" }).format(new Date(overview.latestImport.finishedAt)) : "尚未导入", [overview]);
+  const visibleGroup=entities?.groups.find(group=>group.code===activeGroup)??entities?.groups[0];
+  const publicationErrors=workspace?.latestValidation?.sourceRevision===overview?.configSet.currentRevision?workspace?.latestValidation?.errorCount:null;
 
-  if (!overview && loading) return <div className="admin-loading-shell"><AdminRail /><div className="loading-screen"><div className="seal-loader">昆</div><LoaderCircle className="spin" /><p>{notice}</p></div></div>;
-  if (!overview) return <div className="admin-loading-shell"><AdminRail /><div className="loading-screen"><ShieldAlert /><p>{notice}</p><button className="secondary-button" onClick={() => loadOverview(configSetCode)}>重试</button></div></div>;
+  if (!overview && loading) return <div className="admin-loading-shell"><AdminRail configSet={configSetCode} /><div className="loading-screen"><div className="seal-loader">昆</div><LoaderCircle className="spin" /><p>{notice}</p></div></div>;
+  if (!overview) return <div className="admin-loading-shell"><AdminRail configSet={configSetCode} /><div className="loading-screen"><ShieldAlert /><p>{notice}</p><button className="secondary-button" onClick={() => loadOverview(configSetCode)}>重试</button></div></div>;
 
   return (
-    <div className="config-shell">
+    <div className={`config-shell ${isRelease?"release-shell":"domain-shell"}`}>
       <header className="app-header">
         <div className="brand-lockup"><div className="brand-seal">昆</div><div><strong>昆吾司典</strong><span>KUNWU CONFIG CONSOLE</span></div></div>
         <div className="header-context">
-          <span>配置中心</span><i /><strong>{overview.configSet.name}</strong>
+          <span>{pageTitle}</span><i /><strong>{overview.configSet.name}</strong>
           <small className="status-badge status-badge--review">草稿 · R{overview.configSet.currentRevision}</small>
         </div>
-        <div className="header-actions">
-          <Link className="secondary-button" href="/resources">资源管理</Link>
+        <div className="header-actions"><ConfigLogin />
+          {!isRelease&&<Link className="secondary-button" href={`/config?configSet=${configSetCode}`}>版本与发布</Link>}
           <label className="config-set-picker"><span>配置集</span><select value={configSetCode} onChange={(event) => setConfigSetCode(event.target.value)}>{overview.availableSets.map((set) => <option key={set.code} value={set.code}>{set.name} · R{set.currentRevision}</option>)}</select></label>
-          <button className="secondary-button" onClick={() => loadOverview(configSetCode)} disabled={loading}>{loading ? <LoaderCircle className="spin" size={15} /> : <RefreshCw size={15} />} 刷新</button>
-          <button className="secondary-button" onClick={runValidation} disabled={working !== null}>{working === "validate" ? <LoaderCircle className="spin" size={15} /> : <ShieldAlert size={15} />} 全量校验</button>
-          <button className="secondary-button" onClick={() => buildRelease("preview")} disabled={working !== null}>{working === "preview" ? <LoaderCircle className="spin" size={15} /> : <Hammer size={15} />} 编译预览</button>
+          <button className="secondary-button" onClick={() => {void loadOverview(configSetCode);void loadEntities().catch(()=>setEntityError("配置明细加载失败，请重试"));}} disabled={loading}>{loading ? <LoaderCircle className="spin" size={15} /> : <RefreshCw size={15} />} 刷新</button>
+          {isRelease&&<><button className="secondary-button" onClick={runValidation} disabled={working !== null}>{working === "validate" ? <LoaderCircle className="spin" size={15} /> : <ShieldAlert size={15} />} 全量校验</button>
+          <button className="secondary-button" onClick={() => buildRelease("preview")} disabled={working !== null}>{working === "preview" ? <LoaderCircle className="spin" size={15} /> : <Hammer size={15} />} 编译预览</button></>}
           <button className="avatar-button" aria-label="用户"><CircleUserRound size={21} /></button>
         </div>
       </header>
 
       <div className="config-workspace">
-        <AdminRail />
+        <AdminRail configSet={configSetCode} />
 
         <aside className="config-sidebar">
-          <div className="sidebar-heading"><div><span className="section-kicker">CONFIG DOMAINS</span><h2>业务配置</h2></div><Database size={18} /></div>
-          <p className="config-sidebar__hint">当前配置集：<b>{overview.configSet.code}</b><br />不同配置集完全隔离。</p>
-          <div className="config-module-list">
-            {overview.modules.map((module) => {
-              const Icon = moduleIcons[module.code];
-              return <button key={module.code} className={module.code === activeModule ? "is-active" : ""} onClick={() => setActiveModule(module.code)}>
-                <Icon size={17} /><span><strong>{module.name}</strong><small>{module.detail}</small></span><em>{module.count}</em><ChevronRight size={14} />
-              </button>;
-            })}
-          </div>
-          <div className="sidebar-divider" />
-          <div className="import-brief"><span>最近实际导入</span><strong>{overview.latestImport ? "D0 已进入草稿" : "尚未导入"}</strong><small>{importTime}</small><code>{overview.latestImport?.sourceKind ?? "—"}</code></div>
+          <div className="sidebar-heading"><div><span className="section-kicker">{isRelease?"VERSION CONTROL":"BUSINESS CONFIG"}</span><h2>{pageTitle}</h2></div><Database size={18}/></div>
+          <p className="config-sidebar__hint">{domain?.detail??"各业务模块维护草稿，在这里统一校验、审核和发布。"}</p>
+          <nav className="config-module-list" aria-label={`${pageTitle}功能`}>
+            {isRelease?businessEntries.map(entry=><Link key={entry.href} href={`${entry.href}?configSet=${configSetCode}`}><Database size={17}/><span><strong>{entry.name}</strong><small>{entry.detail}</small></span><ChevronRight size={14}/></Link>):<>
+              {view==="equipment"&&[{tab:"item",name:"物品目录"},{tab:"quality",name:"品级管理"},{tab:"recipe",name:"炼制配方"},{tab:"market",name:"交易行"}].map(entry=><Link key={entry.tab} href={`/items?configSet=${configSetCode}&tab=${entry.tab}`}><Boxes size={17}/><span><strong>{entry.name}</strong></span><ChevronRight size={14}/></Link>)}
+              {domain?.groups.map(code=><button key={code} className={code===activeGroup?"is-active":""} aria-current={code===activeGroup?"page":undefined} onClick={()=>setActiveGroup(code)}><Database size={17}/><span><strong>{groupNames[code]??code}</strong></span><em>{entities?.groups.find(g=>g.code===code)?.rows.length??"—"}</em><ChevronRight size={14}/></button>)}
+            </>}
+          </nav>
+          <p className="config-sidebar__hint">当前配置集：<b>{configSetCode}</b><br/>不同配置集完全隔离。</p>
+          {view==="camp"&&<p className="config-sidebar__hint"><Link href="/resources">前往资源管理：生产 / 仓储 / 杂役</Link></p>}
         </aside>
 
         <main className="config-main">
-          <div className="config-title-row"><div><span className="section-kicker">MYSQL DRAFT SOURCE</span><h1>{activeModuleInfo?.name}</h1><p>{activeModuleInfo?.detail}</p></div><div className="config-revision"><span>SCHEMA</span><b>v{overview.configSet.schemaVersion}</b><small>Revision {overview.configSet.currentRevision}</small></div></div>
-          <section className="metric-grid">
-            <article><Database /><span>业务实体</span><strong>{overview.modules.reduce((sum, module) => sum + module.count, 0)}</strong><small>已落入关系型业务表</small></article>
-            <article className={overview.issueSummary.errors ? "is-danger" : "is-ok"}>{overview.issueSummary.errors ? <ShieldAlert /> : <CheckCircle2 />}<span>阻断冲突</span><strong>{overview.issueSummary.errors}</strong><small>发布前必须消解</small></article>
-            <article className={overview.issueSummary.warnings ? "is-warning" : "is-ok"}><AlertTriangle /><span>导入警告</span><strong>{overview.issueSummary.warnings}</strong><small>保留候选值与来源</small></article>
-            <article><GitCompareArrows /><span>未解决项</span><strong>{overview.issueSummary.unresolved}</strong><small>不会静默最后文件获胜</small></article>
-          </section>
+          <div className="config-title-row"><div><span className="section-kicker">{isRelease?"RELEASE WORKSPACE":"MYSQL DRAFT SOURCE"}</span><h1>{isRelease?pageTitle:visibleGroup?.name??pageTitle}</h1><p>{domain?.detail??"业务数据在各自管理页维护，本页只处理版本与发布。"}</p></div><div className="config-revision"><span>SCHEMA</span><b>v{overview.configSet.schemaVersion}</b><small>Revision {overview.configSet.currentRevision}</small></div></div>
+          {isRelease?<>
+            <section className="metric-grid">
+              <article><Database/><span>配置修订</span><strong>R{overview.configSet.currentRevision}</strong><small>{overview.configSet.name}</small></article>
+              <article className={publicationErrors?"is-danger":""}><ShieldAlert/><span>发布阻断</span><strong>{publicationErrors??"待校验"}</strong><small>以当前修订的全量校验为准</small></article>
+              <article><GitCompareArrows/><span>导入冲突</span><strong>{overview.issueSummary.unresolved}</strong><small>尚未解决的来源冲突</small></article>
+            </section>
+            <section className="entity-section"><div className="section-heading"><div><h2>业务配置入口</h2><p>每项业务在自己的管理页维护；编译和发布继续使用同一配置集。</p></div></div><div className="business-entry-grid">{businessEntries.map(entry=><Link key={entry.href} href={`${entry.href}?configSet=${configSetCode}`}><strong>{entry.name}</strong><span>{entry.detail}</span><ChevronRight size={16}/></Link>)}</div></section>
+          </>:<section className="entity-section">
+            <div className="section-heading"><div><h2>{visibleGroup?.name??"配置明细"}</h2><p>{activeGroup==="skills"?"点击技能编辑；其他模块按编码引用。":"当前为已入库数据查看，尚未开放的编辑能力不会改变运行配置。"}</p></div></div>
+            {view==="maps"&&<p className="domain-note">地图1入口编组和奖励已有数据；地图定义与落点表仍待接入，空表不代表客户端地图没有对象。地图首杀奖励在此维护归属，不作为敌人通用掉落。</p>}
+            {view==="enemies"&&<p className="domain-note">当前查看敌人属性和机制。敌人独立默认掉落尚未建成，已有遭遇奖励保留在地图页，不会自动改为每只敌人的掉落。</p>}
+            {entityError?<div role="alert" className="entity-empty">{entityError}<button className="secondary-button" onClick={()=>void loadEntities().catch(()=>setEntityError("配置明细加载失败，请重试"))}>重试</button></div>:!entities?<div className="entity-loading"><LoaderCircle className="spin"/> 正在读取业务表…</div>:visibleGroup?<EntityGroup key={`${configSetCode}:${visibleGroup.code}`} group={visibleGroup} actionLabel={visibleGroup.code==="skills"?"点击行编辑":"点击行查看设计"} onEdit={visibleGroup.code==="skills"?editSkill:visibleGroup.code==="enemies"?code=>viewBattleDesign("enemy",code):visibleGroup.code==="encounters"?code=>viewBattleDesign("encounter",code):undefined}/>:<div className="entity-empty">当前配置集暂无数据</div>}
+          </section>}
 
-          <section className="entity-section">
-            <div className="section-heading"><div><h2>{activeModuleInfo?.name}明细</h2><p>技能已开放乐观锁编辑；其他实体继续按领域逐步开放。</p></div><span>{activeModuleInfo?.count ?? 0} 条</span></div>
-            {!entities ? <div className="entity-loading"><LoaderCircle className="spin" /> 正在读取业务表…</div> : entities.groups.map((group) => <EntityGroup key={group.code} group={group} onEdit={group.code === "skills" ? editSkill : undefined} />)}
-          </section>
         </main>
 
-        <aside className="issue-panel">
+        {isRelease&&<aside className="issue-panel">
           <div className="release-panel">
             <div><span className="section-kicker">RELEASE PIPELINE</span><h2>校验与发布</h2></div>
             <ReleaseStatus workspace={workspace} currentRevision={overview.configSet.currentRevision} />
@@ -278,18 +308,19 @@ export function ConfigDashboard() {
             <strong>{issue.entityType ?? "source"} / {issue.entityCode ?? "—"}</strong>
             <p>{issueText(issue.conflictType)}</p>
           </article>)}</div>
-        </aside>
+        </aside>}
       </div>
 
       <footer className="status-bar"><span><Database size={13} /> MySQL 8.4 · {overview.configSet.code}</span><p><Sparkles size={13} /> {notice}</p><div><b>{overview.modules.length}</b> 配置域 <i /><b>{overview.issueSummary.total}</b> 项冲突</div></footer>
-      {skillDraft && <SkillEditor draft={skillDraft} working={working === "save"} onChange={setSkillDraft} onClose={() => setSkillDraft(null)} onSave={saveSkill} />}
+      {skillDraft && <SkillEditor key={`${skillDraft.code}:${skillDraft.revision}`} draft={skillDraft} working={working === "save"} onChange={setSkillDraft} onClose={() => setSkillDraft(null)} onSave={saveSkill} />}
+      {battleDesign&&<BattleDesignViewer value={battleDesign} onClose={()=>setBattleDesign(null)}/>}
     </div>
   );
 }
 
-function EntityGroup({ group, onEdit }: { group: ModuleEntities["groups"][number]; onEdit?: (code: string) => void }) {
+function EntityGroup({ group, onEdit, actionLabel="点击行编辑" }: { group: ModuleEntities["groups"][number]; onEdit?: (code: string) => void; actionLabel?:string }) {
   const fields = Array.from(new Set(group.rows.flatMap((row) => Object.keys(row))));
-  return <div className="entity-group"><div className="entity-group__title"><h3>{group.name}</h3><span>{group.rows.length}</span>{onEdit && <small>点击行编辑</small>}</div>{group.rows.length ? <div className="entity-table-wrap"><table><thead><tr>{fields.map((field) => <th key={field}>{fieldNames[field] ?? field}</th>)}</tr></thead><tbody>{group.rows.map((row, index) => <tr className={onEdit ? "is-editable" : ""} key={`${String(row.code ?? index)}-${index}`} onClick={() => onEdit?.(String(row.code))}>{fields.map((field) => <td key={field}>{renderCell(row[field], field)}</td>)}</tr>)}</tbody></table></div> : <div className="entity-empty">当前配置集暂无数据</div>}</div>;
+  return <div className="entity-group"><div className="entity-group__title"><h3>{group.name}</h3><span>{group.rows.length}</span>{onEdit && <small>{actionLabel}</small>}</div>{group.rows.length ? <div className="entity-table-wrap"><table><thead><tr>{fields.map((field) => <th key={field}>{fieldNames[field] ?? field}</th>)}</tr></thead><tbody>{group.rows.map((row, index) => <tr className={onEdit ? "is-editable" : ""} key={`${String(row.code ?? index)}-${index}`} onClick={() => onEdit?.(String(row.code))}>{fields.map((field) => <td key={field}>{renderCell(row[field], field)}</td>)}</tr>)}</tbody></table></div> : <div className="entity-empty">当前配置集暂无数据</div>}</div>;
 }
 
 function ReleaseStatus({ workspace, currentRevision }: { workspace: ReleaseWorkspace | null; currentRevision: number }) {
@@ -343,8 +374,9 @@ function changeStatusName(status: string) {
 }
 
 const attributes = ["strength", "magic", "technique", "speed", "constitution", "armor", "resistance"];
-const targets = ["SELF", "ALLY_ALL", "ALLY_LOWEST_HP", "ENEMY_SINGLE", "ENEMY_ALL", "ENEMY_LOWEST_HP", "ENEMY_RANDOM_MULTI"];
+const targets = ["SELF", "ALLY_ALL", "ALLY_LOWEST_HP", "ENEMY_SINGLE", "ENEMY_ALL", "ENEMY_LOWEST_HP", "ENEMY_RANDOM_MULTI", "ENEMY_MOST_DEBUFFS"];
 function SkillEditor({ draft, working, onChange, onClose, onSave }: { draft: SkillDraft; working: boolean; onChange: (draft: SkillDraft) => void; onClose: () => void; onSave: () => void }) {
+  const [mechanicsValid,setMechanicsValid]=useState(true);
   const set = <K extends keyof SkillDraft>(key: K, value: SkillDraft[K]) => onChange({ ...draft, [key]: value });
   return <div className="config-modal-backdrop" onMouseDown={onClose}><section className="skill-editor" onMouseDown={(event) => event.stopPropagation()}>
     <header><div><span className="section-kicker">OPTIMISTIC EDITOR · R{draft.revision}</span><h2>编辑技能 <code>{draft.code}</code></h2></div><button className="icon-button" onClick={onClose}><X size={17} /></button></header>
@@ -363,8 +395,9 @@ function SkillEditor({ draft, working, onChange, onClose, onSave }: { draft: Ski
       <NumberField label="排序" value={draft.sortOrder} onChange={(value) => set("sortOrder", value)} />
       <label className="check-field"><input type="checkbox" checked={draft.ignoreTaunt} onChange={(event) => set("ignoreTaunt", event.target.checked)} /><span>忽略嘲讽</span></label>
       <label className="span-2"><span>备注</span><textarea value={draft.notes ?? ""} onChange={(event) => set("notes", event.target.value || null)} /></label>
+      {draft.mechanics&&<SkillMechanicsEditor value={draft.mechanics} onChange={value=>set("mechanics",value)} onValidityChange={setMechanicsValid}/>}
     </div>
-    <footer><span>保存将令实体 revision 和配置集 revision 各 +1，并写入修订快照与审计。</span><button className="secondary-button" onClick={onClose}>取消</button><button className="primary-button" onClick={onSave} disabled={working}>{working && <LoaderCircle className="spin" size={14} />} 保存技能</button></footer>
+    <footer><span>保存将令实体 revision 和配置集 revision 各 +1，并写入修订快照与审计。</span><button className="secondary-button" onClick={onClose}>取消</button><button className="primary-button" onClick={onSave} disabled={working||!mechanicsValid}>{working && <LoaderCircle className="spin" size={14} />} 保存技能</button></footer>
   </section></div>;
 }
 

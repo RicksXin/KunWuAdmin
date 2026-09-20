@@ -1,0 +1,48 @@
+{
+  "sourceProject": "KunWuGodot",
+  "policy": "用户最新确认 > 1.0策划 > PRD；运行路径以当前工程为准",
+  "records": [
+    {
+      "file": "27_完整游戏野外大地图与内容框架_草案.md",
+      "source": "Docs/1.0策划案/地图/27_完整游戏野外大地图与内容框架_草案.md",
+      "sourceSha256": "f58f0d03a50af8bc371318d59cd024f38cc5508c5fe80e378211ffb96bbad29f",
+      "snapshotSha256": "07eadeb7b26942e445ab7f8fed15e97bf643d1e97317e1fbb9b8fa3f1f4ee2ca",
+      "version": "full-map-framework.8"
+    },
+    {
+      "file": "28_地图01_破禁山麓与万修之门_详细设计_草案.md",
+      "source": "Docs/1.0策划案/地图/28_地图01_破禁山麓与万修之门_详细设计_草案.md",
+      "sourceSha256": "40835741500da4b473bb9386bc7a991f4e662a72e772d110ec120ab252445f92",
+      "snapshotSha256": "0c81a4f7ae4f0852ff22b951dcde860d074f1e2775d542345ce184ea04526e74",
+      "version": "map-detail.3"
+    },
+    {
+      "file": "29_地图02_白玉广场_详细设计_草案.md",
+      "source": "Docs/1.0策划案/地图/29_地图02_白玉广场_详细设计_草案.md",
+      "sourceSha256": "62dc769e0a03b021c7014391ab74600a05fd6e56234f7351d9fd49d73b9018f5",
+      "snapshotSha256": "70d00449cdb2cbfbc8e126a033b01e18588c9abce2f08dc3198a28e89a40b210",
+      "version": "map-detail.2"
+    },
+    {
+      "file": "30_地图03_灵宝遗址_详细设计_草案.md",
+      "source": "Docs/1.0策划案/地图/30_地图03_灵宝遗址_详细设计_草案.md",
+      "sourceSha256": "ff5bba6829dca45f580892acfe239044e2725ecfb8dba62a5c78f63732cab401",
+      "snapshotSha256": "8958c244548552abf243bc1c7bcb5181437c70acb71f6828ba47bb64198699ab",
+      "version": "map-detail.5"
+    },
+    {
+      "file": "31_地图04_镇魔塔外层_详细设计_草案.md",
+      "source": "Docs/1.0策划案/地图/31_地图04_镇魔塔外层_详细设计_草案.md",
+      "sourceSha256": "efe86b263faf7ad5373ac57e2ec72b1ad8330f6e6bcc6b8e5ce98ac37c8e5073",
+      "snapshotSha256": "eede07752c04329348d2498dda8fd827ed497609758de5d872f5e254a2f45b31",
+      "version": "map-detail.5"
+    },
+    {
+      "file": "32_可重复资源副本与新修士追赶机制_草案.md",
+      "source": "Docs/1.0策划案/地图/32_可重复资源副本与新修士追赶机制_草案.md",
+      "sourceSha256": "7d169ba7391a72b594771837f6852007210c4ab22b686bfd3fdf67b1cff04dc6",
+      "snapshotSha256": "a0feeffcfacac21fa4e6bedd8f3b2459b8b1078efc3b2a6f973b02255d74c491",
+      "version": "resource-dungeon-balance.1"
+    }
+  ]
+}

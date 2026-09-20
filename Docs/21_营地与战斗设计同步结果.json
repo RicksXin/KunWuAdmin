@@ -1,0 +1,14 @@
+{
+  "configSet": "v1_0",
+  "revision": 207,
+  "changed": 112,
+  "enemyDesigns": 38,
+  "encounterDesigns": 70,
+  "productionSource": {
+    "environment": "development",
+    "releaseId": "69349869-3e07-4973-84e7-9e56f2008c90",
+    "hash": "833b16f0c9ea83867dbfb02d741ed6122acb1f25cf772900590cd7a50f81e0ea"
+  },
+  "newPlayerPreset": "v1_default",
+  "runtimeStatus": "战斗设计未启用；新档剧情执行器未接入；生产沿用资源服务"
+}

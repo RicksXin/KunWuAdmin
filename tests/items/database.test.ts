@@ -1,0 +1,66 @@
+import "dotenv/config";
+import { migrateItemQualities } from "../../tools/item-quality-migration";
+import test from "node:test";
+import assert from "node:assert/strict";
+import { v7 as uuid } from "uuid";
+import { eq } from "drizzle-orm";
+import { database, databasePool } from "../../server/db/client";
+import { configSets,marketConfigs,gameAssets,itemDefinitions,itemQualities,itemQualitySchemes,craftingRecipes,configEntityRevisions,auditLogs,i18nTexts,buildings,buildingLevels,configChangeRequests } from "../../db/schema";
+import { itemWorkspace,saveItemConfig } from "../../server/services/item-config";
+import { compileConfigModules } from "../../server/compiler/config-compiler";
+import { type ItemMutation } from "../../server/domain/items/config";
+
+test("DB: 原子保存、并发冲突、引用回滚、审核失效和发布快照",async()=>{
+ const id=uuid(),code=`test_items_${Date.now()}`,actor=uuid();
+ const save=(m:ItemMutation)=>saveItemConfig(code,m,actor,uuid());
+ const base={code:"ingot",name:"铁胚",revision:0,status:"active" as const,sortOrder:0};
+ try{
+  await database.insert(configSets).values({id,code,name:"物品测试"});
+  await database.insert(gameAssets).values([{configSetId:id,code:"spiritStone",nameKey:"currency.stone",assetType:"currency"},{configSetId:id,code:"spiritWood",nameKey:"resource.wood",assetType:"production_resource"},{configSetId:id,code:"darkIron",nameKey:"resource.iron",assetType:"production_resource"}]);
+  await migrateItemQualities(code,actor);
+  assert.equal(await migrateItemQualities(code,actor),0);
+  const item:Extract<ItemMutation,{kind:"item"}>={kind:"item",value:{...base,category:"processed",usageTag:"ingot",qualityCode:"fa_qi",stackLimit:999,iconPath:"",isProtected:false,isDiscardable:true}};
+  await save(item);
+  await save({kind:"workshop",value:{revision:0,woodCode:"spiritWood",costs:Array.from({length:23},(_,i)=>(i+1)*40)}});
+  await save({kind:"recipe",value:{...base,code:"craft_ingot",availability:"ready",workshopLevel:1,outputCode:"ingot",outputQuantity:1,costs:[{kind:"resource",code:"darkIron",quantity:8}]}});
+  await save({kind:"market",value:{code:"default",revision:0,currency:"spiritStone",refreshSeconds:7200,randomSlots:6,refreshBase:600,refreshPerMap:300,currentTierPercent:70,groups:[{code:"materials",name:"材料",weight:100,minMap:1,stockMin:1,stockMax:1,prices:[100,100,100,100],availability:"planned"}],goods:[{code:"shop_ingot",itemCode:"ingot",shelf:"fixed",groupCode:null,price:100,stock:2,minMap:1,tier:null,enabled:true}]}});
+  const before=await itemWorkspace(code);
+  await assert.rejects(()=>save({kind:"market",value:{...before.market!,goods:[{...before.market!.goods[0],itemCode:"missing"}]}}),/商品引用/);
+  assert.equal((await itemWorkspace(code)).market!.goods[0].itemCode,"ingot");
+  assert.equal(before.items[0].isMarketSellable,false);
+  await assert.rejects(()=>save({...item,value:{...before.items[0],isMarketSellable:true,isProtected:true,isDiscardable:false}}),/交易行/);
+  await assert.rejects(()=>save({kind:"quality",value:{...before.qualities[0],name:"第七档"}}),/品级/);
+  assert.equal((await itemWorkspace(code)).revision,before.revision);
+  await assert.rejects(()=>save({...item,value:{...before.items[0],status:"disabled"}}),/产物/);
+  const changeId=uuid();
+  await database.insert(configChangeRequests).values({id:changeId,configSetId:id,sourceRevision:before.revision,title:"测试审核",status:"approved"});
+  const concurrent=await Promise.allSettled([save({...item,value:{...before.items[0],name:"铁胚甲",isMarketSellable:true}}),save({...item,value:{...before.items[0],name:"铁胚乙",isMarketSellable:true}})]);
+  assert.equal(concurrent.filter(r=>r.status==="fulfilled").length,1);
+  assert.equal(concurrent.filter(r=>r.status==="rejected").length,1);
+  const [change]=await database.select().from(configChangeRequests).where(eq(configChangeRequests.id,changeId));
+  assert.equal(change.status,"superseded");
+  const workspace=await itemWorkspace(code);
+  const release=await compileConfigModules(database,id,1,workspace.revision);
+  const economy=release.find(m=>m.moduleCode==="economy")!.payload as {craftingRecipes:{code:string;costs:unknown[]}[]};
+  assert.equal(economy.craftingRecipes[0].costs.length,1);
+  assert.equal(economy.craftingRecipes[0].code,"craft_ingot");
+  const baseModule=release.find(m=>m.moduleCode==="base")!.payload as {itemDefinitions:{name:string;isMarketSellable:boolean}[];marketConfig:{playerSellingEnabled:boolean;goods:{price:number}[]};itemQualities:unknown[]};
+  assert.equal(baseModule.itemDefinitions[0].name,workspace.items[0].name);
+  assert.equal(baseModule.itemQualities.length,6);
+  assert.equal(baseModule.marketConfig.playerSellingEnabled,false);assert.equal(baseModule.marketConfig.goods[0].price,100);
+  assert.equal(workspace.items[0].isMarketSellable,true);
+  assert.equal(baseModule.itemDefinitions[0].isMarketSellable,true);
+  const revisions=await database.select().from(configEntityRevisions).where(eq(configEntityRevisions.configSetId,id));
+  assert.equal(revisions.length,12);
+  assert.ok(revisions.every(r=>r.afterData));
+  const audit=await database.select().from(auditLogs).where(eq(auditLogs.configSetId,id));
+  assert.equal(audit.length,6);
+  const [storedAsset]=await database.select().from(gameAssets).where(eq(gameAssets.code,"ingot"));
+  assert.ok(storedAsset);
+ }finally{
+  for(const t of [marketConfigs,craftingRecipes,itemDefinitions,itemQualities,itemQualitySchemes,configEntityRevisions,auditLogs,configChangeRequests,i18nTexts])await database.delete(t).where(eq(t.configSetId,id));
+  const b=await database.select().from(buildings).where(eq(buildings.configSetId,id));
+  for(const row of b)await database.delete(buildingLevels).where(eq(buildingLevels.buildingId,row.id));
+  await database.delete(buildings).where(eq(buildings.configSetId,id));await database.delete(gameAssets).where(eq(gameAssets.configSetId,id));await database.delete(configSets).where(eq(configSets.id,id));await databasePool.end();
+ }
+});

@@ -1,0 +1,4136 @@
+{
+  "sourceHash": "91fb6ebcda129fa6436da7706de8cb4b4223886e0d605f8fc990ca4ac347162e",
+  "enemies": [
+    {
+      "code": "m1_rubble_rat",
+      "name": "噬灵鼠",
+      "rank": "normal",
+      "level": 2,
+      "maxHp": 420,
+      "stats": [
+        12,
+        2,
+        10,
+        18,
+        8,
+        5,
+        6
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "role": "追击残血",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图1普通敌人",
+          "text": "| `m1_rubble_rat` 噬灵鼠 | 2 | 420 | 12/2/10/18/8/5/6 | 啮咬`90%力`；优先最低生命；30%命中附迟缓10%/40tick | 12/6 | 兽皮1–2 |"
+        },
+        "intendedCounterplay": "保护残血并优先击杀",
+        "proposedBaseIntervalTicks": 29,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m1_stone_wisp",
+      "name": "碎岩灵",
+      "rank": "normal",
+      "level": 3,
+      "maxHp": 650,
+      "stats": [
+        16,
+        6,
+        8,
+        8,
+        16,
+        15,
+        9
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "role": "周期护盾",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图1普通敌人",
+          "text": "| `m1_stone_wisp` 碎岩灵 | 3 | 650 | 16/6/8/8/16/15/9 | 石片`95%力`；每60tick获得120点盾；优先当前目标 | 14/7 | 碎石核1 |"
+        },
+        "intendedCounterplay": "法术集中破盾，避免低效零散攻击",
+        "proposedBaseIntervalTicks": 30,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m1_corpse_scout",
+      "name": "游荡尸兵",
+      "rank": "normal",
+      "level": 4,
+      "maxHp": 780,
+      "stats": [
+        20,
+        3,
+        8,
+        9,
+        20,
+        18,
+        7
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "role": "尸毒消耗",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图1普通敌人",
+          "text": "| `m1_corpse_scout` 游荡尸兵 | 4 | 780 | 20/3/8/9/20/18/7 | 锈刃`105%力`；尸爪`75%力`并附每秒3点尸毒/60tick | 16/8 | 尸煞骨1 |"
+        },
+        "intendedCounterplay": "稳定恢复并保持定力",
+        "proposedBaseIntervalTicks": 30,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m1_array_glow",
+      "name": "残阵灵光",
+      "rank": "normal",
+      "level": 5,
+      "maxHp": 620,
+      "stats": [
+        5,
+        22,
+        14,
+        14,
+        10,
+        7,
+        19
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "role": "沉默干扰",
+        "hardControl": true,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图1普通敌人",
+          "text": "| `m1_array_glow` 残阵灵光 | 5 | 620 | 5/22/14/14/10/7/19 | 灵闪`105%法+20%神`；封灵光`60%法`、沉默20tick/CD120 | 17/8 | 残符1–2 |"
+        },
+        "intendedCounterplay": "优先处理施法者，错开恢复窗口",
+        "proposedBaseIntervalTicks": 30,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m1_stone_guard",
+      "name": "石甲守卫",
+      "rank": "normal",
+      "level": 6,
+      "maxHp": 1200,
+      "stats": [
+        27,
+        3,
+        9,
+        7,
+        30,
+        28,
+        12
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "role": "高护体承伤",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图1普通敌人",
+          "text": "| `m1_stone_guard` 石甲守卫 | 6 | 1200 | 27/3/9/7/30/28/12 | 重拳`110%力`；生命<50%使用350点盾/CD140 | 18/9 | 玄铁1–2 |"
+        },
+        "intendedCounterplay": "降甲或法术突破高护体",
+        "proposedBaseIntervalTicks": 30,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "e1_cracked_guard",
+      "name": "裂甲石卫",
+      "rank": "elite",
+      "level": 6,
+      "maxHp": 2600,
+      "stats": [
+        32,
+        4,
+        12,
+        8,
+        42,
+        36,
+        15
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "role": "物理反震",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图1精英",
+          "text": "| `e1_cracked_guard` 裂甲石卫 | 6 | 2600 | 32/4/12/8/42/36/15 | 碎岳拳`125%力`；震地`55%力`全体/CD100；受物理攻击3次后反震`35%力`，法伤可清计数 | 60/30 | 石卫甲片2、玄铁4 |"
+        },
+        "intendedCounterplay": "法术清除反震计数",
+        "proposedBaseIntervalTicks": 30,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "e1_banner_corpse",
+      "name": "尸煞执旗者",
+      "rank": "elite",
+      "level": 7,
+      "maxHp": 2300,
+      "stats": [
+        27,
+        18,
+        18,
+        12,
+        35,
+        24,
+        22
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "role": "同伴增伤旗手",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图1精英",
+          "text": "| `e1_banner_corpse` 尸煞执旗者 | 7 | 2300 | 27/18/18/12/35/24/22 | 尸旗使同伴伤害+15%；鬼火`95%法`；每秒5点尸毒/80tick；先杀旗手可解除增益 | 55/28 | 破旗1、归营符残纸 |"
+        },
+        "intendedCounterplay": "先击杀旗手解除同伴增益",
+        "proposedBaseIntervalTicks": 30,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m2_jade_corpse",
+      "name": "白玉尸兵",
+      "rank": "normal",
+      "level": 9,
+      "maxHp": 1300,
+      "stats": [
+        36,
+        5,
+        16,
+        14,
+        38,
+        32,
+        15
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "role": "尸毒前排",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图2普通敌人",
+          "text": "| `m2_jade_corpse` 白玉尸兵 | 9 | 1300 | 36/5/16/14/38/32/15 | 玉刃`115%力`；尸毒每秒6点/80tick | 25/11 | 尸煞骨2 |"
+        },
+        "intendedCounterplay": "控制尸毒叠加与连战损耗",
+        "proposedBaseIntervalTicks": 30,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m2_vine",
+      "name": "缠魂藤",
+      "rank": "normal",
+      "level": 9,
+      "maxHp": 1100,
+      "stats": [
+        12,
+        30,
+        24,
+        9,
+        30,
+        16,
+        30
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "role": "优先控制高速单位",
+        "hardControl": true,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图2普通敌人",
+          "text": "| `m2_vine` 缠魂藤 | 9 | 1100 | 12/30/24/9/30/16/30 | 藤刺`95%法`；缠绕24tick/CD100，优先最高遁速 | 27/12 | 缠魂藤1–2 |"
+        },
+        "intendedCounterplay": "保护高速输出位或抢先控制",
+        "proposedBaseIntervalTicks": 30,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m2_wood_sprite",
+      "name": "木魅幼体",
+      "rank": "normal",
+      "level": 10,
+      "maxHp": 1400,
+      "stats": [
+        18,
+        34,
+        28,
+        18,
+        32,
+        18,
+        34
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "role": "汲取恢复",
+        "hardControl": false,
+        "healer": true,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图2普通敌人",
+          "text": "| `m2_wood_sprite` 木魅幼体 | 10 | 1400 | 18/34/28/18/32/18/34 | 汲灵`105%法+20%神`并治疗自身伤害30%；生命低于40%先用 | 30/14 | 木魅心1 |"
+        },
+        "intendedCounterplay": "集中伤害越过恢复窗口",
+        "proposedBaseIntervalTicks": 29,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m2_array_serpent",
+      "name": "阵纹灵蛇",
+      "rank": "normal",
+      "level": 11,
+      "maxHp": 1150,
+      "stats": [
+        15,
+        38,
+        32,
+        32,
+        22,
+        15,
+        35
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "role": "高速减速",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图2普通敌人",
+          "text": "| `m2_array_serpent` 阵纹灵蛇 | 11 | 1150 | 15/38/32/32/22/15/35 | 灵咬`90%法+25%神`；迟缓15%/80tick；优先无迟缓目标 | 32/14 | 阵纹鳞1 |"
+        },
+        "intendedCounterplay": "优先击杀高速干扰单位",
+        "proposedBaseIntervalTicks": 28,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m2_spell_shadow",
+      "name": "残禁法影",
+      "rank": "normal",
+      "level": 12,
+      "maxHp": 1250,
+      "stats": [
+        8,
+        42,
+        38,
+        24,
+        20,
+        12,
+        42
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "role": "降抗沉默",
+        "hardControl": true,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图2普通敌人",
+          "text": "| `m2_spell_shadow` 残禁法影 | 12 | 1250 | 8/42/38/24/20/12/42 | 禁光`110%法`；降抗12%/80tick；沉默20tick/CD140 | 35/16 | 残符2 |"
+        },
+        "intendedCounterplay": "用定力和打断保护恢复位",
+        "proposedBaseIntervalTicks": 29,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "e2_reviving_guard",
+      "name": "复生尸卫",
+      "rank": "elite",
+      "level": 12,
+      "maxHp": 4200,
+      "stats": [
+        48,
+        8,
+        24,
+        15,
+        60,
+        45,
+        24
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "role": "魂灯复生",
+        "hardControl": false,
+        "healer": true,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图2精英",
+          "text": "| 复生尸卫 | 12/4200 | 48/8/24/15/60/45/24 | 第一次死亡后5秒复生至35%生命；战前或倒计时内破坏HP1000魂灯阻止 | 100/45 | 尸卫甲片3 |"
+        },
+        "intendedCounterplay": "先破魂灯再击杀本体",
+        "proposedBaseIntervalTicks": 29,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "e2_mana_devourer",
+      "name": "噬法木魅",
+      "rank": "elite",
+      "level": 12,
+      "maxHp": 3800,
+      "stats": [
+        20,
+        55,
+        42,
+        24,
+        52,
+        24,
+        48
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "role": "反制法术",
+        "hardControl": false,
+        "healer": true,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图2精英",
+          "text": "| 噬法木魅 | 12/3800 | 20/55/42/24/52/24/48 | 每次法伤吸取施术者5%当前生命；物理暴击可打断80tick | 110/50 | 木魅妖心2 |"
+        },
+        "intendedCounterplay": "物理暴击制造输出窗口",
+        "proposedBaseIntervalTicks": 29,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "e2_four_symbols",
+      "name": "四象阵灵",
+      "rank": "elite",
+      "level": 13,
+      "maxHp": 4800,
+      "stats": [
+        30,
+        50,
+        46,
+        20,
+        58,
+        40,
+        50
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "role": "双免切换",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图2精英",
+          "text": "| 四象阵灵 | 13/4800 | 30/50/46/20/58/40/50 | 每25%生命切换物免20%/法免20%；切换预警1秒 | 120/55 | 四象阵砂2 |"
+        },
+        "intendedCounterplay": "按护罩阶段切换攻击类型",
+        "proposedBaseIntervalTicks": 29,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m3_broken_blade",
+      "name": "断刃器灵",
+      "rank": "normal",
+      "level": 15,
+      "maxHp": 2200,
+      "stats": [
+        48,
+        20,
+        45,
+        38,
+        38,
+        35,
+        38
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "role": "追弱多段",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图3普通敌人",
+          "text": "| 断刃器灵 | 15/2200 | 48/20/45/38/38/35/38 | 双斩2×`65%力+20%神`；优先最低生命 | 45/18 | 器灵残片1 |"
+        },
+        "intendedCounterplay": "保护残血，优先削减多段伤害",
+        "proposedBaseIntervalTicks": 28,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m3_bronze_puppet",
+      "name": "铸灵铜傀",
+      "rank": "normal",
+      "level": 16,
+      "maxHp": 3200,
+      "stats": [
+        58,
+        12,
+        30,
+        16,
+        70,
+        62,
+        34
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "role": "周期盾前排",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图3普通敌人",
+          "text": "| 铸灵铜傀 | 16/3200 | 58/12/30/16/70/62/34 | 铜拳`125%力`；每100tick获得600盾 | 52/21 | 玄铁3 |"
+        },
+        "intendedCounterplay": "集中破盾与稳定续航",
+        "proposedBaseIntervalTicks": 29,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m3_treasure_rogue",
+      "name": "夺宝散修",
+      "rank": "normal",
+      "level": 17,
+      "maxHp": 2500,
+      "stats": [
+        42,
+        50,
+        58,
+        42,
+        42,
+        35,
+        44
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "role": "混合攻击与逃跑",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图3普通敌人",
+          "text": "| 夺宝散修 | 17/2500 | 42/50/58/42/42/35/44 | 随机使用剑诀`105%力`或火符`105%法`；生命<30%尝试逃跑 | 55/22 | 灵石30–45 |"
+        },
+        "intendedCounterplay": "控制残血逃跑，兼顾双防",
+        "proposedBaseIntervalTicks": 28,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m3_ghost_soldier",
+      "name": "阴罗宗鬼卒",
+      "rank": "normal",
+      "level": 18,
+      "maxHp": 2700,
+      "stats": [
+        35,
+        55,
+        62,
+        30,
+        48,
+        32,
+        58
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "role": "恐惧干扰",
+        "hardControl": true,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图3普通敌人",
+          "text": "| 阴罗宗鬼卒 | 18/2700 | 35/55/62/30/48/32/58 | 鬼爪`100%法+25%神`；恐惧20%/20tick | 60/24 | 鬼道残页1 |"
+        },
+        "intendedCounterplay": "保护低定力队员并优先击杀",
+        "proposedBaseIntervalTicks": 28,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m3_gold_eater",
+      "name": "吞金兽",
+      "rank": "normal",
+      "level": 18,
+      "maxHp": 3800,
+      "stats": [
+        68,
+        8,
+        32,
+        22,
+        82,
+        70,
+        28
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "role": "破盾前排",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图3普通敌人",
+          "text": "| 吞金兽 | 18/3800 | 68/8/32/22/82/70/28 | 吞铁`115%力`；若玩家有护盾则伤害+20%并吸收同量护盾 | 65/26 | 庚精1 |"
+        },
+        "intendedCounterplay": "避免只依赖护盾，改用减伤与恢复",
+        "proposedBaseIntervalTicks": 29,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "e3_treasure_guard",
+      "name": "灵宝阁守卫",
+      "rank": "elite",
+      "level": 18,
+      "maxHp": 7600,
+      "stats": [
+        72,
+        40,
+        60,
+        28,
+        95,
+        76,
+        60
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "role": "护罩机制",
+        "hardControl": false,
+        "healer": true,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图3精英",
+          "text": "| 灵宝阁守卫 | 18/7600 | 72/40/60/28/95/76/60 | 物/法护罩每120tick切换；错误类型为其恢复3%生命 | 200/80 | 古禁令1；首杀禅珠残片1 |"
+        },
+        "intendedCounterplay": "观察护罩后选择正确伤害类型",
+        "proposedBaseIntervalTicks": 29,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "e3_elder_soul",
+      "name": "阴罗宗长老分魂",
+      "rank": "elite",
+      "level": 19,
+      "maxHp": 6500,
+      "stats": [
+        38,
+        82,
+        90,
+        48,
+        65,
+        42,
+        78
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "role": "随机群攻",
+        "hardControl": true,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图3精英",
+          "text": "| 阴罗宗长老分魂 | 19/6500 | 38/82/90/48/65/42/78 | 五鬼随机3段`48%法+20%神`；恐惧；无视嘲讽 | 220/88 | 五鬼袋残片1 |"
+        },
+        "intendedCounterplay": "保护后排，群疗应对随机多段",
+        "proposedBaseIntervalTicks": 27,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "e3_unstable_sword",
+      "name": "失控剑灵",
+      "rank": "elite",
+      "level": 19,
+      "maxHp": 6200,
+      "stats": [
+        86,
+        15,
+        76,
+        78,
+        55,
+        52,
+        45
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "role": "暴击叠速",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图3精英",
+          "text": "| 失控剑灵 | 19/6200 | 86/15/76/78/55/52/45 | 每次暴击加速8%，最多5层；眩晕可清层 | 210/84 | 首杀剑灵锋1 |"
+        },
+        "intendedCounterplay": "控制清除叠速",
+        "proposedBaseIntervalTicks": 25,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "e3_furnace_golem",
+      "name": "熔炉石傀",
+      "rank": "elite",
+      "level": 20,
+      "maxHp": 9000,
+      "stats": [
+        92,
+        35,
+        62,
+        24,
+        115,
+        84,
+        68
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "role": "过热群攻",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图3精英",
+          "text": "| 熔炉石傀 | 20/9000 | 92/35/62/24/115/84/68 | 每20秒过热，全体`70%力+40%法`；破盾可延后 | 240/96 | 铸灵核心碎片2 |"
+        },
+        "intendedCounterplay": "在过热前破盾延后群攻",
+        "proposedBaseIntervalTicks": 29,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m4_silver_corpse",
+      "name": "银甲尸",
+      "rank": "normal",
+      "level": 21,
+      "maxHp": 4200,
+      "stats": [
+        95,
+        20,
+        60,
+        35,
+        110,
+        90,
+        55
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "role": "高护体尸毒",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图4普通敌人",
+          "text": "| 银甲尸 | 21/4200 | 95/20/60/35/110/90/55 | 尸爪`125%力`；尸毒每秒12点；高护体 | 72/26 | 银甲片1 |"
+        },
+        "intendedCounterplay": "法术破高护体，维持尸毒恢复",
+        "proposedBaseIntervalTicks": 28,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m4_chain_spirit",
+      "name": "封链魔灵",
+      "rank": "normal",
+      "level": 21,
+      "maxHp": 3500,
+      "stats": [
+        30,
+        100,
+        92,
+        58,
+        72,
+        48,
+        96
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "role": "压制法力最高者",
+        "hardControl": true,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图4普通敌人",
+          "text": "| 封链魔灵 | 21/3500 | 30/100/92/58/72/48/96 | 封灵`90%法`+沉默24tick；优先法力最高 | 78/28 | 封链碎片1 |"
+        },
+        "intendedCounterplay": "保护主法修与恢复位",
+        "proposedBaseIntervalTicks": 27,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m4_soul_shadow",
+      "name": "摄魂残影",
+      "rank": "normal",
+      "level": 22,
+      "maxHp": 3200,
+      "stats": [
+        25,
+        90,
+        110,
+        72,
+        60,
+        38,
+        88
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "role": "无视嘲讽追魂",
+        "hardControl": true,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图4普通敌人",
+          "text": "| 摄魂残影 | 22/3200 | 25/90/110/72/60/38/88 | 摄魂`105%法+35%神`无视嘲讽；恐惧30% | 82/29 | 残魂1 |"
+        },
+        "intendedCounterplay": "保护残血并提高异常抵抗",
+        "proposedBaseIntervalTicks": 26,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m4_demon_beast",
+      "name": "魔化石兽",
+      "rank": "normal",
+      "level": 22,
+      "maxHp": 5200,
+      "stats": [
+        115,
+        25,
+        65,
+        32,
+        130,
+        100,
+        60
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "role": "眩晕狂暴",
+        "hardControl": true,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图4普通敌人",
+          "text": "| 魔化石兽 | 22/5200 | 115/25/65/32/130/100/60 | 冲撞`130%力`+眩晕；生命40%狂暴伤害+25% | 90/32 | 魔化石核1 |"
+        },
+        "intendedCounterplay": "保留眩晕应对狂暴阶段",
+        "proposedBaseIntervalTicks": 28,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "m4_rift_form",
+      "name": "裂隙化形",
+      "rank": "normal",
+      "level": 23,
+      "maxHp": 3800,
+      "stats": [
+        45,
+        110,
+        105,
+        82,
+        75,
+        50,
+        105
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "role": "行动条干扰",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图4普通敌人",
+          "text": "| 裂隙化形 | 23/3800 | 45/110/105/82/75/50/105 | 空间割裂`115%法`；空间错位使行动条+30tick | 98/35 | 裂隙尘1 |"
+        },
+        "intendedCounterplay": "提早恢复，避免行动条被推后时断档",
+        "proposedBaseIntervalTicks": 25,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "e4_golden_guard",
+      "name": "金身尸卫",
+      "rank": "elite",
+      "level": 23,
+      "maxHp": 10000,
+      "stats": [
+        130,
+        20,
+        75,
+        40,
+        165,
+        125,
+        72
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "role": "护盾吸血",
+        "hardControl": false,
+        "healer": true,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图4精英",
+          "text": "| 金身尸卫 | 23/10000 | 130/20/75/40/165/125/72 | 生命50%获2500盾；盾存在吸血25%；法伤破盾效率+25% | 330/116 | 庚精3；首杀金身尸卫残骨、金身尸卫核心、古修甲片各1 |"
+        },
+        "intendedCounterplay": "法伤破盾消除吸血收益",
+        "proposedBaseIntervalTicks": 28,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "e4_blackwind_shadow",
+      "name": "黑风旗影",
+      "rank": "elite",
+      "level": 23,
+      "maxHp": 8500,
+      "stats": [
+        40,
+        135,
+        125,
+        95,
+        100,
+        60,
+        120
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "role": "空间错位",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图4精英",
+          "text": "| 黑风旗影 | 23/8500 | 40/135/125/95/100/60/120 | 每80tick空间错位1人；定界珠免疫；无视嘲讽群攻 | 360/126 | 黑风丝1 |"
+        },
+        "intendedCounterplay": "携定界珠或提前恢复",
+        "proposedBaseIntervalTicks": 24,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "e4_parasite",
+      "name": "魔气寄生体",
+      "rank": "elite",
+      "level": 23,
+      "maxHp": 9000,
+      "stats": [
+        85,
+        110,
+        100,
+        55,
+        125,
+        80,
+        105
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "role": "寄生恢复",
+        "hardControl": false,
+        "healer": true,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图4精英",
+          "text": "| 魔气寄生体 | 23/9000 | 85/110/100/55/125/80/105 | 寄生最低生命；5秒不击破1200HP寄生核则治疗自身2500 | 350/122 | 魔髓碎屑2 |"
+        },
+        "intendedCounterplay": "优先击破寄生核",
+        "proposedBaseIntervalTicks": 27,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "e4_jailer",
+      "name": "镇塔狱卒",
+      "rank": "elite",
+      "level": 24,
+      "maxHp": 11500,
+      "stats": [
+        145,
+        55,
+        90,
+        48,
+        180,
+        130,
+        100
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "role": "处刑残血",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图4精英",
+          "text": "| 镇塔狱卒 | 24/11500 | 145/55/90/48/180/130/100 | 处刑标记最低生命；4秒后`180%力`，护盾可吸收 | 400/140 | 镇塔令片1 |"
+        },
+        "intendedCounterplay": "保留护盾承受处刑",
+        "proposedBaseIntervalTicks": 27,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "e4_silver_feather",
+      "name": "银翅残羽",
+      "rank": "elite",
+      "level": 24,
+      "maxHp": 8000,
+      "stats": [
+        75,
+        105,
+        120,
+        125,
+        90,
+        65,
+        90
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "role": "飞行多段",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图4精英",
+          "text": "| 银翅残羽 | 24/8000 | 75/105/120/125/90/65/90 | 飞行；三段羽刃3×`42%神+20%速`；青冥飞剑/法术克制 | 420/147 | 残翎1；首杀残翎核心1并开放残翅骨环净化节点 |"
+        },
+        "intendedCounterplay": "使用飞剑和法术处理飞行",
+        "proposedBaseIntervalTicks": 22,
+        "proposals": [
+          "基础行动间隔为新增设计初值；不覆盖原文已明确的技能I/CD、被动计时和阶段规则。",
+          "原文未指定的技能冷却/命中需在执行化时按战斗目标校准。"
+        ]
+      }
+    },
+    {
+      "code": "b1_gate_stone",
+      "name": "守门石灵",
+      "rank": "boss",
+      "level": 7,
+      "maxHp": 6500,
+      "stats": [
+        42,
+        12,
+        24,
+        10,
+        70,
+        48,
+        28
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "role": "反震、护盾与核心暴露",
+        "hardControl": false,
+        "healer": false,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图1Boss",
+          "text": "### 2.3 Boss：守门石灵\n\n等级7；HP `6500`；七维 `42/12/24/10/70/48/28`；初始行动45tick；不可被缠绕，眩晕\n持续按100%/60%/30%递减。逃生在Boss生命降至70%后开放。\n\n| 技能 | I/CD | 数值 | 规则 |\n|---|---:|---|---|\n| 岩拳 | 28/0 | `120%力+20%肉`物理单体 | 受嘲讽；优先最高当前生命 |\n| 裂地震 | 38/120 | `58%力+15%肉`物理全体 | 无视嘲讽；预警0.8秒；附流血每秒4点/60tick |\n| 石灵金身 | 34/160 | 护盾`900` | 生命75%和35%各强制一次；盾存在时护体+20 |\n| 反震石纹 | 被动 | `40%力`物理 | 每累计3次物理直击触发；法术直击清除1层计数；反击不递归 |\n\n阶段：100%–36%循环岩拳/裂地震；35%强制金身并使裂地震间隔缩短20%。金身被破后核心\n外露80tick，受到伤害+25%。胜利固定奖励魂晶200、石灵核心和两件地图1制式装备；两件均至少精制，\n其中至少一件上品。\n\n失败提示按最高贡献伤害类型判断：物理占比>75%时提示“石纹不断反震，尝试法术击散纹路”；\n恢复不足提示“裂地流血期间团队恢复不足，请调整五行归元/回元灵符的自动阈值”。"
+        },
+        "intendedCounterplay": "法术清反震，破金身后集中输出；群疗应对裂地流血",
+        "proposedBaseIntervalTicks": null,
+        "proposals": [
+          "沿用初始45tick、75%/35%强制金身、破盾暴露80tick；不增加第二Boss。"
+        ]
+      }
+    },
+    {
+      "code": "b2_corpse_general",
+      "name": "封坛尸将",
+      "rank": "boss",
+      "level": 13,
+      "maxHp": 12000,
+      "stats": [
+        62,
+        42,
+        45,
+        18,
+        90,
+        58,
+        45
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "role": "魂旗复生、尸毒军阵",
+        "hardControl": false,
+        "healer": true,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图2Boss",
+          "text": "### 3.3 Boss：封坛尸将\n\n等级13；主体HP `12000`；七维 `62/42/45/18/90/58/45`。开场带魂旗1面，魂旗HP `1800`、\n护/定均30。尸将眩晕递减；尸毒持续80 tick后自然结束，战斗中无净化技能。生命60%后允许逃生。\n\n| 技能 | I/CD | 数值 | 规则 |\n|---|---:|---|---|\n| 尸将斩 | 27/0 | `130%力+25%神`物理 | 受嘲讽；目标有尸毒时增伤15% |\n| 尸毒军阵 | 36/140 | `55%法+20%神`法术全体 | 预警1秒；尸毒每秒`8%法`、80tick，治疗-10%，最多3层 |\n| 招魂号令 | 34/200 | 无直接伤害 | 魂旗存活时召回2名HP750尸兵；场上最多2名 |\n| 军魂不灭 | 被动 | — | 主体首次降至1生命时，若魂旗存活则消耗魂旗恢复3000HP；魂旗提前击破则失效 |\n\nAI：优先保证尸毒覆盖至少2人，其次场上尸兵少于1时招魂，否则尸将斩。胜利奖励魂晶700、\n封坛令、筑基保底灵石1200、地图2配方册、两件地图2上品制式装备和唯一\n`item_boss_soul_02_corpse_general`“封坛尸将魂魄”。失败页区分“魂旗未击破导致复生”和“尸毒层数过高”。"
+        },
+        "intendedCounterplay": "优先处理魂旗，维持群疗与定力，减少尸毒叠加",
+        "proposedBaseIntervalTicks": null,
+        "proposals": [
+          "解决主体+魂旗+2尸兵超出3个可选目标的冲突：魂旗存活时只容纳1尸兵，第二名进入待召队列；魂旗破坏后允许2尸兵。候补不计场上单位，不得行动或产出战利品。"
+        ]
+      }
+    },
+    {
+      "code": "b3_four_arm_puppet",
+      "name": "四臂铸灵傀",
+      "rank": "boss",
+      "level": 20,
+      "maxHp": 26000,
+      "stats": [
+        105,
+        88,
+        82,
+        28,
+        150,
+        92,
+        84
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "role": "四臂拆解、护罩和复活",
+        "hardControl": false,
+        "healer": true,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图3Boss",
+          "text": "### 4.3 Boss：四臂铸灵傀\n\n等级20；核心HP `26000`；七维 `105/88/82/28/150/92/84`。四臂各HP `3000`，与核心共享\n战斗但属于部件，不计额外Boss。部件死亡后对应技能永久禁用。逃生从70%生命开放。\n\n| 部件/技能 | I/CD | 数值 | 规则 |\n|---|---:|---|---|\n| 战臂·碎岳 | 26/0 | `125%力`物理单体 | 受嘲讽；战臂毁坏后禁用 |\n| 法臂·熔光 | 34/100 | `72%法+25%神`法术全体 | 预警0.8秒；法臂毁坏后禁用 |\n| 守臂·两仪罩 | 36/160 | 护盾3000 | 在物理罩/法术罩间切换，对应类型减伤35%；守臂毁坏后禁用 |\n| 铸臂·回炉 | 40/180 | 核心治疗1800或复活一条已毁手臂至1000HP | 预警1.2秒，可用眩晕打断；铸臂毁坏后禁用 |\n| 熔炉过载 | 阶段 | 每秒`18%力+18%法`全体，持续5秒 | 核心30%触发；5秒内击破任一存活手臂或控制核心可中断 |\n\nAI按守臂→铸臂→法臂→战臂优先级选择可用且不在冷却技能。玩家可选择先拆守臂稳步输出，\n或先拆铸臂防止复活。首杀魂晶 1800、铸灵核心、两件地图 3 制式装备；同一结算事务同时解锁\n降尘丹配方，并发放凝丹灵草 4、灵晶 60 和结丹保底灵石 4800，不再作为另一份“章节奖励”重复发放。"
+        },
+        "intendedCounterplay": "先拆守臂或铸臂，保留打断应对回炉和过载",
+        "proposedBaseIntervalTicks": null,
+        "proposals": [
+          "四臂生命独立保留，每次仅暴露2臂供选择，和核心共3个目标；每120tick在存活手臂中轮换暴露对，切换预警20tick；隐藏臂仍执行原技能，不能受到选中伤害。",
+          "铸臂复活恢复原臂身份和1000HP，不增加第五只臂；过载时必保证至少1只存活臂可选，全部手臂已毁时由控制核心中断。"
+        ]
+      }
+    },
+    {
+      "code": "b4_silver_wing_avatar",
+      "name": "银翅夜叉·尸煞化身",
+      "rank": "boss",
+      "level": 24,
+      "maxHp": 45000,
+      "stats": [
+        155,
+        120,
+        145,
+        105,
+        220,
+        120,
+        115
+      ],
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "role": "尸毒、飞行、残羽三阶段",
+        "hardControl": true,
+        "healer": true,
+        "source": {
+          "document": "Docs/1.0策划案/数值/19_1.0敌人与Boss战斗数值_草案.md",
+          "section": "地图4Boss",
+          "text": "### 5.3 最终Boss：银翅夜叉·尸煞化身\n\n等级24；主体HP `45000`；七维 `155/120/145/105/220/120/115`。结丹硬门槛在战斗外校验。\n恐惧和尸毒只能等待持续结束，可通过定力、状态抵抗、DoT减伤和恢复对冲；飞行和阶段标记是战斗状态。\n阶段三锁定逃生，进入前二次确认。\n\n#### 阶段一：尸煞（100%–71%）\n\n| 技能 | I/CD | 数值 | 规则 |\n|---|---:|---|---|\n| 夜叉爪 | 22/0 | 2段，每段`72%力+18%神`物理 | 受嘲讽；每段附1层尸毒，基础命中65% |\n| 尸煞吐息 | 34/140 | `62%法+25%神`法术全体 | 预警1秒；尸毒每秒`10%法`/100tick，治疗-10%/层 |\n| 啖血 | 30/120 | `115%力`物理最低生命 | 伤害35%治疗自身；目标有尸毒每层增伤8%；无视嘲讽 |\n\n阶段目标：教玩家控制尸毒层数和保护最低生命单位。生命70%时清除当前行动，播放展翅1.2秒。\n\n#### 阶段二：银翅（70%–31%）\n\nBoss获得飞行：普通近战命中-35%，青冥飞剑、法术和明示对空的装备不受影响。\n\n| 技能 | I/CD | 数值 | 规则 |\n|---|---:|---|---|\n| 银羽裂空 | 24/0 | 随机3段，每段`48%神+25%速`物理 | 可重复目标；无视嘲讽 |\n| 翼风压阵 | 36/140 | `58%法+25%神`全体 | 迟缓25%/100tick；预警1秒 |\n| 掠影俯冲 | 30/120 | `145%力+35%速`物理单体 | 选择神识最高者；受到剑煞归流或雷链追身后的下次俯冲命中使Boss落地40tick，受到伤害+15% |\n\n阶段目标：处理命中和迟缓。生命30%时Boss落地并召唤两枚残羽。\n\n#### 阶段三：残蜕（30%–0%）\n\n两枚残羽各HP `5500`，七维`60/80/95/110/70/55/70`。残羽存活时每枚令Boss伤害+12%、\n速度+10%。主体获得“不稳定残蜕”，受到伤害+10%。\n\n| 技能 | I/CD | 数值 | 规则 |\n|---|---:|---|---|\n| 群体恐惧 | 40/180 | 无直接伤害 | 预警1.5秒；全体恐惧，基础命中75%，持续40tick |\n| 残翅斩 | 28/80 | `165%力+45%神`物理单体 | 预警1秒；残羽每存活1枚额外+15%；受嘲讽 |\n| 尸爆 | 死亡触发 | 每枚`45%法`全体 | 残羽死亡后1秒爆炸；可用护盾承受，不能打断 |\n| 魔魂回响 | 120tick后 | 全体每秒固定35伤害 | 狂暴软时限；不受减伤，护盾可吸收 |\n\n胜利：魂晶4000、镇魔残翅、古宝残片、两件地图4制式装备、唯一\n`item_boss_soul_04_silver_wing_avatar`“银翅尸煞魂魄”、Boss完成Flag。失败诊断优先级：尸毒≥3层\n死亡→“尸毒期间群体恢复或DoT抵抗不足”；阶段二未命中率>30%→“缺少飞行命中”；残羽存活时死于残翅斩→\n“未先处理残羽”；战斗超过180秒→“输出不足”。"
+        },
+        "intendedCounterplay": "群疗应对尸毒，法术与飞剑对空，终阶段先处理残羽",
+        "proposedBaseIntervalTicks": null,
+        "proposals": [
+          "严格保留原文三阶段、70%展翅、30%落地和2残羽；阶段三不能逃生，进入战斗前显示提示与确认。"
+        ]
+      }
+    }
+  ],
+  "encounters": [
+    {
+      "code": "enc_m1_normal_01",
+      "name": "地图1·A 入山坡·敌群01",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "region": "A 入山坡",
+        "difficulty": "low",
+        "recommendedLevel": 2,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 1,
+        "members": [
+          {
+            "enemyCode": "m1_rubble_rat",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 24,
+        "repeatSoulCrystal": 12,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保护残血并优先击杀",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；28分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m1_normal_02",
+      "name": "地图1·A 入山坡·敌群02",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "region": "A 入山坡",
+        "difficulty": "medium",
+        "recommendedLevel": 2,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 2,
+        "members": [
+          {
+            "enemyCode": "m1_rubble_rat",
+            "quantity": 2
+          }
+        ],
+        "firstSoulCrystal": 27,
+        "repeatSoulCrystal": 14,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保护残血并优先击杀",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；28分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m1_normal_03",
+      "name": "地图1·B 废营灯坪·敌群03",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "region": "B 废营灯坪",
+        "difficulty": "low",
+        "recommendedLevel": 3,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 3,
+        "members": [
+          {
+            "enemyCode": "m1_stone_wisp",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 30,
+        "repeatSoulCrystal": 15,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "法术集中破盾，避免低效零散攻击",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；28分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m1_normal_04",
+      "name": "地图1·B 废营灯坪·敌群04",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "region": "B 废营灯坪",
+        "difficulty": "medium",
+        "recommendedLevel": 4,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 4,
+        "members": [
+          {
+            "enemyCode": "m1_corpse_scout",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m1_rubble_rat",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 33,
+        "repeatSoulCrystal": 16,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "稳定恢复并保持定力；保护残血并优先击杀",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；28分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m1_normal_05",
+      "name": "地图1·C 万修门外坡·敌群05",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "region": "C 万修门外坡",
+        "difficulty": "medium",
+        "recommendedLevel": 4,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 5,
+        "members": [
+          {
+            "enemyCode": "m1_stone_wisp",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m1_corpse_scout",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 36,
+        "repeatSoulCrystal": 18,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "法术集中破盾，避免低效零散攻击；稳定恢复并保持定力",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；28分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m1_normal_06",
+      "name": "地图1·D 山腹暗道·敌群06",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "region": "D 山腹暗道",
+        "difficulty": "medium",
+        "recommendedLevel": 5,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 6,
+        "members": [
+          {
+            "enemyCode": "m1_array_glow",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m1_rubble_rat",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 39,
+        "repeatSoulCrystal": 20,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "优先处理施法者，错开恢复窗口；保护残血并优先击杀",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；28分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m1_normal_07",
+      "name": "地图1·D 山腹暗道·敌群07",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "region": "D 山腹暗道",
+        "difficulty": "medium",
+        "recommendedLevel": 4,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 7,
+        "members": [
+          {
+            "enemyCode": "m1_corpse_scout",
+            "quantity": 2
+          }
+        ],
+        "firstSoulCrystal": 42,
+        "repeatSoulCrystal": 21,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "稳定恢复并保持定力",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；28分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m1_normal_08",
+      "name": "地图1·E 东壁阵灯台·敌群08",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "region": "E 东壁阵灯台",
+        "difficulty": "medium",
+        "recommendedLevel": 6,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 8,
+        "members": [
+          {
+            "enemyCode": "m1_stone_guard",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m1_rubble_rat",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 45,
+        "repeatSoulCrystal": 22,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "降甲或法术突破高护体；保护残血并优先击杀",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；28分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m1_normal_09",
+      "name": "地图1·F 北坡残阵带·敌群09",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "region": "F 北坡残阵带",
+        "difficulty": "medium",
+        "recommendedLevel": 5,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 9,
+        "members": [
+          {
+            "enemyCode": "m1_array_glow",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m1_stone_wisp",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 48,
+        "repeatSoulCrystal": 24,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "优先处理施法者，错开恢复窗口；法术集中破盾，避免低效零散攻击",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；28分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m1_normal_10",
+      "name": "地图1·F 北坡残阵带·敌群10",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "region": "F 北坡残阵带",
+        "difficulty": "high",
+        "recommendedLevel": 6,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 10,
+        "members": [
+          {
+            "enemyCode": "m1_stone_guard",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m1_corpse_scout",
+            "quantity": 2
+          },
+          {
+            "enemyCode": "m1_array_glow",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 51,
+        "repeatSoulCrystal": 26,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "降甲或法术突破高护体；稳定恢复并保持定力；优先处理施法者，错开恢复窗口",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；28分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_e1_cracked_guard",
+      "name": "裂甲石卫",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "region": "E 东壁阵灯台",
+        "difficulty": "elite",
+        "recommendedLevel": 6,
+        "targetSeconds": [
+          45,
+          90
+        ],
+        "sequence": 11,
+        "members": [
+          {
+            "enemyCode": "e1_cracked_guard",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 60,
+        "repeatSoulCrystal": 30,
+        "rewardBasis": "source_19",
+        "additionalRewards": "石卫甲片2、玄铁4；首次专属物只发一次。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "法术清除反震计数",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；28分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_e1_banner_corpse",
+      "name": "尸煞执旗者",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "region": "F 北坡残阵带",
+        "difficulty": "elite",
+        "recommendedLevel": 7,
+        "targetSeconds": [
+          45,
+          90
+        ],
+        "sequence": 12,
+        "members": [
+          {
+            "enemyCode": "e1_banner_corpse",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 55,
+        "repeatSoulCrystal": 28,
+        "rewardBasis": "source_19",
+        "additionalRewards": "破旗1、归营符残纸；首次专属物只发一次。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "先击杀旗手解除同伴增益",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；28分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_b1_gate_stone",
+      "name": "守门石灵",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 1,
+        "region": "G 万修之门",
+        "difficulty": "boss",
+        "recommendedLevel": 7,
+        "targetSeconds": [
+          90,
+          210
+        ],
+        "sequence": 13,
+        "members": [
+          {
+            "enemyCode": "b1_gate_stone",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 200,
+        "repeatSoulCrystal": 0,
+        "rewardBasis": "source_19",
+        "additionalRewards": "全部首杀任务物、材料与装备见敌人Boss来源段落；旧装备品级不直接映射新六档。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "never",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": 1,
+        "bossSoulCode": null,
+        "intent": "法术清反震，破金身后集中输出；群疗应对裂地流血",
+        "precondition": "完成本章Boss前主线；可返回整备",
+        "source": "19分册敌人数值；28分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m2_normal_01",
+      "name": "地图2·A 入口·敌群01",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "region": "A 入口",
+        "difficulty": "low",
+        "recommendedLevel": 9,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 1,
+        "members": [
+          {
+            "enemyCode": "m2_jade_corpse",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 64,
+        "repeatSoulCrystal": 29,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "控制尸毒叠加与连战损耗",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；29分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m2_normal_02",
+      "name": "地图2·A 入口·敌群02",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "region": "A 入口",
+        "difficulty": "medium",
+        "recommendedLevel": 11,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 2,
+        "members": [
+          {
+            "enemyCode": "m2_jade_corpse",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m2_array_serpent",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 70,
+        "repeatSoulCrystal": 32,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "控制尸毒叠加与连战损耗；优先击杀高速干扰单位",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；29分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m2_normal_03",
+      "name": "地图2·外环玉道·敌群03",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "region": "外环玉道",
+        "difficulty": "medium",
+        "recommendedLevel": 9,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 3,
+        "members": [
+          {
+            "enemyCode": "m2_vine",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m2_jade_corpse",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 76,
+        "repeatSoulCrystal": 34,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保护高速输出位或抢先控制；控制尸毒叠加与连战损耗",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；29分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m2_normal_04",
+      "name": "地图2·C 木魅庭院·敌群04",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "region": "C 木魅庭院",
+        "difficulty": "medium",
+        "recommendedLevel": 10,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 4,
+        "members": [
+          {
+            "enemyCode": "m2_wood_sprite",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m2_jade_corpse",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 82,
+        "repeatSoulCrystal": 37,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "集中伤害越过恢复窗口；控制尸毒叠加与连战损耗",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；29分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m2_normal_05",
+      "name": "地图2·D 力阵庭院·敌群05",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "region": "D 力阵庭院",
+        "difficulty": "medium",
+        "recommendedLevel": 11,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 5,
+        "members": [
+          {
+            "enemyCode": "m2_array_serpent",
+            "quantity": 2
+          }
+        ],
+        "firstSoulCrystal": 88,
+        "repeatSoulCrystal": 40,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "优先击杀高速干扰单位",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；29分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m2_normal_06",
+      "name": "地图2·E 雷阵庭院·敌群06",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "region": "E 雷阵庭院",
+        "difficulty": "medium",
+        "recommendedLevel": 12,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 6,
+        "members": [
+          {
+            "enemyCode": "m2_spell_shadow",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m2_jade_corpse",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m2_array_serpent",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 94,
+        "repeatSoulCrystal": 42,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "用定力和打断保护恢复位；控制尸毒叠加与连战损耗；优先击杀高速干扰单位",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；29分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m2_normal_07",
+      "name": "地图2·F 蜃阵庭院·敌群07",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "region": "F 蜃阵庭院",
+        "difficulty": "medium",
+        "recommendedLevel": 9,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 7,
+        "members": [
+          {
+            "enemyCode": "m2_jade_corpse",
+            "quantity": 2
+          }
+        ],
+        "firstSoulCrystal": 100,
+        "repeatSoulCrystal": 45,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "控制尸毒叠加与连战损耗",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；29分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m2_normal_08",
+      "name": "地图2·G 神阵庭院·敌群08",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "region": "G 神阵庭院",
+        "difficulty": "medium",
+        "recommendedLevel": 10,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 8,
+        "members": [
+          {
+            "enemyCode": "m2_vine",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m2_wood_sprite",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m2_jade_corpse",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 106,
+        "repeatSoulCrystal": 48,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保护高速输出位或抢先控制；集中伤害越过恢复窗口；控制尸毒叠加与连战损耗",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；29分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m2_normal_09",
+      "name": "地图2·外环玉道·敌群09",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "region": "外环玉道",
+        "difficulty": "medium",
+        "recommendedLevel": 11,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 9,
+        "members": [
+          {
+            "enemyCode": "m2_array_serpent",
+            "quantity": 2
+          },
+          {
+            "enemyCode": "m2_jade_corpse",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 112,
+        "repeatSoulCrystal": 50,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "优先击杀高速干扰单位；控制尸毒叠加与连战损耗",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；29分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m2_normal_10",
+      "name": "地图2·H 封尸地窟·敌群10",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "region": "H 封尸地窟",
+        "difficulty": "medium",
+        "recommendedLevel": 12,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 10,
+        "members": [
+          {
+            "enemyCode": "m2_spell_shadow",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m2_wood_sprite",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m2_jade_corpse",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 118,
+        "repeatSoulCrystal": 53,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "用定力和打断保护恢复位；集中伤害越过恢复窗口；控制尸毒叠加与连战损耗",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；29分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m2_normal_11",
+      "name": "地图2·H 封尸地窟·敌群11",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "region": "H 封尸地窟",
+        "difficulty": "medium",
+        "recommendedLevel": 11,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 11,
+        "members": [
+          {
+            "enemyCode": "m2_jade_corpse",
+            "quantity": 2
+          },
+          {
+            "enemyCode": "m2_array_serpent",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 124,
+        "repeatSoulCrystal": 56,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "控制尸毒叠加与连战损耗；优先击杀高速干扰单位",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；29分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m2_normal_12",
+      "name": "地图2·I 封坛区前环路·敌群12",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "region": "I 封坛区前环路",
+        "difficulty": "high",
+        "recommendedLevel": 12,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 12,
+        "members": [
+          {
+            "enemyCode": "m2_spell_shadow",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m2_wood_sprite",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m2_jade_corpse",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m2_array_serpent",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 130,
+        "repeatSoulCrystal": 58,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "用定力和打断保护恢复位；集中伤害越过恢复窗口；控制尸毒叠加与连战损耗；优先击杀高速干扰单位",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；29分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_e2_reviving_guard",
+      "name": "复生尸卫",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "region": "D 力阵庭院",
+        "difficulty": "elite",
+        "recommendedLevel": 12,
+        "targetSeconds": [
+          45,
+          90
+        ],
+        "sequence": 13,
+        "members": [
+          {
+            "enemyCode": "e2_reviving_guard",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 100,
+        "repeatSoulCrystal": 45,
+        "rewardBasis": "source_19",
+        "additionalRewards": "尸卫甲片3；首次专属物只发一次。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "先破魂灯再击杀本体",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；29分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_e2_mana_devourer",
+      "name": "噬法木魅",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "region": "C 木魅庭院",
+        "difficulty": "elite",
+        "recommendedLevel": 12,
+        "targetSeconds": [
+          45,
+          90
+        ],
+        "sequence": 14,
+        "members": [
+          {
+            "enemyCode": "e2_mana_devourer",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 110,
+        "repeatSoulCrystal": 50,
+        "rewardBasis": "source_19",
+        "additionalRewards": "木魅妖心2；首次专属物只发一次。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "物理暴击制造输出窗口",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；29分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_e2_four_symbols",
+      "name": "四象阵灵",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "region": "四阵眼汇流",
+        "difficulty": "elite",
+        "recommendedLevel": 13,
+        "targetSeconds": [
+          45,
+          90
+        ],
+        "sequence": 15,
+        "members": [
+          {
+            "enemyCode": "e2_four_symbols",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 120,
+        "repeatSoulCrystal": 55,
+        "rewardBasis": "source_19",
+        "additionalRewards": "四象阵砂2；首次专属物只发一次。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "按护罩阶段切换攻击类型",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；29分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_b2_corpse_general",
+      "name": "封坛尸将",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 2,
+        "region": "I 封坛区",
+        "difficulty": "boss",
+        "recommendedLevel": 13,
+        "targetSeconds": [
+          90,
+          210
+        ],
+        "sequence": 16,
+        "members": [
+          {
+            "enemyCode": "b2_corpse_general",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 700,
+        "repeatSoulCrystal": 0,
+        "rewardBasis": "source_19",
+        "additionalRewards": "全部首杀任务物、材料与装备见敌人Boss来源段落；旧装备品级不直接映射新六档。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "never",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": 2,
+        "bossSoulCode": "item_boss_soul_02_corpse_general",
+        "intent": "优先处理魂旗，维持群疗与定力，减少尸毒叠加",
+        "precondition": "完成本章Boss前主线；可返回整备",
+        "source": "19分册敌人数值；29分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m3_normal_01",
+      "name": "地图3·B 山脊交通带·敌群01",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "B 山脊交通带",
+        "difficulty": "low",
+        "recommendedLevel": 15,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 1,
+        "members": [
+          {
+            "enemyCode": "m3_broken_blade",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 140,
+        "repeatSoulCrystal": 56,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保护残血，优先削减多段伤害",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m3_normal_02",
+      "name": "地图3·B 山脊交通带·敌群02",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "B 山脊交通带",
+        "difficulty": "medium",
+        "recommendedLevel": 16,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 2,
+        "members": [
+          {
+            "enemyCode": "m3_bronze_puppet",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m3_broken_blade",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 150,
+        "repeatSoulCrystal": 60,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "集中破盾与稳定续航；保护残血，优先削减多段伤害",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m3_normal_03",
+      "name": "地图3·C 昆吾殿外苑·敌群03",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "C 昆吾殿外苑",
+        "difficulty": "medium",
+        "recommendedLevel": 17,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 3,
+        "members": [
+          {
+            "enemyCode": "m3_treasure_rogue",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m3_broken_blade",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 160,
+        "repeatSoulCrystal": 64,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "控制残血逃跑，兼顾双防；保护残血，优先削减多段伤害",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m3_normal_04",
+      "name": "地图3·D 元牌密室·敌群04",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "D 元牌密室",
+        "difficulty": "medium",
+        "recommendedLevel": 18,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 4,
+        "members": [
+          {
+            "enemyCode": "m3_ghost_soldier",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m3_bronze_puppet",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 170,
+        "repeatSoulCrystal": 68,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保护低定力队员并优先击杀；集中破盾与稳定续航",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m3_normal_05",
+      "name": "地图3·E 灵宝阁外台·敌群05",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "E 灵宝阁外台",
+        "difficulty": "medium",
+        "recommendedLevel": 18,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 5,
+        "members": [
+          {
+            "enemyCode": "m3_gold_eater",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m3_broken_blade",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 180,
+        "repeatSoulCrystal": 72,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "避免只依赖护盾，改用减伤与恢复；保护残血，优先削减多段伤害",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m3_normal_06",
+      "name": "地图3·F 灵宝阁残层·敌群06",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "F 灵宝阁残层",
+        "difficulty": "medium",
+        "recommendedLevel": 17,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 6,
+        "members": [
+          {
+            "enemyCode": "m3_treasure_rogue",
+            "quantity": 2
+          }
+        ],
+        "firstSoulCrystal": 190,
+        "repeatSoulCrystal": 76,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "控制残血逃跑，兼顾双防",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m3_normal_07",
+      "name": "地图3·G 中央机关回廊·敌群07",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "G 中央机关回廊",
+        "difficulty": "medium",
+        "recommendedLevel": 18,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 7,
+        "members": [
+          {
+            "enemyCode": "m3_bronze_puppet",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m3_broken_blade",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m3_ghost_soldier",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 200,
+        "repeatSoulCrystal": 80,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "集中破盾与稳定续航；保护残血，优先削减多段伤害；保护低定力队员并优先击杀",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m3_normal_08",
+      "name": "地图3·B 山脊交通带·敌群08",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "B 山脊交通带",
+        "difficulty": "medium",
+        "recommendedLevel": 18,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 8,
+        "members": [
+          {
+            "enemyCode": "m3_gold_eater",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m3_treasure_rogue",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 210,
+        "repeatSoulCrystal": 84,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "避免只依赖护盾，改用减伤与恢复；控制残血逃跑，兼顾双防",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m3_normal_09",
+      "name": "地图3·G 中央机关回廊·敌群09",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "G 中央机关回廊",
+        "difficulty": "medium",
+        "recommendedLevel": 17,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 9,
+        "members": [
+          {
+            "enemyCode": "m3_broken_blade",
+            "quantity": 2
+          },
+          {
+            "enemyCode": "m3_treasure_rogue",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 220,
+        "repeatSoulCrystal": 88,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保护残血，优先削减多段伤害；控制残血逃跑，兼顾双防",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m3_normal_10",
+      "name": "地图3·H 铸灵堂上层·敌群10",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "H 铸灵堂上层",
+        "difficulty": "medium",
+        "recommendedLevel": 18,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 10,
+        "members": [
+          {
+            "enemyCode": "m3_bronze_puppet",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m3_gold_eater",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m3_ghost_soldier",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 230,
+        "repeatSoulCrystal": 92,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "集中破盾与稳定续航；避免只依赖护盾，改用减伤与恢复；保护低定力队员并优先击杀",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m3_normal_11",
+      "name": "地图3·K 回程断桥·敌群11",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "K 回程断桥",
+        "difficulty": "medium",
+        "recommendedLevel": 17,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 11,
+        "members": [
+          {
+            "enemyCode": "m3_treasure_rogue",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m3_broken_blade",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 240,
+        "repeatSoulCrystal": 96,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "控制残血逃跑，兼顾双防；保护残血，优先削减多段伤害",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m3_normal_12",
+      "name": "地图3·H 铸灵堂上层·敌群12",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "H 铸灵堂上层",
+        "difficulty": "medium",
+        "recommendedLevel": 17,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 12,
+        "members": [
+          {
+            "enemyCode": "m3_bronze_puppet",
+            "quantity": 2
+          },
+          {
+            "enemyCode": "m3_treasure_rogue",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 250,
+        "repeatSoulCrystal": 100,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "集中破盾与稳定续航；控制残血逃跑，兼顾双防",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m3_normal_13",
+      "name": "地图3·I 铸灵堂地宫·敌群13",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "I 铸灵堂地宫",
+        "difficulty": "medium",
+        "recommendedLevel": 18,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 13,
+        "members": [
+          {
+            "enemyCode": "m3_gold_eater",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m3_broken_blade",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m3_ghost_soldier",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 260,
+        "repeatSoulCrystal": 104,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "避免只依赖护盾，改用减伤与恢复；保护残血，优先削减多段伤害；保护低定力队员并优先击杀",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m3_normal_14",
+      "name": "地图3·I 铸灵堂地宫·敌群14",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "I 铸灵堂地宫",
+        "difficulty": "high",
+        "recommendedLevel": 18,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 14,
+        "members": [
+          {
+            "enemyCode": "m3_gold_eater",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m3_bronze_puppet",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m3_treasure_rogue",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m3_ghost_soldier",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 270,
+        "repeatSoulCrystal": 108,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "避免只依赖护盾，改用减伤与恢复；集中破盾与稳定续航；控制残血逃跑，兼顾双防；保护低定力队员并优先击杀",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_e3_treasure_guard",
+      "name": "灵宝阁守卫",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "E 灵宝阁外台",
+        "difficulty": "elite",
+        "recommendedLevel": 18,
+        "targetSeconds": [
+          45,
+          90
+        ],
+        "sequence": 15,
+        "members": [
+          {
+            "enemyCode": "e3_treasure_guard",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 200,
+        "repeatSoulCrystal": 80,
+        "rewardBasis": "source_19",
+        "additionalRewards": "古禁令1；首杀禅珠残片1；首次专属物只发一次。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "观察护罩后选择正确伤害类型",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_e3_elder_soul",
+      "name": "阴罗宗长老分魂",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "G 中央机关回廊",
+        "difficulty": "elite",
+        "recommendedLevel": 19,
+        "targetSeconds": [
+          45,
+          90
+        ],
+        "sequence": 16,
+        "members": [
+          {
+            "enemyCode": "e3_elder_soul",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 220,
+        "repeatSoulCrystal": 88,
+        "rewardBasis": "source_19",
+        "additionalRewards": "五鬼袋残片1；首次专属物只发一次。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保护后排，群疗应对随机多段",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_e3_unstable_sword",
+      "name": "失控剑灵",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "H 铸灵堂上层",
+        "difficulty": "elite",
+        "recommendedLevel": 19,
+        "targetSeconds": [
+          45,
+          90
+        ],
+        "sequence": 17,
+        "members": [
+          {
+            "enemyCode": "e3_unstable_sword",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 210,
+        "repeatSoulCrystal": 84,
+        "rewardBasis": "source_19",
+        "additionalRewards": "首杀剑灵锋1；首次专属物只发一次。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "控制清除叠速",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_e3_furnace_golem",
+      "name": "熔炉石傀",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "I 铸灵堂地宫",
+        "difficulty": "elite",
+        "recommendedLevel": 20,
+        "targetSeconds": [
+          45,
+          90
+        ],
+        "sequence": 18,
+        "members": [
+          {
+            "enemyCode": "e3_furnace_golem",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 240,
+        "repeatSoulCrystal": 96,
+        "rewardBasis": "source_19",
+        "additionalRewards": "铸灵核心碎片2；首次专属物只发一次。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "在过热前破盾延后群攻",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_b3_four_arm_puppet",
+      "name": "四臂铸灵傀",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 3,
+        "region": "J 铸灵核心台",
+        "difficulty": "boss",
+        "recommendedLevel": 20,
+        "targetSeconds": [
+          90,
+          210
+        ],
+        "sequence": 19,
+        "members": [
+          {
+            "enemyCode": "b3_four_arm_puppet",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 1800,
+        "repeatSoulCrystal": 0,
+        "rewardBasis": "source_19",
+        "additionalRewards": "全部首杀任务物、材料与装备见敌人Boss来源段落；旧装备品级不直接映射新六档。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "never",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": 3,
+        "bossSoulCode": null,
+        "intent": "先拆守臂或铸臂，保留打断应对回炉和过载",
+        "precondition": "完成本章Boss前主线；可返回整备",
+        "source": "19分册敌人数值；30分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m4_normal_01",
+      "name": "地图4·A 西侧入口臂·敌群01",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "A 西侧入口臂",
+        "difficulty": "low",
+        "recommendedLevel": 21,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 1,
+        "members": [
+          {
+            "enemyCode": "m4_silver_corpse",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 220,
+        "repeatSoulCrystal": 77,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "法术破高护体，维持尸毒恢复",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m4_normal_02",
+      "name": "地图4·B 黑风折返带·敌群02",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "B 黑风折返带",
+        "difficulty": "medium",
+        "recommendedLevel": 23,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 2,
+        "members": [
+          {
+            "enemyCode": "m4_silver_corpse",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m4_rift_form",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 232,
+        "repeatSoulCrystal": 81,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "法术破高护体，维持尸毒恢复；提早恢复，避免行动条被推后时断档",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m4_normal_03",
+      "name": "地图4·C 外环前段·敌群03",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "C 外环前段",
+        "difficulty": "medium",
+        "recommendedLevel": 21,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 3,
+        "members": [
+          {
+            "enemyCode": "m4_chain_spirit",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m4_silver_corpse",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 244,
+        "repeatSoulCrystal": 85,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保护主法修与恢复位；法术破高护体，维持尸毒恢复",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m4_normal_04",
+      "name": "地图4·D 定界链臂·敌群04",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "D 定界链臂",
+        "difficulty": "low",
+        "recommendedLevel": 22,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 4,
+        "members": [
+          {
+            "enemyCode": "m4_demon_beast",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 256,
+        "repeatSoulCrystal": 90,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保留眩晕应对狂暴阶段",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m4_normal_05",
+      "name": "地图4·C 外环前段·敌群05",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "C 外环前段",
+        "difficulty": "medium",
+        "recommendedLevel": 23,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 5,
+        "members": [
+          {
+            "enemyCode": "m4_rift_form",
+            "quantity": 2
+          }
+        ],
+        "firstSoulCrystal": 268,
+        "repeatSoulCrystal": 94,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "提早恢复，避免行动条被推后时断档",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m4_normal_06",
+      "name": "地图4·E 封魂间·敌群06",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "E 封魂间",
+        "difficulty": "medium",
+        "recommendedLevel": 22,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 6,
+        "members": [
+          {
+            "enemyCode": "m4_soul_shadow",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m4_silver_corpse",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 280,
+        "repeatSoulCrystal": 98,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保护残血并提高异常抵抗；法术破高护体，维持尸毒恢复",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m4_normal_07",
+      "name": "地图4·C 外环前段·敌群07",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "C 外环前段",
+        "difficulty": "medium",
+        "recommendedLevel": 23,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 7,
+        "members": [
+          {
+            "enemyCode": "m4_silver_corpse",
+            "quantity": 2
+          },
+          {
+            "enemyCode": "m4_rift_form",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 292,
+        "repeatSoulCrystal": 102,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "法术破高护体，维持尸毒恢复；提早恢复，避免行动条被推后时断档",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m4_normal_08",
+      "name": "地图4·F 侧狱支路·敌群08",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "F 侧狱支路",
+        "difficulty": "medium",
+        "recommendedLevel": 23,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 8,
+        "members": [
+          {
+            "enemyCode": "m4_chain_spirit",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m4_rift_form",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 304,
+        "repeatSoulCrystal": 106,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保护主法修与恢复位；提早恢复，避免行动条被推后时断档",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m4_normal_09",
+      "name": "地图4·G 镇尸链臂·敌群09",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "G 镇尸链臂",
+        "difficulty": "medium",
+        "recommendedLevel": 22,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 9,
+        "members": [
+          {
+            "enemyCode": "m4_demon_beast",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m4_silver_corpse",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 316,
+        "repeatSoulCrystal": 111,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保留眩晕应对狂暴阶段；法术破高护体，维持尸毒恢复",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m4_normal_10",
+      "name": "地图4·E 封魂间·敌群10",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "E 封魂间",
+        "difficulty": "medium",
+        "recommendedLevel": 23,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 10,
+        "members": [
+          {
+            "enemyCode": "m4_soul_shadow",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m4_rift_form",
+            "quantity": 2
+          }
+        ],
+        "firstSoulCrystal": 328,
+        "repeatSoulCrystal": 115,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保护残血并提高异常抵抗；提早恢复，避免行动条被推后时断档",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m4_normal_11",
+      "name": "地图4·外环后段·敌群11",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "外环后段",
+        "difficulty": "medium",
+        "recommendedLevel": 23,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 11,
+        "members": [
+          {
+            "enemyCode": "m4_silver_corpse",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m4_rift_form",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 340,
+        "repeatSoulCrystal": 119,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "法术破高护体，维持尸毒恢复；提早恢复，避免行动条被推后时断档",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m4_normal_12",
+      "name": "地图4·G 镇尸链臂·敌群12",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "G 镇尸链臂",
+        "difficulty": "medium",
+        "recommendedLevel": 23,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 12,
+        "members": [
+          {
+            "enemyCode": "m4_demon_beast",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m4_silver_corpse",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m4_rift_form",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 352,
+        "repeatSoulCrystal": 123,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保留眩晕应对狂暴阶段；法术破高护体，维持尸毒恢复；提早恢复，避免行动条被推后时断档",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m4_normal_13",
+      "name": "地图4·H 锁魂链臂·敌群13",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "H 锁魂链臂",
+        "difficulty": "medium",
+        "recommendedLevel": 21,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 13,
+        "members": [
+          {
+            "enemyCode": "m4_chain_spirit",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m4_silver_corpse",
+            "quantity": 2
+          }
+        ],
+        "firstSoulCrystal": 364,
+        "repeatSoulCrystal": 127,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保护主法修与恢复位；法术破高护体，维持尸毒恢复",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m4_normal_14",
+      "name": "地图4·祭坛前环路·敌群14",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "祭坛前环路",
+        "difficulty": "medium",
+        "recommendedLevel": 22,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 14,
+        "members": [
+          {
+            "enemyCode": "m4_soul_shadow",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m4_silver_corpse",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 376,
+        "repeatSoulCrystal": 132,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保护残血并提高异常抵抗；法术破高护体，维持尸毒恢复",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m4_normal_15",
+      "name": "地图4·Boss前整备环路·敌群15",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "Boss前整备环路",
+        "difficulty": "medium",
+        "recommendedLevel": 23,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 15,
+        "members": [
+          {
+            "enemyCode": "m4_rift_form",
+            "quantity": 2
+          },
+          {
+            "enemyCode": "m4_silver_corpse",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 388,
+        "repeatSoulCrystal": 136,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "提早恢复，避免行动条被推后时断档；法术破高护体，维持尸毒恢复",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_m4_normal_16",
+      "name": "地图4·Boss前整备环路·敌群16",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "Boss前整备环路",
+        "difficulty": "high",
+        "recommendedLevel": 23,
+        "targetSeconds": [
+          20,
+          45
+        ],
+        "sequence": 16,
+        "members": [
+          {
+            "enemyCode": "m4_demon_beast",
+            "quantity": 1
+          },
+          {
+            "enemyCode": "m4_silver_corpse",
+            "quantity": 2
+          },
+          {
+            "enemyCode": "m4_rift_form",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 400,
+        "repeatSoulCrystal": 140,
+        "rewardBasis": "new_design",
+        "additionalRewards": "普通材料按模板来源保留，尚未绑定掉落池；魂晶按整场结算，不按单位相加。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保留眩晕应对狂暴阶段；法术破高护体，维持尸毒恢复；提早恢复，避免行动条被推后时断档",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_e4_golden_guard",
+      "name": "金身尸卫",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "D 定界链臂",
+        "difficulty": "elite",
+        "recommendedLevel": 23,
+        "targetSeconds": [
+          45,
+          90
+        ],
+        "sequence": 17,
+        "members": [
+          {
+            "enemyCode": "e4_golden_guard",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 330,
+        "repeatSoulCrystal": 116,
+        "rewardBasis": "source_19",
+        "additionalRewards": "庚精3；首杀金身尸卫残骨、金身尸卫核心、古修甲片各1；首次专属物只发一次。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "法伤破盾消除吸血收益",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_e4_blackwind_shadow",
+      "name": "黑风旗影",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "F 侧狱支路",
+        "difficulty": "elite",
+        "recommendedLevel": 23,
+        "targetSeconds": [
+          45,
+          90
+        ],
+        "sequence": 18,
+        "members": [
+          {
+            "enemyCode": "e4_blackwind_shadow",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 360,
+        "repeatSoulCrystal": 126,
+        "rewardBasis": "source_19",
+        "additionalRewards": "黑风丝1；首次专属物只发一次。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "携定界珠或提前恢复",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_e4_parasite",
+      "name": "魔气寄生体",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "E 封魂间",
+        "difficulty": "elite",
+        "recommendedLevel": 23,
+        "targetSeconds": [
+          45,
+          90
+        ],
+        "sequence": 19,
+        "members": [
+          {
+            "enemyCode": "e4_parasite",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 350,
+        "repeatSoulCrystal": 122,
+        "rewardBasis": "source_19",
+        "additionalRewards": "魔髓碎屑2；首次专属物只发一次。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "优先击破寄生核",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_e4_jailer",
+      "name": "镇塔狱卒",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "G 镇尸链臂",
+        "difficulty": "elite",
+        "recommendedLevel": 24,
+        "targetSeconds": [
+          45,
+          90
+        ],
+        "sequence": 20,
+        "members": [
+          {
+            "enemyCode": "e4_jailer",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 400,
+        "repeatSoulCrystal": 140,
+        "rewardBasis": "source_19",
+        "additionalRewards": "镇塔令片1；首次专属物只发一次。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "保留护盾承受处刑",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_e4_silver_feather",
+      "name": "银翅残羽",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "H 锁魂链臂",
+        "difficulty": "elite",
+        "recommendedLevel": 24,
+        "targetSeconds": [
+          45,
+          90
+        ],
+        "sequence": 21,
+        "members": [
+          {
+            "enemyCode": "e4_silver_feather",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 420,
+        "repeatSoulCrystal": 147,
+        "rewardBasis": "source_19",
+        "additionalRewards": "残翎1；首杀残翎核心1并开放残翅骨环净化节点；首次专属物只发一次。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "next_expedition",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": null,
+        "bossSoulCode": null,
+        "intent": "使用飞剑和法术处理飞行",
+        "precondition": "按所在区域主线条件开放",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    },
+    {
+      "code": "enc_b4_silver_wing_avatar",
+      "name": "银翅夜叉·尸煞化身",
+      "design": {
+        "schemaVersion": 1,
+        "implementationStatus": "design_only",
+        "mapNumber": 4,
+        "region": "镇魔塔Boss场地",
+        "difficulty": "boss",
+        "recommendedLevel": 24,
+        "targetSeconds": [
+          90,
+          210
+        ],
+        "sequence": 22,
+        "members": [
+          {
+            "enemyCode": "b4_silver_wing_avatar",
+            "quantity": 1
+          }
+        ],
+        "firstSoulCrystal": 4000,
+        "repeatSoulCrystal": 0,
+        "rewardBasis": "source_19",
+        "additionalRewards": "全部首杀任务物、材料与装备见敌人Boss来源段落；旧装备品级不直接映射新六档。",
+        "rewardState": "pending_asset_and_quality_mapping",
+        "refresh": "never",
+        "firstClearOnce": true,
+        "revisitRetainsFirstClear": true,
+        "mainBossOrdinal": 4,
+        "bossSoulCode": "item_boss_soul_04_silver_wing_avatar",
+        "intent": "群疗应对尸毒，法术与飞剑对空，终阶段先处理残羽",
+        "precondition": "全员结丹，确认阶段三不可逃生",
+        "source": "19分册敌人数值；31分册区域；新增编成/奖励初值见20_敌人与遭遇设计",
+        "coordinateStatus": "unplaced"
+      }
+    }
+  ]
+}
