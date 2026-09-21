@@ -1,0 +1,298 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e67]:
+      - generic [ref=e68]:
+        - generic [ref=e69]: 昆
+        - generic [ref=e70]:
+          - strong [ref=e71]: 昆吾司典
+          - generic [ref=e72]: KUNWU CONFIG CONSOLE
+      - generic [ref=e73]:
+        - generic [ref=e74]: 地图
+        - strong [ref=e76]: 1.0 正式版
+        - generic [ref=e77]: 草稿 · R212
+      - generic [ref=e78]:
+        - button "连接管理身份" [ref=e79] [cursor=pointer]
+        - link "版本与发布" [ref=e80] [cursor=pointer]:
+          - /url: /config?configSet=v1_0
+        - generic [ref=e81]:
+          - generic [ref=e82]: 配置集
+          - combobox "配置集" [ref=e83]:
+            - option "D0 Demo · R5"
+            - option "1.0 正式版 · R212" [selected]
+        - button "刷新" [ref=e84] [cursor=pointer]
+        - button "用户" [ref=e90] [cursor=pointer]
+    - generic [ref=e61]:
+      - navigation "后台导航" [ref=e95]:
+        - generic [ref=e96]:
+          - link "剧情" [ref=e97] [cursor=pointer]:
+            - /url: /
+          - link "发布" [ref=e101] [cursor=pointer]:
+            - /url: /config?configSet=v1_0
+          - link "资源" [ref=e107] [cursor=pointer]:
+            - /url: /resources
+          - link "物品" [ref=e112] [cursor=pointer]:
+            - /url: /items?configSet=v1_0
+          - link "修士" [ref=e118] [cursor=pointer]:
+            - /url: /cultivators?configSet=v1_0
+          - link "技能" [ref=e125] [cursor=pointer]:
+            - /url: /skills?configSet=v1_0
+          - link "敌人" [ref=e136] [cursor=pointer]:
+            - /url: /enemies?configSet=v1_0
+          - link "地图" [ref=e143] [cursor=pointer]:
+            - /url: /maps?configSet=v1_0
+          - link "营地" [ref=e147] [cursor=pointer]:
+            - /url: /camp?configSet=v1_0
+      - complementary [ref=e153]:
+        - generic [ref=e155]:
+          - text: BUSINESS CONFIG
+          - heading "地图" [level=2] [ref=e156]
+        - paragraph [ref=e161]: 地图、敌人编组、交互点位置与专属奖励。
+        - navigation "地图功能" [ref=e162]:
+          - button [ref=e163] [cursor=pointer]:
+            - strong [ref=e169]: 地图基础
+            - emphasis [ref=e170]: "1"
+          - button [ref=e173] [cursor=pointer]:
+            - strong [ref=e179]: 资源与交互点
+            - emphasis [ref=e180]: "31"
+          - button [ref=e183] [cursor=pointer]:
+            - strong [ref=e189]: 地图落点
+            - emphasis [ref=e190]: "31"
+          - button [ref=e193] [cursor=pointer]:
+            - strong [ref=e199]: 敌人编组
+            - emphasis [ref=e200]: "70"
+          - button [ref=e203] [cursor=pointer]:
+            - strong [ref=e209]: 地图1入口与奖励
+            - emphasis [ref=e210]: "14"
+          - button [ref=e213] [cursor=pointer]:
+            - strong [ref=e219]: Boss首杀装备
+            - emphasis [ref=e220]: "2"
+          - button [ref=e223] [cursor=pointer]:
+            - strong [ref=e229]: 奖励包
+            - emphasis [ref=e230]: "0"
+        - paragraph [ref=e233]: 当前配置集：v1_0不同配置集完全隔离。
+      - main [ref=e234]:
+        - generic [ref=e235]:
+          - generic [ref=e236]:
+            - text: MYSQL DRAFT SOURCE
+            - heading "地图" [level=1] [ref=e237]
+            - paragraph [ref=e238]: 地图、敌人编组、交互点位置与专属奖励。
+          - generic [ref=e239]:
+            - generic [ref=e240]: SCHEMA
+            - generic [ref=e241]: v1
+            - generic [ref=e242]: Revision 212
+        - generic [ref=e243]:
+          - generic [ref=e245]:
+            - heading "地图" [level=2] [ref=e246]
+            - paragraph [ref=e247]: 当前为已入库数据查看，尚未开放的编辑能力不会改变运行配置。
+          - paragraph [ref=e248]: 已导入的地图可在“地图基础”查看对象位置、交互和奖励。导入草稿不等于启用发布；地图专属奖励与敌人通用掉落分别管理。
+          - region "地图核对" [ref=e249]:
+            - generic [ref=e250]:
+              - generic [ref=e251]:
+                - text: 地图
+                - combobox "选择地图" [ref=e252]:
+                  - option "破禁山麓·万修之门" [selected]
+              - generic [ref=e253]: 配置修订 212 · 导入草稿 · 未启用
+            - paragraph [ref=e254]: 世界尺寸 897 × 1938.5411681914145 · 入口 (450, 1890) · 31 个对象
+            - paragraph [ref=e255]: 碰撞层 36 个 · 调节层 17 个。坐标原样保留，当前只读核对。
+            - generic [ref=e256]:
+              - generic [ref=e257]:
+                - heading "对象位置示意" [level=3] [ref=e258]
+                - group "地图1对象位置" [ref=e259]:
+                  - generic [ref=e262]: 入口
+                  - button "定位噬灵鼠群" [ref=e263] [cursor=pointer]
+                  - button "定位崩石间的灵光" [ref=e265] [cursor=pointer]
+                  - button "定位废营尸兵" [ref=e267] [cursor=pointer]
+                  - button "定位反阵骚动" [ref=e269] [cursor=pointer]
+                  - button "定位东壁石卫" [ref=e271] [cursor=pointer]
+                  - button "定位暗道尸群" [ref=e273] [cursor=pointer]
+                  - button "定位残阵灵光群" [ref=e275] [cursor=pointer]
+                  - button "定位北坡尸卫" [ref=e277] [cursor=pointer]
+                  - button "定位双石甲关口" [ref=e279] [cursor=pointer]
+                  - button "定位门前残阵" [ref=e281] [cursor=pointer]
+                  - button "定位精英：裂甲石卫" [ref=e283] [cursor=pointer]
+                  - button "定位精英：尸煞执旗者" [ref=e285] [cursor=pointer]
+                  - button "定位入口灵木" [active] [ref=e287] [cursor=pointer]
+                  - button "定位东壁灵木" [ref=e289] [cursor=pointer]
+                  - button "定位山脊灵木" [ref=e291] [cursor=pointer]
+                  - button "定位露天玄铁" [ref=e293] [cursor=pointer]
+                  - button "定位暗道玄铁" [ref=e295] [cursor=pointer]
+                  - button "定位废营粮袋" [ref=e297] [cursor=pointer]
+                  - button "定位北坡粮仓" [ref=e299] [cursor=pointer]
+                  - button "定位西北灵晶" [ref=e301] [cursor=pointer]
+                  - button "定位第一盏阵灯" [ref=e303] [cursor=pointer]
+                  - button "定位第二盏阵灯" [ref=e305] [cursor=pointer]
+                  - button "定位第三盏阵灯" [ref=e307] [cursor=pointer]
+                  - button "定位两份开山令" [ref=e309] [cursor=pointer]
+                  - button "定位废营粮册" [ref=e311] [cursor=pointer]
+                  - button "定位万修之门残碑" [ref=e313] [cursor=pointer]
+                  - button "定位暗道宝匣" [ref=e315] [cursor=pointer]
+                  - button "定位山腹暗道：顾南炉" [ref=e317] [cursor=pointer]
+                  - button "定位东壁回程阶梯" [ref=e319] [cursor=pointer]
+                  - button "定位首领：守门石灵" [ref=e321] [cursor=pointer]
+                  - button "定位万修之门出口" [ref=e323] [cursor=pointer]
+                - paragraph [ref=e325]: 点击落点查看详情；示意图不代表可行走区域。
+              - generic [ref=e326]:
+                - generic [ref=e327]:
+                  - textbox "搜索地图对象" [ref=e328]:
+                    - /placeholder: 搜索名称或编码
+                  - combobox "对象类型" [ref=e329]:
+                    - option "全部对象" [selected]
+                    - option "普通敌人"
+                    - option "精英敌人"
+                    - option "资源点"
+                    - option "阵灯"
+                    - option "剧情事件"
+                    - option "宝箱"
+                    - option "洞窟"
+                    - option "捷径"
+                    - option "Boss"
+                    - option "出口"
+                - list "地图对象列表" [ref=e330]:
+                  - button "噬灵鼠群 普通敌人 · (432, 1620) m1_g01" [ref=e331] [cursor=pointer]:
+                    - strong [ref=e332]: 噬灵鼠群
+                    - generic [ref=e333]: 普通敌人 · (432, 1620)
+                    - generic [ref=e334]: m1_g01
+                  - button "崩石间的灵光 普通敌人 · (594, 1650) m1_g02" [ref=e335] [cursor=pointer]:
+                    - strong [ref=e336]: 崩石间的灵光
+                    - generic [ref=e337]: 普通敌人 · (594, 1650)
+                    - generic [ref=e338]: m1_g02
+                  - button "废营尸兵 普通敌人 · (720, 1536) m1_g03" [ref=e339] [cursor=pointer]:
+                    - strong [ref=e340]: 废营尸兵
+                    - generic [ref=e341]: 普通敌人 · (720, 1536)
+                    - generic [ref=e342]: m1_g03
+                  - button "反阵骚动 普通敌人 · (384, 1362) m1_g04" [ref=e343] [cursor=pointer]:
+                    - strong [ref=e344]: 反阵骚动
+                    - generic [ref=e345]: 普通敌人 · (384, 1362)
+                    - generic [ref=e346]: m1_g04
+                  - button "东壁石卫 普通敌人 · (726, 996) m1_g05" [ref=e347] [cursor=pointer]:
+                    - strong [ref=e348]: 东壁石卫
+                    - generic [ref=e349]: 普通敌人 · (726, 996)
+                    - generic [ref=e350]: m1_g05
+                  - button "暗道尸群 普通敌人 · (432, 1104) m1_g06" [ref=e351] [cursor=pointer]:
+                    - strong [ref=e352]: 暗道尸群
+                    - generic [ref=e353]: 普通敌人 · (432, 1104)
+                    - generic [ref=e354]: m1_g06
+                  - button "残阵灵光群 普通敌人 · (630, 756) m1_g07" [ref=e355] [cursor=pointer]:
+                    - strong [ref=e356]: 残阵灵光群
+                    - generic [ref=e357]: 普通敌人 · (630, 756)
+                    - generic [ref=e358]: m1_g07
+                  - button "北坡尸卫 普通敌人 · (294, 636) m1_g08" [ref=e359] [cursor=pointer]:
+                    - strong [ref=e360]: 北坡尸卫
+                    - generic [ref=e361]: 普通敌人 · (294, 636)
+                    - generic [ref=e362]: m1_g08
+                  - button "双石甲关口 普通敌人 · (618, 498) m1_g09" [ref=e363] [cursor=pointer]:
+                    - strong [ref=e364]: 双石甲关口
+                    - generic [ref=e365]: 普通敌人 · (618, 498)
+                    - generic [ref=e366]: m1_g09
+                  - button "门前残阵 普通敌人 · (588, 300) m1_g10" [ref=e367] [cursor=pointer]:
+                    - strong [ref=e368]: 门前残阵
+                    - generic [ref=e369]: 普通敌人 · (588, 300)
+                    - generic [ref=e370]: m1_g10
+                  - button "精英：裂甲石卫 精英敌人 · (720, 894) m1_e01" [ref=e371] [cursor=pointer]:
+                    - strong [ref=e372]: 精英：裂甲石卫
+                    - generic [ref=e373]: 精英敌人 · (720, 894)
+                    - generic [ref=e374]: m1_e01
+                  - button "精英：尸煞执旗者 精英敌人 · (414, 408) m1_e02" [ref=e375] [cursor=pointer]:
+                    - strong [ref=e376]: 精英：尸煞执旗者
+                    - generic [ref=e377]: 精英敌人 · (414, 408)
+                    - generic [ref=e378]: m1_e02
+                  - button "入口灵木 资源点 · (306, 1770) m1_res_wood_01" [pressed] [ref=e379] [cursor=pointer]:
+                    - strong [ref=e380]: 入口灵木
+                    - generic [ref=e381]: 资源点 · (306, 1770)
+                    - generic [ref=e382]: m1_res_wood_01
+                  - button "东壁灵木 资源点 · (636, 1224) m1_res_wood_02" [ref=e383] [cursor=pointer]:
+                    - strong [ref=e384]: 东壁灵木
+                    - generic [ref=e385]: 资源点 · (636, 1224)
+                    - generic [ref=e386]: m1_res_wood_02
+                  - button "山脊灵木 资源点 · (402, 1320) m1_res_wood_03" [ref=e387] [cursor=pointer]:
+                    - strong [ref=e388]: 山脊灵木
+                    - generic [ref=e389]: 资源点 · (402, 1320)
+                    - generic [ref=e390]: m1_res_wood_03
+                  - button "露天玄铁 资源点 · (690, 768) m1_res_iron_01" [ref=e391] [cursor=pointer]:
+                    - strong [ref=e392]: 露天玄铁
+                    - generic [ref=e393]: 资源点 · (690, 768)
+                    - generic [ref=e394]: m1_res_iron_01
+                  - button "暗道玄铁 资源点 · (414, 1068) m1_res_iron_02" [ref=e395] [cursor=pointer]:
+                    - strong [ref=e396]: 暗道玄铁
+                    - generic [ref=e397]: 资源点 · (414, 1068)
+                    - generic [ref=e398]: m1_res_iron_02
+                  - button "废营粮袋 资源点 · (366, 1620) m1_res_grain_01" [ref=e399] [cursor=pointer]:
+                    - strong [ref=e400]: 废营粮袋
+                    - generic [ref=e401]: 资源点 · (366, 1620)
+                    - generic [ref=e402]: m1_res_grain_01
+                  - button "北坡粮仓 资源点 · (624, 588) m1_res_grain_02" [ref=e403] [cursor=pointer]:
+                    - strong [ref=e404]: 北坡粮仓
+                    - generic [ref=e405]: 资源点 · (624, 588)
+                    - generic [ref=e406]: m1_res_grain_02
+                  - button "西北灵晶 资源点 · (240, 618) m1_res_crystal_01" [ref=e407] [cursor=pointer]:
+                    - strong [ref=e408]: 西北灵晶
+                    - generic [ref=e409]: 资源点 · (240, 618)
+                    - generic [ref=e410]: m1_res_crystal_01
+                  - button "第一盏阵灯 阵灯 · (432, 1530) m1_event_lamp_01" [ref=e411] [cursor=pointer]:
+                    - strong [ref=e412]: 第一盏阵灯
+                    - generic [ref=e413]: 阵灯 · (432, 1530)
+                    - generic [ref=e414]: m1_event_lamp_01
+                  - button "第二盏阵灯 阵灯 · (732, 1098) m1_event_lamp_02" [ref=e415] [cursor=pointer]:
+                    - strong [ref=e416]: 第二盏阵灯
+                    - generic [ref=e417]: 阵灯 · (732, 1098)
+                    - generic [ref=e418]: m1_event_lamp_02
+                  - button "第三盏阵灯 阵灯 · (462, 588) m1_event_lamp_03" [ref=e419] [cursor=pointer]:
+                    - strong [ref=e420]: 第三盏阵灯
+                    - generic [ref=e421]: 阵灯 · (462, 588)
+                    - generic [ref=e422]: m1_event_lamp_03
+                  - button "两份开山令 剧情事件 · (594, 1500) m1_event_corpses" [ref=e423] [cursor=pointer]:
+                    - strong [ref=e424]: 两份开山令
+                    - generic [ref=e425]: 剧情事件 · (594, 1500)
+                    - generic [ref=e426]: m1_event_corpses
+                  - button "废营粮册 剧情事件 · (324, 1332) m1_event_ledger" [ref=e427] [cursor=pointer]:
+                    - strong [ref=e428]: 废营粮册
+                    - generic [ref=e429]: 剧情事件 · (324, 1332)
+                    - generic [ref=e430]: m1_event_ledger
+                  - button "万修之门残碑 剧情事件 · (462, 1260) m1_event_stele" [ref=e431] [cursor=pointer]:
+                    - strong [ref=e432]: 万修之门残碑
+                    - generic [ref=e433]: 剧情事件 · (462, 1260)
+                    - generic [ref=e434]: m1_event_stele
+                  - button "暗道宝匣 宝箱 · (636, 1038) m1_event_chest" [ref=e435] [cursor=pointer]:
+                    - strong [ref=e436]: 暗道宝匣
+                    - generic [ref=e437]: 宝箱 · (636, 1038)
+                    - generic [ref=e438]: m1_event_chest
+                  - button "山腹暗道：顾南炉 洞窟 · (240, 654) m1_dungeon_tunnel" [ref=e439] [cursor=pointer]:
+                    - strong [ref=e440]: 山腹暗道：顾南炉
+                    - generic [ref=e441]: 洞窟 · (240, 654)
+                    - generic [ref=e442]: m1_dungeon_tunnel
+                  - button "东壁回程阶梯 捷径 · (738, 960) m1_shortcut_stairs" [ref=e443] [cursor=pointer]:
+                    - strong [ref=e444]: 东壁回程阶梯
+                    - generic [ref=e445]: 捷径 · (738, 960)
+                    - generic [ref=e446]: m1_shortcut_stairs
+                  - button "首领：守门石灵 Boss · (450, 240) m1_boss_gate_spirit" [ref=e447] [cursor=pointer]:
+                    - strong [ref=e448]: 首领：守门石灵
+                    - generic [ref=e449]: Boss · (450, 240)
+                    - generic [ref=e450]: m1_boss_gate_spirit
+                  - button "万修之门出口 出口 · (450, 198) m1_exit" [ref=e451] [cursor=pointer]:
+                    - strong [ref=e452]: 万修之门出口
+                    - generic [ref=e453]: 出口 · (450, 198)
+                    - generic [ref=e454]: m1_exit
+                - article "地图对象详情" [ref=e455]:
+                  - heading "入口灵木" [level=3] [ref=e481]
+                  - paragraph [ref=e457]: 山风折断的灵木仍有可用木心。
+                  - paragraph [ref=e458]: 资源点 · X 306 / Y 1770 · 每次出征刷新
+                  - generic [ref=e482]:
+                    - heading "交互选项" [level=4] [ref=e483]
+                    - generic [ref=e484]:
+                      - strong [ref=e485]: 采集灵木
+                      - paragraph [ref=e486]: 取得灵木。
+                      - list [ref=e487]:
+                        - listitem [ref=e488]: 灵木：首次 18 / 重复 9
+                      - group [ref=e489]:
+                        - generic "查看触发条件与完整效果" [ref=e490] [cursor=pointer]
+                  - group [ref=e466]:
+                    - generic "完整对象数据（含门禁、状态与奖励）" [ref=e467] [cursor=pointer]
+    - contentinfo [ref=e468]:
+      - generic [ref=e469]: MySQL 8.4 · v1_0
+      - paragraph [ref=e474]: 1.0 正式版 · 修订 212 · 数据来自 MySQL
+      - generic [ref=e477]:
+        - generic [ref=e478]: "5"
+        - text: 配置域
+        - generic [ref=e480]: "0"
+        - text: 项冲突
+  - alert [ref=e66]

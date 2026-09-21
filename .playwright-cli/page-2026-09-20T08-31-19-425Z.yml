@@ -1,0 +1,26 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - navigation "后台导航" [ref=e3]:
+      - generic [ref=e4]:
+        - link "剧情" [ref=e5] [cursor=pointer]:
+          - /url: /
+        - link "发布" [ref=e9] [cursor=pointer]:
+          - /url: /config?configSet=v1_0
+        - link "资源" [ref=e15] [cursor=pointer]:
+          - /url: /resources
+        - link "物品" [ref=e20] [cursor=pointer]:
+          - /url: /items?configSet=v1_0
+        - link "修士" [ref=e26] [cursor=pointer]:
+          - /url: /cultivators?configSet=v1_0
+        - link "技能" [ref=e33] [cursor=pointer]:
+          - /url: /skills?configSet=v1_0
+        - link "敌人" [ref=e44] [cursor=pointer]:
+          - /url: /enemies?configSet=v1_0
+        - link "地图" [ref=e51] [cursor=pointer]:
+          - /url: /maps?configSet=v1_0
+        - link "营地" [ref=e55] [cursor=pointer]:
+          - /url: /camp?configSet=v1_0
+    - generic [ref=e61]:
+      - generic [ref=e62]: 昆
+      - paragraph [ref=e65]: 正在连接 MySQL 配置中心…
+  - alert [ref=e66]

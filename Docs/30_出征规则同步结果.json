@@ -1,0 +1,10 @@
+{
+  "revision": 215,
+  "changed": 1,
+  "staminaCost": 10,
+  "minimumCarriedGrain": 20,
+  "lossBasisPoints": 3000,
+  "fieldHealingPercent": 35,
+  "healingSource": "策划36_营地后勤与野外循环机制",
+  "published": false
+}

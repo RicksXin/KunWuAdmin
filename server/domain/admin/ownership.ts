@@ -2,7 +2,7 @@
 export const domainViews = {
   skills: {name:'技能',detail:'统一维护技能，修士和敌人按编码引用。',groups:['skills','enemySkills'],modules:['combat']},
   enemies: {name:'敌人',detail:'敌人模板、基础属性与战斗机制；地图通过编组引用。',groups:['enemies'],modules:['combat']},
-  maps: {name:'地图',detail:'地图、敌人编组、交互点位置与专属奖励。',groups:['maps','objects','placements','encounters','map01Bindings','bossEquipmentRewards','rewardPacks'],modules:['expedition','combat','base']},
+  maps: {name:'地图',detail:'地图、敌人编组、交互点位置与专属奖励。',groups:['maps','expeditionRules','mapExpeditionRules','objects','placements','encounters','map01Bindings','bossEquipmentRewards','rewardPacks'],modules:['expedition','combat','base']},
   camp: {name:'营地',detail:'建筑与等级；生产、仓储和杂役费用在资源管理维护。',groups:['buildings'],modules:['economy']},
   equipment: {name:'装备模板',detail:'物品系统中的装备生成模板；地图奖励只引用模板与品级。',groups:['equipmentRuntime'],modules:['combat']},
 } as const;

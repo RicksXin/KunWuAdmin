@@ -40,7 +40,9 @@
     "map01:sync": "node --conditions=react-server --import tsx tools/sync-map01-runtime.ts",
     "map01:export-test": "node --conditions=react-server --import tsx tools/export-map01-runtime-test.ts",
     "map01:loop:sync": "node --conditions=react-server --import tsx tools/sync-map01-loop.ts",
-    "test:encounters": "node --conditions=react-server --import tsx --test tests/encounters/*.test.ts"
+    "test:encounters": "node --conditions=react-server --import tsx --test tests/encounters/*.test.ts",
+    "maps:sync:map01": "node --conditions=react-server --import tsx tools/sync-map01-map.ts",
+    "test:maps": "node --conditions=react-server --import tsx --test tests/maps/*.test.ts"
   },
   "dependencies": {
     "@xyflow/react": "^12.8.6",

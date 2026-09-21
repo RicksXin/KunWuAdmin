@@ -8,7 +8,7 @@ export function BattleDesignViewer({value,onClose}:{value:BattleDesignDetail;onC
   const visual=value.kind==="enemy" ? visualPlan.enemies[value.code as keyof typeof visualPlan.enemies] : undefined;
   const family=visualPlan.families.find(f=>f.code===visual?.family);
   return <div className="config-modal-backdrop" onMouseDown={onClose}><section className="skill-editor" onMouseDown={e=>e.stopPropagation()}>
-    <header><div><span className="section-kicker">设计草稿 · 未启用</span><h2>{value.name}</h2></div><button className="icon-button" aria-label="关闭设计详情" onClick={onClose}><X size={17}/></button></header>
+    <header><div><span className="section-kicker">{value.design.implementationStatus==="runtime_ready"?"执行配置就绪 · 渠道发布另行审核":"设计草稿 · 未启用"}</span><h2>{value.name}</h2></div><button className="icon-button" aria-label="关闭设计详情" onClick={onClose}><X size={17}/></button></header>
     <div className="skill-form"><div className="span-2" style={{fontSize:13,lineHeight:1.8}}>
       <p>地图 {value.design.mapNumber} · {value.code}</p>
       {value.kind==="enemy"?<>

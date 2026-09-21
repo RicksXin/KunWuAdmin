@@ -2,22 +2,22 @@ import { z } from "zod";
 const code=z.string().regex(/^[a-z][a-z0-9_]*$/);
 const source=z.object({document:z.string().min(1),section:z.string().min(1),text:z.string().min(1)}).strict();
 export const enemyDesignSchema=z.object({
-  schemaVersion:z.literal(1),implementationStatus:z.literal("design_only"),mapNumber:z.number().int().min(1).max(4),
+  schemaVersion:z.literal(1),implementationStatus:z.enum(["design_only","runtime_ready"]),mapNumber:z.number().int().min(1).max(4),
   role:z.string().min(1),hardControl:z.boolean(),healer:z.boolean(),source,
   intendedCounterplay:z.string().min(1),
   proposedBaseIntervalTicks:z.number().int().min(1).nullable(),
   proposals:z.array(z.string()),
 }).strict();
 export const encounterDesignSchema=z.object({
-  schemaVersion:z.literal(1),implementationStatus:z.literal("design_only"),mapNumber:z.number().int().min(1).max(4),
+  schemaVersion:z.literal(1),implementationStatus:z.enum(["design_only","runtime_ready"]),mapNumber:z.number().int().min(1).max(4),
   region:z.string().min(1),difficulty:z.enum(["low","medium","high","elite","boss"]),
   recommendedLevel:z.number().int().min(1).max(30),targetSeconds:z.tuple([z.number().int().positive(),z.number().int().positive()]),
   sequence:z.number().int().positive(),members:z.array(z.object({enemyCode:code,quantity:z.number().int().min(1).max(4)}).strict()).min(1),
   firstSoulCrystal:z.number().int().min(0),repeatSoulCrystal:z.number().int().min(0),rewardBasis:z.enum(["new_design","source_19"]),
-  additionalRewards:z.string(),rewardState:z.literal("pending_asset_and_quality_mapping"),
+  additionalRewards:z.string(),rewardState:z.enum(["pending_asset_and_quality_mapping","runtime_package"]),
   refresh:z.enum(["next_expedition","never"]),firstClearOnce:z.literal(true),revisitRetainsFirstClear:z.literal(true),
   mainBossOrdinal:z.number().int().min(1).max(4).nullable(),bossSoulCode:code.nullable(),
-  intent:z.string().min(1),precondition:z.string(),source:z.string().min(1),coordinateStatus:z.literal("unplaced"),
+  intent:z.string().min(1),precondition:z.string(),source:z.string().min(1),coordinateStatus:z.enum(["unplaced","bound"]),
 }).strict();
 export type EnemyDesign=z.infer<typeof enemyDesignSchema>;
 export type EncounterDesign=z.infer<typeof encounterDesignSchema>;

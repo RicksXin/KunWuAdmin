@@ -1,6 +1,7 @@
 "use client";
 
 import {domainViews,businessEntries,type DomainView} from "@/server/domain/admin/ownership";
+import {MapInspector} from "./MapInspector";
 import { AdminRail } from "@/components/admin/AdminRail";
 import { SkillMechanicsEditor } from "./SkillMechanicsEditor";
 import { BattleDesignViewer,type BattleDesignDetail } from "./BattleDesignViewer";
@@ -60,9 +61,9 @@ interface ChangeRequestWorkspace {
   };
 }
 
-const groupNames:Record<string,string>={skills:"修士技能",enemySkills:"敌人技能",enemies:"敌人模板与属性",maps:"地图基础",objects:"资源与交互点",placements:"地图落点",encounters:"敌人编组",map01Bindings:"地图1入口与奖励",bossEquipmentRewards:"Boss首杀装备",rewardPacks:"奖励包",buildings:"营地建筑",equipmentRuntime:"装备模板"};
+const groupNames:Record<string,string>={expeditionRules:"出征规则",mapExpeditionRules:"地图出征费用",skills:"修士技能",enemySkills:"敌人技能",enemies:"敌人模板与属性",maps:"地图基础",objects:"资源与交互点",placements:"地图落点",encounters:"敌人编组",map01Bindings:"地图1入口与奖励",bossEquipmentRewards:"Boss首杀装备",rewardPacks:"奖励包",buildings:"营地建筑",equipmentRuntime:"装备模板"};
 const fieldNames: Record<string, string> = {
-  runtimeId:"地图入口", firstReward:"首杀魂晶", repeatReward:"重复魂晶",members:"编成",slot:"槽位",baseStatBudget:"每纹基础预算",runeSlots:"器纹数量",allowedStats:"器纹池",quantity:"数量",
+  staminaMax:"体力上限",recoverySeconds:"体力恢复间隔（秒）",baseBurden:"基础负重",strengthBurdenFactor:"力道负重系数",constitutionBurdenFactor:"体质负重系数",restCount:"休整次数",healingPercent:"休整恢复（%）",materialLossBasisPoints:"材料损失（万分比）",equipmentLossBasisPoints:"装备损失概率（万分比）",staminaCost:"出征体力",grainPerStep:"每步灵粮",minimumCarriedGrain:"最低携粮",entryX:"入口X",entryY:"入口Y",map:"所属地图",runtimeId:"地图入口", firstReward:"首杀魂晶", repeatReward:"重复魂晶",members:"编成",slot:"槽位",baseStatBudget:"每纹基础预算",runeSlots:"器纹数量",allowedStats:"器纹池",quantity:"数量",
   strength:"力道",magic:"术法",technique:"技艺",speed:"速度",constitution:"体质",armor:"护甲",resistance:"抗性",name:"名称",
   code: "稳定 ID", nameKey: "名称键", type: "类型", status: "状态", weight: "重量", level: "等级", maxLevel: "最高等级",
   basePercent: "基础倍率", growthPercent: "成长倍率", minLevel: "最低等级", target: "目标",
@@ -286,9 +287,9 @@ export function ConfigDashboard({initialConfigSet="v1_0",view="release"}:{initia
             <section className="entity-section"><div className="section-heading"><div><h2>业务配置入口</h2><p>每项业务在自己的管理页维护；编译和发布继续使用同一配置集。</p></div></div><div className="business-entry-grid">{businessEntries.map(entry=><Link key={entry.href} href={`${entry.href}?configSet=${configSetCode}`}><strong>{entry.name}</strong><span>{entry.detail}</span><ChevronRight size={16}/></Link>)}</div></section>
           </>:<section className="entity-section">
             <div className="section-heading"><div><h2>{visibleGroup?.name??"配置明细"}</h2><p>{activeGroup==="skills"?"点击技能编辑；其他模块按编码引用。":"当前为已入库数据查看，尚未开放的编辑能力不会改变运行配置。"}</p></div></div>
-            {view==="maps"&&<p className="domain-note">地图1入口编组和奖励已有数据；地图定义与落点表仍待接入，空表不代表客户端地图没有对象。地图首杀奖励在此维护归属，不作为敌人通用掉落。</p>}
+            {view==="maps"&&<p className="domain-note">已导入的地图可在“地图基础”查看对象位置、交互和奖励。导入草稿不等于启用发布；地图专属奖励与敌人通用掉落分别管理。</p>}
             {view==="enemies"&&<p className="domain-note">当前查看敌人属性和机制。敌人独立默认掉落尚未建成，已有遭遇奖励保留在地图页，不会自动改为每只敌人的掉落。</p>}
-            {entityError?<div role="alert" className="entity-empty">{entityError}<button className="secondary-button" onClick={()=>void loadEntities().catch(()=>setEntityError("配置明细加载失败，请重试"))}>重试</button></div>:!entities?<div className="entity-loading"><LoaderCircle className="spin"/> 正在读取业务表…</div>:visibleGroup?<EntityGroup key={`${configSetCode}:${visibleGroup.code}`} group={visibleGroup} actionLabel={visibleGroup.code==="skills"?"点击行编辑":"点击行查看设计"} onEdit={visibleGroup.code==="skills"?editSkill:visibleGroup.code==="enemies"?code=>viewBattleDesign("enemy",code):visibleGroup.code==="encounters"?code=>viewBattleDesign("encounter",code):undefined}/>:<div className="entity-empty">当前配置集暂无数据</div>}
+            {entityError?<div role="alert" className="entity-empty">{entityError}<button className="secondary-button" onClick={()=>void loadEntities().catch(()=>setEntityError("配置明细加载失败，请重试"))}>重试</button></div>:!entities?<div className="entity-loading"><LoaderCircle className="spin"/> 正在读取业务表…</div>:visibleGroup?.code==="maps"?<MapInspector key={configSetCode} configSet={configSetCode} maps={visibleGroup.rows.map(row=>({code:String(row.code),name:String(row.name??row.code)}))}/>:visibleGroup?<EntityGroup key={`${configSetCode}:${visibleGroup.code}`} group={visibleGroup} actionLabel={visibleGroup.code==="skills"?"点击行编辑":"点击行查看设计"} onEdit={visibleGroup.code==="skills"?editSkill:visibleGroup.code==="enemies"?code=>viewBattleDesign("enemy",code):visibleGroup.code==="encounters"?code=>viewBattleDesign("encounter",code):undefined}/>:<div className="entity-empty">当前配置集暂无数据</div>}
           </section>}
 
         </main>

@@ -1,0 +1,26 @@
+.root { margin-top: 16px; color: #cbd0c9; font-size: 13px; }
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 12px; }
+.toolbar label { display: flex; align-items: center; gap: 10px; }
+.toolbar input,.toolbar select { border: 1px solid #384a40; background: #101a15; color: #d8dfd8; padding: 9px; border-radius: 4px; }
+.summary,.toolbar span { color: #96a99b; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+.layout { display: grid; grid-template-columns: minmax(180px,280px) minmax(0,1fr); gap: 20px; align-items: start; }
+.canvas { border: 1px solid #34483a; padding: 12px; position: sticky; top: 0; }
+.canvas svg { width: 100%; max-height: 610px; display: block; }
+.canvas svg g { cursor: pointer; outline: none; }
+.canvas svg g:focus circle { stroke: #fff; stroke-width: 8px; }
+.canvas h3,.detail h3 { margin: 0 0 12px; font-size: 16px; }
+.canvas p,.caution { font-size: 12px; color: #baa779; line-height: 1.7; }
+.browser { min-width: 0; }
+.list { max-height: 215px; overflow-y: auto; display: grid; grid-template-columns: repeat(auto-fit,minmax(170px,1fr)); gap: 6px; margin-bottom: 18px; }
+.list button { display: grid; gap: 5px; text-align: left; background: #16211b; color: #b7c4ba; border: 1px solid #304338; border-radius: 4px; padding: 10px; cursor: pointer; }
+.list span,.list small { color: #8c9b90; font-size: 11px; }
+.list button.selected { border-color: #c5a56b; background: #282b20; }
+.detail { padding: 18px; border: 1px solid #34483a; line-height: 1.8; }
+.detail section { border-top: 1px solid #34483a; margin-top: 15px; }
+.detail h4 { color: #ccb27e; }
+.choice { padding: 10px 0; border-bottom: 1px solid #26362b; }
+.detail pre { max-height: 300px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 11px; color: #93a99b; }
+.detail details { margin-top: 12px; }
+.detail summary { cursor: pointer; color: #b4bea9; }
+@media (max-width: 1050px) { .layout { grid-template-columns: 180px minmax(0,1fr); gap: 10px; } }
+@media (max-width: 760px) { .layout { grid-template-columns: 1fr; } .canvas { position: static; } .canvas svg { max-height: 350px; } }

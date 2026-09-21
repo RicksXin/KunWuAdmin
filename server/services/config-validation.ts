@@ -234,7 +234,9 @@ export async function runConfigValidation(configSetCode: string) {
       tx.select({design:encounters.design}).from(encounters).where(eq(encounters.configSetId,configSet.id)),
     ]);
     const pendingDesignCounts={enemy:enemyDesigns.filter(e=>e.design?.implementationStatus==="design_only").length,encounter:encounterDesigns.filter(e=>e.design?.implementationStatus==="design_only").length};
+    const mapDrafts=await tx.select({code:mapDefinitions.code}).from(mapDefinitions).where(eq(mapDefinitions.configSetId,configSet.id));
     missingCollections.forEach(([moduleCode, entityType, size]) => {
+      if(size===0&&entityType==="map_definition"&&mapDrafts.length){add(issue("error",moduleCode,"config_set",configSet.code,entityType,"MAP_DRAFT_NOT_READY",`${mapDrafts.length}张地图已导入草稿，尚待远端适配、出征与发布验收`,{maps:mapDrafts.map(m=>m.code)}));return;}
       if(size===0&&(entityType==="enemy"||entityType==="encounter")&&pendingDesignCounts[entityType]>0){
         add(issue("error",moduleCode,"config_set",configSet.code,entityType,"BATTLE_DESIGN_PENDING",`${pendingDesignCounts[entityType]}条${entityType==="enemy"?"敌人":"遭遇"}设计已入库，执行配置尚未接通，暂无可发布条目`,{entityType,designCount:pendingDesignCounts[entityType]}));return;
       }

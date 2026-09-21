@@ -1,4 +1,4 @@
-import { index, int, json, mysqlTable, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
+import { double, index, int, json, mysqlTable, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
 import { rewardPacks } from "./base";
 import { editableConfigColumns } from "./business";
 import { encounters } from "./combat";
@@ -12,13 +12,14 @@ export const mapDefinitions = mysqlTable("map_definition", {
   schemaVersion: int("schema_version", { unsigned: true }).notNull().default(1),
   scenePath: varchar("scene_path", { length: 512 }),
   artLicense: varchar("art_license", { length: 96 }),
-  width: int("width", { unsigned: true }),
-  height: int("height", { unsigned: true }),
-  activeWidth: int("active_width", { unsigned: true }),
-  activeHeight: int("active_height", { unsigned: true }),
-  entryX: int("entry_x"),
-  entryY: int("entry_y"),
+  width: double("width"),
+  height: double("height"),
+  activeWidth: double("active_width"),
+  activeHeight: double("active_height"),
+  entryX: double("entry_x"),
+  entryY: double("entry_y"),
   terrainDocument: json("terrain_document"),
+  runtimeDocument: json("runtime_document"),
   visualConfig: json("visual_config"),
   unlockCondition: json("unlock_condition"),
 }, (table) => [
@@ -59,8 +60,8 @@ export const mapObjectPlacements = mysqlTable("map_object_placement", {
   mapId: uuidBinary("map_id").notNull().references(() => mapDefinitions.id, { onDelete: "cascade" }),
   instanceCode: varchar("instance_code", { length: 96 }).notNull(),
   prototypeId: uuidBinary("prototype_id").notNull().references(() => mapObjectPrototypes.id),
-  x: int("x").notNull(),
-  y: int("y").notNull(),
+  x: double("x").notNull(),
+  y: double("y").notNull(),
   firstRewardPackId: uuidBinary("first_reward_pack_id").references(() => rewardPacks.id),
   repeatRewardPackId: uuidBinary("repeat_reward_pack_id").references(() => rewardPacks.id),
   overrideConfig: json("override_config"),

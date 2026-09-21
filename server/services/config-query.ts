@@ -19,6 +19,7 @@ import {
   i18nTexts,
   lootPools,
   mapDefinitions,
+  mapExpeditionRules,
   mapObjectPlacements,
   mapObjectPrototypes,
   newPlayerPresets,
@@ -214,9 +215,11 @@ export async function listConfigModuleEntities(configSetCode: string, module: Co
     configSet: configSet.code,
     module,
     groups: [
-      { code: "maps", name: "地图", rows: await database.select({ code: mapDefinitions.code, nameKey: mapDefinitions.nameKey, type: mapDefinitions.status, mapNumber: mapDefinitions.mapNumber, width: mapDefinitions.activeWidth, height: mapDefinitions.activeHeight }).from(mapDefinitions).where(eq(mapDefinitions.configSetId, setId)).orderBy(mapDefinitions.mapNumber) },
+      {code:"expeditionRules",name:"出征通用规则",rows:await database.select({code:expeditionRules.code,staminaMax:expeditionRules.staminaMax,recoverySeconds:expeditionRules.staminaRecoveryIntervalSeconds,baseBurden:expeditionRules.baseBurden,strengthBurdenFactor:expeditionRules.strengthBurdenFactor,constitutionBurdenFactor:expeditionRules.constitutionBurdenFactor,restCount:expeditionRules.baseRestCount,healingPercent:expeditionRules.fieldHealingPercent,materialLossBasisPoints:expeditionRules.materialLossBasisPoints,equipmentLossBasisPoints:expeditionRules.equipmentLossBasisPoints}).from(expeditionRules).where(eq(expeditionRules.configSetId,setId))},
+      {code:"mapExpeditionRules",name:"地图出征费用",rows:await database.select({code:mapDefinitions.code,staminaCost:mapExpeditionRules.staminaCost,grainPerStep:mapExpeditionRules.grainPerStep,minimumCarriedGrain:mapExpeditionRules.minimumCarriedGrain}).from(mapExpeditionRules).innerJoin(mapDefinitions,eq(mapExpeditionRules.mapId,mapDefinitions.id)).where(eq(mapDefinitions.configSetId,setId))},
+      { code: "maps", name: "地图", rows: await database.select({ code: mapDefinitions.code, name: mapDefinitions.displayName, nameKey: mapDefinitions.nameKey, status: mapDefinitions.status, mapNumber: mapDefinitions.mapNumber, width: mapDefinitions.activeWidth, height: mapDefinitions.activeHeight, entryX:mapDefinitions.entryX, entryY:mapDefinitions.entryY }).from(mapDefinitions).where(eq(mapDefinitions.configSetId, setId)).orderBy(mapDefinitions.mapNumber) },
       { code: "objects", name: "地图对象原型", rows: await database.select({ code: mapObjectPrototypes.code, type: mapObjectPrototypes.kind, title: mapObjectPrototypes.title, refresh: mapObjectPrototypes.refreshType, status: mapObjectPrototypes.status }).from(mapObjectPrototypes).where(eq(mapObjectPrototypes.configSetId, setId)).orderBy(mapObjectPrototypes.sortOrder) },
-      { code: "placements", name: "地图落点", rows: await database.select({ code: mapObjectPlacements.instanceCode, x: mapObjectPlacements.x, y: mapObjectPlacements.y }).from(mapObjectPlacements).innerJoin(mapDefinitions, eq(mapObjectPlacements.mapId, mapDefinitions.id)).where(eq(mapDefinitions.configSetId, setId)).orderBy(mapObjectPlacements.instanceCode) },
+      { code: "placements", name: "地图落点", rows: await database.select({ code: mapObjectPlacements.instanceCode, map:mapDefinitions.code, x: mapObjectPlacements.x, y: mapObjectPlacements.y }).from(mapObjectPlacements).innerJoin(mapDefinitions, eq(mapObjectPlacements.mapId, mapDefinitions.id)).where(eq(mapDefinitions.configSetId, setId)).orderBy(mapObjectPlacements.instanceCode) },
     ],
   };
 }

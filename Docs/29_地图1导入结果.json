@@ -1,0 +1,52 @@
+{
+  "configSet": "v1_0",
+  "revision": 212,
+  "changed": 63,
+  "mapCode": "map_01",
+  "objects": 31,
+  "directBattleBindings": 13,
+  "totalEncounterReferences": 14,
+  "kinds": {
+    "enemy_group": 10,
+    "elite_enemy": 2,
+    "resource": 8,
+    "landmark_event": 3,
+    "story_event": 3,
+    "treasure_chest": 1,
+    "dungeon": 1,
+    "shortcut": 1,
+    "boss": 1,
+    "map_exit": 1
+  },
+  "worldSize": [
+    897,
+    1938.5411681914145
+  ],
+  "entry": [
+    450,
+    1890
+  ],
+  "sourceHash": "a5175531ac1b3bbd8c54786a4b734dc5396dc276289866092ecbacf745f23138",
+  "regionsHash": "4c12337a786d8472027026cc788572e4f2aece56f7b72051fe7ceea9b5be5cea",
+  "regionLayers": [
+    {
+      "id": "occlusion",
+      "count": 0
+    },
+    {
+      "id": "collision",
+      "count": 36
+    },
+    {
+      "id": "adjust",
+      "count": 17
+    },
+    {
+      "id": "top",
+      "count": 0
+    }
+  ],
+  "status": "disabled",
+  "published": false,
+  "roundTripVerified": true
+}
